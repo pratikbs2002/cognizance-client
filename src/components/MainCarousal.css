@@ -1,0 +1,6 @@
+.home-carousel-image {
+  width: 100%;
+  background-size: auto !important;
+  object-fit: cover;
+  height: 90vh;
+}
