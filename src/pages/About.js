@@ -18,10 +18,12 @@ export default function About() {
   const date = new Date();
   return (
     <>
-      <Container marginTop={"20px"} maxWidth={"100%"}>
+      <Container marginTop={"20px"} height={"100%"} maxWidth={"100%"}>
         <Heading
           // textAlign={"center"}
-          paddingStart={"50px"}
+          paddingStart={"25px"}
+          paddingTop={1}
+          paddingBottom={1}
           color="#1c4980"
           size="lg"
         >
@@ -29,19 +31,28 @@ export default function About() {
         </Heading>
         <Stack direction={{ base: "column", md: "row" }}>
           <Container maxW={{ base: "100%", md: "50%" }}>
-            <VStack padding={6}>
+            <VStack padding={{ base: "2px", md: "10px" }}>
               <Image src={aboutImage} alt="About Image"></Image>
             </VStack>
           </Container>
           <Container maxW={{ base: "100%", md: "70%" }}>
-            <Stack gap={10} direction={"column"}>
-              <Container maxWidth="100%">
-                <HStack justifyContent="space-between">
-                  <Text>Event Date : {date.getDate()}/{date.getMonth()}/{date.getFullYear()}</Text>
-                </HStack>
+            <Stack gap={{ base: 10, md: 6 }} direction={"column"}>
+              <Container
+                padding={{ base: "2px", md: "10px 0" }}
+                margin={0}
+                maxWidth="100%"
+              >
+                <Heading
+                  color={"#eeeeee"}
+                  fontSize={{ base: "1.5rem", md: "2rem" }}
+                  textAlign={{ base: "center", md: "left" }}
+                >
+                  Event Date : {date.getDate()}/{date.getMonth()}/
+                  {date.getFullYear()}
+                </Heading>
               </Container>
 
-              <Text>
+              <Text color={"#eeeeee"} align={"justify"}>
                 A technical festival is an event that brings together technology
                 enthusiasts, students, and professionals to showcase the latest
                 advancements and innovations in the field of science,
@@ -50,9 +61,12 @@ export default function About() {
                 fostering learning, creativity, and collaboration among
                 attendees.
               </Text>
-              <Container alignItems={"center"} marginTop={10}>
+              <Container maxWidth={"100%"} alignItems={"center"} marginTop={10}>
                 <Stack
-                  direction={{ base: "row", md: "row" }}
+                  maxWidth={"100%"}
+                  justifyContent="space-around"
+                  alignItems={"center"}
+                  direction={{ base: "column", md: "row" }}
                   gap={{ base: 2, md: 10 }}
                 >
                   <a href="pdfs/banner.pdf" target="_blank" download>
@@ -87,27 +101,101 @@ export default function About() {
                   </a>
                 </Stack>
               </Container>
-              <Container>
-                <Stack direction={"row"}>
-                  <Container>
-                    <Card>
-                      <Stack direction={"row"}>
-                        <Image
-                          borderRadius="full"
-                          boxSize="100px"
-                          src={count_icon}
-                          alt="count icon"
-                        />
-                      </Stack>
-                    </Card>
+              <Container maxWidth={"100%"} marginTop={10}>
+                <Stack
+                  justifyContent={{ base: "center", md: "space-around" }}
+                  alignItems="center"
+                  maxWidth={"100%"}
+                  padding={0}
+                  direction={{ base: "column", md: "row" }}
+                >
+                  <Container
+                    padding={0}
+                    margin="0"
+                    maxWidth={{ base: "100%", md: "300px" }}
+                  >
+                    <Stack padding={0} direction={"row"}>
+                      <Container
+                        padding={0}
+                        justifyContent={"center"}
+                        alignItems="center"
+                      >
+                        <Card>
+                          <Stack direction={"row"}>
+                            <Image
+                              borderRadius="full"
+                              boxSize="100px"
+                              src={count_icon}
+                              alt="count icon"
+                            />
+                            <Stack
+                              justifyContent={"center"}
+                              alignItems={"flex-start"}
+                              direction={"column"}
+                            >
+                              <Text>10000+</Text>
+                              <Text>Total Visitors</Text>
+                            </Stack>
+                          </Stack>
+                        </Card>
+                      </Container>
+                    </Stack>
+                  </Container>
+                  <Container
+                    padding={0}
+                    maxWidth={{ base: "100%", md: "300px" }}
+                  >
+                    <Stack padding={0} direction={"row"}>
+                      <Container
+                        padding={0}
+                        justifyContent={"center"}
+                        alignItems="center"
+                      >
+                        <Card>
+                          <Stack direction={"row"}>
+                            <Image
+                              borderRadius="full"
+                              boxSize="100px"
+                              src={count_icon}
+                              alt="count icon"
+                            />
+                            <Stack
+                              justifyContent={"center"}
+                              alignItems={"flex-start"}
+                              direction={"column"}
+                            >
+                              <Text>10000+</Text>
+                              <Text>Total Registration</Text>
+                            </Stack>
+                          </Stack>
+                        </Card>
+                      </Container>
+                    </Stack>
                   </Container>
                 </Stack>
               </Container>
             </Stack>
           </Container>
         </Stack>
+        <Container
+          paddingBottom={10}
+          bg={"blackAlpha.100"}
+          marginTop={"50px"}
+          maxWidth="100%"
+        >
+          <Heading
+            marginTop={"50px"}
+            paddingTop={"20px"}
+            paddingBottom="20px"
+            textAlign={"center"}
+            color="#1c4980"
+            size="lg"
+          >
+            Sponsors
+          </Heading>
+          <SponsorMarquee />
+        </Container>
       </Container>
-      <SponsorMarquee />
     </>
   );
 }

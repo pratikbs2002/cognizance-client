@@ -1,0 +1,67 @@
+.gallery {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-width: 33%;
+  -moz-column-width: 33%;
+  column-width: 33%;
+  padding: 0 200px;
+  padding-bottom: 30px;
+  padding-top: 40px;
+  /* background: url("../../assets/main-bg.jpg"); */
+  background-image: url("../../assets/main-bg2.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.gallery .pics {
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: transform 1s;
+}
+.gallery .pics:hover {
+  /* filter: opacity(0.8); */
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05);
+}
+
+@media (max-width: 991px) {
+  .gallery {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    padding: 0 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-width: 100%;
+    -moz-column-width: 100%;
+    column-width: 100%;
+    padding: 0 10px;
+  }
+}
+.chakra-modal__close-btn {
+  color: red;
+}
+
+
+
+
+                                  /* [Load Balancer]
+                                          |
+                                          |
+                 +------------------------+------------------------+
+                 |                        |                        |
+      [UserManagement Container] [Notification Container] [ArticleManagement Container]
+                 |                        |                        |
+        +--------+--------+        +--------+--------+        +--------+--------+
+        |                 |        |                 |        |                 |
+[Authentication Container] [MediaManagement Container] [EventManagement Container] [Search Container] */

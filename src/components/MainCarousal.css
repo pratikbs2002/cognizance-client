@@ -4,3 +4,10 @@
   object-fit: cover;
   height: 90vh;
 }
+
+.carousel-control-prev {
+  display: none;
+}
+.carousel-control-next {
+  display: none;
+}

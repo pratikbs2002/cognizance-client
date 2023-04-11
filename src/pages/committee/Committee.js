@@ -1,48 +1,81 @@
-import { Container, Text, Card, Stack, HStack, VStack, CardHeader, Heading } from "@chakra-ui/react";
+import {
+  Container,
+  Text,
+  Card,
+  Stack,
+  HStack,
+  VStack,
+  CardHeader,
+  Heading,
+} from "@chakra-ui/react";
 import React from "react";
-import SponsorLogo from "../SponsorMarquee";
 import CommitteeMembers from "./CommitteeMembers";
+import CoreTeam from "./CoreTeam";
+import "./committee.css";
 export default function Committee() {
   return (
     <>
-      <Container padding={10} maxW={"100%"}>
-        <Card padding={"0 0 40px 0"} align="flex-start" bg="white">
+      <Container
+        background={"transparent"}
+        className="committee-section"
+        padding={5}
+        maxW={"100%"}
+      >
+        <Card
+          background={"transparent"}
+          padding={0}
+          align="flex-start"
+          // bg="white"
+        >
           <CardHeader maxW={"100%"} fontSize={30} alignSelf={"center"}>
-            <Heading
-              color="#1c4980"
-              size="lg"
-            >
+            <Heading color="#1c4980" size="lg">
               Committee
             </Heading>
           </CardHeader>
-          <Container maxW={{ base: "100%", md: "60%" }}>
-            <Card padding={"30px 30px 0px 30px"}>
-              <VStack>
-                <CommitteeMembers />
-                <CardHeader>
-                  <Heading
-                    color="#1c4980"
-                    size="sm"
-                  >
-                    Core Team
-                  </Heading>
-                </CardHeader>
-              </VStack>
+          <Container
+            padding={0}
+            marginTop={10}
+            maxW={{
+              base: "100%",
+              md: "100%",
+              lg: "100%",
+              xl: "80%",
+              "2xl": "60%",
+            }}
+          >
+            <Card padding={0}>
+              <CoreTeam />
+              <Heading
+                padding={5}
+                textAlign={"center"}
+                color="#1c4980"
+                size="sm"
+              >
+                Core members
+              </Heading>
             </Card>
           </Container>
-          <Container marginTop={10} maxW={{ base: "100%", md: "60%" }}  >
-            <Card padding={"30px 30px 0px 30px"}>
-              <VStack>
-                <CommitteeMembers />
-                <CardHeader>
-                  <Heading
-                    color="#1c4980"
-                    size="sm"
-                  >
-                    Other members
-                  </Heading>
-                </CardHeader>
-              </VStack>
+          <Container
+            padding={0}
+            marginTop={10}
+            maxW={{
+              base: "100%",
+              md: "100%",
+              lg: "100%",
+              xl: "80%",
+              "2xl": "60%",
+            }}
+          >
+            <Card padding={"10px 0px 0 0px"}>
+              <CommitteeMembers />
+              <Heading
+                padding={5}
+                textAlign={"center"}
+                color="#1c4980"
+                size="sm"
+              >
+                Other members
+              </Heading>
             </Card>
           </Container>
         </Card>
@@ -50,6 +83,3 @@ export default function Committee() {
     </>
   );
 }
-
-
-

@@ -11,6 +11,7 @@ export default function MainCarousel() {
     return (
         <Carousel
             // indicatorLabels={[]}
+            ind
             indicators={false}
         >
             <Carousel.Item interval={1000}>
