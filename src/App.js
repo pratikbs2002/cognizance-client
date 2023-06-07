@@ -1,15 +1,19 @@
 import "./App.css";
-import { Fragment } from "react";
 import "react-multi-carousel/lib/styles.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
+import PhotoGallery from "./pages/photoGallery/PhotoGallery";
 
-function App() {
+const App = () => {
   return (
-    <Fragment>
-      <LandingPage />
-    </Fragment>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/gallery" element={<PhotoGallery />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

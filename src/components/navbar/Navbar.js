@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Button } from "@chakra-ui/react";
-import logo from "../../assets/cognizance_logo.png";
-import { Link, animateScroll as scroll } from "react-scroll";
-
+import { Button, Image } from "@chakra-ui/react";
+import CzMainLogo from "../../assets/cog-new-logo.png";
+import { Link as CurrentPath, animateScroll as scroll } from "react-scroll";
+import { Link, Outlet } from "react-router-dom";
+import mainbg from "../../assets/main-bg.jpg";
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -14,9 +15,12 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="Container">
+      <nav
+        className="Container"
+        // style={{ background: showMenu ? `url(${mainbg})` : `` }}
+      >
         <div className="navbar-logo">
-          <img src={logo} width="200px" alt="sd" />
+          <Image src={CzMainLogo} width="100px" alt="sd" />
         </div>
         <div className="navbar-toggle-button" onClick={toggleMenu}>
           {showMenu ? <FaTimes /> : <FaBars />}
@@ -44,48 +48,47 @@ export default function Navbar() {
             }
           >
             <li>
-              <Link
+              <CurrentPath
                 activeClass="active"
                 to="Home-section"
                 smooth={true}
                 duration={10}
               >
                 Home
-              </Link>
+              </CurrentPath>
             </li>
             <li>
-              <Link to="section1" smooth={true} duration={10}>
+              <CurrentPath to="event-section" smooth={true}>
                 Event
-              </Link>
+              </CurrentPath>
             </li>
-            <li>
-              <Link to="section1" smooth={true} duration={10}>
+            {/* <li>
+              <CurrentPath to="section1" smooth={true}>
                 Workshops
-              </Link>
-            </li>
+              </CurrentPath>
+            </li> */}
             <li>
-              <Link to="committee-section" smooth={true} duration={10}>
+              <CurrentPath to="committee-section" smooth={true}>
                 Committee
-              </Link>
+              </CurrentPath>
             </li>
             <li>
-              <Link to="section1" smooth={true} duration={10}>
-                Gallery
-              </Link>
+              <Link to="gallery">Gallery</Link>
             </li>
             <li>
-              <Link to="section1" smooth={true} duration={10}>
+              <CurrentPath to="footer-section" smooth={true}>
                 Contact Us
-              </Link>
+              </CurrentPath>
             </li>
             <li>
-              <Link to="section1" smooth={true} duration={10}>
-                Register
+              <Link to="register">
+                <Button variant={"outline"}>Register</Button>
               </Link>
             </li>
           </ul>
         </div>
       </nav>
+      <Outlet />
     </>
   );
 }
