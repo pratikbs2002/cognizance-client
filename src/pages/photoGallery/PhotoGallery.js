@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./PhotoGallery.css";
 import img1 from "../../assets/Avengers.jpeg";
 import img2 from "../../assets/Avengers.jpeg";
@@ -6,10 +6,10 @@ import img3 from "../../assets/163754-spider_man-iron_man-superhero-comic_book-s
 import img4 from "../../assets//6205095502ee1.jpg";
 import img5 from "../../assets/avengers-endgame-iron-man-tony-stark-infinity-stones_2440x4320_xtrafondos.com.jpg";
 import img6 from "../../assets/Avengers.jpeg";
-import img7 from "../../assets/bg3.png";
-import img8 from "../../assets/bg2.jpeg";
-import img9 from "../../assets/bg3.png";
-import img10 from "../../assets/bg4.png";
+import img7 from "../../assets/bg8.png";
+import img8 from "../../assets/bg8.png";
+import img9 from "../../assets/bg9.png";
+import img10 from "../../assets/bg9.png";
 import img11 from "../../assets/bg8.png";
 import img12 from "../../assets/bg9.png";
 
@@ -25,9 +25,8 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../../components/navbar/Navbar";
 import { IoIosArrowBack } from "react-icons/io";
-import ScrollButton from "../../components/scrollButton/ScrollButton";
+
 export default function PhotoGallery() {
   const navigate = useNavigate();
   let data = [

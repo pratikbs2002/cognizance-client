@@ -1,14 +1,12 @@
 import { Button, Container, Text } from "@chakra-ui/react";
 import React from "react";
 import { MdDateRange } from "react-icons/md";
-import mainbg from "../../assets/wall.jpg";
 import { Link } from "react-scroll";
 import RocketAnimation from "../../components/rocketAnimation/RocketAnimation";
 export default function Home() {
   return (
     <>
       <Container
-        backgroundImage={mainbg}
         display={"flex"}
         padding={0}
         alignItems={"center"}

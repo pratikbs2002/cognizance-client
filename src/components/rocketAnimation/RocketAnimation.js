@@ -3,6 +3,7 @@ import rocketImage from "../../assets/rocketo5.png";
 import { Button, Container, Text } from "@chakra-ui/react";
 import "./RocketAnimation.css";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import { Link } from "react-scroll";
 export default function RocketAnimation() {
   const [angle, setAngle] = useState(0);
   const radius = 97; // radius of the big circle
@@ -38,33 +39,36 @@ export default function RocketAnimation() {
           justifyContent={"center"}
           className="button"
         >
-          <Button
-            fontSize={"20px"}
-            borderRadius={"100%"}
-            width={"130px"}
-            height={"130px"}
-            display={"flex"}
-            flexWrap={"wrap"}
-            flexDirection={"column"}
-            alignItems={"flex-start"}
-            border={"5px solid yellow"}
-            backgroundColor={"#353535"}
-            padding={"30px"}
-          >
-            <Text color={"white"} display={"flex"} flexWrap={"wrap"}>
-              Let's
-            </Text>
-            <Text
-              alignItems={"center"}
-              justifyContent={"center"}
-              gap={"10px"}
-              color={"white"}
+          <Link to="event-section" smooth="true">
+            <Button
+              fontSize={"20px"}
+              borderRadius={"100%"}
+              width={"130px"}
+              height={"130px"}
               display={"flex"}
               flexWrap={"wrap"}
+              flexDirection={"column"}
+              alignItems={"flex-start"}
+              border={"5px solid yellow"}
+              backgroundColor={"#353535"}
+              padding={"30px"}
+              variant={"unstyled"}
             >
-              Go <BsFillArrowRightCircleFill />
-            </Text>
-          </Button>
+              <Text color={"white"} display={"flex"} flexWrap={"wrap"}>
+                Let's
+              </Text>
+              <Text
+                alignItems={"center"}
+                justifyContent={"center"}
+                gap={"10px"}
+                color={"white"}
+                display={"flex"}
+                flexWrap={"wrap"}
+              >
+                Go <BsFillArrowRightCircleFill />
+              </Text>
+            </Button>
+          </Link>
         </Container>
       </div>
     </>
