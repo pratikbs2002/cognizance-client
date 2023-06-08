@@ -15,10 +15,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav
-        className="Container"
-        // style={{ background: showMenu ? `url(${mainbg})` : `` }}
-      >
+      <nav className="Container">
         <div className="navbar-logo">
           <Image src={CzMainLogo} width="100px" alt="sd" />
         </div>
@@ -73,12 +70,12 @@ export default function Navbar() {
               </CurrentPath>
             </li>
             <li>
-              <Link to="gallery">Gallery</Link>
-            </li>
-            <li>
               <CurrentPath to="footer-section" smooth={true}>
                 Contact Us
               </CurrentPath>
+            </li>
+            <li>
+              <Link to="gallery">Gallery</Link>
             </li>
             <li>
               <Link to="register">

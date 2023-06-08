@@ -15,11 +15,6 @@ import img12 from "../../assets/bg9.png";
 
 import { useState } from "react";
 import {
-  Button,
-  Card,
-  CardHeader,
-  Container,
-  Heading,
   Img,
   Modal,
   ModalBody,
@@ -30,7 +25,9 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-
+import Navbar from "../../components/navbar/Navbar";
+import { IoIosArrowBack } from "react-icons/io";
+import ScrollButton from "../../components/scrollButton/ScrollButton";
 export default function PhotoGallery() {
   const navigate = useNavigate();
   let data = [
@@ -3131,78 +3128,75 @@ export default function PhotoGallery() {
 
   return (
     <>
-      <Button onClick={() => navigate(`/`)}>Back to Home</Button>
-      <div className="gallery">
-        {data.map((item, index) => {
-          return (
-            <div
-              className="pics"
-              key={index}
-              onClick={() => getImg(item.imgSrc)}
-            >
-              <img alt="temp" src={item.imgSrc} style={{ width: "100%" }} />
+      <div className="photo-gallery-parent-container">
+        <div className="photo-gallery-navbar">
+          <div
+            className="photo-gallery-back-button"
+            onClick={() => navigate(`/`)}
+          >
+            <IoIosArrowBack />
+            Back
+          </div>
+        </div>
+        <div className="gallery-container">
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "10px",
+              fontSize: "50px",
+              fontWeight: "600",
+              color: "white",
+            }}
+          >
+            Photos
+          </div>
+          <div className="main-container-gallery">
+            <div className="gallery">
+              {data.map((item, index) => {
+                return (
+                  <div
+                    className="pics"
+                    key={index}
+                    onClick={() => getImg(item.imgSrc)}
+                  >
+                    <img
+                      alt="temp"
+                      src={item.imgSrc}
+                      style={{ width: "100%" }}
+                    />
+                  </div>
+                );
+              })}
             </div>
-          );
-        })}
+          </div>
+        </div>
+        <Modal size={"full"} isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent bg={"black"}>
+            <ModalHeader
+              color={"red.100"}
+              display={"flex"}
+              fontSize={"30px"}
+              fontWeight={"bold"}
+              justifyContent={"center"}
+            >
+              Cognizance
+            </ModalHeader>
+            <ModalCloseButton />
+            <ModalBody
+              display={"flex"}
+              alignItems={"center"}
+              textAlign={"center"}
+              justifyContent={"center"}
+            >
+              <Img maxHeight={"80vh"} src={currentImage} alt="temp" />
+            </ModalBody>
+          </ModalContent>
+        </Modal>
       </div>
-      <Modal size={"full"} isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent bg={"black"}>
-          <ModalHeader
-            color={"red.100"}
-            display={"flex"}
-            fontSize={"30px"}
-            fontWeight={"bold"}
-            justifyContent={"center"}
-          >
-            {/* <Button onClick={onClose}>❌</Button> */}
-            Cognizance
-          </ModalHeader>
-          <ModalCloseButton />
-          <ModalBody
-            display={"flex"}
-            alignItems={"center"}
-            textAlign={"center"}
-            justifyContent={"center"}
-          >
-            <Img maxHeight={"80vh"} src={currentImage} alt="temp" />
-          </ModalBody>
-        </ModalContent>
-      </Modal>
-
-      <>
-        {" "}
-        <Container
-          background={"transparent"}
-          className="committee-section"
-          padding={5}
-          maxW={"100%"}
-        >
-          <Card
-            background={"transparent"}
-            padding={0}
-            align="flex-start"
-            // bg="white"
-          >
-            <CardHeader maxW={"100%"} fontSize={30} alignSelf={"center"}>
-              <Heading color="#1c4980" size="lg">
-                Committee
-              </Heading>
-            </CardHeader>
-            <Container
-              padding={0}
-              marginTop={10}
-              maxW={{
-                base: "100%",
-                md: "100%",
-                lg: "100%",
-                xl: "80%",
-                "2xl": "60%",
-              }}
-            ></Container>
-          </Card>
-        </Container>
-      </>
     </>
   );
 }

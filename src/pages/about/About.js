@@ -30,8 +30,8 @@ export default function About() {
           paddingStart={"25px"}
           paddingTop={1}
           paddingBottom={1}
-          color="#1c4980"
-          size="lg"
+          color="white"
+          size={{ base: "3xl", md: "4xl" }}
         >
           About the Event
         </Heading>
@@ -195,7 +195,7 @@ export default function About() {
             paddingTop={"20px"}
             paddingBottom="20px"
             textAlign={"center"}
-            color="#1c4980"
+            color="white"
             size="lg"
           >
             Sponsors

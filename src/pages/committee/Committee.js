@@ -28,7 +28,7 @@ export default function Committee() {
           // bg="white"
         >
           <CardHeader maxW={"100%"} fontSize={30} alignSelf={"center"}>
-            <Heading color="#1c4980" size="lg">
+            <Heading color="white" size={{ base: "3xl", md: "4xl" }}>
               Committee
             </Heading>
           </CardHeader>

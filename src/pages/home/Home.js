@@ -86,7 +86,6 @@ export default function Home() {
             >
               <Text
                 color={"white"}
-                // className="charusat"
                 textAlign={"center"}
                 fontSize={{ base: "20px", md: "50px" }}
                 fontWeight={"bold"}
