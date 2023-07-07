@@ -15,6 +15,8 @@ import { HiDownload } from "react-icons/hi";
 import count_icon from "../../assets/count_icon.png";
 import SponsorMarquee from "./SponsorMarquee";
 import Count from "../../components/Count";
+import aboutVideo from "../../assets/video/intro1.mp4";
+
 export default function About() {
   const date = new Date();
   return (
@@ -38,7 +40,8 @@ export default function About() {
         <Stack direction={{ base: "column", md: "row" }}>
           <Container maxW={{ base: "100%", md: "50%" }}>
             <VStack padding={{ base: "2px", md: "10px" }}>
-              <Image src={aboutImage} alt="About Image"></Image>
+              {/* <Image src={aboutImage} alt="About Image"></Image> */}
+              <video src={aboutVideo} alt="About Video" autoPlay loop muted></video>
             </VStack>
           </Container>
           <Container maxW={{ base: "100%", md: "70%" }}>
@@ -75,7 +78,7 @@ export default function About() {
                   direction={{ base: "column", md: "row" }}
                   gap={{ base: 2, md: 10 }}
                 >
-                  <a href="pdfs/banner.pdf" target="_blank" download>
+                  <a href="pdfs/cz_brochure_23.pdf" target="_blank" download>
                     <Button
                       width={"150px"}
                       leftIcon={<HiDownload />}
@@ -86,7 +89,7 @@ export default function About() {
                       Magazine
                     </Button>
                   </a>
-                  <a href="pdfs/banner.pdf" target="_blank" download>
+                  <a href="pdfs/cz_brochure_23.pdf" target="_blank" download>
                     <Button
                       width={"150px"}
                       leftIcon={<HiDownload />}
@@ -96,7 +99,7 @@ export default function About() {
                       Brochure
                     </Button>
                   </a>
-                  <a href="pdfs/banner.pdf" target="_blank" download>
+                  <a href="pdfs/cz_brochure_23.pdf" target="_blank" download>
                     <Button
                       width={"150px"}
                       leftIcon={<HiDownload />}

@@ -26,6 +26,7 @@ export default function LandingPage() {
         backgroundRepeat={"no-repeat"}
       >
         <Navbar />
+        {/* <div style={{ height: "130px" }}></div>  */}
         <Home />
         <About />
         <Committee />

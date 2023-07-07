@@ -32,7 +32,8 @@ export default function PhotoGallery() {
   let data = [
     {
       id: 1,
-      imgSrc: img1,
+      imgSrc:
+        "https://drive.google.com/file/d/1s0sO7zADgfH2MaZFu5lHg0KFM8ulUdtN/view?usp=drive_link",
     },
     {
       id: 2,
