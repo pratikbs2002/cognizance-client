@@ -10,7 +10,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import aboutImage from "../../assets/background.png";
 import { HiDownload } from "react-icons/hi";
 import count_icon from "../../assets/count_icon.png";
 import SponsorMarquee from "./SponsorMarquee";
@@ -41,7 +40,13 @@ export default function About() {
           <Container maxW={{ base: "100%", md: "50%" }}>
             <VStack padding={{ base: "2px", md: "10px" }}>
               {/* <Image src={aboutImage} alt="About Image"></Image> */}
-              <video src={aboutVideo} alt="About Video" autoPlay loop muted></video>
+              <video
+                src={aboutVideo}
+                alt="About Video"
+                autoPlay
+                loop
+                muted
+              ></video>
             </VStack>
           </Container>
           <Container maxW={{ base: "100%", md: "70%" }}>
