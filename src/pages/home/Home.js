@@ -3,7 +3,9 @@ import React from "react";
 import { MdDateRange } from "react-icons/md";
 import { Link } from "react-scroll";
 import RocketAnimation from "../../components/rocketAnimation/RocketAnimation";
+import { useNavigate } from "react-router-dom";
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <>
       <Container
@@ -105,7 +107,7 @@ export default function Home() {
               <Button
                 width={{ base: "80%", md: "30%" }}
                 variant={"solid"}
-                isDisabled
+                onClick={() => navigate(`/register`)}
               >
                 Register
               </Button>
