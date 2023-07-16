@@ -84,11 +84,12 @@ export default function Register() {
             width: "100%",
             fontSize: "40px",
             fontWeight: "800",
-            color: "black",
+            color: "white",
             paddingBottom: "10px",
+            backgroundColor: "rgba(0, 0, 0, 0.442)",
           }}
         >
-          <u>WORKSHOP REGISTRATION</u>
+          <u>WORKSHOPS</u>
         </div>
         <div
           style={{
