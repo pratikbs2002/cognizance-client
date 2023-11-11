@@ -12,28 +12,28 @@ import Home from "./home/Home";
 import ScrollButton from "../components/scrollButton/ScrollButton";
 
 export default function LandingPage() {
-  return (
-    <>
-      <Container
-        padding={0}
-        margin={0}
-        maxWidth={"100%"}
-        backgroundImage={mainbg}
-        backgroundSize="cover"
-        backgroundAttachment="fixed"
-        backgroundColor="blackAlpha.800"
-        backdropBlur={"lg"}
-        backgroundRepeat={"no-repeat"}
-      >
-        <Navbar />
-        {/* <div style={{ height: "130px" }}></div>  */}
-        <Home />
-        <About />
-        <Committee />
-        {/* <PhotoGallery /> */}
-        <Footer />
-        <ScrollButton />
-      </Container>
-    </>
-  );
+    return (
+        <>
+            <Container
+                padding={0}
+                margin={0}
+                maxWidth={"100%"}
+                backgroundImage={mainbg}
+                backgroundSize="cover"
+                backgroundAttachment="fixed"
+                backgroundColor="blackAlpha.800"
+                backdropBlur={"lg"}
+                backgroundRepeat={"no-repeat"}
+            >
+                <Navbar />
+                {/* <div style={{ height: "130px" }}></div>  */}
+                <Home />
+                <About />
+                <Committee />
+                {/* <PhotoGallery /> */}
+                <Footer />
+                <ScrollButton />
+            </Container>
+        </>
+    );
 }
