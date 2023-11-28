@@ -78,8 +78,13 @@ export default function Navbar() {
                             <Link to="gallery">Gallery</Link>
                         </li>
                         <li>
-                            <Link style={{ color: "inherit" }} to="register">
-                                <Button variant={"outline"}>Register</Button>
+                            <Link to="register">
+                                <Button
+                                    style={{ color: "inherit" }}
+                                    variant={"outline"}
+                                >
+                                    Register
+                                </Button>
                             </Link>
                         </li>
                     </ul>
