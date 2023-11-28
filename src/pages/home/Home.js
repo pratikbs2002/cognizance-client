@@ -35,7 +35,7 @@ export default function Home() {
             color={"white"}
             leftIcon={<MdDateRange color="yellow" />}
           >
-            20 May 2023 - 25 May 2023
+            18 January 2024 - 19 January 2024
           </Button>
         </Container>
         <Container

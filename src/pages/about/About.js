@@ -61,8 +61,7 @@ export default function About() {
                   fontSize={{ base: "1.5rem", md: "2rem" }}
                   textAlign={{ base: "center", md: "left" }}
                 >
-                  Event Date : {date.getDate()}/{date.getMonth()}/
-                  {date.getFullYear()}
+                  Event Date : 18th - 19th January 2024
                 </Heading>
               </Container>
 

@@ -8,11 +8,18 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-  Button,
+  Button
 } from "@chakra-ui/react";
+import { useState } from "react";
 import "./EventCard.css";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 export default function EventCard(props) {
+  const navigate = useNavigate();
+
+  const [show, setShow] = useState(props.show);
+
   return (
     <Box p={4} width="350px">
       <Box
@@ -31,7 +38,12 @@ export default function EventCard(props) {
         />
 
         <Box p={4}>
-          <Text fontSize="20px" fontWeight="bold" height={"50px"} mb={2}>
+          <Text
+            fontSize="20px"
+            fontWeight="bold"
+            height={"50px"}
+            mb={2}
+          >
             {props.title}
           </Text>
 
@@ -58,13 +70,24 @@ export default function EventCard(props) {
                 // maxHeight={"100px"}
                 pb={4}
               >
-                {props.description}
+                {!show ? (
+                  <>Coming Soon!!</>
+                ) : (
+                  <>{props.description}</>
+                )}
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
 
           <Flex width={"100%"} justify="flex-end" mt={4}>
-            <Button width={"100%"} backgroundColor="#54cadd" color={"black"}>
+            <Button
+              width={"100%"}
+              backgroundColor="#54cadd"
+              color={"black"}
+              onClick={() => {
+                navigate("/registerform");
+              }}
+            >
               Register
             </Button>
           </Flex>

@@ -1,8 +1,5 @@
 import React from "react";
-import { IoIosArrowBack } from "react-icons/io";
-import { Navigate, useNavigate } from "react-router-dom";
 import EventCard from "./EventCard";
-
 import image1 from "../../assets/eventRegister/register1.jpeg";
 import image2 from "../../assets/eventRegister/register2.jpeg";
 import image3 from "../../assets/eventRegister/register3.jpeg";
@@ -10,9 +7,8 @@ import image4 from "../../assets/eventRegister/register4.jpeg";
 import image5 from "../../assets/eventRegister/register5.jpeg";
 import image6 from "../../assets/eventRegister/register6.jpeg";
 import image7 from "../../assets/eventRegister/register7.jpeg";
-import Temp from "./Temp";
 
-export default function Register() {
+const Workshop = () => {
   const data = [
     {
       id: 0,
@@ -64,64 +60,29 @@ export default function Register() {
         "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance."
     }
   ];
-  const navigate = useNavigate();
   return (
     <>
-      <div className="photo-gallery-parent-container">
-        <div className="photo-gallery-navbar">
-          <div
-            className="photo-gallery-back-button"
-            onClick={() => navigate(`/`)}
-          >
-            <IoIosArrowBack />
-            Back
-          </div>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "100%",
-            fontSize: "40px",
-            fontWeight: "800",
-            color: "white",
-            paddingBottom: "10px",
-            marginBottom: "10px",
-            backgroundColor: "rgba(0, 0, 0, 0.442)"
-          }}
-        >
-          <u>Event Registrations</u>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center"
-          }}
-        >
-          <Temp />
-        </div>
-        {/* <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "white",
-            fontWeight: "600",
-            flexWrap: "wrap"
-          }}
-        >
-          {data.map((IData) => (
-            <EventCard
-              image={IData.image}
-              title={IData.title}
-              description={IData.description}
-            />
-          ))}
-        </div> */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "white",
+          fontWeight: "600",
+          flexWrap: "wrap"
+        }}
+      >
+        {data.map((IData) => (
+          <EventCard
+            show={true}
+            image={IData.image}
+            title={IData.title}
+            description={IData.description}
+          />
+        ))}
       </div>
     </>
   );
-}
+};
+
+export default Workshop;

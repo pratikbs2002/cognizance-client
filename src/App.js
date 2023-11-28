@@ -6,6 +6,7 @@ import LandingPage from "./pages/LandingPage";
 import PhotoGallery from "./pages/photoGallery/PhotoGallery";
 import Register from "./pages/register/Register";
 import UploadImages from "./pages/admin/UploadImages";
+import EventRegistrationForm from "./pages/register/EventRegistrationForm";
 
 const App = () => {
     return (
@@ -15,6 +16,7 @@ const App = () => {
                 <Route path="/register" element={<Register />} />
                 <Route path="/admin" element={<UploadImages />} />
                 <Route path="/gallery" element={<PhotoGallery />} />
+                <Route path="/registerform" element={<EventRegistrationForm />} />
                 <Route path="*" element={<LandingPage />} />
             </Routes>
         </BrowserRouter>

@@ -114,7 +114,7 @@ export default function Footer() {
                   <img className="logo" src={emailLogo} alt="email" />
                   <p>email</p>
                 </div>
-                xyz@gmail.com
+                cognizance@charusat.ac.in
               </div>
               <div
                 className="card"
@@ -124,10 +124,14 @@ export default function Footer() {
                 }}
               >
                 <div className="card_logo_container">
-                  <img className="logo" src={contactLogo} alt="email" />
+                  <img
+                    className="logo"
+                    src={contactLogo}
+                    alt="email"
+                  />
                   <p>Contact Us</p>
                 </div>
-                0-123-4567-89
+                +91 8200778757
               </div>
               <div
                 className="card"
@@ -142,26 +146,31 @@ export default function Footer() {
                   <img className="logo" src={address} alt="email" />
                   <p>Address</p>
                 </div>
-                CHARUSAT University, Gujarat
+                CHARUSAT Campus, Highway, Off, Nadiad - Petlad Rd,
+                Changa, Gujarat 388421
               </div>
             </div>
             <div className="social_container">
               <div
                 className="social_logo_container"
                 onClick={() => {
-                  window.open("https://instagram.com", "_blank");
+                  window.open("https://www.instagram.com/cognizance23/", "_blank");
                 }}
               >
                 <img src={instagram} alt="instargram" />
               </div>
-              <div
+              {/* <div
                 className="social_logo_container"
                 onClick={() => {
                   window.open("https://facebook.com", "_blank");
                 }}
               >
-                <img className="facebook" src={facebook} alt="instargram" />
-              </div>
+                <img
+                  className="facebook"
+                  src={facebook}
+                  alt="instargram"
+                />
+              </div> */}
             </div>
             <div className="rights">
               &#169;2023. Charusat. All rights revserved
