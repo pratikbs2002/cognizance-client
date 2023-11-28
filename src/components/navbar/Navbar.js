@@ -17,7 +17,7 @@ export default function Navbar() {
         <>
             <nav className="Container">
                 <div className="navbar-logo">
-                    <Image src={CzMainLogo} width="100px" alt="sd" />
+                    <Image src={CzMainLogo} width="100px" alt="sds" />
                 </div>
                 <div className="navbar-toggle-button" onClick={toggleMenu}>
                     {showMenu ? <FaTimes /> : <FaBars />}
