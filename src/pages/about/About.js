@@ -82,7 +82,7 @@ export default function About() {
                   direction={{ base: "column", md: "row" }}
                   gap={{ base: 2, md: 10 }}
                 >
-                  <a href="pdfs/cz_brochure_23.pdf" target="_blank" download>
+                  <a href="pdfs/cz23brochure.pdf" target="_blank" download>
                     <Button
                       width={"150px"}
                       leftIcon={<HiDownload />}
@@ -93,7 +93,7 @@ export default function About() {
                       Magazine
                     </Button>
                   </a>
-                  <a href="pdfs/cz_brochure_23.pdf" target="_blank" download>
+                  <a href="pdfs/cz23brochure.pdf" target="_blank" download>
                     <Button
                       width={"150px"}
                       leftIcon={<HiDownload />}
@@ -103,7 +103,7 @@ export default function About() {
                       Brochure
                     </Button>
                   </a>
-                  <a href="pdfs/cz_brochure_23.pdf" target="_blank" download>
+                  <a href="pdfs/cz23brochure.pdf" target="_blank" download>
                     <Button
                       width={"150px"}
                       leftIcon={<HiDownload />}
