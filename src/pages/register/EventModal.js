@@ -18,23 +18,15 @@ import {
     Tag,
     TagLabel,
     HStack,
-    StackDivider
+    StackDivider,
+    ListItem,
+    UnorderedList
 } from "@chakra-ui/react";
 
 const BasicUsage = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
-    let tsk = props.task;
-    console.log(tsk);
-
-    // tsk.map((task) => {
-    //     console.log(task);
-    //     return <>{task}</>;
-    // });
-
-    for (let i = 0; i < tsk.length; i++) {
-        console.log(tsk[i]);
-    }
+    const price = "₹1000";
     return (
         <>
             <Button onClick={onOpen} color="black">
@@ -103,7 +95,32 @@ const BasicUsage = (props) => {
                                                 {props.about}
                                             </TabPanel>
 
-                                            <TabPanel></TabPanel>
+                                            <TabPanel>
+                                                {/* <div
+                                                    style={{
+                                                        textAlign:
+                                                            "left",
+                                                        display:
+                                                            "flex",
+                                                        flexDirection:
+                                                            "column",
+                                                        alignItems:
+                                                            "flex-start"
+                                                    }}
+                                                > */}
+                                                <Box>
+                                                    <UnorderedList>
+                                                        {props?.task?.map(
+                                                            (t) => (
+                                                                <ListItem>
+                                                                    {t}
+                                                                </ListItem>
+                                                            )
+                                                        )}
+                                                    </UnorderedList>
+                                                </Box>
+                                                {/* </div> */}
+                                            </TabPanel>
 
                                             <TabPanel>
                                                 {props.contact}
@@ -121,10 +138,10 @@ const BasicUsage = (props) => {
                             mr={3}
                             onClick={onClose}
                         >
-                            Close
+                            Download PDF
                         </Button>
                         <Button variant="ghost">
-                            Secondary Action
+                            Register {price}
                         </Button>
                     </ModalFooter>
                 </ModalContent>
