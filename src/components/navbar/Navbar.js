@@ -3,7 +3,12 @@ import "./Navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Button, Image } from "@chakra-ui/react";
 import CzMainLogo from "../../assets/cog-new-logo.png";
-import { Link as CurrentPath, animateScroll as scroll } from "react-scroll";
+import CSPIT from "../../assets/cspit.png";
+import DEPSTAR from "../../assets/depstar.png";
+import {
+    Link as CurrentPath,
+    animateScroll as scroll
+} from "react-scroll";
 import { Link, Outlet } from "react-router-dom";
 import mainbg from "../../assets/main-bg.jpg";
 export default function Navbar() {
@@ -16,13 +21,51 @@ export default function Navbar() {
     return (
         <>
             <nav className="Container">
-                <div className="navbar-logo">
-                    <Image src={CzMainLogo} width="100px" alt="sds" />
+                <div
+                    className="navbar-logo"
+                    style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        gap: "20px",
+                        aspectRatio: "auto"
+                        // alignItems: "center"
+                    }}
+                >
+                    <Image
+                        src={CzMainLogo}
+                        width="100px"
+                        alt="sds"
+                        aspectRatio={"auto"}
+                        objectFit={"cover"}
+                    />
+                    <Image
+                        src={CSPIT}
+                        width="100px"
+                        alt="sds"
+                        aspectRatio={"auto"}
+                        objectFit={"cover"}
+                        borderRadius={15}
+                    />
+                    <Image
+                        src={DEPSTAR}
+                        width="100px"
+                        alt="sds"
+                        aspectRatio={"auto"}
+                        objectFit={"cover"}
+                        borderRadius={15}
+                    />
                 </div>
-                <div className="navbar-toggle-button" onClick={toggleMenu}>
+                <div
+                    className="navbar-toggle-button"
+                    onClick={toggleMenu}
+                >
                     {showMenu ? <FaTimes /> : <FaBars />}
                 </div>
-                <div className={`navbar-menu ${showMenu ? "active" : ""}`}>
+                <div
+                    className={`navbar-menu ${
+                        showMenu ? "active" : ""
+                    }`}
+                >
                     <ul
                         style={
                             !showMenu
@@ -32,7 +75,7 @@ export default function Navbar() {
                                       padding: "2px",
                                       flexDirection: "row",
                                       textDecoration: "none",
-                                      listStyle: "none",
+                                      listStyle: "none"
                                   }
                                 : {
                                       display: "flex",
@@ -40,7 +83,7 @@ export default function Navbar() {
                                       padding: "2px",
                                       flexDirection: "column",
                                       textDecoration: "none",
-                                      listStyle: "none",
+                                      listStyle: "none"
                                   }
                         }
                     >
@@ -55,7 +98,10 @@ export default function Navbar() {
                             </CurrentPath>
                         </li>
                         <li>
-                            <CurrentPath to="event-section" smooth={true}>
+                            <CurrentPath
+                                to="event-section"
+                                smooth={true}
+                            >
                                 Event
                             </CurrentPath>
                         </li>
@@ -65,12 +111,18 @@ export default function Navbar() {
               </CurrentPath>
             </li> */}
                         <li>
-                            <CurrentPath to="committee-section" smooth={true}>
+                            <CurrentPath
+                                to="committee-section"
+                                smooth={true}
+                            >
                                 Committee
                             </CurrentPath>
                         </li>
                         <li>
-                            <CurrentPath to="footer-section" smooth={true}>
+                            <CurrentPath
+                                to="footer-section"
+                                smooth={true}
+                            >
                                 Contact Us
                             </CurrentPath>
                         </li>
