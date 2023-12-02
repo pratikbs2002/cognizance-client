@@ -9,20 +9,14 @@ import { Link as CurrentPath, animateScroll as scroll } from "react-scroll";
 import { Link, Outlet } from "react-router-dom";
 import mainbg from "../../assets/main-bg.jpg";
 
-import { GoogleLogin, googleLogout } from "@react-oauth/google";
-import { login } from "../../service/authService";
+import { googleLogout } from "@react-oauth/google";
+import GAuth from "../GAuth";
 
 export default function Navbar() {
     const [showMenu, setShowMenu] = useState(false);
     const [isLogin, setIsLogin] = useState(false);
     const toggleMenu = () => {
         setShowMenu(!showMenu);
-    };
-
-    const loginRequest = async (token) => {
-        if (!token) return console.log("Login Failed");
-        let response = await login(token);
-        console.log(response);
     };
 
     return (
@@ -125,23 +119,7 @@ export default function Navbar() {
                         </li>
                         <li>
                             {!isLogin ? (
-                                <GoogleLogin
-                                    auto_select={false}
-                                    onSuccess={async (credentialResponse) => {
-                                        console.log(credentialResponse);
-                                        sessionStorage.setItem(
-                                            "token",
-                                            credentialResponse.credential
-                                        );
-                                        setIsLogin(true);
-                                        loginRequest(
-                                            credentialResponse.credential
-                                        );
-                                    }}
-                                    onError={() => {
-                                        console.log("Login Failed");
-                                    }}
-                                />
+                                <GAuth setIsLogin={setIsLogin} />
                             ) : (
                                 <Button
                                     style={{ color: "inherit" }}

@@ -8,15 +8,15 @@ import {
     AccordionButton,
     AccordionPanel,
     AccordionIcon,
-    Button
+    Button,
     // useDisclosure
 } from "@chakra-ui/react";
 import { useState } from "react";
 import "./EventCard.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
 import Modal from "./EventModal";
+import EditProfile from "./EditProfile";
 
 export default function EventCard(props) {
     const navigate = useNavigate();
@@ -56,18 +56,13 @@ export default function EventCard(props) {
                                 <h2>
                                     <AccordionButton
                                         display="flex"
-                                        justifyContent={
-                                            "space-between"
-                                        }
+                                        justifyContent={"space-between"}
                                         w={"100%"}
                                         alignItems={"flex-start"}
                                         margin={0}
                                         padding={"10px 10px 10px 0px"}
                                     >
-                                        <Box
-                                            flex="1"
-                                            textAlign="left"
-                                        >
+                                        <Box flex="1" textAlign="left">
                                             More Details
                                         </Box>
                                         <AccordionIcon />
@@ -94,16 +89,7 @@ export default function EventCard(props) {
                             mt={4}
                             gap={2}
                         >
-                            <Button
-                                backgroundColor="#54cadd"
-                                color={"black"}
-                                onClick={() => {
-                                    navigate("/registerform");
-                                    // setOpen(!open);
-                                }}
-                            >
-                                Register
-                            </Button>
+                            <EditProfile eventName={props.eventName} />
                             <Modal
                                 about={props.about}
                                 eventName={props.eventName}

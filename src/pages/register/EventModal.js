@@ -20,7 +20,7 @@ import {
     HStack,
     StackDivider,
     ListItem,
-    UnorderedList
+    UnorderedList,
 } from "@chakra-ui/react";
 
 const BasicUsage = (props) => {
@@ -46,16 +46,6 @@ const BasicUsage = (props) => {
                         <Heading as="h1" size={"lg"}>
                             {props.eventName}
                         </Heading>
-
-                        <Tag
-                            size={"md"}
-                            variant="outline"
-                            color="#cc7c69"
-                            borderRadius={100}
-                            marginTop={2}
-                        >
-                            <TagLabel>{props.department}</TagLabel>
-                        </Tag>
                     </ModalHeader>
 
                     <ModalCloseButton />
@@ -72,7 +62,7 @@ const BasicUsage = (props) => {
                                     <img
                                         style={{
                                             width: "300px",
-                                            aspectRatio: "auto"
+                                            aspectRatio: "auto",
                                         }}
                                         src={props.image}
                                         alt={props.eventName}
@@ -80,10 +70,7 @@ const BasicUsage = (props) => {
                                 </Box>
 
                                 <Box w="65%">
-                                    <Tabs
-                                        size="md"
-                                        variant="enclosed"
-                                    >
+                                    <Tabs size="md" variant="enclosed">
                                         <TabList mb="1em">
                                             <Tab>About</Tab>
                                             <Tab>Task</Tab>
@@ -91,9 +78,7 @@ const BasicUsage = (props) => {
                                         </TabList>
 
                                         <TabPanels>
-                                            <TabPanel>
-                                                {props.about}
-                                            </TabPanel>
+                                            <TabPanel>{props.about}</TabPanel>
 
                                             <TabPanel>
                                                 {/* <div
@@ -122,9 +107,7 @@ const BasicUsage = (props) => {
                                                 {/* </div> */}
                                             </TabPanel>
 
-                                            <TabPanel>
-                                                {props.contact}
-                                            </TabPanel>
+                                            <TabPanel>{props.contact}</TabPanel>
                                         </TabPanels>
                                     </Tabs>
                                 </Box>
@@ -133,16 +116,10 @@ const BasicUsage = (props) => {
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button
-                            colorScheme="blue"
-                            mr={3}
-                            onClick={onClose}
-                        >
+                        <Button colorScheme="blue" mr={3} onClick={onClose}>
                             Download PDF
                         </Button>
-                        <Button variant="ghost">
-                            Register {price}
-                        </Button>
+                        <Button variant="ghost">Register {price}</Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal>
