@@ -5,17 +5,24 @@ import { Button, Image } from "@chakra-ui/react";
 import CzMainLogo from "../../assets/cog-new-logo.png";
 import CSPIT from "../../assets/cspit.png";
 import DEPSTAR from "../../assets/depstar.png";
-import {
-    Link as CurrentPath,
-    animateScroll as scroll
-} from "react-scroll";
+import { Link as CurrentPath, animateScroll as scroll } from "react-scroll";
 import { Link, Outlet } from "react-router-dom";
 import mainbg from "../../assets/main-bg.jpg";
+
+import { GoogleLogin, googleLogout } from "@react-oauth/google";
+import { login } from "../../service/authService";
+
 export default function Navbar() {
     const [showMenu, setShowMenu] = useState(false);
-
+    const [isLogin, setIsLogin] = useState(false);
     const toggleMenu = () => {
         setShowMenu(!showMenu);
+    };
+
+    const loginRequest = async (token) => {
+        if (!token) return console.log("Login Failed");
+        let response = await login(token);
+        console.log(response);
     };
 
     return (
@@ -27,7 +34,7 @@ export default function Navbar() {
                         display: "flex",
                         flexDirection: "row",
                         gap: "20px",
-                        aspectRatio: "auto"
+                        aspectRatio: "auto",
                         // alignItems: "center"
                     }}
                 >
@@ -55,17 +62,10 @@ export default function Navbar() {
                         borderRadius={15}
                     />
                 </div>
-                <div
-                    className="navbar-toggle-button"
-                    onClick={toggleMenu}
-                >
+                <div className="navbar-toggle-button" onClick={toggleMenu}>
                     {showMenu ? <FaTimes /> : <FaBars />}
                 </div>
-                <div
-                    className={`navbar-menu ${
-                        showMenu ? "active" : ""
-                    }`}
-                >
+                <div className={`navbar-menu ${showMenu ? "active" : ""}`}>
                     <ul
                         style={
                             !showMenu
@@ -75,7 +75,7 @@ export default function Navbar() {
                                       padding: "2px",
                                       flexDirection: "row",
                                       textDecoration: "none",
-                                      listStyle: "none"
+                                      listStyle: "none",
                                   }
                                 : {
                                       display: "flex",
@@ -83,7 +83,7 @@ export default function Navbar() {
                                       padding: "2px",
                                       flexDirection: "column",
                                       textDecoration: "none",
-                                      listStyle: "none"
+                                      listStyle: "none",
                                   }
                         }
                     >
@@ -98,10 +98,7 @@ export default function Navbar() {
                             </CurrentPath>
                         </li>
                         <li>
-                            <CurrentPath
-                                to="event-section"
-                                smooth={true}
-                            >
+                            <CurrentPath to="event-section" smooth={true}>
                                 Event
                             </CurrentPath>
                         </li>
@@ -111,18 +108,12 @@ export default function Navbar() {
               </CurrentPath>
             </li> */}
                         <li>
-                            <CurrentPath
-                                to="committee-section"
-                                smooth={true}
-                            >
+                            <CurrentPath to="committee-section" smooth={true}>
                                 Committee
                             </CurrentPath>
                         </li>
                         <li>
-                            <CurrentPath
-                                to="footer-section"
-                                smooth={true}
-                            >
+                            <CurrentPath to="footer-section" smooth={true}>
                                 Contact Us
                             </CurrentPath>
                         </li>
@@ -130,14 +121,40 @@ export default function Navbar() {
                             <Link to="gallery">Gallery</Link>
                         </li>
                         <li>
-                            <Link to="register">
+                            <Link to="register">WorkShops</Link>
+                        </li>
+                        <li>
+                            {!isLogin ? (
+                                <GoogleLogin
+                                    auto_select={false}
+                                    onSuccess={async (credentialResponse) => {
+                                        console.log(credentialResponse);
+                                        sessionStorage.setItem(
+                                            "token",
+                                            credentialResponse.credential
+                                        );
+                                        setIsLogin(true);
+                                        loginRequest(
+                                            credentialResponse.credential
+                                        );
+                                    }}
+                                    onError={() => {
+                                        console.log("Login Failed");
+                                    }}
+                                />
+                            ) : (
                                 <Button
                                     style={{ color: "inherit" }}
                                     variant={"outline"}
+                                    onClick={() => {
+                                        sessionStorage.removeItem("token");
+                                        googleLogout();
+                                        setIsLogin(false);
+                                    }}
                                 >
-                                    Register
+                                    Logout
                                 </Button>
-                            </Link>
+                            )}
                         </li>
                     </ul>
                 </div>
