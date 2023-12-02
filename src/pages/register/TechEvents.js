@@ -61,7 +61,12 @@ const TechEvents = () => {
             department: "CSPIT: CSE/AIML",
             description:
                 "Experience working with SolidWorks, a 3D CAD software which includes modeling, analysis and AMP, Animation and more.",
-            task: "",
+            task: [
+                "To design technical posters or graphic designs",
+                "Creating games by using code",
+                "Design blueprints etc.",
+                "You may use it according to your interest"
+            ],
             contact: "",
             about: ""
         },
@@ -72,7 +77,11 @@ const TechEvents = () => {
             department: "CSPIT: CSE/AIML",
             description:
                 "Get ready for the ultimate frenzy of Machino Mania, a thrilling competition where machines clash in a high-octane showdown! ",
-            task: "",
+            task: [
+                "The event will consist of multiple coding problems of varying difficulty levels.",
+                "The problem set may include algorithmic challenges, data structure manipulation, logical puzzles, or real-world coding scenarios.",
+                "Each problem will have a specific set of input and output requirements."
+            ],
             contact: "",
             about: ""
         },
@@ -83,7 +92,7 @@ const TechEvents = () => {
             department: "CSPIT: EC/EE",
             description:
                 "Demystify the world of Web3 and discover the limitless possibilities of the decentralized web.",
-            task: "The BattleBot Blitz Contest is an electrifying competition that showcases the engineering prowess of custom-built robots engaged in intense combat. Witness the thrilling clash of mechanical titans as they battle for supremacy in a no-holds-barred arena!",
+            task: ["The BattleBot Blitz Contest is an electrifying competition that showcases the engineering prowess of custom-built robots engaged in intense combat. Witness the thrilling clash of mechanical titans as they battle for supremacy in a no-holds-barred arena!"],
             contact: "",
             about: "The BattleBot Blitz Contest is an electrifying competition that showcases the engineering prowess of custom-built robots engaged in intense combat. Witness the thrilling clash of mechanical titans as they battle for supremacy in a no-holds-barred arena!"
         },
@@ -125,7 +134,12 @@ const TechEvents = () => {
             department: "CSPIT: IT",
             description:
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
-            task: "",
+            task: [
+                "Task 1: Debugging the code provided.",
+                "Task 2: Mini-Games.",
+                "Task 3: Solving the GATE Level Questions.",
+                "Task 4: Technical Treasure Hunt"
+            ],
             contact: "",
             about: ""
         },
@@ -136,7 +150,11 @@ const TechEvents = () => {
             department: "CSPIT: IT",
             description:
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
-            task: "",
+            task: [
+                "Task 1 :  QUIZ",
+                "Task 2 :  LOGO DESIGN",
+                "Task 3 :  BRANDING"
+            ],
             contact: "",
             about: ""
         },
@@ -147,7 +165,11 @@ const TechEvents = () => {
             department: "CSPIT: ME",
             description:
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
-            task: "",
+            task: [
+                "Task 1 :  Time travelled by a plastic ball from top to toe will be measured along the maze created.",
+                "Task 2 : Plastic ball filled with sand will be tested on the same maze and maximum time will be measured.     ",
+                "Task 3 : Plastic ball half filled with liquid will be tested on the maze and time taken to travel the maze will measured."
+            ],
             contact: "",
             about: ""
         },
@@ -158,7 +180,7 @@ const TechEvents = () => {
             department: "DEPSTAR CE",
             description:
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
-            task: "",
+            task: [],
             contact: "",
             about: ""
         },
@@ -169,7 +191,9 @@ const TechEvents = () => {
             department: "DEPSTAR CE",
             description:
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
-            task: "",
+            task: [
+                "<b>Five Rounds of Typing Fun:</b> The Typing Game Extravaganza comprises five rounds, each with its own unique typing challenge. From speed tests to accuracy challenges, you'll have the opportunity to showcase your typing prowess."
+            ],
             contact: "",
             about: ""
         },
@@ -180,7 +204,10 @@ const TechEvents = () => {
             department: "DEPSTAR CSE",
             description:
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
-            task: "",
+            task: [
+                "Task 1: Solve the Quiz",
+                "Task 2: Solve Query Challenge"
+            ],
             contact: "",
             about: ""
         },
@@ -191,7 +218,10 @@ const TechEvents = () => {
             department: "DEPSTAR CSE",
             description:
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
-            task: "",
+            task: [
+                "Task 1 : Find the flags 8 flags",
+                "Task 2 : Answer the questions"
+            ],
             contact: "",
             about: ""
         },
@@ -202,7 +232,7 @@ const TechEvents = () => {
             department: "DEPSTAR IT",
             description:
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
-            task: "",
+            task: ["Task 1: Design UX/UI"],
             contact: "",
             about: ""
         },
@@ -213,7 +243,10 @@ const TechEvents = () => {
             department: "DEPSTAR IT",
             description:
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
-            task: "",
+            task: [
+                "Task 1: Solve the Quiz.",
+                "Task 2: Solve Query Challenge."
+            ],
             contact: "",
             about: ""
         }

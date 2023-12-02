@@ -24,14 +24,22 @@ import {
 const BasicUsage = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
-    const tsk = props.task;
+    let tsk = props.task;
     console.log(tsk);
 
-    if (tsk) {
+    // tsk.map((task) => {
+    //     console.log(task);
+    //     return <>{task}</>;
+    // });
+
+    for (let i = 0; i < tsk.length; i++) {
+        console.log(tsk[i]);
     }
     return (
         <>
-            <Button onClick={onOpen}>Explore more</Button>
+            <Button onClick={onOpen} color="black">
+                Explore more
+            </Button>
 
             <Modal
                 isOpen={isOpen}
