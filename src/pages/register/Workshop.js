@@ -6,6 +6,8 @@ import image4 from "../../assets/eventRegister/register4.jpeg";
 import image5 from "../../assets/eventRegister/register5.jpeg";
 import image6 from "../../assets/eventRegister/register6.jpeg";
 import image7 from "../../assets/eventRegister/register7.jpeg";
+import image8 from "../../assets/eventRegister/djnight.jpg";
+
 import EventCard from "./EventCard";
 
 const Workshop = () => {
@@ -58,6 +60,11 @@ const Workshop = () => {
             title: "CABLE AND WIRE TESTING WORKSHOP",
             description:
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance."
+        },{
+            id: 7,
+            image: image8,
+            title: "DJ Night",
+            description: "Get ready to groove to the beats of DJ Night"
         }
     ];
     return (
