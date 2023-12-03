@@ -3,8 +3,6 @@ import "./Navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Button, Image } from "@chakra-ui/react";
 import CzMainLogo from "../../assets/cog-new-logo.png";
-import CSPIT from "../../assets/cspit.png";
-import DEPSTAR from "../../assets/depstar.png";
 import { Link as CurrentPath, animateScroll as scroll } from "react-scroll";
 import { Link, Outlet } from "react-router-dom";
 import mainbg from "../../assets/main-bg.jpg";
@@ -40,22 +38,6 @@ export default function Navbar() {
                         alt="sds"
                         aspectRatio={"auto"}
                         objectFit={"cover"}
-                    />
-                    <Image
-                        src={CSPIT}
-                        width="100px"
-                        alt="sds"
-                        aspectRatio={"auto"}
-                        objectFit={"cover"}
-                        borderRadius={15}
-                    />
-                    <Image
-                        src={DEPSTAR}
-                        width="100px"
-                        alt="sds"
-                        aspectRatio={"auto"}
-                        objectFit={"cover"}
-                        borderRadius={15}
                     />
                 </div>
                 <div className="navbar-toggle-button" onClick={toggleMenu}>

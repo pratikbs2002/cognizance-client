@@ -1,9 +1,11 @@
-import { Button, Container, Text } from "@chakra-ui/react";
+import { Button, Container, Text, Image } from "@chakra-ui/react";
 import React from "react";
 import { MdDateRange } from "react-icons/md";
 import { Link } from "react-scroll";
 import RocketAnimation from "../../components/rocketAnimation/RocketAnimation";
 import { useNavigate } from "react-router-dom";
+import CSPIT from "../../assets/cspit.png";
+import DEPSTAR from "../../assets/depstar.png";
 export default function Home() {
     const navigate = useNavigate();
     return (
@@ -79,6 +81,32 @@ export default function Home() {
                                 Cognizance 2024
                             </Text>
                         </Container>
+
+                        <Container
+                            display={"flex"}
+                            padding={30}
+                            gap={20}
+                            m={0}
+                            paddingLeft={{ md: "100px" }}
+                        >
+                            <Image
+                                src={CSPIT}
+                                width="90px"
+                                alt="sds"
+                                aspectRatio={"auto"}
+                                objectFit={"cover"}
+                                borderRadius={15}
+                            />
+                            <Image
+                                src={DEPSTAR}
+                                width="90px"
+                                alt="sds"
+                                aspectRatio={"auto"}
+                                objectFit={"cover"}
+                                borderRadius={15}
+                            />
+                        </Container>
+
                         <Container
                             display={"flex"}
                             padding={0}

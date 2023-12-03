@@ -19,7 +19,7 @@ import {
     StackDivider,
     ListItem,
     UnorderedList,
-    Text
+    Text,
 } from "@chakra-ui/react";
 
 const BasicUsage = (props) => {
@@ -77,7 +77,7 @@ const BasicUsage = (props) => {
                                             objectFit: "contain",
                                             // border: "1px solid",
                                             borderColor: "gray",
-                                            borderRadius: "10px"
+                                            borderRadius: "10px",
                                         }}
                                         src={props.image}
                                         alt={props.eventName}
@@ -85,10 +85,7 @@ const BasicUsage = (props) => {
                                 </Box>
 
                                 <Box w="65%">
-                                    <Tabs
-                                        size="md"
-                                        variant="enclosed"
-                                    >
+                                    <Tabs size="md" variant="enclosed">
                                         <TabList mb="1em">
                                             <Tab>About</Tab>
                                             <Tab>Task</Tab>
@@ -96,21 +93,16 @@ const BasicUsage = (props) => {
                                         </TabList>
 
                                         <TabPanels>
-                                            <TabPanel>
-                                                {props.about}
-                                            </TabPanel>
+                                            <TabPanel>{props.about}</TabPanel>
 
                                             <TabPanel>
                                                 <div
                                                     style={{
-                                                        textAlign:
-                                                            "left",
-                                                        display:
-                                                            "flex",
-                                                        flexDirection:
-                                                            "column",
+                                                        textAlign: "left",
+                                                        display: "flex",
+                                                        flexDirection: "column",
                                                         alignItems:
-                                                            "flex-start"
+                                                            "flex-start",
                                                     }}
                                                 >
                                                     <UnorderedList>
@@ -132,11 +124,7 @@ const BasicUsage = (props) => {
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button
-                            colorScheme="blue"
-                            mr={3}
-                            onClick={onClose}
-                        >
+                        <Button colorScheme="blue" mr={3} onClick={onClose}>
                             Download PDF
                         </Button>
                         <Button variant="outline" colorScheme="black">

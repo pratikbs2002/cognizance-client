@@ -89,7 +89,11 @@ export default function EventCard(props) {
                             mt={4}
                             gap={2}
                         >
-                            <EditProfile eventName={props.eventName} />
+                            <EditProfile
+                                eventName={props.eventName}
+                                teamSize={props.teamSize}
+                                price={props.price}
+                            />
                             <Modal
                                 about={props.about}
                                 eventName={props.eventName}

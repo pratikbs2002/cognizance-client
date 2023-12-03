@@ -37,6 +37,7 @@ import {
     updateProfileAPI,
 } from "../../service/authService";
 import { useGoogleLogin } from "@react-oauth/google";
+import Payment from "./Payment";
 
 const EditProfile = (props) => {
     const {
@@ -50,6 +51,9 @@ const EditProfile = (props) => {
         onClose: onEventRegisterModalClose,
     } = useDisclosure();
     const [registerCredentials, setRegisterCredentials] = useState({});
+    const [eventRegisterCredentials, setEventRegisterCredentials] = useState(
+        {}
+    );
     const [isProfileUpdated, setIsProfileUpdated] = useState(false);
 
     const handleRegister = async (event) => {
@@ -81,6 +85,38 @@ const EditProfile = (props) => {
             ...values,
             [name]: value,
         }));
+    };
+
+    const handleRegisterEvent = async (event) => {
+        event.preventDefault();
+        if (validateRegisterEventCredentials()) {
+            console.log(eventRegisterCredentials);
+            setIsPaymentModalOpen(true);
+        }
+    };
+
+    const validateRegisterEventCredentials = () => {
+        return true;
+    };
+
+    const handleChangeEvent = (event, index) => {
+        const name = event.target.name;
+        if (name === "teamName") {
+            const value = event.target.value;
+            setEventRegisterCredentials((values) => ({
+                ...values,
+                [name]: value,
+            }));
+        } else {
+            const value = event.target.value;
+            setEventRegisterCredentials((values) => ({
+                ...values,
+                [`participants${index}`]: {
+                    ...values[`participants${index}`],
+                    [name]: value,
+                },
+            }));
+        }
     };
 
     const isProfileUpdatedRequest = async () => {
@@ -120,6 +156,61 @@ const EditProfile = (props) => {
             console.log("Login Failed");
         },
     });
+
+    const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+
+    const participantsField = [];
+    for (let i = 1; i < props.teamSize; i++) {
+        participantsField.push(
+            <VStack
+                w="full"
+                spacing={2}
+                alignItems="flex-start"
+                key={i}
+                divider={<StackDivider borderColor="gray.200" />}
+            >
+                <Text fontSize={14} align="left">
+                    Participant {i}
+                </Text>
+                <FormControl>
+                    <Input
+                        name="name"
+                        type="text"
+                        pr="4.5rem"
+                        variant="outline"
+                        placeholder="Enter Participant's Name"
+                        onChange={(event) => {
+                            handleChangeEvent(event, i);
+                        }}
+                    />
+                </FormControl>
+                <FormControl>
+                    <Input
+                        name="email"
+                        type="email"
+                        pr="4.5rem"
+                        variant="outline"
+                        placeholder="Enter Participant's Email"
+                        onChange={(event) => {
+                            handleChangeEvent(event, i);
+                        }}
+                    />
+                </FormControl>
+                <FormControl>
+                    <Input
+                        name="mobileNumber"
+                        type="tel"
+                        pr="4.5rem"
+                        variant="outline"
+                        placeholder="Enter Participant's Mobile Number"
+                        onChange={(event) => {
+                            handleChangeEvent(event, i);
+                        }}
+                    />
+                </FormControl>
+            </VStack>
+        );
+    }
 
     return (
         <>
@@ -253,7 +344,13 @@ const EditProfile = (props) => {
             >
                 <ModalOverlay />
 
-                <ModalContent bg="white" p={10} paddingBottom={10}>
+                <ModalContent
+                    bg="white"
+                    p={10}
+                    paddingBottom={10}
+                    h={"80%"}
+                    overflowY={"scroll"}
+                >
                     <ModalHeader>
                         <Heading as="h1" size={"lg"}>
                             Register for {props.eventName}
@@ -263,97 +360,104 @@ const EditProfile = (props) => {
                     <ModalCloseButton />
 
                     <ModalBody>
-                        <Box>
-                            <form onSubmit={handleRegister}>
-                                <VStack w="full" bg="white" p={6} spacing={5}>
+                        {!isPaymentModalOpen ? (
+                            <Box>
+                                <form onSubmit={handleRegisterEvent}>
                                     <VStack
                                         w="full"
-                                        spacing={2}
-                                        alignItems="flex-start"
+                                        bg="white"
+                                        p={6}
+                                        spacing={5}
                                     >
-                                        <Text fontSize={14} align="left">
-                                            Team Name
-                                        </Text>
-                                        <FormControl>
-                                            <Input
-                                                name="teamName"
-                                                type="text"
-                                                pr="4.5rem"
-                                                variant="outline"
-                                                placeholder="Enter Name"
-                                                onChange={handleChange}
-                                            />
-                                        </FormControl>
-                                    </VStack>
+                                        <VStack
+                                            w="full"
+                                            spacing={2}
+                                            alignItems="flex-start"
+                                        >
+                                            <Text fontSize={14} align="left">
+                                                Team Name
+                                            </Text>
+                                            <FormControl>
+                                                <Input
+                                                    name="teamName"
+                                                    type="text"
+                                                    pr="4.5rem"
+                                                    variant="outline"
+                                                    placeholder="Enter Team Name"
+                                                    onChange={handleChangeEvent}
+                                                />
+                                            </FormControl>
+                                        </VStack>
 
-                                    <VStack
-                                        w="full"
-                                        spacing={2}
-                                        alignItems="flex-start"
-                                    >
-                                        <Text fontSize={14} align="left">
-                                            Team Leader Name
-                                        </Text>
-                                        <FormControl>
-                                            <Input
-                                                name="mobileNumber"
-                                                type="number"
-                                                pr="4.5rem"
-                                                variant="outline"
-                                                placeholder="Enter Mobile Number"
-                                                onChange={handleChange}
-                                            />
-                                        </FormControl>
-                                    </VStack>
+                                        <VStack
+                                            w="full"
+                                            spacing={2}
+                                            alignItems="flex-start"
+                                        >
+                                            <Text fontSize={14} align="left">
+                                                Team Leader
+                                            </Text>
+                                            <FormControl>
+                                                <Input
+                                                    name="name"
+                                                    type="text"
+                                                    pr="4.5rem"
+                                                    variant="outline"
+                                                    placeholder="Enter Leader's Name"
+                                                    onChange={(event) => {
+                                                        handleChangeEvent(
+                                                            event,
+                                                            0
+                                                        );
+                                                    }}
+                                                />
+                                            </FormControl>
+                                            <FormControl>
+                                                <Input
+                                                    name="email"
+                                                    type="email"
+                                                    pr="4.5rem"
+                                                    variant="outline"
+                                                    placeholder="Enter Leader's Email"
+                                                    onChange={(event) => {
+                                                        handleChangeEvent(
+                                                            event,
+                                                            0
+                                                        );
+                                                    }}
+                                                />
+                                            </FormControl>
+                                            <FormControl>
+                                                <Input
+                                                    name="mobileNumber"
+                                                    type="tel"
+                                                    pr="4.5rem"
+                                                    variant="outline"
+                                                    placeholder="Enter Leader's Mobile Number"
+                                                    onChange={(event) => {
+                                                        handleChangeEvent(
+                                                            event,
+                                                            0
+                                                        );
+                                                    }}
+                                                />
+                                            </FormControl>
+                                        </VStack>
 
-                                    <VStack
-                                        w="full"
-                                        spacing={2}
-                                        alignItems="flex-start"
-                                    >
-                                        <Text fontSize={14} align="left">
-                                            Participant 1
-                                        </Text>
-                                        <FormControl>
-                                            <Input
-                                                name="year"
-                                                type="number"
-                                                pr="4.5rem"
-                                                variant="outline"
-                                                placeholder="Enter Current Year"
-                                                onChange={handleChange}
-                                            />
-                                        </FormControl>
+                                        {participantsField}
                                     </VStack>
-                                    <VStack
-                                        w="full"
-                                        spacing={2}
-                                        alignItems="flex-start"
-                                    >
-                                        <Text fontSize={14} align="left">
-                                            Participant 2
-                                        </Text>
-                                        <FormControl>
-                                            <Input
-                                                name="year"
-                                                type="number"
-                                                pr="4.5rem"
-                                                variant="outline"
-                                                placeholder="Enter Current Year"
-                                                onChange={handleChange}
-                                            />
-                                        </FormControl>
-                                    </VStack>
-                                </VStack>
-                            </form>
-                        </Box>
+                                </form>
+                            </Box>
+                        ) : (
+                            <Payment price={props.price} />
+                        )}
                     </ModalBody>
 
                     <ModalFooter>
                         <Button
                             colorScheme="blue"
                             mr={3}
-                            onClick={onEventRegisterModalClose}
+                            onClick={handleRegisterEvent}
                         >
                             Submit
                         </Button>

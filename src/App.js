@@ -8,7 +8,7 @@ import Register from "./pages/register/Register";
 import UploadImages from "./pages/admin/UploadImages";
 import EventRegistrationForm from "./pages/register/EventRegistrationForm";
 import EditProfile from "./pages/register/EditProfile";
-import Payment from './pages/register/Payment';
+import Payment from "./pages/register/Payment";
 
 const App = () => {
     return (
@@ -18,9 +18,11 @@ const App = () => {
                 <Route path="/register" element={<Register />} />
                 <Route path="/admin" element={<UploadImages />} />
                 <Route path="/gallery" element={<PhotoGallery />} />
-                <Route path="/registerform" element={<EventRegistrationForm />} />
-                <Route path="/edit" element={<EditProfile/>}/>
-                <Route path="/payment" element={<Payment/>}/>
+                <Route
+                    path="/registerform"
+                    element={<EventRegistrationForm />}
+                />
+                <Route path="/edit" element={<EditProfile />} />
                 <Route path="*" element={<LandingPage />} />
             </Routes>
         </BrowserRouter>
