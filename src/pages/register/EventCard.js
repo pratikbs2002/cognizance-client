@@ -96,6 +96,8 @@ export default function EventCard(props) {
                                 image={props.image}
                                 department={props.department}
                                 task={props.task}
+                                price={props.price}
+                                teamSize={props.teamSize}
                             />
                         </Flex>
                     </Box>

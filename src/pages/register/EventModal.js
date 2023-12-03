@@ -15,18 +15,17 @@ import {
     TabPanels,
     Tab,
     TabPanel,
-    Tag,
-    TagLabel,
     HStack,
     StackDivider,
     ListItem,
-    UnorderedList
+    UnorderedList,
+    Text
 } from "@chakra-ui/react";
 
 const BasicUsage = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
-    const price = "₹1000";
+    const price = `₹${props.price}`;
     return (
         <>
             <Button onClick={onOpen} color="black">
@@ -45,7 +44,8 @@ const BasicUsage = (props) => {
                     bg="white"
                     p={10}
                     paddingBottom={0}
-                    h="600px"
+                    h="700px"
+                    // maxH="600px"
                 >
                     <ModalHeader>
                         <Heading as="h1" size={"lg"}>
@@ -56,6 +56,10 @@ const BasicUsage = (props) => {
                     <ModalCloseButton />
 
                     <ModalBody>
+                        <Text fontSize={"xl"} p={5} pt={0}>
+                            Team Size: {props.teamSize}
+                        </Text>
+
                         <Box>
                             <HStack
                                 spacing={10}
@@ -63,6 +67,7 @@ const BasicUsage = (props) => {
                                     <StackDivider borderColor="gray.200" />
                                 }
                                 align="flex-start"
+                                justifyContent={"space-between"}
                             >
                                 <Box>
                                     <img
@@ -87,7 +92,7 @@ const BasicUsage = (props) => {
                                         <TabList mb="1em">
                                             <Tab>About</Tab>
                                             <Tab>Task</Tab>
-                                            <Tab>Contact</Tab>
+                                            {/* <Tab>Contact</Tab> */}
                                         </TabList>
 
                                         <TabPanels>
@@ -96,7 +101,7 @@ const BasicUsage = (props) => {
                                             </TabPanel>
 
                                             <TabPanel>
-                                                {/* <div
+                                                <div
                                                     style={{
                                                         textAlign:
                                                             "left",
@@ -107,25 +112,17 @@ const BasicUsage = (props) => {
                                                         alignItems:
                                                             "flex-start"
                                                     }}
-                                                > */}
-                                                <Box>
+                                                >
                                                     <UnorderedList>
                                                         {props?.task?.map(
                                                             (t) => (
                                                                 <ListItem>
-                                                                    {
-                                                                        t
-                                                                    }
+                                                                    {t}
                                                                 </ListItem>
                                                             )
                                                         )}
                                                     </UnorderedList>
-                                                </Box>
-                                                {/* </div> */}
-                                            </TabPanel>
-
-                                            <TabPanel>
-                                                {props.contact}
+                                                </div>
                                             </TabPanel>
                                         </TabPanels>
                                     </Tabs>
@@ -142,8 +139,8 @@ const BasicUsage = (props) => {
                         >
                             Download PDF
                         </Button>
-                        <Button variant="ghost">
-                            Register {price}
+                        <Button variant="outline" colorScheme="black">
+                            Register for {price}
                         </Button>
                     </ModalFooter>
                 </ModalContent>

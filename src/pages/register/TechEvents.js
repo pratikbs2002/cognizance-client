@@ -14,12 +14,10 @@ import image10 from "../../assets/eventRegister/flag.jpeg";
 import battleBlitz from "../../assets/eventImages/battle blitz.png";
 import roboSoccer from "../../assets/eventImages/robo soccer.png";
 import roboRace from "../../assets/eventImages/robo race.jpg";
-// import ballGun from "../../assets/eventImages/ball gun.png";
-// import ballGun from "../../assets/eventImages/ball gun.png";
-// import ballGun from "../../assets/eventImages/ball gun.png";
+import codeMania from "../../assets/eventImages/code mania.png";
+import artTech from "../../assets/eventImages/artTech.png";
+import networkinghunting from "../../assets/eventImages/network hunting.png";
 // import
-
-
 
 const TechEvents = () => {
     const data = [
@@ -34,7 +32,9 @@ const TechEvents = () => {
                 "The BattleBot Blitz Contest is an electrifying competition that showcases the engineering prowess of custom-built robots engaged in intense combat. Witness the thrilling clash of mechanical titans as they battle for supremacy in a no-holds-barred arena!"
             ],
             contact: "",
-            about: "The BattleBot Blitz Contest is an electrifying competition that showcases the engineering prowess of custom-built robots engaged in intense combat. Witness the thrilling clash of mechanical titans as they battle for supremacy in a no-holds-barred arena!"
+            about: "The BattleBot Blitz Contest is an electrifying competition that showcases the engineering prowess of custom-built robots engaged in intense combat. Witness the thrilling clash of mechanical titans as they battle for supremacy in a no-holds-barred arena!",
+            teamSize: 3,
+            eventFee: 150
         },
         {
             id: 1,
@@ -48,7 +48,9 @@ const TechEvents = () => {
                 "Obstacles are placed on both halves of the arena; points will be deducted if the robot touches the obstacles."
             ],
             contact: "",
-            about: "Its football time and no-one plays soccer better than the engineers, in their own sophisticated way we hail this event ROBO SOCCER. All your soccer fans hold your breath, as we present to your soccer with an entirely new dimension. So if you are up for the challenge get your manual soccer playing bots ready in order to compete on the biggest stage and bring out the hidden RONALDO, MESSI in you…its time you to stop watching soccer on screens. Participate and have lots of fun it’s going to be thrilling for sure…..enjoy the event!"
+            about: "Its football time and no-one plays soccer better than the engineers, in their own sophisticated way we hail this event ROBO SOCCER. All your soccer fans hold your breath, as we present to your soccer with an entirely new dimension. So if you are up for the challenge get your manual soccer playing bots ready in order to compete on the biggest stage and bring out the hidden RONALDO, MESSI in you…its time you to stop watching soccer on screens. Participate and have lots of fun it’s going to be thrilling for sure…..enjoy the event!",
+            teamSize: 3,
+            eventFee: 150
         },
         {
             id: 2,
@@ -65,11 +67,13 @@ const TechEvents = () => {
                 "If there is a tie, another chance will be given to the participants."
             ],
             contact: "",
-            about: "'RoboRace' refers to an innovative motorsport concept that involves fully autonomous, electric race cars competing against each other. It's a high-tech, futuristic take on traditional racing, with a focus on showcasing the capabilities of artificial intelligence, machine learning, and autonomous driving technology."
+            about: "'RoboRace' refers to an innovative motorsport concept that involves fully autonomous, electric race cars competing against each other. It's a high-tech, futuristic take on traditional racing, with a focus on showcasing the capabilities of artificial intelligence, machine learning, and autonomous driving technology.",
+            teamSize: 3,
+            eventFee: 150
         },
         {
             id: 3,
-            image: image2,
+            image: networkinghunting,
             title: "Network Hunting",
             department: "CSPIT: CE",
             description:
@@ -80,11 +84,13 @@ const TechEvents = () => {
                 "Task 3: Solve the code and reach to final location."
             ],
             contact: "",
-            about: "Welcome to the Amazing Network Challenge, an exhilarating competition designed to test your IP Address knowledge and network connections. This two-round event promises an immersive experience filled with puzzles, teamwork, and networking challenges. Get ready to embark on an unforgettable adventure!"
+            about: "Welcome to the Amazing Network Challenge, an exhilarating competition designed to test your IP Address knowledge and network connections. This two-round event promises an immersive experience filled with puzzles, teamwork, and networking challenges. Get ready to embark on an unforgettable adventure!",
+            teamSize: 3,
+            eventFee: 150
         },
         {
             id: 4,
-            image: image1,
+            image: networkinghunting,
             title: "Healthy Switching",
             department: "CSPIT: CE",
             description:
@@ -95,11 +101,13 @@ const TechEvents = () => {
                 "Task 2: Solve the question and get clues and combines all clues and find IP address.   ",
                 "Task 3: Solve the code and reach to final location."
             ],
-            contact: ""
+            contact: "",
+            teamSize: 3,
+            eventFee: 150
         },
         {
             id: 5,
-            image: image4,
+            image: artTech,
             title: "ArtTech Extravaganza",
             department: "CSPIT: CSE/AIML",
             description:
@@ -111,11 +119,13 @@ const TechEvents = () => {
                 "You may use it according to your interest"
             ],
             contact: "",
-            about: "Host an ArtTech Extravaganza where participants create tech-inspired artwork, designs, and games by using code, Graphic design, or blueprints in a race against the clock."
+            about: "Host an ArtTech Extravaganza where participants create tech-inspired artwork, designs, and games by using code, Graphic design, or blueprints in a race against the clock.",
+            teamSize: 3,
+            eventFee: 150
         },
         {
             id: 6,
-            image: image9,
+            image: codeMania,
             title: "Code Mania",
             department: "CSPIT: CSE/AIML",
             description:
@@ -126,7 +136,9 @@ const TechEvents = () => {
                 "Each problem will have a specific set of input and output requirements."
             ],
             contact: "",
-            about: "Code Mania is an intense and fast-paced coding competition that challenges participants' coding skills, problem-solving abilities, and time management. The event is designed to push participants to their limits as they tackle a series of coding challenges within a limited timeframe. Participants will have the opportunity to showcase their technical prowess and compete against other talented coders."
+            about: "Code Mania is an intense and fast-paced coding competition that challenges participants' coding skills, problem-solving abilities, and time management. The event is designed to push participants to their limits as they tackle a series of coding challenges within a limited timeframe. Participants will have the opportunity to showcase their technical prowess and compete against other talented coders.",
+            teamSize: 3,
+            eventFee: 150
         },
         {
             id: 7,
@@ -137,7 +149,9 @@ const TechEvents = () => {
                 "Unleash your creativity at the Blender and Beyond Workshop! Dive into the world of 3D modeling, animation, and visual effects, as industry experts guide you through powerful techniques.",
             task: ["f"],
             contact: "",
-            about: "Dive into the exciting world of Civil Saga! Join us for a fun-filled day of quizzes, stimulating discussions about all objects of civil engineering and model-making. Whether you're a seasoned pro or just starting, there's something for everyone. Let's explore and enjoy the world of civil engineering together!"
+            about: "Dive into the exciting world of Civil Saga! Join us for a fun-filled day of quizzes, stimulating discussions about all objects of civil engineering and model-making. Whether you're a seasoned pro or just starting, there's something for everyone. Let's explore and enjoy the world of civil engineering together!",
+            teamSize: 3,
+            eventFee: 150
         },
         {
             id: 8,
@@ -152,7 +166,9 @@ const TechEvents = () => {
                 "Task 3 : Plastic ball half filled with liquid will be tested on the maze and time taken to travel the maze will measured."
             ],
             contact: "",
-            about: "Lose yourself in the maze of roller coaster. This three round event will assure the thrill and calibrate your technical fundamentals with creatively designed map where slow and steady wins the race. "
+            about: "Lose yourself in the maze of roller coaster. This three round event will assure the thrill and calibrate your technical fundamentals with creatively designed map where slow and steady wins the race. ",
+            teamSize: 3,
+            eventFee: 150
         },
         {
             id: 9,
@@ -163,7 +179,9 @@ const TechEvents = () => {
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
             task: ["g"],
             contact: "",
-            about: "Divide students into groups of 3. Competition is of 3 rounds. Each round features two key phases: Problem Statement Discussion and Blind-Relay Coding. In the initial phase, team members collaborate to strategize based on a provided problem statement. After discussing the problem statement, participants move to the Blind Coding phase, where they write code on a blank screen. The challenge continues with a relay-style queue, with each student coding for a specific time period while performing blind coding, and their co-team members taking turns to complete the task within a specific time duration. A participating certificate will be provided to all Participants and the top 3 teams can win exciting prizes."
+            about: "Divide students into groups of 3. Competition is of 3 rounds. Each round features two key phases: Problem Statement Discussion and Blind-Relay Coding. In the initial phase, team members collaborate to strategize based on a provided problem statement. After discussing the problem statement, participants move to the Blind Coding phase, where they write code on a blank screen. The challenge continues with a relay-style queue, with each student coding for a specific time period while performing blind coding, and their co-team members taking turns to complete the task within a specific time duration. A participating certificate will be provided to all Participants and the top 3 teams can win exciting prizes.",
+            teamSize: 3,
+            eventFee: 150
         },
         {
             id: 10,
@@ -176,7 +194,9 @@ const TechEvents = () => {
                 "<b>Five Rounds of Typing Fun:</b> The Typing Game Extravaganza comprises five rounds, each with its own unique typing challenge. From speed tests to accuracy challenges, you'll have the opportunity to showcase your typing prowess."
             ],
             contact: "",
-            about: "In this thrilling competition, participants have the opportunity to put their typing speed and accuracy to the test. With five rounds of fast-paced challenges, the event is open to individuals of all skill levels. Whether you're a seasoned typist or someone looking to enhance their typing skills, this competition offers a chance to shine and potentially win prizes."
+            about: "In this thrilling competition, participants have the opportunity to put their typing speed and accuracy to the test. With five rounds of fast-paced challenges, the event is open to individuals of all skill levels. Whether you're a seasoned typist or someone looking to enhance their typing skills, this competition offers a chance to shine and potentially win prizes.",
+            teamSize: 3,
+            eventFee: 150
         },
         {
             id: 11,
@@ -190,7 +210,9 @@ const TechEvents = () => {
                 "Task 2: Solve Query Challenge."
             ],
             contact: "",
-            about: "Welcome to the Amazing an exhilarating competition designed to test Competitive Coding Minds. Challenging young minds with problems designed to check their grip on data structures and logic building!"
+            about: "Welcome to the Amazing an exhilarating competition designed to test Competitive Coding Minds. Challenging young minds with problems designed to check their grip on data structures and logic building!",
+            teamSize: 3,
+            eventFee: 150
         },
         {
             id: 12,
@@ -201,7 +223,9 @@ const TechEvents = () => {
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
             task: ["Task 1: Design UX/UI"],
             contact: "",
-            about: "Welcome to the Amazing an exhilarating competition designed to test Competitive Coding Minds. Challenging young minds with problems designed to check their grip on data structures and logic building!"
+            about: "Welcome to the Amazing an exhilarating competition designed to test Competitive Coding Minds. Challenging young minds with problems designed to check their grip on data structures and logic building!",
+            teamSize: 3,
+            eventFee: 150
         },
 
         {
@@ -216,9 +240,10 @@ const TechEvents = () => {
                 "Task 2: Solve Query Challenge"
             ],
             contact: "",
-            about: "Welcome to the Amazing Database Challenge, an exhilarating competition designed to test Competitive Coding Minds. Challenging young minds with problems designed to check their grip on data structures and logic building!"
+            about: "Welcome to the Amazing Database Challenge, an exhilarating competition designed to test Competitive Coding Minds. Challenging young minds with problems designed to check their grip on data structures and logic building!",
+            teamSize: 3,
+            eventFee: 150
         },
-
         {
             id: 14,
             image: image10,
@@ -231,7 +256,9 @@ const TechEvents = () => {
                 "Task 2 : Answer the questions"
             ],
             contact: "",
-            about: "Welcome to the Amazing Security Challenge, an exhilarating competition designed to test a series of rounds that will involve certain tasks (from decrypting ciphers, finding data hidden behind server/web pages they can find hidden info via exploiting it!"
+            about: "Welcome to the Amazing Security Challenge, an exhilarating competition designed to test a series of rounds that will involve certain tasks (from decrypting ciphers, finding data hidden behind server/web pages they can find hidden info via exploiting it!",
+            teamSize: 3,
+            eventFee: 150
         },
         {
             id: 15,
@@ -247,7 +274,9 @@ const TechEvents = () => {
                 "Task 4: Technical Treasure Hunt"
             ],
             contact: "",
-            about: "Join us for a fun-filled two-day event full of challenges and camaraderie! This event will comprise of various rounds comprising Debugging, Mini-games, GATECRASH, Treasure Hunt. This is the event shaped in such a way to test the techies and challenge their knowledge."
+            about: "Join us for a fun-filled two-day event full of challenges and camaraderie! This event will comprise of various rounds comprising Debugging, Mini-games, GATECRASH, Treasure Hunt. This is the event shaped in such a way to test the techies and challenge their knowledge.",
+            teamSize: 3,
+            eventFee: 150
         },
         {
             id: 16,
@@ -262,7 +291,9 @@ const TechEvents = () => {
                 "Task 3 :  BRANDING"
             ],
             contact: "",
-            about: "This Event is meant to test the Graphic Designing skills of the participants and One of them will be crowned as the Graphic Gladiator for CZ ‘24."
+            about: "This Event is meant to test the Graphic Designing skills of the participants and One of them will be crowned as the Graphic Gladiator for CZ ‘24.",
+            teamSize: 3,
+            eventFee: 150
         }
     ];
     return (
@@ -287,6 +318,8 @@ const TechEvents = () => {
                         eventName={IData.title}
                         department={IData.department}
                         task={IData.task}
+                        price={IData.eventFee}
+                        teamSize={IData.teamSize}
                     />
                 ))}
             </div>
