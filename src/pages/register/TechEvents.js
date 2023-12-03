@@ -8,16 +8,16 @@ import image5 from "../../assets/eventRegister/register5.jpeg";
 // import image6 from "../../assets/eventRegister/register6.jpeg";
 import image7 from "../../assets/eventRegister/register7.jpeg";
 import image8 from "../../assets/eventRegister/reg1.png";
-import image9 from "../../assets/eventRegister/coding.png";
 import image10 from "../../assets/eventRegister/flag.jpeg";
 
 import battleBlitz from "../../assets/eventImages/battle blitz.png";
 import roboSoccer from "../../assets/eventImages/robo soccer.png";
-import roboRace from "../../assets/eventImages/robo race.jpg";
+import roboRace from "../../assets/eventImages/robo race.png";
 import codeMania from "../../assets/eventImages/code mania.png";
 import artTech from "../../assets/eventImages/artTech.png";
 import networkinghunting from "../../assets/eventImages/network hunting.png";
-// import
+import keyMaster from "../../assets/eventImages/key master.jpg"
+import uiux from "../../assets/eventImages/ui ux.jpeg"
 
 const TechEvents = () => {
     const data = [
@@ -195,7 +195,7 @@ const TechEvents = () => {
         },
         {
             id: 10,
-            image: image5,
+            image: keyMaster,
             title: "Key Masters - The ultimate typing showdown",
             department: "DEPSTAR CE",
             description:
@@ -228,7 +228,7 @@ const TechEvents = () => {
         },
         {
             id: 12,
-            image: image10,
+            image: uiux,
             title: "Designing for Delight: A UI/UX challenge",
             department: "DEPSTAR IT",
             description:
