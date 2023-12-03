@@ -100,14 +100,18 @@ import React from "react";
 export default function Footer() {
     return (
         <>
-            <footer style={{ marginTop: "100px" }} id="footer-section">
+            <footer
+                style={{ marginTop: "100px" }}
+                id="footer-section"
+            >
                 <div className="footer_container">
                     <div className="cotent_container">
                         <div className="card_container">
                             <div
                                 className="card"
                                 onClick={() => {
-                                    window.location = "mailto:xyz@gmail.com";
+                                    window.location =
+                                        "mailto:xyz@gmail.com";
                                 }}
                             >
                                 <div className="card_logo_container">
@@ -119,7 +123,7 @@ export default function Footer() {
                                     <p>Email</p>
                                 </div>
                                 <span style={{ fontSize: "18px" }}>
-                                    cognizance@charusat.ac.in
+                                    cognizance@charusat.edu.in
                                 </span>
                             </div>
                             <div
@@ -161,8 +165,9 @@ export default function Footer() {
                                     <p>Address</p>
                                 </div>
                                 <span style={{ fontSize: "18px" }}>
-                                    CHARUSAT Campus, Highway, Off, Nadiad -
-                                    Petlad Rd, Changa, Gujarat 388421
+                                    CHARUSAT Campus, Highway, Off,
+                                    Nadiad - Petlad Rd, Changa,
+                                    Gujarat 388421
                                 </span>
                             </div>
                         </div>
@@ -176,7 +181,10 @@ export default function Footer() {
                                     );
                                 }}
                             >
-                                <img src={instagram} alt="instargram" />
+                                <img
+                                    src={instagram}
+                                    alt="instargram"
+                                />
                             </div>
                             {/* <div
                 className="social_logo_container"
@@ -193,7 +201,8 @@ export default function Footer() {
                         </div>
                         <div className="rights">
                             <span style={{ fontSize: "18px" }}>
-                                &#169;2024. Charusat. All rights revserved
+                                &#169;2024. Charusat. All rights
+                                revserved
                             </span>
                         </div>
                     </div>

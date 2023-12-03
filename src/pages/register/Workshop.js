@@ -1,5 +1,4 @@
 import React from "react";
-import EventCard from "./EventCard";
 import image1 from "../../assets/eventRegister/register1.jpeg";
 import image2 from "../../assets/eventRegister/register2.jpeg";
 import image3 from "../../assets/eventRegister/register3.jpeg";
@@ -7,6 +6,7 @@ import image4 from "../../assets/eventRegister/register4.jpeg";
 import image5 from "../../assets/eventRegister/register5.jpeg";
 import image6 from "../../assets/eventRegister/register6.jpeg";
 import image7 from "../../assets/eventRegister/register7.jpeg";
+import EventCard from "./EventCard";
 
 const Workshop = () => {
     const data = [

@@ -20,7 +20,7 @@ import {
     HStack,
     StackDivider,
     ListItem,
-    UnorderedList,
+    UnorderedList
 } from "@chakra-ui/react";
 
 const BasicUsage = (props) => {
@@ -41,7 +41,12 @@ const BasicUsage = (props) => {
                 isCentered
             >
                 <ModalOverlay />
-                <ModalContent bg="white" p={10} paddingBottom={0}>
+                <ModalContent
+                    bg="white"
+                    p={10}
+                    paddingBottom={0}
+                    h="600px"
+                >
                     <ModalHeader>
                         <Heading as="h1" size={"lg"}>
                             {props.eventName}
@@ -57,12 +62,17 @@ const BasicUsage = (props) => {
                                 divider={
                                     <StackDivider borderColor="gray.200" />
                                 }
+                                align="flex-start"
                             >
                                 <Box>
                                     <img
                                         style={{
                                             width: "300px",
-                                            aspectRatio: "auto",
+                                            aspectRatio: "1/1",
+                                            objectFit: "contain",
+                                            // border: "1px solid",
+                                            borderColor: "gray",
+                                            borderRadius: "10px"
                                         }}
                                         src={props.image}
                                         alt={props.eventName}
@@ -70,7 +80,10 @@ const BasicUsage = (props) => {
                                 </Box>
 
                                 <Box w="65%">
-                                    <Tabs size="md" variant="enclosed">
+                                    <Tabs
+                                        size="md"
+                                        variant="enclosed"
+                                    >
                                         <TabList mb="1em">
                                             <Tab>About</Tab>
                                             <Tab>Task</Tab>
@@ -78,7 +91,9 @@ const BasicUsage = (props) => {
                                         </TabList>
 
                                         <TabPanels>
-                                            <TabPanel>{props.about}</TabPanel>
+                                            <TabPanel>
+                                                {props.about}
+                                            </TabPanel>
 
                                             <TabPanel>
                                                 {/* <div
@@ -98,7 +113,9 @@ const BasicUsage = (props) => {
                                                         {props?.task?.map(
                                                             (t) => (
                                                                 <ListItem>
-                                                                    {t}
+                                                                    {
+                                                                        t
+                                                                    }
                                                                 </ListItem>
                                                             )
                                                         )}
@@ -107,7 +124,9 @@ const BasicUsage = (props) => {
                                                 {/* </div> */}
                                             </TabPanel>
 
-                                            <TabPanel>{props.contact}</TabPanel>
+                                            <TabPanel>
+                                                {props.contact}
+                                            </TabPanel>
                                         </TabPanels>
                                     </Tabs>
                                 </Box>
@@ -116,10 +135,16 @@ const BasicUsage = (props) => {
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button colorScheme="blue" mr={3} onClick={onClose}>
+                        <Button
+                            colorScheme="blue"
+                            mr={3}
+                            onClick={onClose}
+                        >
                             Download PDF
                         </Button>
-                        <Button variant="ghost">Register {price}</Button>
+                        <Button variant="ghost">
+                            Register {price}
+                        </Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal>
