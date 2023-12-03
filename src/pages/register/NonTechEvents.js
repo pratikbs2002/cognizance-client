@@ -29,10 +29,11 @@ const NonTechEvents = () => {
             about: "The CS2 Tournament is an exciting gaming event organized as part of Cognizance 23, the annual techfest of our esteemed institution. This tournament aims to bring together gaming enthusiasts, showcase their skills, and promote a spirit of healthy competition within the gaming community.",
             task: [
                 "●	The tournament will consist of a double-elimination bracket.",
-                "●	Series of competitive games of CS2 will be played between two teams, likewise for every participant team",
+                "●	Series of competitive games of CS2 will be played between two teams, likewise for every participant team"
             ],
             teamSize: 3,
             eventFee: 150,
+            pdfName: "cs2"
         },
         {
             id: 1,
@@ -44,6 +45,7 @@ const NonTechEvents = () => {
             task: [],
             teamSize: 3,
             eventFee: 150,
+            pdfName: "boxcricket"
         },
         {
             id: 2,
@@ -55,6 +57,7 @@ const NonTechEvents = () => {
             task: [],
             teamSize: 3,
             eventFee: 150,
+            pdfName: "wireloop"
         },
         {
             id: 3,
@@ -66,6 +69,7 @@ const NonTechEvents = () => {
             task: [],
             teamSize: 3,
             eventFee: 150,
+            pdfName: "civilcastle"
         },
         {
             id: 4,
@@ -77,6 +81,7 @@ const NonTechEvents = () => {
             task: [],
             teamSize: 3,
             eventFee: 150,
+            pdfName: "squidgame"
         },
         {
             id: 5,
@@ -90,6 +95,7 @@ const NonTechEvents = () => {
             task: [],
             teamSize: 3,
             eventFee: 150,
+            pdfName: "bgmi"
         },
         {
             id: 6,
@@ -101,6 +107,7 @@ const NonTechEvents = () => {
             task: [],
             teamSize: 3,
             eventFee: 150,
+            pdfName: "boxsoccer"
         },
         {
             id: 7,
@@ -118,6 +125,7 @@ const NonTechEvents = () => {
             task: [],
             teamSize: 3,
             eventFee: 150,
+            pdfName: "paintdate"
         },
         {
             id: 8,
@@ -128,7 +136,8 @@ const NonTechEvents = () => {
             about: "Paintball is a competitive team shooting sport in which players eliminate opponents from play by hitting them with spherical dye-filled gelatin capsules called paintballs that break upon impact. Paintballs are usually shot using low-energy air weapons called paintball markers that are powered by compressed air or carbon dioxide.",
             teamSize: 3,
             eventFee: 150,
-        },
+            pdfName: "paintball"
+        }
     ];
     return (
         <>
@@ -139,7 +148,7 @@ const NonTechEvents = () => {
                     justifyContent: "center",
                     color: "white",
                     fontWeight: "600",
-                    flexWrap: "wrap",
+                    flexWrap: "wrap"
                 }}
             >
                 {data.map((IData) => (
@@ -155,6 +164,7 @@ const NonTechEvents = () => {
                         teamSize={IData.teamSize}
                         about={IData.about}
                         taskEnabled={false}
+                        pdfName={IData.pdfName}
                     />
                 ))}
             </div>
