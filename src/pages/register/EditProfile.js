@@ -2,12 +2,8 @@ import React, { useEffect, useState } from "react";
 import {
     Button,
     Modal,
-    Card,
-    CardHeader,
-    Container,
     FormControl,
     Input,
-    Stack,
     Text,
     useDisclosure,
     VStack,
@@ -18,25 +14,14 @@ import {
     ModalBody,
     ModalFooter,
     Heading,
-    Tag,
-    TagLabel,
     Box,
-    Tabs,
-    TabList,
-    TabPanels,
-    Tab,
-    TabPanel,
-    HStack,
-    StackDivider,
-    ListItem,
-    UnorderedList,
     Spinner,
-    Image,
+    Image
 } from "@chakra-ui/react";
 import {
     isProfileUpdatedAPI,
     login,
-    updateProfileAPI,
+    updateProfileAPI
 } from "../../service/authService";
 import { useGoogleLogin } from "@react-oauth/google";
 import Payment from "./Payment";
@@ -45,17 +30,18 @@ const EditProfile = (props) => {
     const {
         isOpen: isEditProfileModalOpen,
         onOpen: onEditProfileModalOpen,
-        onClose: onEditProfileModalClose,
+        onClose: onEditProfileModalClose
     } = useDisclosure();
     const {
         isOpen: isEventRegisterModalOpen,
         onOpen: onEventRegisterModalOpen,
-        onClose: onEventRegisterModalClose,
+        onClose: onEventRegisterModalClose
     } = useDisclosure();
-    const [registerCredentials, setRegisterCredentials] = useState({});
-    const [eventRegisterCredentials, setEventRegisterCredentials] = useState(
+    const [registerCredentials, setRegisterCredentials] = useState(
         {}
     );
+    const [eventRegisterCredentials, setEventRegisterCredentials] =
+        useState({});
     const [isProfileUpdated, setIsProfileUpdated] = useState(false);
 
     const handleRegister = async (event) => {
@@ -87,7 +73,7 @@ const EditProfile = (props) => {
         const value = event.target.value;
         setRegisterCredentials((values) => ({
             ...values,
-            [name]: value,
+            [name]: value
         }));
     };
 
@@ -109,7 +95,7 @@ const EditProfile = (props) => {
             const value = event.target.value;
             setEventRegisterCredentials((values) => ({
                 ...values,
-                [name]: value,
+                [name]: value
             }));
         } else {
             const value = event.target.value;
@@ -117,8 +103,8 @@ const EditProfile = (props) => {
                 ...values,
                 [`participants${index}`]: {
                     ...values[`participants${index}`],
-                    [name]: value,
-                },
+                    [name]: value
+                }
             }));
         }
     };
@@ -146,7 +132,10 @@ const EditProfile = (props) => {
                 sessionStorage.removeItem("token");
             } else {
                 setIsLoading(true);
-                if (isProfileUpdated || (await isProfileUpdatedRequest())) {
+                if (
+                    isProfileUpdated ||
+                    (await isProfileUpdatedRequest())
+                ) {
                     // Call For Register Modal
                     console.log("REGISTER MODAL");
                     onEventRegisterModalOpen();
@@ -161,10 +150,11 @@ const EditProfile = (props) => {
         },
         onError: () => {
             console.log("Login Failed");
-        },
+        }
     });
     const [isLoading, setIsLoading] = useState(false);
-    const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+    const [isPaymentModalOpen, setIsPaymentModalOpen] =
+        useState(false);
 
     const participantsField = [];
     for (let i = 0; i < props.teamSize; i++) {
@@ -274,7 +264,7 @@ const EditProfile = (props) => {
                         left: "0",
                         top: "0",
                         zIndex: "100",
-                        backgroundColor: "rgba(0,0,0,0.5)",
+                        backgroundColor: "rgba(0,0,0,0.5)"
                     }}
                 >
                     <Spinner
@@ -289,7 +279,7 @@ const EditProfile = (props) => {
                             position: "fixed",
                             left: "47.5%",
                             top: "45%",
-                            zIndex: "100",
+                            zIndex: "100"
                         }}
                     />
                 </div>
@@ -304,7 +294,11 @@ const EditProfile = (props) => {
                     >
                         <ModalOverlay />
 
-                        <ModalContent bg="white" p={10} paddingBottom={10}>
+                        <ModalContent
+                            bg="white"
+                            p={10}
+                            paddingBottom={10}
+                        >
                             <ModalHeader>
                                 <Heading as="h1" size={"lg"}>
                                     User Profile
@@ -340,7 +334,9 @@ const EditProfile = (props) => {
                                                         pr="4.5rem"
                                                         variant="outline"
                                                         placeholder="Enter Name"
-                                                        onChange={handleChange}
+                                                        onChange={
+                                                            handleChange
+                                                        }
                                                     />
                                                 </FormControl>
                                             </VStack>
@@ -363,7 +359,9 @@ const EditProfile = (props) => {
                                                         pr="4.5rem"
                                                         variant="outline"
                                                         placeholder="Enter Mobile Number"
-                                                        onChange={handleChange}
+                                                        onChange={
+                                                            handleChange
+                                                        }
                                                     />
                                                 </FormControl>
                                             </VStack>
@@ -386,7 +384,9 @@ const EditProfile = (props) => {
                                                         pr="4.5rem"
                                                         variant="outline"
                                                         placeholder="Enter Current Year"
-                                                        onChange={handleChange}
+                                                        onChange={
+                                                            handleChange
+                                                        }
                                                     />
                                                 </FormControl>
                                             </VStack>
@@ -407,7 +407,9 @@ const EditProfile = (props) => {
                         </ModalContent>
                     </Modal>
                     <Modal
-                        isOpen={isEventRegisterModalOpen && !isLoading}
+                        isOpen={
+                            isEventRegisterModalOpen && !isLoading
+                        }
                         onClose={onEventRegisterModalClose}
                         size={"6xl"}
                         closeOnOverlayClick={false}
@@ -438,15 +440,18 @@ const EditProfile = (props) => {
                                                 display: "flex",
                                                 flexDirection: "row",
                                                 gap: "10px",
-                                                justifyContent: "space-between",
+                                                justifyContent:
+                                                    "space-between"
                                             }}
                                         >
                                             <div
                                                 style={{
                                                     display: "flex",
                                                     flex: 1,
-                                                    overflowY: "hidden",
-                                                    alignItems: "center",
+                                                    overflowY:
+                                                        "hidden",
+                                                    alignItems:
+                                                        "center"
                                                 }}
                                             >
                                                 <Image
@@ -458,6 +463,7 @@ const EditProfile = (props) => {
                                                 />
                                             </div>
                                             <div
+                                            className="event-registration-description"
                                                 style={{
                                                     display: "flex",
                                                     flex: 1,
@@ -465,8 +471,9 @@ const EditProfile = (props) => {
                                                     borderLeft:
                                                         "1px solid gray",
                                                     padding: "10px",
-                                                    flexDirection: "column",
-                                                    overflowY: "auto",
+                                                    flexDirection:
+                                                        "column",
+                                                    overflowY: "auto"
                                                 }}
                                             >
                                                 <form
@@ -480,10 +487,13 @@ const EditProfile = (props) => {
                                                         p={6}
                                                         spacing={5}
                                                     >
-                                                        {props.teamSize > 1 && (
+                                                        {props.teamSize >
+                                                            1 && (
                                                             <VStack
                                                                 w="full"
-                                                                spacing={2}
+                                                                spacing={
+                                                                    2
+                                                                }
                                                                 alignItems="flex-start"
                                                                 paddingBottom={
                                                                     5
@@ -498,7 +508,8 @@ const EditProfile = (props) => {
                                                                         500
                                                                     }
                                                                 >
-                                                                    Team Name
+                                                                    Team
+                                                                    Name
                                                                 </Text>
                                                                 <FormControl>
                                                                     <Input
@@ -582,7 +593,9 @@ const EditProfile = (props) => {
                                                     </FormControl>
                                                 </VStack> */}
 
-                                                        {participantsField}
+                                                        {
+                                                            participantsField
+                                                        }
                                                     </VStack>
                                                 </form>
                                             </div>
