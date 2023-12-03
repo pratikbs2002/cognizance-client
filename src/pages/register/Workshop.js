@@ -6,6 +6,8 @@ import image4 from "../../assets/eventRegister/register4.jpeg";
 import image5 from "../../assets/eventRegister/register5.jpeg";
 import image6 from "../../assets/eventRegister/register6.jpeg";
 import image7 from "../../assets/eventRegister/register7.jpeg";
+import image8 from "../../assets/eventRegister/djnight.jpg";
+
 import EventCard from "./EventCard";
 
 const Workshop = () => {
