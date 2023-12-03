@@ -38,7 +38,9 @@ export default function EventCard(props) {
                         alt="Image"
                         objectFit="cover"
                         w="100%"
-                        h={200}
+                        style={{
+                            aspectRatio: "1/1",
+                        }}
                     />
 
                     <Box p={4}>

@@ -1,8 +1,7 @@
 import React from "react";
 import EventCard from "./EventCard";
-import DJNight from "../../assets/eventImages/DJNight.jpg";
+import DJNight from "../../assets/eventImages/dj.png";
 import { Card } from "@chakra-ui/react";
-
 
 const ComboEvents = () => {
     const data = [1, 2, 3, 4];
