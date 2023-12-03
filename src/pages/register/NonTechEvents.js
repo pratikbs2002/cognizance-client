@@ -154,7 +154,7 @@ const NonTechEvents = () => {
                         price={IData.eventFee}
                         teamSize={IData.teamSize}
                         about={IData.about}
-                        taskEnabled={true}
+                        taskEnabled={false}
                     />
                 ))}
             </div>
