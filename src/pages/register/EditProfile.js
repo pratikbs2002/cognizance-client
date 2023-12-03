@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     Button,
     Modal,
@@ -31,7 +31,11 @@ import {
     ListItem,
     UnorderedList,
 } from "@chakra-ui/react";
-import { isProfileUpdatedAPI, login } from "../../service/authService";
+import {
+    isProfileUpdatedAPI,
+    login,
+    updateProfileAPI,
+} from "../../service/authService";
 import { useGoogleLogin } from "@react-oauth/google";
 
 const EditProfile = (props) => {
@@ -46,13 +50,28 @@ const EditProfile = (props) => {
         onClose: onEventRegisterModalClose,
     } = useDisclosure();
     const [registerCredentials, setRegisterCredentials] = useState({});
-    const [isLogin, setIsLogin] = useState(
-        sessionStorage.getItem("token") ? true : false
-    );
-    const [isProfileUpdated, setIsProfileUpdated] = useState(true);
+    const [isProfileUpdated, setIsProfileUpdated] = useState(false);
 
     const handleRegister = async (event) => {
         event.preventDefault();
+        console.log(registerCredentials);
+        if (validateRegisterCredentials()) {
+            let response = await updateProfileAPI(
+                registerCredentials.mobileNumber,
+                registerCredentials.universityName,
+                registerCredentials.year
+            );
+            console.log(response);
+            if (response?.isProfileUpdated) {
+                setIsProfileUpdated(true);
+                onEditProfileModalClose();
+                onEventRegisterModalOpen();
+            }
+        }
+    };
+
+    const validateRegisterCredentials = () => {
+        return true;
     };
 
     const handleChange = (event) => {
@@ -64,21 +83,11 @@ const EditProfile = (props) => {
         }));
     };
 
-    const loginRequest = async () => {
-        let response = await login();
-        console.log(response);
-        if (isProfileUpdated) {
-            onEventRegisterModalOpen();
-        } else {
-            isProfileUpdatedRequest();
-            onEditProfileModalOpen();
-        }
-    };
-
     const isProfileUpdatedRequest = async () => {
         let response = await isProfileUpdatedAPI();
         console.log(response);
         setIsProfileUpdated(response?.isProfileUpdated);
+        return response?.isProfileUpdated;
     };
 
     const GAuth = useGoogleLogin({
@@ -90,8 +99,22 @@ const EditProfile = (props) => {
                 "token",
                 "Bearer " + credentialResponse.access_token
             );
-            setIsLogin(true);
-            loginRequest();
+            let response = await login();
+            console.log(response);
+            if (!response?.isAuthenticated) {
+                console.log(response.message);
+                sessionStorage.removeItem("token");
+            } else {
+                if (isProfileUpdated || (await isProfileUpdatedRequest())) {
+                    // Call For Register Modal
+                    console.log("REGISTER MODAL");
+                    onEventRegisterModalOpen();
+                } else {
+                    // Call For Profile Modal
+                    console.log("PROFILE MODAL");
+                    onEditProfileModalOpen();
+                }
+            }
         },
         onError: () => {
             console.log("Login Failed");
@@ -103,14 +126,16 @@ const EditProfile = (props) => {
             <Button
                 backgroundColor="#54cadd"
                 color={"black"}
-                onClick={() => {
-                    if (isLogin) {
-                        if (isProfileUpdated) {
+                onClick={async () => {
+                    if (sessionStorage.getItem("token") !== null) {
+                        if (
+                            isProfileUpdated ||
+                            (await isProfileUpdatedRequest())
+                        ) {
                             // Call For Register Modal
                             console.log("REGISTER MODAL");
                             onEventRegisterModalOpen();
                         } else {
-                            isProfileUpdatedRequest();
                             // Call For Profile Modal
                             console.log("PROFILE MODAL");
                             onEditProfileModalOpen();
@@ -142,7 +167,7 @@ const EditProfile = (props) => {
 
                     <ModalBody>
                         <Box>
-                            <form onSubmit={handleRegister}>
+                            <form>
                                 <VStack w="full" bg="white" p={6} spacing={5}>
                                     <VStack
                                         w="full"
@@ -212,8 +237,7 @@ const EditProfile = (props) => {
                         <Button
                             colorScheme="blue"
                             mr={3}
-                            onClick={onEditProfileModalClose}
-                            onSubmit={handleRegister}
+                            onClick={handleRegister}
                         >
                             Submit
                         </Button>
@@ -248,11 +272,11 @@ const EditProfile = (props) => {
                                         alignItems="flex-start"
                                     >
                                         <Text fontSize={14} align="left">
-                                            University Name
+                                            Team Name
                                         </Text>
                                         <FormControl>
                                             <Input
-                                                name="universityName"
+                                                name="teamName"
                                                 type="text"
                                                 pr="4.5rem"
                                                 variant="outline"
@@ -268,7 +292,7 @@ const EditProfile = (props) => {
                                         alignItems="flex-start"
                                     >
                                         <Text fontSize={14} align="left">
-                                            Mobile Number
+                                            Team Leader Name
                                         </Text>
                                         <FormControl>
                                             <Input
@@ -288,7 +312,26 @@ const EditProfile = (props) => {
                                         alignItems="flex-start"
                                     >
                                         <Text fontSize={14} align="left">
-                                            Current Year
+                                            Participant 1
+                                        </Text>
+                                        <FormControl>
+                                            <Input
+                                                name="year"
+                                                type="number"
+                                                pr="4.5rem"
+                                                variant="outline"
+                                                placeholder="Enter Current Year"
+                                                onChange={handleChange}
+                                            />
+                                        </FormControl>
+                                    </VStack>
+                                    <VStack
+                                        w="full"
+                                        spacing={2}
+                                        alignItems="flex-start"
+                                    >
+                                        <Text fontSize={14} align="left">
+                                            Participant 2
                                         </Text>
                                         <FormControl>
                                             <Input

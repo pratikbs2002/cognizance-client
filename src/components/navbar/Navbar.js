@@ -14,7 +14,9 @@ import GAuth from "../GAuth";
 
 export default function Navbar() {
     const [showMenu, setShowMenu] = useState(false);
-    const [isLogin, setIsLogin] = useState(false);
+    const [isLogin, setIsLogin] = useState(
+        sessionStorage.getItem("token") ? true : false
+    );
     const toggleMenu = () => {
         setShowMenu(!showMenu);
     };
