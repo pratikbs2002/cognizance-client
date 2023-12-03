@@ -93,6 +93,7 @@ export default function EventCard(props) {
                                 eventName={props.eventName}
                                 teamSize={props.teamSize}
                                 price={props.price}
+                                image={props.image}
                             />
                             <Modal
                                 about={props.about}
@@ -102,6 +103,7 @@ export default function EventCard(props) {
                                 task={props.task}
                                 price={props.price}
                                 teamSize={props.teamSize}
+                                taskEnabled={props.taskEnabled}
                             />
                         </Flex>
                     </Box>

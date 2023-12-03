@@ -305,7 +305,7 @@ const TechEvents = () => {
                 {data.map((IData) => (
                     <EventCard
                         about={IData.about}
-                        show={false}
+                        show={true}
                         image={IData.image}
                         title={IData.title}
                         description={IData.description}
@@ -314,6 +314,7 @@ const TechEvents = () => {
                         task={IData.task}
                         price={IData.eventFee}
                         teamSize={IData.teamSize}
+                        taskEnabled={true}
                     />
                 ))}
             </div>

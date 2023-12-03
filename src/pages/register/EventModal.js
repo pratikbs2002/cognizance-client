@@ -88,7 +88,9 @@ const BasicUsage = (props) => {
                                     <Tabs size="md" variant="enclosed">
                                         <TabList mb="1em">
                                             <Tab>About</Tab>
-                                            <Tab>Task</Tab>
+                                            {props.taskEnabled && (
+                                                <Tab>Task</Tab>
+                                            )}
                                             {/* <Tab>Contact</Tab> */}
                                         </TabList>
 
@@ -127,9 +129,9 @@ const BasicUsage = (props) => {
                         <Button colorScheme="blue" mr={3} onClick={onClose}>
                             Download PDF
                         </Button>
-                        <Button variant="outline" colorScheme="black">
+                        {/* <Button variant="outline" colorScheme="black">
                             Register for {price}
-                        </Button>
+                        </Button> */}
                     </ModalFooter>
                 </ModalContent>
             </Modal>
