@@ -404,7 +404,7 @@ const EditProfile = (props) => {
                             p={10}
                             paddingBottom={10}
                             h={"80%"}
-                            overflowY={"hidden"}
+                            overflowY={"scroll"}
                         >
                             <ModalHeader>
                                 <Heading as="h1" size={"lg"}>

@@ -91,9 +91,7 @@ export default function Navbar() {
                             </CurrentPath>
                         </li>
                         <li>
-                            <CurrentPath to="footer-section" smooth={true}>
-                                Contact Us
-                            </CurrentPath>
+                            <Link to="contact-us">Contact Us</Link>
                         </li>
                         <li>
                             <Link to="gallery">Gallery</Link>

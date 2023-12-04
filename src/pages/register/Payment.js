@@ -1,34 +1,20 @@
 import React from "react";
 import qrCodeImage from "./paymentQrCode.png";
-import { Text } from "@chakra-ui/react";
+import { Button, Text } from "@chakra-ui/react";
 export default function Payment(props) {
     return (
         <div
             style={{
                 display: "flex",
                 flexDirection: "column",
-                overflowY: "scroll",
             }}
         >
             <div
                 style={{
                     display: "flex",
                     width: "100%",
-                    paddingLeft: "30px",
-                    fontWeight: "500",
-                    fontSize: "30px",
-                    maxHeight: "25vh",
-                    paddingTop: "80px",
-                    paddingBottom: "50px",
-                }}
-            >
-                Payment | ₹{props.price}/-
-            </div>
-            <div
-                style={{
-                    display: "flex",
-                    width: "100%",
-                    maxHeight: "25vh",
+                    maxHeight: "45vh",
+                    paddingTop: "50px",
                     justifyContent: "center",
                 }}
             >
@@ -112,6 +98,57 @@ export default function Payment(props) {
                         </div>
                         <div>Scan the QR Code</div>
                     </div>
+                </div>
+            </div>
+
+            <div>
+                <div
+                    style={{
+                        display: "flex",
+                        paddingTop: "10%",
+                        paddingBottom: "20px",
+                    }}
+                >
+                    <div
+                        style={{
+                            display: "flex",
+                            fontSize: "20px",
+                            fontWeight: "700",
+                            paddingRight: "10px",
+                        }}
+                    >
+                        Note:
+                    </div>
+                    <div
+                        style={{
+                            display: "flex",
+                            fontSize: "20px",
+                            fontWeight: "700",
+                        }}
+                    >
+                        After payment, please proceed by clicking following
+                        button to fill out the form. Our coordinators will
+                        contact you shortly.
+                    </div>
+                </div>
+                <div
+                    style={{
+                        display: "flex",
+                        width: "100%",
+                        paddingBottom: "50px",
+                        justifyContent: "center",
+                    }}
+                >
+                    <Button colorScheme="blue" mr={3}>
+                        <a
+                            href="https://forms.gle/DaqEYXgjcx9kCNpe6"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: "white" }}
+                        >
+                            Submit Payment Reciept
+                        </a>
+                    </Button>
                 </div>
             </div>
         </div>
