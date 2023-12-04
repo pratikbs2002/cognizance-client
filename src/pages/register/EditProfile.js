@@ -39,9 +39,9 @@ const EditProfile = (props) => {
         onClose: onEventRegisterModalClose,
     } = useDisclosure();
     const [registerCredentials, setRegisterCredentials] = useState({});
-    const [eventRegisterCredentials, setEventRegisterCredentials] = useState(
-        {}
-    );
+    const [eventRegisterCredentials, setEventRegisterCredentials] = useState({
+        teamSize: props.teamSize,
+    });
     const [isProfileUpdated, setIsProfileUpdated] = useState(false);
 
     const handleRegister = async (event) => {
@@ -131,8 +131,8 @@ const EditProfile = (props) => {
             const value = event.target.value;
             setEventRegisterCredentials((values) => ({
                 ...values,
-                [`participants${index}`]: {
-                    ...values[`participants${index}`],
+                [`participant${index}`]: {
+                    ...values[`participant${index}`],
                     [name]: value,
                 },
             }));
