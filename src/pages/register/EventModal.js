@@ -65,10 +65,14 @@ const BasicUsage = (props) => {
                                 divider={
                                     <StackDivider borderColor="gray.200" />
                                 }
-                                align="flex-start"
-                                justifyContent={"space-between"}
+                                align={{ base: "flex-start", md: "flex-start" }}
+                                justifyContent={{
+                                    base: "center",
+                                    md: "space-between",
+                                }}
+                                flexDirection={{ base: "column", md: "row" }}
                             >
-                                <Box>
+                                <Box w={{ base: "100%", md: "auto" }}>
                                     <img
                                         style={{
                                             width: "300px",
@@ -83,7 +87,7 @@ const BasicUsage = (props) => {
                                     />
                                 </Box>
 
-                                <Box w="65%">
+                                <Box w={{ base: "100%", md: "65%" }}>
                                     <Tabs size="md" variant="enclosed">
                                         <TabList mb="1em">
                                             <Tab>About</Tab>
