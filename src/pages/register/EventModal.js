@@ -19,7 +19,7 @@ import {
     StackDivider,
     ListItem,
     UnorderedList,
-    Text
+    Text,
 } from "@chakra-ui/react";
 
 const BasicUsage = (props) => {
@@ -76,7 +76,7 @@ const BasicUsage = (props) => {
                                             objectFit: "contain",
                                             // border: "1px solid",
                                             borderColor: "gray",
-                                            borderRadius: "10px"
+                                            borderRadius: "10px",
                                         }}
                                         src={props.image}
                                         alt={props.eventName}
@@ -84,10 +84,7 @@ const BasicUsage = (props) => {
                                 </Box>
 
                                 <Box w="65%">
-                                    <Tabs
-                                        size="md"
-                                        variant="enclosed"
-                                    >
+                                    <Tabs size="md" variant="enclosed">
                                         <TabList mb="1em">
                                             <Tab>About</Tab>
                                             {props.taskEnabled && (
@@ -98,29 +95,33 @@ const BasicUsage = (props) => {
 
                                         <TabPanels>
                                             <TabPanel>
-                                                {props.about}
+                                                <div
+                                                    style={{
+                                                        overflowY: "auto",
+                                                        maxHeight: "20vh",
+                                                    }}
+                                                >
+                                                    {props.about}
+                                                </div>
                                             </TabPanel>
 
                                             <TabPanel>
                                                 <div
                                                     style={{
-                                                        textAlign:
-                                                            "left",
-                                                        display:
-                                                            "flex",
-                                                        flexDirection:
-                                                            "column",
+                                                        textAlign: "left",
+                                                        display: "flex",
+                                                        flexDirection: "column",
                                                         alignItems:
-                                                            "flex-start"
+                                                            "flex-start",
+                                                        overflowY: "auto",
+                                                        maxHeight: "20vh",
                                                     }}
                                                 >
                                                     <UnorderedList>
                                                         {props?.task?.map(
                                                             (t) => (
                                                                 <ListItem>
-                                                                    {
-                                                                        t
-                                                                    }
+                                                                    {t}
                                                                 </ListItem>
                                                             )
                                                         )}
