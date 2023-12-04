@@ -76,6 +76,8 @@ const Workshop = () => {
             >
                 {data.map((IData) => (
                     <EventCard
+                        eventId={IData.id}
+                        eventType={"WORKSHOP"}
                         about={IData.about}
                         eventName={IData.title}
                         department={IData.department}

@@ -25,6 +25,7 @@ import {
 } from "../../service/authService";
 import { useGoogleLogin } from "@react-oauth/google";
 import Payment from "./Payment";
+import { registerEvent } from "../../service/eventRegistrationService";
 
 const EditProfile = (props) => {
     const {
@@ -80,7 +81,37 @@ const EditProfile = (props) => {
         event.preventDefault();
         if (validateRegisterEventCredentials()) {
             console.log(eventRegisterCredentials);
-            setIsPaymentModalOpen(true);
+            if (!sessionStorage.getItem("token")) {
+                alert("Please Login First");
+                GAuth();
+            }
+            let eventData = {
+                id: props.eventId,
+                eventType: props.eventType,
+                eventTitle: props.eventName,
+                // eventDate: "",
+                // eventLocation: "",
+                eventFees: props.price,
+                eventParticipantInfo: eventRegisterCredentials,
+            };
+            console.log(eventData);
+            let response = await registerEvent(eventData);
+            console.log(response);
+            if (!response?.isAuthenticated) {
+                sessionStorage.removeItem("token");
+                return;
+            }
+            if (!response?.isUserExist) {
+                alert("User Does Not Exist");
+                return;
+            }
+            if (!response?.isEventRegistered) {
+                alert("Event Already Registered");
+                return;
+            }
+            if (response?.isEventRegistered) {
+                setIsPaymentModalOpen(true);
+            }
         }
     };
 
@@ -111,6 +142,10 @@ const EditProfile = (props) => {
     const isProfileUpdatedRequest = async () => {
         let response = await isProfileUpdatedAPI();
         console.log(response);
+        if (!response?.isAuthenticated) {
+            sessionStorage.removeItem("token");
+            return false;
+        }
         setIsProfileUpdated(response?.isProfileUpdated);
         return response?.isProfileUpdated;
     };
@@ -126,11 +161,11 @@ const EditProfile = (props) => {
             );
             let response = await login();
             console.log(response);
+            setIsLoading(true);
             if (!response?.isAuthenticated) {
                 console.log(response.message);
                 sessionStorage.removeItem("token");
             } else {
-                setIsLoading(true);
                 if (isProfileUpdated || (await isProfileUpdatedRequest())) {
                     // Call For Register Modal
                     console.log("REGISTER MODAL");
@@ -138,6 +173,10 @@ const EditProfile = (props) => {
                     setIsLoading(false);
                 } else {
                     // Call For Profile Modal
+                    if (!sessionStorage.getItem("token")) {
+                        GAuth();
+                        return;
+                    }
                     console.log("PROFILE MODAL");
                     onEditProfileModalOpen();
                     setIsLoading(false);
@@ -148,6 +187,7 @@ const EditProfile = (props) => {
             console.log("Login Failed");
         },
     });
+
     const [isLoading, setIsLoading] = useState(false);
     const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
 
@@ -239,6 +279,10 @@ const EditProfile = (props) => {
                             setIsLoading(false);
                         } else {
                             // Call For Profile Modal
+                            if (!sessionStorage.getItem("token")) {
+                                GAuth();
+                                return;
+                            }
                             console.log("PROFILE MODAL");
                             onEditProfileModalOpen();
                             setIsLoading(false);

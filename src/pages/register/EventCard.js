@@ -92,6 +92,8 @@ export default function EventCard(props) {
                             gap={2}
                         >
                             <EditProfile
+                                eventType={props.eventType}
+                                eventId={props.eventId}
                                 eventName={props.eventName}
                                 teamSize={props.teamSize}
                                 price={props.price}

@@ -326,6 +326,8 @@ const TechEvents = () => {
             >
                 {data.map((IData) => (
                     <EventCard
+                        eventId={IData.id}
+                        eventType={"TECH"}
                         about={IData.about}
                         show={true}
                         image={IData.image}

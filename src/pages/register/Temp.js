@@ -78,22 +78,18 @@ const Temp = () => {
 
                     <TabPanels>
                         <TabPanel>
-                            1
                             <TechEvents />
                         </TabPanel>
 
                         <TabPanel>
-                            2
                             <NonTechEvents />
                         </TabPanel>
 
                         <TabPanel>
-                            3
                             <Workshop />
                         </TabPanel>
 
                         <TabPanel>
-                            4
                             <ComboEvents />
                         </TabPanel>
                     </TabPanels>

@@ -30,6 +30,8 @@ const ComboEvents = () => {
                 }}
             >
                 <EventCard
+                    eventId={IData.id}
+                    eventType={"DJ NIGHT"}
                     about={IData.about}
                     show={true}
                     image={IData.image}
