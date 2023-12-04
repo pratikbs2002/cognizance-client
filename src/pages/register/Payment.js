@@ -3,7 +3,13 @@ import qrCodeImage from "./paymentQrCode.png";
 import { Text } from "@chakra-ui/react";
 export default function Payment(props) {
     return (
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                overflowY: "scroll",
+            }}
+        >
             <div
                 style={{
                     display: "flex",
@@ -11,6 +17,7 @@ export default function Payment(props) {
                     paddingLeft: "30px",
                     fontWeight: "500",
                     fontSize: "30px",
+                    maxHeight: "25vh",
                     paddingTop: "80px",
                     paddingBottom: "50px",
                 }}
@@ -21,6 +28,7 @@ export default function Payment(props) {
                 style={{
                     display: "flex",
                     width: "100%",
+                    maxHeight: "25vh",
                     justifyContent: "center",
                 }}
             >
