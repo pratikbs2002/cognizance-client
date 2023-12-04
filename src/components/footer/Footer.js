@@ -94,45 +94,28 @@ import contactLogo from "../../assets/footer/contact us.png";
 import address from "../../assets/footer/adderss.png";
 import instagram from "../../assets/footer/instagram.png";
 import facebook from "../../assets/footer/facebook.png";
-
-import React from "react";
+import { React } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+    const navigate = useNavigate();
     return (
         <>
-            <footer
-                style={{ marginTop: "100px" }}
-                id="footer-section"
-            >
+            <footer style={{ marginTop: "100px" }} id="footer-section">
                 <div className="footer_container">
                     <div className="cotent_container">
                         <div className="card_container">
                             <div
                                 className="card"
                                 onClick={() => {
-                                    window.location =
-                                        "mailto:xyz@gmail.com";
+                                    navigate("/contact-us");
                                 }}
-                            >
-                                <div className="card_logo_container">
-                                    <img
-                                        className="logo"
-                                        src={emailLogo}
-                                        alt="email"
-                                    />
-                                    <p>Email</p>
-                                </div>
-                                <span style={{ fontSize: "18px" }}>
-                                    cognizance@charusat.edu.in
-                                </span>
-                            </div>
-                            <div
-                                className="card"
-                                onClick={() => {
-                                    navigator.clipboard.writeText(
-                                        "0-123-4567-89"
-                                    );
-                                    alert("Contact number coppied");
+                                style={{
+                                    height: "10vh",
+                                    width: "20%",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    display: "flex",
                                 }}
                             >
                                 <div className="card_logo_container">
@@ -143,20 +126,21 @@ export default function Footer() {
                                     />
                                     <p>Contact Us</p>
                                 </div>
-                                <span style={{ fontSize: "18px" }}>
-                                    +91 8200778757
-                                </span>
                             </div>
                             <div
                                 className="card"
-                                onClick={() => {
-                                    window.open(
-                                        "https://goo.gl/maps/Y6HdXpp7atfo8RAc6?coh=178571&entry=tt",
-                                        "_blank"
-                                    );
+                                style={{
+                                    height: "50vh",
+                                    width: "40%",
+                                    marginLeft: "5%",
                                 }}
                             >
-                                <div className="card_logo_container">
+                                <div
+                                    className="card_logo_container"
+                                    style={{
+                                        marginBottom: "20px",
+                                    }}
+                                >
                                     <img
                                         className="logo"
                                         src={address}
@@ -164,13 +148,17 @@ export default function Footer() {
                                     />
                                     <p>Address</p>
                                 </div>
-                                <span style={{ fontSize: "18px" }}>
-                                    CHARUSAT Campus, Highway, Off,
-                                    Nadiad - Petlad Rd, Changa,
-                                    Gujarat 388421
-                                </span>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.458099229622!2d72.81789177603518!3d22.59936243198752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e50c43cdea6c7%3A0x5074fe9e0c1c8bd!2sCharotar%20University%20of%20Science%20and%20Technology%20(CHARUSAT)!5e0!3m2!1sen!2sin!4v1701723489178!5m2!1sen!2sin"
+                                    width="100%"
+                                    height="100%"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                ></iframe>
                             </div>
                         </div>
+
                         <div className="social_container">
                             <div
                                 className="social_logo_container"
@@ -181,10 +169,7 @@ export default function Footer() {
                                     );
                                 }}
                             >
-                                <img
-                                    src={instagram}
-                                    alt="instargram"
-                                />
+                                <img src={instagram} alt="instargram" />
                             </div>
                             {/* <div
                 className="social_logo_container"
@@ -201,8 +186,7 @@ export default function Footer() {
                         </div>
                         <div className="rights">
                             <span style={{ fontSize: "18px" }}>
-                                &#169;2024. Charusat. All rights
-                                revserved
+                                &#169;2024. Charusat. All rights revserved
                             </span>
                         </div>
                     </div>

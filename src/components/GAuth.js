@@ -27,6 +27,7 @@ export default function GAuth({ setIsLogin }) {
                 onError={() => {
                     console.log("Login Failed");
                 }}
+                useOneTap
             />
         </>
     );

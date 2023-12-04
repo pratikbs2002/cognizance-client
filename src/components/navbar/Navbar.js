@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Button, Image } from "@chakra-ui/react";
-import CzMainLogo from "../../assets/cog-new-logo.png";
+import CzMainLogo from "../../assets/cz-final-logo.jpg";
 import { Link as CurrentPath, animateScroll as scroll } from "react-scroll";
 import { Link, Outlet } from "react-router-dom";
 import mainbg from "../../assets/main-bg.jpg";
@@ -34,7 +34,7 @@ export default function Navbar() {
                 >
                     <Image
                         src={CzMainLogo}
-                        width="100px"
+                        width="120px"
                         alt="sds"
                         aspectRatio={"auto"}
                         objectFit={"cover"}

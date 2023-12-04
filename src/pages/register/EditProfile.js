@@ -106,7 +106,7 @@ const EditProfile = (props) => {
                 return;
             }
             if (!response?.isEventRegistered) {
-                alert("Event Already Registered");
+                alert("Event is not registered!");
                 return;
             }
             if (response?.isEventRegistered) {
@@ -165,6 +165,7 @@ const EditProfile = (props) => {
             if (!response?.isAuthenticated) {
                 console.log(response.message);
                 sessionStorage.removeItem("token");
+                setIsLoading(false);
             } else {
                 if (isProfileUpdated || (await isProfileUpdatedRequest())) {
                     // Call For Register Modal

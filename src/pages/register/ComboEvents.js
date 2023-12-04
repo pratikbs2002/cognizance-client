@@ -6,7 +6,7 @@ import { Card } from "@chakra-ui/react";
 const ComboEvents = () => {
     const data = [1, 2, 3, 4];
     const IData = {
-        id: 0,
+        id: 34,
         image: DJNight,
         title: "DJ Night",
         description:

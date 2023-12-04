@@ -58,11 +58,11 @@ export default function Committee() {
                                 color="#1c4980"
                                 size="sm"
                             >
-                                Core members
+                                Coordinators
                             </Heading>
                         </Card>
                     </Container>
-                    <Container
+                    {/* <Container
                         padding={0}
                         marginTop={10}
                         maxW={{
@@ -84,7 +84,7 @@ export default function Committee() {
                                 Other members
                             </Heading>
                         </Card>
-                    </Container>
+                    </Container> */}
                 </Card>
             </Container>
         </>

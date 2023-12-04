@@ -24,6 +24,7 @@ const Temp = () => {
                             }}
                             style={{
                                 fontWeight: "bold",
+                                fontSize: "1.2rem",
                                 backgroundColor: "rgba(0, 0, 0, 0.442)",
                                 // border: "1px solid white"
                             }}
@@ -38,6 +39,7 @@ const Temp = () => {
                                 border: "1px solid white",
                             }}
                             style={{
+                                fontSize: "1.2rem",
                                 fontWeight: "bold",
                                 backgroundColor: "rgba(0, 0, 0, 0.442)",
                                 // border: "1px solid white"
@@ -48,6 +50,7 @@ const Temp = () => {
                         <Tab
                             variant="enclosed"
                             style={{
+                                fontSize: "1.2rem",
                                 fontWeight: "bold",
                                 backgroundColor: "rgba(0, 0, 0, 0.442)",
                             }}
@@ -63,6 +66,7 @@ const Temp = () => {
                         <Tab
                             variant="enclosed"
                             style={{
+                                fontSize: "1.2rem",
                                 fontWeight: "bold",
                                 backgroundColor: "rgba(0, 0, 0, 0.442)",
                             }}

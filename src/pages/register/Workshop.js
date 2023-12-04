@@ -13,49 +13,49 @@ import EventCard from "./EventCard";
 const Workshop = () => {
     const data = [
         {
-            id: 0,
+            id: 27,
             image: image1,
             title: "BLOCKCHAIN",
             description:
                 "Technology for creating decentralized ledger systems for various Dataset.Learn the fundamentals, applications, and hands-on skills to navigate the decentralized future",
         },
         {
-            id: 1,
+            id: 28,
             image: image2,
             title: "BLENDER AND BEYOND",
             description:
                 "Unleash your creativity at the Blender and Beyond Workshop! Dive into the world of 3D modeling, animation, and visual effects, as industry experts guide you through powerful techniques.",
         },
         {
-            id: 2,
+            id: 29,
             image: image3,
             title: "CLOUD",
             description:
                 "Unleash your creativity at the Blender and Beyond Workshop! Dive into the world of 3D modeling, animation, and visual effects, as industry experts guide you through powerful techniques.",
         },
         {
-            id: 3,
+            id: 30,
             image: image4,
             title: "SOLID WORKS WITH 3D PRINTING",
             description:
                 "Experience working with SolidWorks, a 3D CAD software which includes modeling, analysis and AMP, Animation and more.",
         },
         {
-            id: 4,
+            id: 31,
             image: image5,
             title: "MACHINO MANIA",
             description:
                 "Get ready for the ultimate frenzy of Machino Mania, a thrilling competition where machines clash in a high-octane showdown! ",
         },
         {
-            id: 5,
+            id: 32,
             image: image6,
             title: "DEMYSTIFYING WEB3",
             description:
                 "Demystify the world of Web3 and discover the limitless possibilities of the decentralized web.",
         },
         {
-            id: 6,
+            id: 33,
             image: image7,
             title: "CABLE AND WIRE TESTING WORKSHOP",
             description:

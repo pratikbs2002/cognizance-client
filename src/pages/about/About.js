@@ -30,15 +30,23 @@ export default function About() {
                     textAlign={{ base: "center", md: "left" }}
                     paddingStart={"25px"}
                     paddingTop={1}
-                    paddingBottom={1}
+                    paddingBottom={10}
+                    paddingLeft={{ base: "0px", md: "100px" }}
                     color="white"
                     size={{ base: "3xl", md: "4xl" }}
                 >
                     About the Event
                 </Heading>
-                <Stack direction={{ base: "column", md: "row" }}>
+                <Stack
+                    direction={{ base: "column", md: "row" }}
+                    alignItems={{ base: "center", md: "center" }}
+                >
                     <Container maxW={{ base: "100%", md: "50%" }}>
-                        <VStack padding={{ base: "2px", md: "10px" }}>
+                        <VStack
+                            padding={{ base: "2px", md: "10px" }}
+                            maxW={"70%"}
+                            marginLeft={"20%"}
+                        >
                             {/* <Image src={aboutImage} alt="About Image"></Image> */}
                             <video
                                 src={aboutVideo}
@@ -66,9 +74,11 @@ export default function About() {
                             </Container>
 
                             <Text
-                                color={"#eeeeee"}
+                                color={"#000033"}
                                 align={"justify"}
+                                maxW={{ base: "100%", md: "60%" }}
                                 fontSize={"20px"}
+                                fontWeight={"600"}
                             >
                                 A technical festival is an event that brings
                                 together technology enthusiasts, students, and
@@ -81,7 +91,7 @@ export default function About() {
                                 attendees.
                             </Text>
                             <Container
-                                maxWidth={"100%"}
+                                maxWidth={"60%"}
                                 alignItems={"center"}
                                 marginTop={10}
                             >
@@ -137,7 +147,7 @@ export default function About() {
                                     </a>
                                 </Stack>
                             </Container>
-                            <Container maxWidth={"100%"} marginTop={10}>
+                            <Container maxWidth={"60%"} marginTop={10}>
                                 <Stack
                                     justifyContent={{
                                         base: "center",
@@ -237,7 +247,7 @@ export default function About() {
                         </Stack>
                     </Container>
                 </Stack>
-                <Container
+                {/* <Container
                     paddingBottom={10}
                     bg={"blackAlpha.100"}
                     marginTop={"50px"}
@@ -254,7 +264,7 @@ export default function About() {
                         Sponsors
                     </Heading>
                     <SponsorMarquee />
-                </Container>
+                </Container> */}
             </Container>
         </>
     );

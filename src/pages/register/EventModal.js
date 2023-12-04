@@ -21,6 +21,7 @@ import {
     UnorderedList,
     Text,
 } from "@chakra-ui/react";
+import "./EventModal.css";
 
 const BasicUsage = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -88,7 +89,13 @@ const BasicUsage = (props) => {
                                 </Box>
 
                                 <Box w={{ base: "100%", md: "65%" }}>
-                                    <Tabs size="md" variant="enclosed">
+                                    <Tabs
+                                        size="md"
+                                        variant="enclosed"
+                                        style={{
+                                            textAlign: "left",
+                                        }}
+                                    >
                                         <TabList mb="1em">
                                             <Tab>About</Tab>
                                             {props.taskEnabled && (

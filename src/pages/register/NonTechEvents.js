@@ -21,7 +21,7 @@ import paintDate from "../../assets/eventImages/paint date.png";
 const NonTechEvents = () => {
     const data = [
         {
-            id: 0,
+            id: 18,
             image: cs2,
             title: "Counter-Strike 2(CS2)",
             description:
@@ -31,48 +31,60 @@ const NonTechEvents = () => {
                 "●	The tournament will consist of a double-elimination bracket.",
                 "●	Series of competitive games of CS2 will be played between two teams, likewise for every participant team",
             ],
-            teamSize: 3,
+            teamSize: 5,
             eventFee: 150,
+            winningPrice: ["Coming Soon"],
             pdfName: "cs2",
         },
         {
-            id: 1,
+            id: 19,
             image: boxCricket,
             title: "Box Cricket",
             description:
                 "Demystify the world of Web3 and discover the limitless possibilities of the decentralized web.",
             about: "Box Cricket is a version of the game of cricket that remains many of the characteristics of the original game but is played for fun in a more controlled environment, making It more accessible to casual players.",
             task: [],
-            teamSize: 3,
+            teamSize: 7,
             eventFee: 150,
+            winningPrice: ["Coming Soon"],
             pdfName: "boxcricket",
         },
         {
-            id: 2,
+            id: 20,
             image: wireLoop,
             title: "Wire Loop Game",
             description:
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
             about: "A wire loop game is a game which involves guiding a metal loop (a 'probe') along a serpentine length of wire without touching the loop to the wire. The loop and wire are connected to a power source in such a way that, if they touch, they form a closed electric circuit. The circuit is connected to a light or sound-emitting device of some sort, so that when the loop and the wire touch, the light-emitting device will light up, and the sound-emitting device will make a sound, traditionally a buzzing noise. In commercial implementations of the game the wire is usually bent along a single axis",
-            task: [],
-            teamSize: 3,
+            task: [
+                "●	Round 1: Time yourself and see how long it takes you to move the loop all the way across the bent wire (buzzing is ok for this round) ",
+                "●	Round 2: Time yourself again. This time, every time it buzzes, add 5 seconds to your time!",
+                "●	Round 3: See if you can move the loop all the way across the bent wire with NO BUZZ!",
+            ],
+            teamSize: 1,
             eventFee: 150,
+            winningPrice: ["Coming Soon"],
             pdfName: "wireloop",
         },
         {
-            id: 3,
+            id: 21,
             image: civilCastle,
             title: "Civil’s CASTLE",
             description:
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
             about: "Join us for an exciting Exclusive Games in Campus! Experience a day of fun challenges and crazy obstacles inspired by the famous TV show. Test your skills and coordination to have a blast with your friends as you tackle hilarious hurdles, big bouncy inflatables, and tricky tasks. It's a day of laughter and adventure for everyone!",
-            task: [],
-            teamSize: 3,
+            task: [
+                "●	Round 1: Put the ball in the box , Eat the cookie.",
+                "●	Round 2: Junk in the trunk , Score the goal",
+                "●	Round 3: Dangerous Curves, Slippery castle ",
+            ],
+            teamSize: 4,
             eventFee: 150,
+            winningPrice: ["Coming Soon"],
             pdfName: "civilcastle",
         },
         {
-            id: 4,
+            id: 22,
             image: squidGame2,
             title: "Squid Game",
             description:
@@ -81,10 +93,11 @@ const NonTechEvents = () => {
             task: [],
             teamSize: 3,
             eventFee: 150,
+            winningPrice: ["Coming Soon"],
             pdfName: "squidgame",
         },
         {
-            id: 5,
+            id: 23,
             image: bgmi,
             title: "BGMI",
             description:
@@ -93,12 +106,18 @@ const NonTechEvents = () => {
                 "Join us for an exhilarating gaming experience in the BattleGrounds Mobile India (BGMI) Championship, where players from across various universities will battle it out for supremacy! Get ready to showcase your skills, strategies, and teamwork as you participate in one of the most exciting mobile e-sports tournaments." +
                 "Don't miss this opportunity to be a part of the BGMI Championship and prove your skills on the battlefield. Get ready for epic battles, nail-biting moments, and unforgettable gaming action! Whether you're a seasoned pro or just starting your BGMI journey, this championship is your chance to shine.",
             task: [],
-            teamSize: 3,
-            eventFee: 150,
+            teamSize: 4,
+            eventFee: 160,
+            winningPrice: [
+                "Total prize pool: Rs. 10,000/-",
+                "   ●	Winner: Rs. 5,000/-",
+                "   ●	Runner up: Rs. 3,000/-",
+                "   ●	 2nd runner up: Rs. 2,000/-",
+            ],
             pdfName: "bgmi",
         },
         {
-            id: 6,
+            id: 24,
             image: boxSoccer,
             title: "Box Soccer",
             description:
@@ -106,11 +125,12 @@ const NonTechEvents = () => {
             about: "A large rectangular area is marked, usually with cones or lines, to create a box. The size of the box can vary depending on the number of players and available space. Two teams are formed, and each team has players sitting inside the designated box. The number of players per team can vary but typically ranges from 3 to 5. The objective is to score goals by kicking the ball with your feet while remaining seated inside the box. Players can pass the ball to their teammates or attempt to shoot directly at the opponents' goal. The ball should remain on the ground during play. Box football offers a unique twist to the traditional game of soccer, as players have to adapt their playing style while seated. It can be a fun and entertaining activity, especially in situations where space or mobility is limited.",
             task: [],
             teamSize: 3,
-            eventFee: 150,
+            eventFee: 100,
+            winningPrice: ["Coming Soon"],
             pdfName: "boxsoccer",
         },
         {
-            id: 7,
+            id: 25,
             image: paintDate,
             title: "Paint Date",
             description:
@@ -124,11 +144,12 @@ const NonTechEvents = () => {
                 "6.	The minimum number of participants is 2 in a group.",
             task: [],
             teamSize: 3,
-            eventFee: 150,
+            eventFee: 100,
+            winningPrice: ["Coming Soon"],
             pdfName: "paintdate",
         },
         {
-            id: 8,
+            id: 26,
             image: ballGun,
             title: "Paint Ball",
             description:
@@ -136,6 +157,7 @@ const NonTechEvents = () => {
             about: "Paintball is a competitive team shooting sport in which players eliminate opponents from play by hitting them with spherical dye-filled gelatin capsules called paintballs that break upon impact. Paintballs are usually shot using low-energy air weapons called paintball markers that are powered by compressed air or carbon dioxide.",
             teamSize: 3,
             eventFee: 150,
+            winningPrice: ["Coming Soon"],
             pdfName: "paintball",
         },
     ];
@@ -165,7 +187,7 @@ const NonTechEvents = () => {
                         price={IData.eventFee}
                         teamSize={IData.teamSize}
                         about={IData.about}
-                        taskEnabled={false}
+                        taskEnabled={true}
                         pdfName={IData.pdfName}
                     />
                 ))}

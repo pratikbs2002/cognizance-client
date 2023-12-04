@@ -21,7 +21,6 @@ export default function Payment(props) {
                 <div
                     className="part1"
                     style={{
-                        borderRight: "2px solid #282b35",
                         display: "flex",
                         width: "50%",
                         alignItems: "center",
@@ -62,7 +61,7 @@ export default function Payment(props) {
                         </div>
                     </div>
                 </div>
-                <div
+                {/* <div
                     className="part2"
                     style={{
                         display: "flex",
@@ -98,7 +97,7 @@ export default function Payment(props) {
                         </div>
                         <div>Scan the QR Code</div>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <div>

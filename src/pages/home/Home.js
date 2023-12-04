@@ -6,6 +6,7 @@ import RocketAnimation from "../../components/rocketAnimation/RocketAnimation";
 import { useNavigate } from "react-router-dom";
 import CSPIT from "../../assets/cspit.png";
 import DEPSTAR from "../../assets/depstar.png";
+import CHARUSAT from "../../assets/CHARUSAT_RGTD_LOGO.webp";
 export default function Home() {
     const navigate = useNavigate();
     return (
@@ -78,38 +79,13 @@ export default function Home() {
                                 fontSize={{ base: "40px", md: "80px" }}
                                 fontWeight={"bold"}
                             >
-                                Cognizance 2024
+                                Cognizance 24
                             </Text>
                         </Container>
-
-                        <Container
-                            display={"flex"}
-                            padding={30}
-                            gap={20}
-                            m={0}
-                            paddingLeft={{ md: "100px" }}
-                        >
-                            <Image
-                                src={CSPIT}
-                                width="90px"
-                                alt="sds"
-                                aspectRatio={"auto"}
-                                objectFit={"cover"}
-                                borderRadius={15}
-                            />
-                            <Image
-                                src={DEPSTAR}
-                                width="90px"
-                                alt="sds"
-                                aspectRatio={"auto"}
-                                objectFit={"cover"}
-                                borderRadius={15}
-                            />
-                        </Container>
-
                         <Container
                             display={"flex"}
                             padding={0}
+                            paddingTop={10}
                             maxWidth={"100%"}
                             alignItems={{ base: "center", md: "flex-start" }}
                             justifyContent={{
@@ -118,15 +94,52 @@ export default function Home() {
                             }}
                             paddingLeft={{ md: "100px" }}
                         >
-                            <Text
+                            <Image
+                                src={CHARUSAT}
+                                height={"7vh"}
+                                alt="sds"
+                                aspectRatio={"auto"}
+                                objectFit={"cover"}
+                            />
+                            {/* <Text
                                 color={"white"}
-                                textAlign={"center"}
+                                textAlign={"left"}
                                 fontSize={{ base: "20px", md: "50px" }}
                                 fontWeight={"bold"}
                             >
-                                Charusat University
-                            </Text>
+                                Charotar University of Science and Technology
+                            </Text> */}
                         </Container>
+                        <Container
+                            display={"flex"}
+                            padding={30}
+                            gap={20}
+                            m={0}
+                            alignItems={{ base: "center", md: "flex-start" }}
+                            justifyContent={{
+                                base: "center",
+                                md: "flex-start",
+                            }}
+                            paddingLeft={{ md: "100px" }}
+                        >
+                            <Image
+                                src={CSPIT}
+                                width="13vh"
+                                alt="sds"
+                                aspectRatio={"auto"}
+                                objectFit={"cover"}
+                                borderRadius={15}
+                            />
+                            <Image
+                                src={DEPSTAR}
+                                width="9.5vh"
+                                alt="sds"
+                                aspectRatio={"auto"}
+                                objectFit={"cover"}
+                                borderRadius={15}
+                            />
+                        </Container>
+
                         <Container
                             display={"flex"}
                             padding={0}
@@ -139,7 +152,7 @@ export default function Home() {
                             paddingLeft={{ md: "100px" }}
                             gap={10}
                             flexDirection={{ base: "column", md: "row" }}
-                            marginTop={"50px"}
+                            marginTop={"30px"}
                         >
                             <Button
                                 width={{ base: "80%", md: "30%" }}
@@ -161,6 +174,7 @@ export default function Home() {
                     <Container
                         display={"flex"}
                         padding={0}
+                        width={{ base: "100%", md: "60%" }}
                         maxWidth={"100%"}
                         alignItems={"center"}
                         justifyContent={"center"}
