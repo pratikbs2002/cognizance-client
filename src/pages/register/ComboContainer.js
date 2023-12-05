@@ -15,6 +15,7 @@ import {
 import { FaQuestion } from "react-icons/fa";
 import Payment from "./Payment";
 export default function ComboContainer() {
+    const [selectedEvents, setSelectedEvents] = React.useState([]);
     return (
         <Container
             maxW={"100%"}
@@ -60,12 +61,16 @@ export default function ComboContainer() {
                             image={DJNight}
                             name="Musical Night"
                             price="100"
+                            selectedEvents={selectedEvents}
+                            setSelectedEvents={setSelectedEvents}
                         />
                         <ComboCard
                             isActive={false}
                             image={DJNight}
                             name="Musical Night"
                             price="100"
+                            selectedEvents={selectedEvents}
+                            setSelectedEvents={setSelectedEvents}
                         />
                     </Container>
                     <Card

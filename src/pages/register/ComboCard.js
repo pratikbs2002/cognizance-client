@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import { Box, Image, Text, Button, useColorModeValue } from "@chakra-ui/react";
 import AddEventModal from "./AddEventModal";
+import EditProfile from "./EditProfile";
 
-const ComboCard = ({ name, image, price, title, isActive }) => {
+const ComboCard = ({
+    name,
+    image,
+    price,
+    title,
+    isActive,
+    selectedEvents,
+    setSelectedEvents,
+}) => {
     const [isTeamRegistered, setIsTeamRegistered] = useState(false);
 
     const boxShadowColor = useColorModeValue(
@@ -27,6 +36,8 @@ const ComboCard = ({ name, image, price, title, isActive }) => {
     ) => {
         console.log("Add event handler called");
         setData({ image, title, price, eventId, eventType, teamSize });
+        console.log(selectedEvents);
+        setSelectedEvents([...selectedEvents, eventId]);
         setActive(true);
     };
 
@@ -36,7 +47,7 @@ const ComboCard = ({ name, image, price, title, isActive }) => {
         <>
             {active ? (
                 <Box
-                    maxW={"250px"}
+                    maxW={"300px"}
                     borderWidth="5px"
                     borderRadius="lg"
                     overflow="hidden"
@@ -65,7 +76,7 @@ const ComboCard = ({ name, image, price, title, isActive }) => {
                     <Text mt={2} color="white">
                         ${isActive ? price : data.price}
                     </Text>
-                    <Button
+                    {/* <Button
                         mt={4}
                         backgroundColor="white"
                         onClick={handleRegisterTeam}
@@ -73,7 +84,44 @@ const ComboCard = ({ name, image, price, title, isActive }) => {
                         w="100%"
                     >
                         {isTeamRegistered ? "Unregister Team" : "Register Team"}
-                    </Button>
+                    </Button> */}
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            marginTop: "5%",
+                        }}
+                    >
+                        <EditProfile
+                            eventType={data.eventType}
+                            eventId={data.eventId}
+                            eventName={data.title}
+                            teamSize={data.teamSize}
+                            price={data.price}
+                            image={data.image}
+                            addEventModal={true}
+                            setIsTeamRegistered={setIsTeamRegistered}
+                        />
+                        {!isActive && (
+                            <Button
+                                backgroundColor="#54cadd"
+                                onClick={() => {
+                                    setActive(!active);
+                                    setSelectedEvents(
+                                        selectedEvents.filter(
+                                            (event) => event !== data.eventId
+                                        )
+                                    );
+                                }}
+                                variant="outline"
+                                marginLeft="5%"
+                                w="50%"
+                            >
+                                Remove Event
+                            </Button>
+                        )}
+                    </div>
                 </Box>
             ) : (
                 <Box
@@ -91,7 +139,10 @@ const ComboCard = ({ name, image, price, title, isActive }) => {
                     alignItems={"center"}
                     justifyContent={"center"}
                 >
-                    <AddEventModal addEventHandler={addEventHandler} />
+                    <AddEventModal
+                        addEventHandler={addEventHandler}
+                        selectedEvents={selectedEvents}
+                    />
                 </Box>
             )}
         </>

@@ -110,7 +110,10 @@ const EditProfile = (props) => {
                 return;
             }
             if (response?.isEventRegistered) {
-                setIsPaymentModalOpen(true);
+                if (props.addEventModal) {
+                    props.setIsTeamRegistered(true);
+                    onEventRegisterModalClose();
+                } else setIsPaymentModalOpen(true);
             }
         }
     };
@@ -461,7 +464,7 @@ const EditProfile = (props) => {
                             <ModalCloseButton />
 
                             <ModalBody>
-                                {!isPaymentModalOpen ? (
+                                {props.addEventModal || !isPaymentModalOpen ? (
                                     <Box>
                                         <div
                                             style={{

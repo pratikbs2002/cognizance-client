@@ -407,28 +407,31 @@ const TechEvents = (props) => {
                     flexWrap: "wrap",
                 }}
             >
-                {data.map((IData) => (
-                    <EventCard
-                        eventId={IData.id}
-                        eventType={"TECH"}
-                        about={IData.about}
-                        show={true}
-                        image={IData.image}
-                        title={IData.title}
-                        description={IData.description}
-                        eventName={IData.title}
-                        department={IData.department}
-                        task={IData.task}
-                        price={IData.eventFee}
-                        teamSize={IData.teamSize}
-                        taskEnabled={true}
-                        winningPrizes={IData.winningPrice}
-                        prizesEnabled={IData.isPrizesEnabled}
-                        pdfName={IData.pdfName}
-                        addEventModal={props.addEventModal}
-                        addEventHandler={props.addEventHandler}
-                    />
-                ))}
+                {data.map(
+                    (IData) =>
+                        !props?.selectedEvents?.includes(IData.id) && (
+                            <EventCard
+                                eventId={IData.id}
+                                eventType={"TECH"}
+                                about={IData.about}
+                                show={true}
+                                image={IData.image}
+                                title={IData.title}
+                                description={IData.description}
+                                eventName={IData.title}
+                                department={IData.department}
+                                task={IData.task}
+                                price={IData.eventFee}
+                                teamSize={IData.teamSize}
+                                taskEnabled={true}
+                                winningPrizes={IData.winningPrice}
+                                prizesEnabled={IData.isPrizesEnabled}
+                                pdfName={IData.pdfName}
+                                addEventModal={props.addEventModal}
+                                addEventHandler={props.addEventHandler}
+                            />
+                        )
+                )}
             </div>
         </>
     );

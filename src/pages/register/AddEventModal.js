@@ -129,6 +129,7 @@ const AddEventModal = (props) => {
                                     addEventModal={true}
                                     addEventHandler={props.addEventHandler}
                                     setAddEventData={props.setAddEventData}
+                                    selectedEvents={props.selectedEvents}
                                 />
                             </ModalBody>
                         </ModalContent>
