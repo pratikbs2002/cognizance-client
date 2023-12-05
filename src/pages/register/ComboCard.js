@@ -3,6 +3,7 @@ import { Box, Image, Text, Button, useColorModeValue } from "@chakra-ui/react";
 import AddEventModal from "./AddEventModal";
 import EditProfile from "./EditProfile";
 import { set } from "lodash";
+import { deleteEvent } from "../../service/eventRegistrationService";
 
 const ComboCard = ({
     name,
@@ -39,14 +40,35 @@ const ComboCard = ({
         eventType,
         teamSize
     ) => {
-        console.log("Add event handler called");
         setData({ image, title, price, eventId, eventType, teamSize });
         setPriceDetails((values) => [...values, { [title]: price }]);
-        console.log(selectedEvents);
         setSelectedEvents([...selectedEvents, eventId]);
         setActive(true);
     };
-    console.log(priceDetails);
+
+    const removeEventHandler = async () => {
+        if (isTeamRegistered) {
+            const response = await deleteEvent(data.eventId);
+            console.log(response);
+            if (!response?.isAuthenticated) {
+                console.log(response.message);
+                sessionStorage.removeItem("token");
+            } else if (response?.isEventDeleted) {
+                setIsTeamRegistered(false);
+                setPriceDetails((values) =>
+                    values.filter(
+                        (value) => Object.keys(value)[0] !== data.title
+                    )
+                );
+                setSelectedEvents(
+                    selectedEvents.filter((event) => event !== data.eventId)
+                );
+                setActive(!active);
+            } else {
+                setIsTeamRegistered(true);
+            }
+        }
+    };
 
     const [active, setActive] = useState(isActive);
     const [data, setData] = useState({});
@@ -83,15 +105,6 @@ const ComboCard = ({
                     <Text mt={2} color="white">
                         ${isActive ? price : data.price}
                     </Text>
-                    {/* <Button
-                        mt={4}
-                        backgroundColor="white"
-                        onClick={handleRegisterTeam}
-                        variant="outline"
-                        w="100%"
-                    >
-                        {isTeamRegistered ? "Unregister Team" : "Register Team"}
-                    </Button> */}
                     <div
                         style={{
                             display: "flex",
@@ -113,21 +126,7 @@ const ComboCard = ({
                         {!isActive && (
                             <Button
                                 backgroundColor="#54cadd"
-                                onClick={() => {
-                                    setActive(!active);
-                                    setPriceDetails((values) =>
-                                        values.filter(
-                                            (value) =>
-                                                Object.keys(value)[0] !==
-                                                data.title
-                                        )
-                                    );
-                                    setSelectedEvents(
-                                        selectedEvents.filter(
-                                            (event) => event !== data.eventId
-                                        )
-                                    );
-                                }}
+                                onClick={removeEventHandler}
                                 variant="outline"
                                 marginLeft="5%"
                                 w="50%"
