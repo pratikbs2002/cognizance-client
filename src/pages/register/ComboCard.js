@@ -2,15 +2,20 @@ import React, { useState } from "react";
 import { Box, Image, Text, Button, useColorModeValue } from "@chakra-ui/react";
 import AddEventModal from "./AddEventModal";
 import EditProfile from "./EditProfile";
+import { set } from "lodash";
 
 const ComboCard = ({
     name,
     image,
     price,
-    title,
+    eventType,
+    teamSize,
+    eventId,
     isActive,
     selectedEvents,
     setSelectedEvents,
+    setPriceDetails,
+    priceDetails,
 }) => {
     const [isTeamRegistered, setIsTeamRegistered] = useState(false);
 
@@ -36,10 +41,12 @@ const ComboCard = ({
     ) => {
         console.log("Add event handler called");
         setData({ image, title, price, eventId, eventType, teamSize });
+        setPriceDetails((values) => [...values, { [title]: price }]);
         console.log(selectedEvents);
         setSelectedEvents([...selectedEvents, eventId]);
         setActive(true);
     };
+    console.log(priceDetails);
 
     const [active, setActive] = useState(isActive);
     const [data, setData] = useState({});
@@ -71,7 +78,7 @@ const ComboCard = ({
                         fontSize="xl"
                         fontWeight="semibold"
                     >
-                        {isActive ? title : data.title}
+                        {isActive ? name : data.title}
                     </Text>
                     <Text mt={2} color="white">
                         ${isActive ? price : data.price}
@@ -94,20 +101,27 @@ const ComboCard = ({
                         }}
                     >
                         <EditProfile
-                            eventType={data.eventType}
-                            eventId={data.eventId}
-                            eventName={data.title}
-                            teamSize={data.teamSize}
-                            price={data.price}
-                            image={data.image}
+                            eventType={isActive ? eventType : data.eventType}
+                            eventId={isActive ? eventId : data.eventId}
+                            eventName={isActive ? name : data.title}
+                            teamSize={isActive ? teamSize : data.teamSize}
+                            price={isActive ? price : data.price}
+                            image={isActive ? image : data.image}
                             addEventModal={true}
-                            setIsTeamRegistered={setIsTeamRegistered}
+                            handleRegisterTeam={handleRegisterTeam}
                         />
                         {!isActive && (
                             <Button
                                 backgroundColor="#54cadd"
                                 onClick={() => {
                                     setActive(!active);
+                                    setPriceDetails((values) =>
+                                        values.filter(
+                                            (value) =>
+                                                Object.keys(value)[0] !==
+                                                data.title
+                                        )
+                                    );
                                     setSelectedEvents(
                                         selectedEvents.filter(
                                             (event) => event !== data.eventId

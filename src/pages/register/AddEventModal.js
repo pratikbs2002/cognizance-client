@@ -18,7 +18,6 @@ import {
     Spinner,
     Image,
 } from "@chakra-ui/react";
-import Temp from "./Temp";
 
 import { CiCirclePlus } from "react-icons/ci";
 import TechEvents from "./TechEvents";
@@ -41,6 +40,12 @@ const AddEventModal = (props) => {
                 alignItems={"center"}
                 justifyContent={"center"}
                 backgroundColor={"rgba(0, 0, 0, 0.442)"}
+                onClick={() => {
+                    setIsLoading(true);
+                    onEventModalOpen();
+                    setIsLoading(false);
+                }}
+                cursor={"pointer"}
             >
                 <div
                     padding={"10px"}
@@ -48,19 +53,18 @@ const AddEventModal = (props) => {
                     width={"50px"}
                     borderRadius={"100%"}
                     // backgroundColor="#54cadd"
-                    color={"black"}
                     display={"flex"}
                     alignItems={"center"}
                     justifyContent={"center"}
                     style={{
                         display: "flex",
                         justifyContent: "center",
+                        flexDirection: "column",
+                        gap: "2%",
                         alignItems: "center",
-                    }}
-                    onClick={() => {
-                        setIsLoading(true);
-                        onEventModalOpen();
-                        setIsLoading(false);
+                        color: "white",
+                        fontSize: "20px",
+                        fontWeight: "500",
                     }}
                     cursor={"pointer"}
                 >
@@ -69,6 +73,7 @@ const AddEventModal = (props) => {
                         cursor={"pointer"}
                         fontSize={"70px"}
                     />
+                    Add Event
                 </div>
             </Box>
             {isLoading ? (

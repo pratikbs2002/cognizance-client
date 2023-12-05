@@ -111,7 +111,7 @@ const EditProfile = (props) => {
             }
             if (response?.isEventRegistered) {
                 if (props.addEventModal) {
-                    props.setIsTeamRegistered(true);
+                    props.handleRegisterTeam();
                     onEventRegisterModalClose();
                 } else setIsPaymentModalOpen(true);
             }

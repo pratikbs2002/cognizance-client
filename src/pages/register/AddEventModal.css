@@ -1,0 +1,10 @@
+.addEventCard {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.addEventCard :hover {
+    cursor: pointer;
+    scale: 1.1 !important;
+}
