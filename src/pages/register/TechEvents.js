@@ -15,6 +15,7 @@ import roboRace from "../../assets/eventImages/robo race.png";
 import codeMania from "../../assets/eventImages/code mania.png";
 import artTech from "../../assets/eventImages/artTech.png";
 import networkHunting from "../../assets/eventImages/network hunting.png";
+import healthyswitching from "../../assets/eventImages/healthySwitching.png";
 import keyMaster from "../../assets/eventImages/key master.jpg";
 import uiux from "../../assets/eventImages/ui ux.jpeg";
 import civilSaga from "../../assets/eventImages/civil saga.png";
@@ -112,16 +113,17 @@ const TechEvents = (props) => {
         },
         {
             id: 5,
-            image: networkHunting,
+            image: healthyswitching,
             title: "Healthy Switching",
             department: "CSPIT: CE",
             description:
                 "Technology for creating decentralized ledger systems for various Dataset.Learn the fundamentals, applications, and hands-on skills to navigate the decentralized future",
-            about: "Welcome to the Amazing Network Challenge, an exhilarating competition designed to test your IP Address knowledge and network connections. This two-round event promises an immersive experience filled with puzzles, teamwork, and networking challenges. Get ready to embark on an unforgettable adventure!",
+            about: "The event is a two-day programming competition designed to test participants puzzle solving knowledge, coding skills, and debugging abilities. It consists of three main segments: Maze game, Coding, and Debugging.",
             task: [
                 "●	Task 1: Maze Game.",
                 "●	Task 2: Solve the question and get clues and combines all clues and find IP address.   ",
                 "●	Task 3: Solve the code and reach to final location.",
+                "●	Task 4: Coding round but with a minor change that at the end of every switch the team participant will have to drink a carbonated beverage within a given set of time. ",
             ],
             contact: "",
             teamSize: 3,

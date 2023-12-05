@@ -8,8 +8,8 @@ import EventCard from "./EventCard";
 // import image6 from "../../assets/eventRegister/register6.jpeg";
 // import image7 from "../../assets/eventRegister/register7.jpeg";
 
-import bgmi from "../../assets/eventImages/BGMI.jpg";
-import cs2 from "../../assets/eventImages/Counter-Strike-2.jpg";
+import bgmi from "../../assets/eventImages/bgmi.png";
+import cs2 from "../../assets/eventImages/CS2.png";
 import boxCricket from "../../assets/eventImages/box cricket 1.png";
 import civilCastle from "../../assets/eventImages/civil's castle.jpeg";
 import squidGame2 from "../../assets/eventImages/Squid Game2.jpeg";

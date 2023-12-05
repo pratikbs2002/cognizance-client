@@ -4,6 +4,7 @@ import Workshop from "./Workshop";
 import TechEvents from "./TechEvents";
 import NonTechEvents from "./NonTechEvents";
 import ComboEvents from "./ComboEvents";
+import MusicalNight from "./MusicalNight";
 
 const Temp = (props) => {
     return (
@@ -81,7 +82,26 @@ const Temp = (props) => {
                                     border: "1px solid white",
                                 }}
                             >
-                                Combo Events & DJ Night
+                                Musical Night
+                            </Tab>
+                        )}
+
+                        {!props.addEventModal && (
+                            <Tab
+                                color={"white"}
+                                variant="enclosed"
+                                style={{
+                                    fontSize: "1.2rem",
+                                    fontWeight: "bold",
+                                    backgroundColor: "rgba(0, 0, 0, 0.442)",
+                                }}
+                                _selected={{
+                                    color: "white",
+                                    bg: "#161d37 !important",
+                                    border: "1px solid white",
+                                }}
+                            >
+                                Combo Events
                             </Tab>
                         )}
                     </TabList>
@@ -110,6 +130,11 @@ const Temp = (props) => {
                                 addEventHandler={props.addEventHandler}
                             />
                         </TabPanel>
+                        {!props.addEventModal && (
+                            <TabPanel>
+                                <MusicalNight />
+                            </TabPanel>
+                        )}
                         {!props.addEventModal && (
                             <TabPanel>
                                 <ComboEvents />
