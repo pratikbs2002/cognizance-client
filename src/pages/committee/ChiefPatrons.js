@@ -17,22 +17,30 @@ export default function ChiefPatrons() {
             id: 1,
             name: "Shri Surendra M. Patel",
             description:
-                "President, Kelavani Mandal and CHARUSAT, Gujarat, India [Chief Patron]",
+                "President, Kelavani Mandal and CHARUSAT, Gujarat, India",
             profile: _1,
         },
         {
             id: 2,
             name: "Dr. M. C. Patel",
             description:
-                "Hon. Secretary, Kelavani Mandal, Matrusanstha & CHRF, Gujarat, India [Chief Patron]",
+                "Hon. Secretary, Kelavani Mandal, Matrusanstha & CHRF, Gujarat, India",
             profile: _2,
         },
     ];
 
     return (
         <>
-
-            <Container marginTop={"20px"} padding={"10px"} maxW={"100%"} display={"flex"} flexWrap={"wrap"} gap={"20px"} alignItems={"center"} justifyContent={"center"}>
+            <Container
+                marginTop={"20px"}
+                padding={"10px"}
+                maxW={"100%"}
+                display={"flex"}
+                flexWrap={"wrap"}
+                gap={"20px"}
+                alignItems={"center"}
+                justifyContent={"center"}
+            >
                 {arr.map((index) => (
                     <Card
                         background={"white"}

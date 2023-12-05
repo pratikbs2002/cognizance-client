@@ -21,18 +21,24 @@ export default function Conveners() {
         {
             id: 6,
             name: "Dr. Trushit Upadhyaya",
-            description:
-                "Principal, CSPIT, CHARUSAT, Gujarat, India [Convener]",
+            description: "Principal, CSPIT, CHARUSAT, Gujarat, India",
             profile: _6,
         },
     ];
 
     return (
         <>
-            <Container padding={"10px"} maxW={"100%"} display={"flex"} flexWrap={"wrap"} gap={"20px"} alignItems={"center"} justifyContent={"center"}>
+            <Container
+                padding={"10px"}
+                maxW={"100%"}
+                display={"flex"}
+                flexWrap={"wrap"}
+                gap={"20px"}
+                alignItems={"center"}
+                justifyContent={"center"}
+            >
                 {arr.map((index) => (
                     <Card
-
                         background={"white"}
                         width={"300px"}
                         height={"300px"}

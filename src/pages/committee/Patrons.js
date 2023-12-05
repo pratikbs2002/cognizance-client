@@ -15,14 +15,22 @@ export default function Patrons() {
         {
             id: 3,
             name: "Dr. R. V. Upadhyay",
-            description: "Provost, CHARUSAT, India [Patron]",
+            description: "Provost, CHARUSAT, India",
             profile: _3,
         },
     ];
 
     return (
         <>
-            <Container padding={"10px"} maxW={"100%"} display={"flex"} flexWrap={"wrap"} gap={"20px"} alignItems={"center"} justifyContent={"center"}>
+            <Container
+                padding={"10px"}
+                maxW={"100%"}
+                display={"flex"}
+                flexWrap={"wrap"}
+                gap={"20px"}
+                alignItems={"center"}
+                justifyContent={"center"}
+            >
                 {arr.map((index) => (
                     <Card
                         background={"white"}

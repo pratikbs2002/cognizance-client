@@ -15,14 +15,22 @@ export default function CoPatrons() {
         {
             id: 4,
             name: "Dr. Atul Patel",
-            description: "Registrar, CHARUSAT, India [Co-Patron]",
+            description: "Registrar, CHARUSAT, India",
             profile: _4,
         },
     ];
 
     return (
         <>
-            <Container padding={"10px"} maxW={"100%"} display={"flex"} flexWrap={"wrap"} gap={"20px"} alignItems={"center"} justifyContent={"center"}>
+            <Container
+                padding={"10px"}
+                maxW={"100%"}
+                display={"flex"}
+                flexWrap={"wrap"}
+                gap={"20px"}
+                alignItems={"center"}
+                justifyContent={"center"}
+            >
                 {arr.map((index) => (
                     <Card
                         background={"white"}
