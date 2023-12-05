@@ -77,7 +77,7 @@ export default function Navbar() {
                         </li>
                         <li>
                             <CurrentPath to="event-section" smooth={true}>
-                                Event
+                                About
                             </CurrentPath>
                         </li>
                         {/* <li>
