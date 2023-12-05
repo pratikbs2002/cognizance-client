@@ -138,7 +138,7 @@ export default function CommitteeMembers() {
                 rewindWithAnimation={false}
                 rtl={false}
                 shouldResetAutoplay
-                showDots={true}
+                showDots={false}
                 sliderClass=""
                 slidesToSlide={1}
                 swipeable
