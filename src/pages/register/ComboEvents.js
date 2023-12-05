@@ -3,6 +3,7 @@ import EventCard from "./EventCard";
 import DJNight from "../../assets/eventImages/dj.png";
 import { Card } from "@chakra-ui/react";
 import ComboCard from "./ComboCard";
+import ComboContainer from "./ComboContainer";
 
 
 
@@ -123,7 +124,7 @@ const ComboEvents = () => {
                     );
                 })}
             </div>
-            <ComboCard image={DJNight} name="DJNight" price="100" />
+            <ComboContainer />
         </>
     );
 };

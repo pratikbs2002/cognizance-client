@@ -24,7 +24,7 @@ const ComboCard = ({ name, image, price }) => {
 
     return (
         <Box
-            maxW={{ base: '100%', sm: '80%', md: '48%', lg: '30%' }}
+            maxW={"250px"}
             borderWidth="5px"
             borderRadius="lg"
             overflow="hidden"

@@ -46,11 +46,12 @@ export default function About() {
                     <Container maxW={{ base: "100%", md: "50%" }}>
                         <VStack
                             padding={{ base: "2px", md: "10px" }}
-                            maxW={"70%"}
-                            marginLeft={"20%"}
+                            maxW={{ base: "100%", md: "100%" }}
+                            marginBottom={{ base: 6, md: 0 }}
                         >
                             {/* <Image src={aboutImage} alt="About Image"></Image> */}
                             <video
+                                style={{ maxWidth: "100%", height: "auto" }}
                                 src={aboutVideo}
                                 alt="About Video"
                                 autoPlay
