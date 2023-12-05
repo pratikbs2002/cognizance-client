@@ -104,8 +104,7 @@ const NonTechEvents = (props) => {
             id: 23,
             image: cs2,
             title: "Money Heist: The Treasure Hunt Caper",
-            description:
-                "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
+            description: "",
             about: `"Money Heist: The Treasure Hunt Caper" is an exciting real-life treasure hunt experience 
             inspired by the popular TV series "Money Heist." In this treasure hunt game, players 
             immerse themselves in the world of heists, solving puzzles, deciphering codes, and
@@ -124,7 +123,7 @@ const NonTechEvents = (props) => {
                 "● Hidden within the blueprint are clues or symbols that lead to the actual location of the hidden treasure.",
             ],
             teamSize: 4,
-            eventFee: 150,
+            eventFee: 100,
             winningPrice: ["●	Winner: Rs. 3,000/-", "●	Runner up: Rs. 1,500/-"],
             isPrizesEnabled: true,
             pdfName: "moneyheist",
@@ -141,7 +140,7 @@ const NonTechEvents = (props) => {
                 "●	Series of competitive games of CS2 will be played between two teams, likewise for every participant team",
             ],
             teamSize: 5,
-            eventFee: 250,
+            eventFee: 50,
             winningPrice: ["●	Winner: Rs. 5,000/-", "●	Runner up: Rs. 3,000/-"],
             isPrizesEnabled: true,
             pdfName: "cs2",
@@ -151,8 +150,7 @@ const NonTechEvents = (props) => {
             id: 25,
             image: paintDate,
             title: "Paint Date",
-            description:
-                "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
+            description: "",
             about:
                 "1.	The participants will be given 2 6x6 inch canvas boards." +
                 "2.	They are given freedom to paint anything." +
@@ -163,25 +161,29 @@ const NonTechEvents = (props) => {
             task: [],
             teamSize: 3,
             eventFee: 100,
-            winningPrice: ["Coming Soon"],
-            isPrizesEnabled: false,
+            winningPrice: ["●	Winner: Rs. 1,500/-", "●	Runner up: Rs. 1,000/-"],
+            isPrizesEnabled: true,
             pdfName: "paintdate",
         },
         {
             id: 26,
             image: wireLoop,
             title: "Wire Loop Game",
-            description:
-                "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
-            about: "A wire loop game is a game which involves guiding a metal loop (a 'probe') along a serpentine length of wire without touching the loop to the wire. The loop and wire are connected to a power source in such a way that, if they touch, they form a closed electric circuit. The circuit is connected to a light or sound-emitting device of some sort, so that when the loop and the wire touch, the light-emitting device will light up, and the sound-emitting device will make a sound, traditionally a buzzing noise. In commercial implementations of the game the wire is usually bent along a single axis",
+            description: "",
+            about: `The wire loop game is a physical skill game that challenges players to navigate a 
+            metal loop along a twisted wire without touching the wire. The goal is to guide the 
+            metal loop from the beginning to the end without allowing the loop to come into 
+            touch with the wire. If the loop comes into contact with the wire at any time, the 
+            player has made a mistake.`,
             task: [
-                "●	Round 1: Time yourself and see how long it takes you to move the loop all the way across the bent wire (buzzing is ok for this round) ",
-                "●	Round 2: Time yourself again. This time, every time it buzzes, add 5 seconds to your time!",
-                "●	Round 3: See if you can move the loop all the way across the bent wire with NO BUZZ!",
+                `● Using a handheld device, guide the loop from the starting point to the finishing point without triggering the buzzer or light. Test your hand-eye coordination and steady hand as you manoeuvre through the wire's twists and turns. `,
+                `● Compete against yourself and others to complete the challenge with the fewest mistakes or in the given time.`,
+                `● There will be one rest place between the beginning and ending ends of the wire loop.`,
+                `● Participants are permitted to commit three mistakes; if you make more than three, you are disqualified from receiving the prize.`,
             ],
             teamSize: 1,
             eventFee: 20,
-            winningPrice: ["Coming Soon"],
+            winningPrice: ["●	Winner: Rs. 1,000/-", "●	Runner up: Rs. 500/-"],
             isPrizesEnabled: false,
             pdfName: "wireloop",
         },
@@ -189,29 +191,44 @@ const NonTechEvents = (props) => {
             id: 27,
             image: squidGame2,
             title: "Squid Game",
-            description:
-                "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
+            description: "",
             about: "Our college is bringing the sensation of the hit series 'Squid Game' to life with an adrenaline-pumping event. Join us for an action-packed experience that features three challenging rounds: 'Human Node', 'Tricky Lights', and 'Twisted Snakes'. Participants will be pushed to their limits as they navigate a world of competition, strategy, and entertainment. Can you outsmart your opponents, complete tasks under pressure, and emerge as a champion? Get ready to test your skill and courage in our thrilling Squid Game event!",
-            task: [],
-            teamSize: 3,
+            task: [
+                `● Task 1: Prepare teams of 4 members in the 1st Round.`,
+                `● Task 2: Select winners in each round.`,
+                `● Task 3: Final round who are selected from out of these. `,
+            ],
+            teamSize: 1,
             eventFee: 150,
-            winningPrice: ["Coming Soon"],
-            isPrizesEnabled: false,
+            winningPrice: ["●	Winner: Rs. 2,500/-", "●	Runner up: Rs. 2,000/-"],
+            isPrizesEnabled: true,
             pdfName: "squidgame",
         },
         {
             id: 28,
             image: squidGame2,
-            title: "Lost in Space",
-            description:
-                "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
-            about: "Our college is bringing the sensation of the hit series 'Squid Game' to life with an adrenaline-pumping event. Join us for an action-packed experience that features three challenging rounds: 'Human Node', 'Tricky Lights', and 'Twisted Snakes'. Participants will be pushed to their limits as they navigate a world of competition, strategy, and entertainment. Can you outsmart your opponents, complete tasks under pressure, and emerge as a champion? Get ready to test your skill and courage in our thrilling Squid Game event!",
-            task: [],
-            teamSize: 3,
+            title: "Galactic Quest: Lost in Space Adventure",
+            description: "",
+            about: `Teams (or individuals) embark on a mission to navigate through the vastness of space and return safely to Earth. Along the way, they'll encounter challenges and make decisions that will determine their fate.`,
+            task: [
+                `1. Cosmic Puzzle Relay:`,
+                `● Set up a series of puzzles related to space and astronomy.`,
+                `● Blindfold half of each team and have the other half guide them through the puzzle relay.`,
+                `● Each correct puzzle solved earns the team a resource token.`,
+                `2. Black Hole Obstacle Course:`,
+                `● Create an obstacle course with different challenges, representing the hazards of a black hole.`,
+                `● Blindfold the entire team and set a time limit for them to navigate through the course.`,
+                `● Time penalties or loss of points for each obstacle not successfully overcome.`,
+                `3. Alien Communication Challenge:`,
+                `● Introduce "alien" facilitators who speak in a made-up language.`,
+                `● Teams must decipher the language by solving a series of riddles or puzzles.`,
+                `● The quicker they communicate with the aliens, the more resource tokens they earn.`,
+            ],
+            teamSize: 4,
             eventFee: 150,
-            winningPrice: ["Coming Soon"],
-            isPrizesEnabled: false,
-            pdfName: "squidgame",
+            winningPrice: ["●	Winner: Rs. 3,000/-", "●	Runner up: Rs. 1,500/-"],
+            isPrizesEnabled: true,
+            pdfName: "galacticquest",
         },
         {
             id: 29,
@@ -219,13 +236,21 @@ const NonTechEvents = (props) => {
             title: "Takeshis Chamber",
             description:
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
-            about: "Our college is bringing the sensation of the hit series 'Squid Game' to life with an adrenaline-pumping event. Join us for an action-packed experience that features three challenging rounds: 'Human Node', 'Tricky Lights', and 'Twisted Snakes'. Participants will be pushed to their limits as they navigate a world of competition, strategy, and entertainment. Can you outsmart your opponents, complete tasks under pressure, and emerge as a champion? Get ready to test your skill and courage in our thrilling Squid Game event!",
-            task: [],
-            teamSize: 3,
-            eventFee: 150,
+            about: `Join us for an exciting Exclusive Games in Campus! Experience a day of fun challenges and 
+            crazy obstacles inspired by the famous TV show. Test your skills and coordination to have a 
+            blast with your friends as you tackle hilarious hurdles, big bouncy inflatables, and tricky tasks. 
+            It's a day of laughter and adventure for everyone!`,
+            task: [
+                `●	Task 1: Put the ball in the box, Eat the cookie.`,
+                `●	Task 2: Junk in the trunk, Score the goal`,
+                `●	Task 3: Dangerous Curves, Slippery castle `,
+                `●	All the tasks will be having their own rules`,
+            ],
+            teamSize: 4,
+            eventFee: 200,
             winningPrice: ["Coming Soon"],
             isPrizesEnabled: false,
-            pdfName: "squidgame",
+            pdfName: "takeshischamber",
         },
         // {
         //     id: 19,
