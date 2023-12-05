@@ -202,7 +202,7 @@ const TechEvents = (props) => {
         {
             id: 9,
             image: rollerCoaster,
-            title: "Roller Coster",
+            title: "Roller Coaster",
             department: "CSPIT: ME",
             description:
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
