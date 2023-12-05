@@ -91,7 +91,7 @@ export default function Register() {
             backgroundColor: "rgba(0, 0, 0, 0.442)"
           }}
         >
-          <u>Event Registrations</u>
+          Event Registrations
         </div>
 
         <div

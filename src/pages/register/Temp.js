@@ -16,6 +16,9 @@ const Temp = () => {
                 <Tabs isFitted variant="enclosed">
                     <TabList mb="1em">
                         <Tab
+                            color={"white"}
+
+
                             variant="enclosed"
                             _selected={{
                                 color: "white",
@@ -32,6 +35,9 @@ const Temp = () => {
                             Technical Events
                         </Tab>
                         <Tab
+
+
+                            color={"white"}
                             variant="enclosed"
                             _selected={{
                                 color: "white",
@@ -48,6 +54,8 @@ const Temp = () => {
                             Non-Technical Events
                         </Tab>
                         <Tab
+
+                            color={"white"}
                             variant="enclosed"
                             style={{
                                 fontSize: "1.2rem",
@@ -64,6 +72,7 @@ const Temp = () => {
                         </Tab>
 
                         <Tab
+                            color={"white"}
                             variant="enclosed"
                             style={{
                                 fontSize: "1.2rem",

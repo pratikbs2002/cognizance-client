@@ -38,6 +38,8 @@ export default function About() {
                     About the Event
                 </Heading>
                 <Stack
+                    padding={"10px"}
+                    backgroundColor={"rgba(0, 0, 0, 0.442)"}
                     direction={{ base: "column", md: "row" }}
                     alignItems={{ base: "center", md: "center" }}
                 >
@@ -74,25 +76,24 @@ export default function About() {
                             </Container>
 
                             <Text
-                                color={"#000033"}
+                                color={"white"}
                                 align={"justify"}
-                                maxW={{ base: "100%", md: "60%" }}
+                                maxW={{ base: "100%", md: "100%" }}
                                 fontSize={"20px"}
                                 fontWeight={"600"}
                             >
-                                A technical festival is an event that brings
-                                together technology enthusiasts, students, and
-                                professionals to showcase the latest
-                                advancements and innovations in the field of
-                                science, engineering, and technology. These
-                                events often feature competitions, workshops,
-                                seminars, and exhibitions aimed at fostering
-                                learning, creativity, and collaboration among
+                                A technical festival is an event that brings together technology
+                                enthusiasts, students, and professionals to showcase the latest
+                                advancements and innovations in the field of science,
+                                engineering, and technology. These events often feature
+                                competitions, workshops, seminars, and exhibitions aimed at
+                                fostering learning, creativity, and collaboration among
                                 attendees.
                             </Text>
                             <Container
-                                maxWidth={"60%"}
-                                alignItems={"center"}
+                                maxWidth={{ base: "100%", md: "60%" }}
+                                alignItems={"flex-end"}
+                                display={"flex"}
                                 marginTop={10}
                                 marginInline={0}
                             >
@@ -103,26 +104,18 @@ export default function About() {
                                     direction={{ base: "column", md: "row" }}
                                     gap={{ base: 2, md: 10 }}
                                 >
-                                    <a
-                                        href="pdfs/cz23brochure.pdf"
-                                        target="_blank"
-                                        download
-                                    >
+                                    <a href="pdfs/cz23brochure.pdf" target="_blank" download>
                                         <Button
                                             width={"150px"}
                                             leftIcon={<HiDownload />}
                                             backgroundColor="#54cadd"
-                                            // color="#a33aa3"
-                                            // variant={"solid"}
+                                        // color="#a33aa3"
+                                        // variant={"solid"}
                                         >
                                             Magazine
                                         </Button>
                                     </a>
-                                    <a
-                                        href="pdfs/cz23brochure.pdf"
-                                        target="_blank"
-                                        download
-                                    >
+                                    <a href="pdfs/cz23brochure.pdf" target="_blank" download>
                                         <Button
                                             width={"150px"}
                                             leftIcon={<HiDownload />}
@@ -132,27 +125,9 @@ export default function About() {
                                             Brochure
                                         </Button>
                                     </a>
-                                    <a
-                                        href="pdfs/cz23brochure.pdf"
-                                        target="_blank"
-                                        download
-                                    >
-                                        <Button
-                                            width={"150px"}
-                                            leftIcon={<HiDownload />}
-                                            backgroundColor="#54cadd"
-                                            variant={"solid"}
-                                        >
-                                            Banner
-                                        </Button>
-                                    </a>
                                 </Stack>
                             </Container>
-                            <Container
-                                maxWidth={"60%"}
-                                marginTop={10}
-                                marginInline={0}
-                            >
+                            <Container maxWidth={"100%"} marginTop={10} marginInline={0}>
                                 <Stack
                                     justifyContent={{
                                         base: "center",
@@ -183,22 +158,12 @@ export default function About() {
                                                             alt="count icon"
                                                         />
                                                         <Stack
-                                                            justifyContent={
-                                                                "center"
-                                                            }
-                                                            alignItems={
-                                                                "flex-start"
-                                                            }
+                                                            justifyContent={"center"}
+                                                            alignItems={"flex-start"}
                                                             direction={"column"}
                                                         >
-                                                            <Count
-                                                                countValue={
-                                                                    1000
-                                                                }
-                                                            />
-                                                            <Text>
-                                                                Total Visitors
-                                                            </Text>
+                                                            <Count countValue={1000} />
+                                                            <Text>Total Visitors</Text>
                                                         </Stack>
                                                     </Stack>
                                                 </Card>
@@ -224,23 +189,12 @@ export default function About() {
                                                             alt="count icon"
                                                         />
                                                         <Stack
-                                                            justifyContent={
-                                                                "center"
-                                                            }
-                                                            alignItems={
-                                                                "flex-start"
-                                                            }
+                                                            justifyContent={"center"}
+                                                            alignItems={"flex-start"}
                                                             direction={"column"}
                                                         >
-                                                            <Count
-                                                                countValue={
-                                                                    10000
-                                                                }
-                                                            />
-                                                            <Text>
-                                                                Total
-                                                                Registration
-                                                            </Text>
+                                                            <Count countValue={10000} />
+                                                            <Text>Total Registration</Text>
                                                         </Stack>
                                                     </Stack>
                                                 </Card>
@@ -251,7 +205,7 @@ export default function About() {
                             </Container>
                         </Stack>
                     </Container>
-                </Stack>
+                </Stack >
                 {/* <Container
                     paddingBottom={10}
                     bg={"blackAlpha.100"}
@@ -270,7 +224,7 @@ export default function About() {
                     </Heading>
                     <SponsorMarquee />
                 </Container> */}
-            </Container>
+            </Container >
         </>
     );
 }
