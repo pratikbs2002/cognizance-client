@@ -3,89 +3,56 @@ import React from "react";
 import profileImage from "../../assets/committee_photo/p1.png";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import _1 from "../../assets/committee_photo/1. VijayPanchal.webp";
-import _2 from "../../assets/committee_photo/2.dr_chirag-patel.png";
-import _3 from "../../assets/committee_photo/3. NilayPatel.jpg";
-import _4 from "../../assets/committee_photo/AmitThakkar.webp";
-import _5 from "../../assets/committee_photo/ParthShah.webp";
-import _6 from "../../assets/committee_photo/UpeshSir.webp";
-import _7 from "../../assets/committee_photo/NiravBhatt.webp";
-import _8 from "../../assets/committee_photo/nikita_mam.jfif";
-// import _9 from "../../assets/committee_photo/9. DweepnaGarg.jpg";
+import _1 from "../../assets/committee_photo/1.SurendraSir.png";
+import _2 from "../../assets/committee_photo/2.Dr M C Patel.jpeg";
+import _3 from "../../assets/committee_photo/3.Provost_RVU1.webp";
+import _4 from "../../assets/committee_photo/4.AP1.png";
+import _5 from "../../assets/committee_photo/5.VC1.png";
+import _6 from "../../assets/committee_photo/6.TU1.png";
 
 export default function CoreTeam() {
     const arr = [
         {
-            id: 0,
-            name: "Dr. V. R. Panchal",
+            id: 1,
+            name: "Shri Surendra M. Patel",
             description:
-                "Professor and Head, Civil Engineering Department, CSPIT, CHARUSAT, India",
+                "President, Kelavani Mandal and CHARUSAT, Gujarat, India [Chief Patron]",
             profile: _1,
         },
         {
-            id: 1,
-            name: "Dr. Chirag Patel",
+            id: 2,
+            name: "Dr. M. C. Patel",
             description:
-                "Associate Professor and Head, Computer Science and Engineering Department, DEPSTAR, CHARUSAT, India",
+                "Hon. Secretary, Kelavani Mandal, Matrusanstha & CHRF, Gujarat, India [Chief Patron]",
             profile: _2,
         },
         {
-            id: 2,
-            name: "Dr. Nilay Patel",
-            description:
-                "Head of the Department, Department of Electrical Engineering, CSPIT, CHARUSAT, India",
+            id: 3,
+            name: "Dr. R. V. Upadhyay",
+            description: "Provost, CHARUSAT, India [Patron]",
             profile: _3,
         },
         {
-            id: 3,
-            name: "Dr. Amit Thakkar",
-            description:
-                "Head of the Department, Department of Computer Science & Engineering, CSPIT, CHARUSAT, India",
+            id: 4,
+            name: "Dr. Atul Patel",
+            description: "Registrar, CHARUSAT, India [Co-Patron]",
             profile: _4,
         },
         {
-            id: 4,
-            name: "Dr. Parth Shah",
-            description:
-                "Department of Information Technology, CSPIT, CHARUSAT, India",
+            id: 5,
+            name: "Dr. Vijay Chaudhary",
+            description: "FTE, CHARUSAT, India [Convener]",
             profile: _5,
         },
         {
-            id: 5,
-            name: "Dr. Upesh Patel",
+            id: 6,
+            name: "Dr. Trushit Upadhyaya",
             description:
-                "Head of the Department, Department of Electronics & Communication Engineering, CSPIT, CHARUSAT, India",
+                "Principal, CSPIT, CHARUSAT, Gujarat, India [Convener]",
             profile: _6,
         },
-        {
-            id: 6,
-            name: "Dr. Nirav Bhatt",
-            description:
-                "Head of the Department, Department of AI & ML Engineering, CSPIT, CHARUSAT, , India",
-            profile: _7,
-        },
-        {
-            id: 7,
-            name: "Dr. Nikita Bhatt",
-            description:
-                "Head of the Department, Department of Computer Engineering, CSPIT, CHARUSAT, India",
-            profile: _8,
-        },
-        {
-            id: 8,
-            name: "Dr. Dweepna Garg",
-            description:
-                "Head of the Department, Department of Computer Engineering, DEPSTAR, CHARUSAT, India",
-            profile: profileImage,
-        },
-        {
-            id: 9,
-            name: "Dr. Amit Nayak",
-            description:
-                "Head of the Department, Department of Information Technology Department, DEPSTAR, CHARUSAT, India",
-            profile: profileImage,
-        },
     ];
+
     return (
         <>
             <Carousel
