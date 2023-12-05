@@ -6,65 +6,8 @@ import ComboCard from "./ComboCard";
 import ComboContainer from "./ComboContainer";
 
 const ComboEvents = () => {
-    const data = [1, 2, 3, 4];
-    const IData = {
-        id: 34,
-        image: MusicalNight,
-        title: "Musical Night",
-        description:
-            "Join us at the college function's electrifying Musical Night for an evening of beats, dance, and celebration!",
-        task: [""],
-        contact: "",
-        about: "Experience an electrifying Musical Night at our college function, featuring pulsating beats, vibrant lights, and an atmosphere brimming with energy that promises an unforgettable evening of music and dance.",
-        teamSize: 1,
-        eventFee: 150,
-    };
     return (
         <>
-            <Container
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                }}
-                fontWeight={"800"}
-                color={"white"}
-                fontSize={"40px"}
-                width={"100%"}
-                maxW={"100%"}
-                textAlign={"center"}
-            >
-                <Text width={"100%"} maxW={"100%"}>
-                    Musical Night Registration
-                </Text>
-            </Container>
-
-            <div
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "white",
-                    fontWeight: "600",
-                    flexWrap: "wrap",
-                }}
-            >
-                <EventCard
-                    eventId={IData.id}
-                    eventType={"DJ NIGHT"}
-                    about={IData.about}
-                    show={true}
-                    image={IData.image}
-                    title={IData.title}
-                    description={IData.description}
-                    eventName={IData.title}
-                    task={IData.task}
-                    price={IData.eventFee}
-                    teamSize={IData.teamSize}
-                    taskEnabled={false}
-                />
-            </div>
-
             <ComboContainer />
         </>
     );
