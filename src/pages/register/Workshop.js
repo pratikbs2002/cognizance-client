@@ -17,7 +17,7 @@ import EventCard from "./EventCard";
 const Workshop = (props) => {
     const data = [
         {
-            id: 27,
+            id: 30,
             image: blockchain,
             title: "Blockchain",
             description:
@@ -31,42 +31,42 @@ const Workshop = (props) => {
         //         "Unleash your creativity at the Blender and Beyond Workshop! Dive into the world of 3D modeling, animation, and visual effects, as industry experts guide you through powerful techniques.",
         // },
         {
-            id: 28,
+            id: 31,
             image: Aws,
             title: "AWS Cloud",
             description:
                 "Embark on an immersive learning experience and gain comprehensive expertise to revolutionize your capabilities within the dynamic realm of AWS Cloud at our transformative and hands-on workshop.",
         },
         {
-            id: 29,
+            id: 32,
             image: CyberSecurity,
             title: "Cyber Security",
             description:
                 "Explore the intricate world of Cyber Security in our comprehensive workshop, where cutting-edge techniques and hands-on learning converge to fortify your defenses and safeguard the digital landscape.",
         },
         {
-            id: 30,
+            id: 33,
             image: BIM,
             title: "BIM : Building Information Modelling",
             description:
                 "Discover the transformative potential of Building Information Modeling (BIM) in our immersive workshop, where innovation meets construction to reshape industry standards and unleash project excellence.",
         },
         {
-            id: 31,
+            id: 34,
             image: cable,
             title: "Cable and Wire Testing Workshop",
             description:
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
         },
         {
-            id: 32,
+            id: 35,
             image: image4,
             title: "Solid Works & 3D Printing",
             description:
                 "Experience working with SolidWorks, a 3D CAD software which includes modeling, analysis and AMP, Animation and more.",
         },
         {
-            id: 33,
+            id: 36,
             image: Iot,
             title: "Enlarging Mobile Apps for IoT & Robotics Application",
             description:
