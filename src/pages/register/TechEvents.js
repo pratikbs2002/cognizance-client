@@ -25,7 +25,7 @@ import rollerCoaster from "../../assets/eventImages/roller coaster.png";
 import theDigitalScavangerHunt from "../../assets/eventImages/TDSH.png";
 import relayAndBlindCoding from "../../assets/eventImages/relayAndBlindCoding.png";
 
-const TechEvents = () => {
+const TechEvents = (props) => {
     const data = [
         {
             id: 1,
@@ -423,6 +423,8 @@ const TechEvents = () => {
                         winningPrizes={IData.winningPrice}
                         prizesEnabled={IData.isPrizesEnabled}
                         pdfName={IData.pdfName}
+                        addEventModal={props.addEventModal}
+                        addEventHandler={props.addEventHandler}
                     />
                 ))}
             </div>

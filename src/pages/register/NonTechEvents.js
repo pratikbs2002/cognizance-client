@@ -18,7 +18,7 @@ import boxSoccer from "../../assets/eventImages/box soccer.png";
 import ballGun from "../../assets/eventImages/ball gun.png";
 import paintDate from "../../assets/eventImages/paint date.png";
 
-const NonTechEvents = () => {
+const NonTechEvents = (props) => {
     const data = [
         {
             id: 18,
@@ -200,6 +200,8 @@ const NonTechEvents = () => {
                         prizesEnabled={IData.isPrizesEnabled}
                         winningPrizes={IData.winningPrice}
                         pdfName={IData.pdfName}
+                        addEventModal={props.addEventModal}
+                        addEventHandler={props.addEventHandler}
                     />
                 ))}
             </div>

@@ -17,6 +17,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from "./EventModal";
 import EditProfile from "./EditProfile";
+import AddEventModal from "./AddEventModal";
 
 export default function EventCard(props) {
     const navigate = useNavigate();
@@ -91,14 +92,34 @@ export default function EventCard(props) {
                             mt={4}
                             gap={2}
                         >
-                            <EditProfile
-                                eventType={props.eventType}
-                                eventId={props.eventId}
-                                eventName={props.eventName}
-                                teamSize={props.teamSize}
-                                price={props.price}
-                                image={props.image}
-                            />
+                            {!props.addEventModal ? (
+                                <EditProfile
+                                    eventType={props.eventType}
+                                    eventId={props.eventId}
+                                    eventName={props.eventName}
+                                    teamSize={props.teamSize}
+                                    price={props.price}
+                                    image={props.image}
+                                />
+                            ) : (
+                                <>
+                                    <Button
+                                        color="black"
+                                        onClick={() => {
+                                            props.addEventHandler(
+                                                props.image,
+                                                props.title,
+                                                props.price,
+                                                props.eventId,
+                                                props.eventType,
+                                                props.teamSize
+                                            );
+                                        }}
+                                    >
+                                        Add Event
+                                    </Button>
+                                </>
+                            )}
                             <Modal
                                 about={props.about}
                                 eventName={props.eventName}
