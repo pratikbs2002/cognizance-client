@@ -94,6 +94,7 @@ export default function About() {
                                 maxWidth={"60%"}
                                 alignItems={"center"}
                                 marginTop={10}
+                                marginInline={0}
                             >
                                 <Stack
                                     maxWidth={"100%"}
@@ -147,7 +148,11 @@ export default function About() {
                                     </a>
                                 </Stack>
                             </Container>
-                            <Container maxWidth={"60%"} marginTop={10}>
+                            <Container
+                                maxWidth={"60%"}
+                                marginTop={10}
+                                marginInline={0}
+                            >
                                 <Stack
                                     justifyContent={{
                                         base: "center",
