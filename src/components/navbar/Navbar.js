@@ -94,9 +94,9 @@ export default function Navbar() {
                         <li>
                             <Link to="gallery">Gallery</Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to="register">WorkShops</Link>
-                        </li>
+                        </li> */}
                         <li>
                             {!isLogin ? (
                                 <GAuth setIsLogin={setIsLogin} />
