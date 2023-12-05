@@ -29,7 +29,7 @@ export default function LandingPage() {
                 {/* <div style={{ height: "130px" }}></div>  */}
                 <Home />
                 <About />
-                <Committee />
+                {/* <Committee /> */}
                 {/* <PhotoGallery /> */}
                 <Footer />
                 <ScrollButton />

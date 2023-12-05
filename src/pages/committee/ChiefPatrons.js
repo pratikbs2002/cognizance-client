@@ -10,7 +10,7 @@ import _4 from "../../assets/committee_photo/4.AP1.png";
 import _5 from "../../assets/committee_photo/5.VC1.png";
 import _6 from "../../assets/committee_photo/6.TU1.png";
 
-export default function CoreTeam() {
+export default function ChiefPatrons() {
     const arr = [
         {
             id: 1,
@@ -25,31 +25,6 @@ export default function CoreTeam() {
             description:
                 "Hon. Secretary, Kelavani Mandal, Matrusanstha & CHRF, Gujarat, India [Chief Patron]",
             profile: _2,
-        },
-        {
-            id: 3,
-            name: "Dr. R. V. Upadhyay",
-            description: "Provost, CHARUSAT, India [Patron]",
-            profile: _3,
-        },
-        {
-            id: 4,
-            name: "Dr. Atul Patel",
-            description: "Registrar, CHARUSAT, India [Co-Patron]",
-            profile: _4,
-        },
-        {
-            id: 5,
-            name: "Dr. Vijay Chaudhary",
-            description: "FTE, CHARUSAT, India [Convener]",
-            profile: _5,
-        },
-        {
-            id: 6,
-            name: "Dr. Trushit Upadhyaya",
-            description:
-                "Principal, CSPIT, CHARUSAT, Gujarat, India [Convener]",
-            profile: _6,
         },
     ];
 

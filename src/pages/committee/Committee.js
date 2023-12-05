@@ -10,8 +10,12 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import CommitteeMembers from "./CommitteeMembers";
-import CoreTeam from "./CoreTeam";
+import CoreTeam from "./ChiefPatrons";
 import "./committee.css";
+import ChiefPatrons from "./ChiefPatrons";
+import Patrons from "./Patrons";
+import CoPatrons from "./CoPatrons";
+import Conveners from "./Coveners";
 export default function Committee() {
     return (
         <>
@@ -33,10 +37,10 @@ export default function Committee() {
                         alignSelf={"center"}
                     >
                         <Heading
-                            color="white"
+                            color="black"
                             size={{ base: "3xl", md: "4xl" }}
                         >
-                            Committee
+                            Organizing Committee
                         </Heading>
                     </CardHeader>
                     <Container
@@ -51,14 +55,83 @@ export default function Committee() {
                         }}
                     >
                         <Card padding={0}>
-                            <CoreTeam />
+                            <ChiefPatrons />
                             <Heading
                                 padding={5}
                                 textAlign={"center"}
                                 color="#1c4980"
                                 size="sm"
                             >
-                                {/* Coordinators */}
+                                Chief Patrons
+                            </Heading>
+                        </Card>
+                    </Container>
+                    <Container
+                        padding={0}
+                        marginTop={10}
+                        maxW={{
+                            base: "100%",
+                            md: "100%",
+                            lg: "100%",
+                            xl: "80%",
+                            "2xl": "60%",
+                        }}
+                    >
+                        <Card padding={0}>
+                            <Patrons />
+                            <Heading
+                                padding={5}
+                                textAlign={"center"}
+                                color="#1c4980"
+                                size="sm"
+                            >
+                                Patrons
+                            </Heading>
+                        </Card>
+                    </Container>
+                    <Container
+                        padding={0}
+                        marginTop={10}
+                        maxW={{
+                            base: "100%",
+                            md: "100%",
+                            lg: "100%",
+                            xl: "80%",
+                            "2xl": "60%",
+                        }}
+                    >
+                        <Card padding={0}>
+                            <CoPatrons />
+                            <Heading
+                                padding={5}
+                                textAlign={"center"}
+                                color="#1c4980"
+                                size="sm"
+                            >
+                                Co-Patrons
+                            </Heading>
+                        </Card>
+                    </Container>
+                    <Container
+                        padding={0}
+                        marginTop={10}
+                        maxW={{
+                            base: "100%",
+                            md: "100%",
+                            lg: "100%",
+                            xl: "80%",
+                            "2xl": "60%",
+                        }}
+                    >
+                        <Card padding={0}>
+                            <Conveners />
+                            <Heading
+                                padding={5}
+                                textAlign={"center"}
+                                color="#1c4980"
+                                size="sm"
+                            >
+                                Conveners
                             </Heading>
                         </Card>
                     </Container>
