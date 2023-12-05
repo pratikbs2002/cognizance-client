@@ -76,7 +76,6 @@ const ComboCard = ({ name, image, price }) => {
                     borderWidth="5px"
                     borderRadius="lg"
                     overflow="hidden"
-                    backgroundColor={"rgba(0, 0, 0, 0.442)"}
                     borderColor={borderColor}
                     p={4}
                     boxShadow={`0 0 30px ${boxShadowColor}`}
