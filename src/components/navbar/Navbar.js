@@ -86,9 +86,7 @@ export default function Navbar() {
               </CurrentPath>
             </li> */}
                         <li>
-                            <CurrentPath to="committee-section" smooth={true}>
-                                Committee
-                            </CurrentPath>
+                            <Link to="committee">Committee</Link>
                         </li>
                         <li>
                             <Link to="contact-us">Contact Us</Link>
