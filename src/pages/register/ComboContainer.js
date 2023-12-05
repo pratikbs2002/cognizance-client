@@ -50,21 +50,19 @@ export default function ComboContainer() {
                         flexWrap={"wrap"}
                     >
                         <ComboCard
+                            isActive={true}
                             image={DJNight}
                             name="Musical Night"
                             price="100"
                         />
                         <ComboCard
+                            isActive={false}
                             image={DJNight}
                             name="Musical Night"
                             price="100"
                         />
                         <ComboCard
-                            image={DJNight}
-                            name="Musical Night"
-                            price="100"
-                        />
-                        <ComboCard
+                            isActive={false}
                             image={DJNight}
                             name="Musical Night"
                             price="100"

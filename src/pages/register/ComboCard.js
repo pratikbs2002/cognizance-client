@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, Image, Text, Button, useColorModeValue } from "@chakra-ui/react";
 import AddEventModal from "./AddEventModal";
 
-const ComboCard = ({ name, image, price }) => {
+const ComboCard = ({ name, image, price, title, isActive }) => {
     const [isTeamRegistered, setIsTeamRegistered] = useState(false);
 
     const boxShadowColor = useColorModeValue(
@@ -30,7 +30,7 @@ const ComboCard = ({ name, image, price }) => {
         setActive(true);
     };
 
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState(isActive);
     const [data, setData] = useState({});
     return (
         <>
@@ -48,17 +48,22 @@ const ComboCard = ({ name, image, price }) => {
                     mx="auto"
                     mb={4}
                 >
-                    <Image src={data.image} alt={name} w="100%" h="auto" />
+                    <Image
+                        src={isActive ? image : data.image}
+                        alt={name}
+                        w="100%"
+                        h="auto"
+                    />
                     <Text
                         color="white"
                         mt={2}
                         fontSize="xl"
                         fontWeight="semibold"
                     >
-                        {data.title}
+                        {isActive ? title : data.title}
                     </Text>
                     <Text mt={2} color="white">
-                        ${data.price}
+                        ${isActive ? price : data.price}
                     </Text>
                     <Button
                         mt={4}
