@@ -22,7 +22,6 @@ export default function Payment(props) {
                     className="part1"
                     style={{
                         display: "flex",
-                        width: "50%",
                         alignItems: "center",
                         flexDirection: "column",
                     }}
@@ -36,7 +35,7 @@ export default function Payment(props) {
                     <div
                         className="body"
                         style={{
-                            paddingTop: "100px",
+                            paddingTop: "5%",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -53,10 +52,29 @@ export default function Payment(props) {
                                 gap: "10px",
                             }}
                         >
-                            <Text fontSize={"20px"}>Bank Name : </Text>
-                            <Text fontSize={"20px"}>Branch Name : </Text>
-                            <Text fontSize={"20px"}>IFSC Code : </Text>
-                            <Text fontSize={"20px"}>Account No : </Text>
+                            <Text fontSize={"20px"}>
+                                ● Bank A/c Name : Chandubhai S. Patel Institute
+                                of Technology
+                            </Text>
+                            <Text fontSize={"20px"}>
+                                ● Bank A/c Number : 30762646817
+                            </Text>
+                            <Text fontSize={"20px"}>
+                                ● Bank A/c Type : Current A/c
+                            </Text>
+                            <Text fontSize={"20px"}>
+                                ● Bank Branch CODE : 10961
+                            </Text>
+                            <Text fontSize={"20px"}>
+                                ● Bank IFSC code : SBIN0010961
+                            </Text>
+                            <Text fontSize={"20px"}>
+                                ● Bank MICR CODE : 388002502
+                            </Text>
+                            <Text fontSize={"20px"}>
+                                ● Bank Branch Address : Darshan Hostel,
+                                Changa-Valetla Road, Changa. Dist. Anand
+                            </Text>
                             {/* <Text fontSize={"20px"}>Amount : </Text> */}
                         </div>
                     </div>
@@ -104,7 +122,7 @@ export default function Payment(props) {
                 <div
                     style={{
                         display: "flex",
-                        paddingTop: "10%",
+                        paddingTop: "5%",
                         paddingBottom: "20px",
                     }}
                 >
