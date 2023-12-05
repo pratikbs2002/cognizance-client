@@ -32,12 +32,12 @@ const AddEventModal = (props) => {
     return (
         <>
             <Box
-                maxW={"250px"}
-                overflow="hidden"
-                p={4}
+                width={"250px"}
+                height={"335px"}
                 transition="box-shadow 0.3s"
-                mx="auto"
-                mb={4}
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={"center"}
             >
                 <Button
                     backgroundColor="#54cadd"

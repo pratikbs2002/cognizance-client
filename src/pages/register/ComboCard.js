@@ -83,6 +83,9 @@ const ComboCard = ({ name, image, price }) => {
                     transition="box-shadow 0.3s"
                     mx="auto"
                     mb={4}
+                    display={"flex"}
+                    alignItems={"center"}
+                    justifyContent={"center"}
                 >
                     <AddEventModal addEventHandler={addEventHandler} />
                 </Box>
