@@ -22,64 +22,11 @@ export default function CoPatrons() {
 
     return (
         <>
-            <Carousel
-                additionalTransfrom={0}
-                arrows={true}
-                autoPlay
-                autoPlaySpeed={3000}
-                centerMode={false}
-                className="team-preview"
-                containerClass="container-with-dots"
-                dotListClass=""
-                draggable
-                focusOnSelect={false}
-                infinite
-                itemClass=""
-                keyBoardControl
-                minimumTouchDrag={80}
-                pauseOnHover
-                renderArrowsWhenDisabled={false}
-                renderButtonGroupOutside={false}
-                renderDotsOutside={false}
-                responsive={{
-                    desktop: {
-                        breakpoint: {
-                            max: 3000,
-                            min: 1024,
-                        },
-                        items: 3,
-                        partialVisibilityGutter: 40,
-                    },
-                    mobile: {
-                        breakpoint: {
-                            max: 464,
-                            min: 0,
-                        },
-                        items: 1,
-                        partialVisibilityGutter: 30,
-                    },
-                    tablet: {
-                        breakpoint: {
-                            max: 1024,
-                            min: 464,
-                        },
-                        items: 2,
-                        partialVisibilityGutter: 30,
-                    },
-                }}
-                rewind={false}
-                rewindWithAnimation={false}
-                rtl={false}
-                shouldResetAutoplay
-                showDots={true}
-                sliderClass=""
-                slidesToSlide={1}
-                swipeable
-            >
+            <Container padding={"10px"} maxW={"100%"} display={"flex"} flexWrap={"wrap"} gap={"20px"} alignItems={"center"} justifyContent={"center"}>
                 {arr.map((index) => (
                     <Card
-                        background={"transparent"}
-                        width={"100%"}
+                        background={"white"}
+                        width={"300px"}
                         height={"300px"}
                         key={index.id}
                     >
@@ -105,7 +52,7 @@ export default function CoPatrons() {
                         </Container>
                     </Card>
                 ))}
-            </Carousel>
+            </Container>
         </>
     );
 }
