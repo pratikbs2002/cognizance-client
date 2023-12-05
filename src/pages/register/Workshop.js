@@ -10,7 +10,7 @@ import image8 from "../../assets/eventRegister/djnight.jpg";
 
 import EventCard from "./EventCard";
 
-const Workshop = () => {
+const Workshop = (props) => {
     const data = [
         {
             id: 27,
@@ -89,6 +89,8 @@ const Workshop = () => {
                         image={IData.image}
                         title={IData.title}
                         description={IData.description}
+                        addEventModal={props.addEventModal}
+                        addEventHandler={props.addEventHandler}
                     />
                 ))}
             </div>

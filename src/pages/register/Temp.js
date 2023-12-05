@@ -5,7 +5,7 @@ import TechEvents from "./TechEvents";
 import NonTechEvents from "./NonTechEvents";
 import ComboEvents from "./ComboEvents";
 
-const Temp = () => {
+const Temp = (props) => {
     return (
         <>
             <div
@@ -17,8 +17,6 @@ const Temp = () => {
                     <TabList mb="1em">
                         <Tab
                             color={"white"}
-
-
                             variant="enclosed"
                             _selected={{
                                 color: "white",
@@ -35,8 +33,6 @@ const Temp = () => {
                             Technical Events
                         </Tab>
                         <Tab
-
-
                             color={"white"}
                             variant="enclosed"
                             _selected={{
@@ -54,7 +50,6 @@ const Temp = () => {
                             Non-Technical Events
                         </Tab>
                         <Tab
-
                             color={"white"}
                             variant="enclosed"
                             style={{
@@ -71,40 +66,55 @@ const Temp = () => {
                             Technical Workshops
                         </Tab>
 
-                        <Tab
-                            color={"white"}
-                            variant="enclosed"
-                            style={{
-                                fontSize: "1.2rem",
-                                fontWeight: "bold",
-                                backgroundColor: "rgba(0, 0, 0, 0.442)",
-                            }}
-                            _selected={{
-                                color: "white",
-                                bg: "#161d37 !important",
-                                border: "1px solid white",
-                            }}
-                        >
-                            Combo Events & DJ Night
-                        </Tab>
+                        {!props.addEventModal && (
+                            <Tab
+                                color={"white"}
+                                variant="enclosed"
+                                style={{
+                                    fontSize: "1.2rem",
+                                    fontWeight: "bold",
+                                    backgroundColor: "rgba(0, 0, 0, 0.442)",
+                                }}
+                                _selected={{
+                                    color: "white",
+                                    bg: "#161d37 !important",
+                                    border: "1px solid white",
+                                }}
+                            >
+                                Combo Events & DJ Night
+                            </Tab>
+                        )}
                     </TabList>
 
                     <TabPanels>
                         <TabPanel>
-                            <TechEvents />
+                            <TechEvents
+                                addEventModal={props.addEventModal}
+                                setAddEventData={props.setAddEventData}
+                                addEventHandler={props.addEventHandler}
+                            />
                         </TabPanel>
 
                         <TabPanel>
-                            <NonTechEvents />
+                            <NonTechEvents
+                                addEventModal={props.addEventModal}
+                                setAddEventData={props.setAddEventData}
+                                addEventHandler={props.addEventHandler}
+                            />
                         </TabPanel>
 
                         <TabPanel>
-                            <Workshop />
+                            <Workshop
+                                addEventModal={props.addEventModal}
+                                setAddEventData={props.setAddEventData}
+                                addEventHandler={props.addEventHandler}
+                            />
                         </TabPanel>
-
-                        <TabPanel>
-                            <ComboEvents />
-                        </TabPanel>
+                        {!props.addEventModal && (
+                            <TabPanel>
+                                <ComboEvents />
+                            </TabPanel>
+                        )}
                     </TabPanels>
                 </Tabs>
             </div>
