@@ -101,6 +101,9 @@ const BasicUsage = (props) => {
                                             {props.taskEnabled && (
                                                 <Tab>Task</Tab>
                                             )}
+                                            {props.prizesEnabled && (
+                                                <Tab>Prizes</Tab>
+                                            )}
                                             {/* <Tab>Contact</Tab> */}
                                         </TabList>
 
@@ -116,29 +119,59 @@ const BasicUsage = (props) => {
                                                 </div>
                                             </TabPanel>
 
-                                            <TabPanel>
-                                                <div
-                                                    style={{
-                                                        textAlign: "left",
-                                                        display: "flex",
-                                                        flexDirection: "column",
-                                                        alignItems:
-                                                            "flex-start",
-                                                        overflowY: "auto",
-                                                        maxHeight: "20vh",
-                                                    }}
-                                                >
-                                                    <UnorderedList>
-                                                        {props?.task?.map(
-                                                            (t) => (
-                                                                <ListItem>
-                                                                    {t}
-                                                                </ListItem>
-                                                            )
-                                                        )}
-                                                    </UnorderedList>
-                                                </div>
-                                            </TabPanel>
+                                            {props.taskEnabled && (
+                                                <TabPanel>
+                                                    <div
+                                                        style={{
+                                                            textAlign: "left",
+                                                            display: "flex",
+                                                            flexDirection:
+                                                                "column",
+                                                            alignItems:
+                                                                "flex-start",
+                                                            overflowY: "auto",
+                                                            maxHeight: "20vh",
+                                                        }}
+                                                    >
+                                                        <UnorderedList>
+                                                            {props?.task?.map(
+                                                                (t) => (
+                                                                    <ListItem>
+                                                                        {t}
+                                                                    </ListItem>
+                                                                )
+                                                            )}
+                                                        </UnorderedList>
+                                                    </div>
+                                                </TabPanel>
+                                            )}
+
+                                            {props.prizesEnabled && (
+                                                <TabPanel>
+                                                    <div
+                                                        style={{
+                                                            textAlign: "left",
+                                                            display: "flex",
+                                                            flexDirection:
+                                                                "column",
+                                                            alignItems:
+                                                                "flex-start",
+                                                            overflowY: "auto",
+                                                            maxHeight: "20vh",
+                                                        }}
+                                                    >
+                                                        <UnorderedList>
+                                                            {props?.winningPrizes?.map(
+                                                                (t) => (
+                                                                    <ListItem>
+                                                                        {t}
+                                                                    </ListItem>
+                                                                )
+                                                            )}
+                                                        </UnorderedList>
+                                                    </div>
+                                                </TabPanel>
+                                            )}
                                         </TabPanels>
                                     </Tabs>
                                 </Box>

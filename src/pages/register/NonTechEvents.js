@@ -32,8 +32,9 @@ const NonTechEvents = () => {
                 "●	Series of competitive games of CS2 will be played between two teams, likewise for every participant team",
             ],
             teamSize: 5,
-            eventFee: 150,
+            eventFee: 50,
             winningPrice: ["Coming Soon"],
+            isPrizesEnabled: false,
             pdfName: "cs2",
         },
         {
@@ -47,6 +48,7 @@ const NonTechEvents = () => {
             teamSize: 7,
             eventFee: 150,
             winningPrice: ["Coming Soon"],
+            isPrizesEnabled: false,
             pdfName: "boxcricket",
         },
         {
@@ -62,8 +64,9 @@ const NonTechEvents = () => {
                 "●	Round 3: See if you can move the loop all the way across the bent wire with NO BUZZ!",
             ],
             teamSize: 1,
-            eventFee: 150,
+            eventFee: 20,
             winningPrice: ["Coming Soon"],
+            isPrizesEnabled: false,
             pdfName: "wireloop",
         },
         {
@@ -81,6 +84,7 @@ const NonTechEvents = () => {
             teamSize: 4,
             eventFee: 150,
             winningPrice: ["Coming Soon"],
+            isPrizesEnabled: false,
             pdfName: "civilcastle",
         },
         {
@@ -94,6 +98,7 @@ const NonTechEvents = () => {
             teamSize: 3,
             eventFee: 150,
             winningPrice: ["Coming Soon"],
+            isPrizesEnabled: false,
             pdfName: "squidgame",
         },
         {
@@ -112,8 +117,9 @@ const NonTechEvents = () => {
                 "Total prize pool: Rs. 10,000/-",
                 "   ●	Winner: Rs. 5,000/-",
                 "   ●	Runner up: Rs. 3,000/-",
-                "   ●	 2nd runner up: Rs. 2,000/-",
+                "   ●	2nd runner up: Rs. 2,000/-",
             ],
+            isPrizesEnabled: true,
             pdfName: "bgmi",
         },
         {
@@ -127,6 +133,7 @@ const NonTechEvents = () => {
             teamSize: 3,
             eventFee: 100,
             winningPrice: ["Coming Soon"],
+            isPrizesEnabled: false,
             pdfName: "boxsoccer",
         },
         {
@@ -146,6 +153,7 @@ const NonTechEvents = () => {
             teamSize: 3,
             eventFee: 100,
             winningPrice: ["Coming Soon"],
+            isPrizesEnabled: false,
             pdfName: "paintdate",
         },
         {
@@ -158,6 +166,7 @@ const NonTechEvents = () => {
             teamSize: 3,
             eventFee: 150,
             winningPrice: ["Coming Soon"],
+            isPrizesEnabled: false,
             pdfName: "paintball",
         },
     ];
@@ -188,6 +197,8 @@ const NonTechEvents = () => {
                         teamSize={IData.teamSize}
                         about={IData.about}
                         taskEnabled={true}
+                        prizesEnabled={IData.isPrizesEnabled}
+                        winningPrizes={IData.winningPrice}
                         pdfName={IData.pdfName}
                     />
                 ))}
