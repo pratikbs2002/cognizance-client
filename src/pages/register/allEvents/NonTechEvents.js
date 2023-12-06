@@ -304,6 +304,10 @@ const NonTechEvents = (props) => {
         //     pdfName: "paintball",
         // },
     ];
+
+    const finalData = props.registeredEvent
+        ? data.filter((item) => props.nonTechEventIds?.includes(item.id))
+        : data;
     return (
         <>
             <div
@@ -316,7 +320,7 @@ const NonTechEvents = (props) => {
                     flexWrap: "wrap",
                 }}
             >
-                {data.map((IData) => (
+                {finalData.map((IData) => (
                     <EventCard
                         eventId={IData.id}
                         eventType={"NTECH"}
@@ -336,6 +340,7 @@ const NonTechEvents = (props) => {
                         pdfName={IData.pdfName}
                         addEventModal={props.addEventModal}
                         addEventHandler={props.addEventHandler}
+                        registeredEvent={props.registeredEvent}
                     />
                 ))}
             </div>

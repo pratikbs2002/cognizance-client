@@ -76,6 +76,10 @@ const Workshop = (props) => {
                 "Enlarging Mobile Apps for IoT & Robotics Application - Workshop - Cognizance 2024",
         },
     ];
+
+    const finalData = props.registeredEvent
+        ? data.filter((item) => props.workshopIds?.includes(item.id))
+        : data;
     return (
         <>
             <div
@@ -88,7 +92,7 @@ const Workshop = (props) => {
                     flexWrap: "wrap",
                 }}
             >
-                {data.map((IData) => (
+                {finalData.map((IData) => (
                     <EventCard
                         eventId={IData.id}
                         eventType={"WORKSHOP"}
@@ -107,6 +111,7 @@ const Workshop = (props) => {
                         addEventModal={props.addEventModal}
                         addEventHandler={props.addEventHandler}
                         isExploreMoreDeactived={true}
+                        registeredEvent={props.registeredEvent}
                     />
                 ))}
             </div>

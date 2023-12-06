@@ -114,7 +114,8 @@ const Temp = (props) => {
                                 setAddEventData={props.setAddEventData}
                                 addEventHandler={props.addEventHandler}
                                 registeredEvent={props.registeredEvent}
-                                registeredTech={props.registeredTech}
+                                techEvents={props?.techEvents}
+                                techEventIds={props?.techEventIds}
                             />
                         </TabPanel>
 
@@ -124,7 +125,8 @@ const Temp = (props) => {
                                 setAddEventData={props.setAddEventData}
                                 addEventHandler={props.addEventHandler}
                                 registeredEvent={props.registeredEvent}
-                                registeredNonTech={props.registeredNonTech}
+                                nonTechEvents={props?.nonTechEvents}
+                                nonTechEventIds={props?.nonTechEventIds}
                             />
                         </TabPanel>
 
@@ -134,14 +136,17 @@ const Temp = (props) => {
                                 setAddEventData={props.setAddEventData}
                                 addEventHandler={props.addEventHandler}
                                 registeredEvent={props.registeredEvent}
-                                registeredWorkshop={props.registeredWorkshop}
+                                workshops={props?.workshops}
+                                workShopsIds={props?.workShopsIds}
                             />
                         </TabPanel>
                         {!props.addEventModal && (
                             <TabPanel>
                                 <MusicalNight
                                     registeredEvent={props.registeredEvent}
-                                    isRegistered={props.isRegistered}
+                                    isMusicalNightRegistered={
+                                        props?.isMusicalNightRegistered
+                                    }
                                 />
                             </TabPanel>
                         )}

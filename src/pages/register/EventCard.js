@@ -85,68 +85,70 @@ export default function EventCard(props) {
                             </AccordionItem>
                         </Accordion>
 
-                        <Flex
-                            width={"100%"}
-                            justify="space-between"
-                            mt={4}
-                            gap={2}
-                        >
-                            {!props.addEventModal ? (
-                                <EditProfile
-                                    eventType={props.eventType}
-                                    eventId={props.eventId}
-                                    eventName={props.eventName}
-                                    teamSize={props.teamSize}
-                                    price={props.price}
-                                    image={props.image}
-                                    isMusicalNight={props.isMusicalNight}
-                                />
-                            ) : (
-                                <>
+                        {!props.registeredEvent && (
+                            <Flex
+                                width={"100%"}
+                                justify="space-between"
+                                mt={4}
+                                gap={2}
+                            >
+                                {!props.addEventModal ? (
+                                    <EditProfile
+                                        eventType={props.eventType}
+                                        eventId={props.eventId}
+                                        eventName={props.eventName}
+                                        teamSize={props.teamSize}
+                                        price={props.price}
+                                        image={props.image}
+                                        isMusicalNight={props.isMusicalNight}
+                                    />
+                                ) : (
+                                    <>
+                                        <Button
+                                            color="black"
+                                            onClick={() => {
+                                                props.addEventHandler(
+                                                    props.image,
+                                                    props.title,
+                                                    props.price,
+                                                    props.eventId,
+                                                    props.eventType,
+                                                    props.teamSize
+                                                );
+                                            }}
+                                        >
+                                            Add Event
+                                        </Button>
+                                    </>
+                                )}
+                                {!props.isExploreMoreDeactived ? (
+                                    <Modal
+                                        about={props.about}
+                                        eventName={props.eventName}
+                                        image={props.image}
+                                        department={props.department}
+                                        task={props.task}
+                                        price={props.price}
+                                        teamSize={props.teamSize}
+                                        taskEnabled={props.taskEnabled}
+                                        prizesEnabled={props.prizesEnabled}
+                                        winningPrizes={props.winningPrizes}
+                                        pdfName={props.pdfName}
+                                    />
+                                ) : (
                                     <Button
-                                        color="black"
-                                        onClick={() => {
-                                            props.addEventHandler(
-                                                props.image,
-                                                props.title,
-                                                props.price,
-                                                props.eventId,
-                                                props.eventType,
-                                                props.teamSize
-                                            );
-                                        }}
+                                        backgroundColor="#54cadd"
+                                        color={"black"}
+                                        as="a"
+                                        mr={3}
+                                        download
+                                        href={`pdfs/${props.pdfName}.pdf`}
                                     >
-                                        Add Event
+                                        Download PDF
                                     </Button>
-                                </>
-                            )}
-                            {!props.isExploreMoreDeactived ? (
-                                <Modal
-                                    about={props.about}
-                                    eventName={props.eventName}
-                                    image={props.image}
-                                    department={props.department}
-                                    task={props.task}
-                                    price={props.price}
-                                    teamSize={props.teamSize}
-                                    taskEnabled={props.taskEnabled}
-                                    prizesEnabled={props.prizesEnabled}
-                                    winningPrizes={props.winningPrizes}
-                                    pdfName={props.pdfName}
-                                />
-                            ) : (
-                                <Button
-                                    backgroundColor="#54cadd"
-                                    color={"black"}
-                                    as="a"
-                                    mr={3}
-                                    download
-                                    href={`pdfs/${props.pdfName}.pdf`}
-                                >
-                                    Download PDF
-                                </Button>
-                            )}
-                        </Flex>
+                                )}
+                            </Flex>
+                        )}
                     </Box>
                 </Box>
             </Box>

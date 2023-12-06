@@ -1,9 +1,8 @@
 import React from "react";
 import { IoIosArrowBack } from "react-icons/io";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getAllRegisteredEvents } from "../../service/eventService";
 import Temp from "../register/Temp";
-import GAuth from "../../components/GAuth";
 
 export default function RegisterdEvent() {
     const navigate = useNavigate();
@@ -17,14 +16,6 @@ export default function RegisterdEvent() {
             sessionStorage.clear();
         } else if (data?.isFound) {
             let d = data?.data;
-            let workshop = d?.workshop?.filter((item) => {
-                return item?.isMusicalNight === false;
-            });
-            let musicalNight = d?.workshop?.filter((item) => {
-                return item?.isMusicalNight === true;
-            });
-            d.workshop = workshop;
-            d["musicalNight"] = musicalNight;
             setData(d);
         }
     };
@@ -38,7 +29,7 @@ export default function RegisterdEvent() {
                 <div className="photo-gallery-navbar">
                     <div
                         className="photo-gallery-back-button"
-                        onClick={() => navigate(`/`)}
+                        onClick={() => navigate(-1)}
                     >
                         <IoIosArrowBack />
                         Back
@@ -71,10 +62,15 @@ export default function RegisterdEvent() {
                     <Temp
                         addEventModal={false}
                         registeredEvent={true}
-                        registeredTech={data?.tech}
-                        registeredNonTech={data?.nontech}
-                        registeredWorkshop={data?.workshop}
-                        isRegistered={data?.musicalNight?.length > 0}
+                        techEvents={data?.techEvents}
+                        nonTechEvents={data?.nonTechEvents}
+                        workshops={data?.workshops}
+                        techEventIds={data?.techEventIds}
+                        nonTechEventIds={data?.nonTechEventIds}
+                        workShopsIds={data?.workShopsIds}
+                        isMusicalNightRegistered={
+                            data?.isMusicalNightRegistered
+                        }
                     />
                 </div>
             </div>

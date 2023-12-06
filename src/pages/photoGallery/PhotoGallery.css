@@ -3,6 +3,8 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
+
 }
 
 /* photo-gallery-navbar */

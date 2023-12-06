@@ -21,52 +21,56 @@ const MusicalNight = (props) => {
 
     return (
         <>
-            <Container
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                }}
-                fontWeight={"800"}
-                color={"white"}
-                fontSize={"40px"}
-                width={"100%"}
-                maxW={"100%"}
-                mt={"4%"}
-                mb={"2%"}
-                textAlign={"center"}
-            >
-                <Text width={"100%"} maxW={"100%"}>
-                    Musical Night Registration
-                </Text>
-            </Container>
-
-            <div
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "white",
-                    fontWeight: "600",
-                    flexWrap: "wrap",
-                }}
-            >
-                <EventCard
-                    eventId={IData.id}
-                    eventType={IData.eventType}
-                    about={IData.about}
-                    show={true}
-                    image={IData.image}
-                    title={IData.title}
-                    description={IData.description}
-                    eventName={IData.title}
-                    task={IData.task}
-                    price={IData.eventFee}
-                    teamSize={IData.teamSize}
-                    taskEnabled={false}
-                    isMusicalNight={true}
-                />
-            </div>
+            {!(props.registeredEvent && !props.isMusicalNightRegistered) ? (
+                <div
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "white",
+                        fontWeight: "600",
+                        flexWrap: "wrap",
+                    }}
+                >
+                    {!props.registeredEvent && (
+                        <Container
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                            }}
+                            fontWeight={"800"}
+                            color={"white"}
+                            fontSize={"40px"}
+                            width={"100%"}
+                            maxW={"100%"}
+                            mt={"4%"}
+                            mb={"2%"}
+                            textAlign={"center"}
+                        >
+                            <Text width={"100%"} maxW={"100%"}>
+                                Musical Night Registration
+                            </Text>
+                        </Container>
+                    )}
+                    <EventCard
+                        eventId={IData.id}
+                        eventType={IData.eventType}
+                        about={IData.about}
+                        show={true}
+                        image={IData.image}
+                        title={IData.title}
+                        description={IData.description}
+                        eventName={IData.title}
+                        task={IData.task}
+                        price={IData.eventFee}
+                        teamSize={IData.teamSize}
+                        taskEnabled={false}
+                        isMusicalNight={true}
+                        registeredEvent={props.registeredEvent}
+                    />
+                </div>
+            ) : null}
         </>
     );
 };

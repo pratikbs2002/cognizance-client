@@ -388,24 +388,9 @@ const TechEvents = (props) => {
         },
     ];
 
-    // const [finalData, setFinalData] = React.useState([]);
-    // console.log(finalData);
-    // React.useEffect(() => {
-    //     if (props.registeredEvent) {
-    //         data.forEach((item) => {
-    //             if (
-    //                 props?.registeredTech?.filter((i) => {
-    //                     console.log(i.srNo, item.id);
-    //                     return i.srNo === item.id;
-    //                 })
-    //             ) {
-    //                 setFinalData((prev) => [...prev, item]);
-    //             }
-    //         });
-    //     } else {
-    //         setFinalData(data);
-    //     }
-    // }, []);
+    const finalData = props.registeredEvent
+        ? data.filter((item) => props.techEventIds?.includes(item.id))
+        : data;
 
     return (
         <>
@@ -419,7 +404,7 @@ const TechEvents = (props) => {
                     flexWrap: "wrap",
                 }}
             >
-                {data.map(
+                {finalData.map(
                     (IData) =>
                         !props?.selectedEvents?.includes(IData.id) && (
                             <EventCard
@@ -441,6 +426,7 @@ const TechEvents = (props) => {
                                 pdfName={IData.pdfName}
                                 addEventModal={props.addEventModal}
                                 addEventHandler={props.addEventHandler}
+                                registeredEvent={props.registeredEvent}
                             />
                         )
                 )}
