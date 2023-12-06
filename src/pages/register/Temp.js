@@ -12,6 +12,7 @@ const Temp = (props) => {
             <div
                 style={{
                     width: "90%",
+                    overflowX: "auto",
                 }}
             >
                 <Tabs isFitted variant="enclosed">
