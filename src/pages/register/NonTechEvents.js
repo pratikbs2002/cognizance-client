@@ -17,6 +17,10 @@ import wireLoop from "../../assets/eventImages/wire loop game.jpeg";
 import boxSoccer from "../../assets/eventImages/box soccer.png";
 import ballGun from "../../assets/eventImages/ball gun.png";
 import paintDate from "../../assets/eventImages/paint date.png";
+import rapbattle from "../../assets/eventImages/RapBattle 2.png";
+import valorant from "../../assets/eventImages/Valorant.png";
+import moneyheist from "../../assets/eventImages/money heist.png";
+import lostinspace from "../../assets/eventImages/Lost in Space.png";
 
 const NonTechEvents = (props) => {
     const data = [
@@ -40,7 +44,7 @@ const NonTechEvents = (props) => {
         },
         {
             id: 19,
-            image: cs2,
+            image: rapbattle,
             title: "Rap Battle",
             description: "",
             about: "Express your inner voice in the form of a rap. Let the others see the world through your eyes in your own words.",
@@ -73,7 +77,7 @@ const NonTechEvents = (props) => {
         },
         {
             id: 21,
-            image: cs2,
+            image: valorant,
             title: "Valorant",
             description: "",
             about: "This 2-day e-sports tournament will feature 256 teams competing in a 5-round tournament across various Valorant game modes.Round 1 on Day 1 will have 256 teams divided into 16 groups playing best-of-3 Team Deathmatch matches. The field will be narrowed down to the top 128 teams for Round 2 best-of-3 Competitive matches. On Day 2, the top 32 teams from the previous day will compete in the final two rounds, with the top 2 teams playing a best-of-5 match to determine the tournament champion.Matches will take place in up to 15 labs simultaneously each day from 9AM to 5PM. The tournament will showcase top collegiate Valorant teams and players.",
@@ -102,7 +106,7 @@ const NonTechEvents = (props) => {
         },
         {
             id: 23,
-            image: cs2,
+            image: moneyheist,
             title: "Money Heist: The Treasure Hunt Caper",
             description: "",
             about: `"Money Heist: The Treasure Hunt Caper" is an exciting real-life treasure hunt experience 
@@ -206,7 +210,7 @@ const NonTechEvents = (props) => {
         },
         {
             id: 28,
-            image: squidGame2,
+            image: lostinspace,
             title: "Galactic Quest: Lost in Space Adventure",
             description: "",
             about: `Teams (or individuals) embark on a mission to navigate through the vastness of space and return safely to Earth. Along the way, they'll encounter challenges and make decisions that will determine their fate.`,
