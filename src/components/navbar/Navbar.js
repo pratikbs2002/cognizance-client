@@ -75,6 +75,9 @@ export default function Navbar() {
                                 Home
                             </CurrentPath>
                         </li>
+                        <li>
+                            <Link to="gallery">Gallery</Link>
+                        </li>
                         {/* <li>
                             <CurrentPath to="" smooth={true}>
                                 About
@@ -90,9 +93,6 @@ export default function Navbar() {
                         </li>
                         <li>
                             <Link to="contact-us">Contact Us</Link>
-                        </li>
-                        <li>
-                            <Link to="gallery">Gallery</Link>
                         </li>
                         {/* <li>
                             <Link to="register">WorkShops</Link>
