@@ -1,30 +1,22 @@
 import React from "react";
-import EventCard from "./EventCard";
-import image1 from "../../assets/eventRegister/register1.jpeg";
-import image2 from "../../assets/eventRegister/register2.jpeg";
-import image4 from "../../assets/eventRegister/register4.jpeg";
-import image5 from "../../assets/eventRegister/register5.jpeg";
-// import image6 from "../../assets/eventRegister/register6.jpeg";
-import image7 from "../../assets/eventRegister/register7.jpeg";
-import image8 from "../../assets/eventRegister/reg1.png";
-import image10 from "../../assets/eventRegister/flag.jpeg";
+import EventCard from "../EventCard";
 
-import battleBlitz from "../../assets/eventImages/battle blitz.png";
-import roboSoccer from "../../assets/eventImages/robo soccer.png";
-import roboRace from "../../assets/eventImages/robo race.png";
-import codeMania from "../../assets/eventImages/code mania.png";
-import artTech from "../../assets/eventImages/artTech.png";
-import networkHunting from "../../assets/eventImages/network hunting.png";
-import healthyswitching from "../../assets/eventImages/healthySwitching.png";
-import keyMaster from "../../assets/eventImages/key master.jpg";
-import uiux from "../../assets/eventImages/ui ux.jpeg";
-import civilSaga from "../../assets/eventImages/civil saga.png";
-import captureTheFlag from "../../assets/eventImages/ctf2.png";
-import graphicsGladiator from "../../assets/eventImages/Graphics Gladiator.png";
-import pingDataStructure from "../../assets/eventImages/ping.png";
-import rollerCoaster from "../../assets/eventImages/roller coaster.png";
-import theDigitalScavangerHunt from "../../assets/eventImages/TDSH.png";
-import relayAndBlindCoding from "../../assets/eventImages/relayAndBlindCoding.png";
+import battleBlitz from "../../../assets/eventImages/battle blitz.png";
+import roboSoccer from "../../../assets/eventImages/robo soccer.png";
+import roboRace from "../../../assets/eventImages/robo race.png";
+import codeMania from "../../../assets/eventImages/code mania.png";
+import artTech from "../../../assets/eventImages/artTech.png";
+import networkHunting from "../../../assets/eventImages/network hunting.png";
+import healthyswitching from "../../../assets/eventImages/healthySwitching.png";
+import keyMaster from "../../../assets/eventImages/key master.jpg";
+import uiux from "../../../assets/eventImages/ui ux.jpeg";
+import civilSaga from "../../../assets/eventImages/civil saga.png";
+import captureTheFlag from "../../../assets/eventImages/ctf2.png";
+import graphicsGladiator from "../../../assets/eventImages/Graphics Gladiator.png";
+import pingDataStructure from "../../../assets/eventImages/ping.png";
+import rollerCoaster from "../../../assets/eventImages/roller coaster.png";
+import theDigitalScavangerHunt from "../../../assets/eventImages/TDSH.png";
+import relayAndBlindCoding from "../../../assets/eventImages/relayAndBlindCoding.png";
 
 const TechEvents = (props) => {
     const data = [

@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Text } from "@chakra-ui/react";
-import MusicalNight1 from "../../assets/eventImages/dj.png";
+import MusicalNight1 from "../../../assets/eventImages/dj.png";
 
-import EventCard from "./EventCard";
+import EventCard from "../EventCard";
 
 const MusicalNight = (props) => {
     const IData = {

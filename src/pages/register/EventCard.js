@@ -15,9 +15,8 @@ import { useState } from "react";
 import "./EventCard.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Modal from "./EventModal";
-import EditProfile from "./EditProfile";
-import AddEventModal from "./AddEventModal";
+import Modal from "./modals/EventModal";
+import EditProfile from "./modals/EditProfile";
 
 export default function EventCard(props) {
     const navigate = useNavigate();

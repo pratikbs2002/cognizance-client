@@ -1,5 +1,5 @@
 import React from "react";
-import EventCard from "./EventCard";
+import EventCard from "../EventCard";
 // import image1 from "../../assets/eventRegister/register1.jpeg";
 // import image2 from "../../assets/eventRegister/register2.jpeg";
 // import image3 from "../../assets/eventRegister/register3.jpeg";
@@ -8,19 +8,19 @@ import EventCard from "./EventCard";
 // import image6 from "../../assets/eventRegister/register6.jpeg";
 // import image7 from "../../assets/eventRegister/register7.jpeg";
 
-import bgmi from "../../assets/eventImages/bgmi.png";
-import cs2 from "../../assets/eventImages/CS2.png";
-import boxCricket from "../../assets/eventImages/box cricket 1.png";
-import civilCastle from "../../assets/eventImages/civil's castle.jpeg";
-import squidGame2 from "../../assets/eventImages/Squid Game2.jpeg";
-import wireLoop from "../../assets/eventImages/wire loop game.jpeg";
-import boxSoccer from "../../assets/eventImages/box soccer.png";
-import ballGun from "../../assets/eventImages/ball gun.png";
-import paintDate from "../../assets/eventImages/paint date.png";
-import rapbattle from "../../assets/eventImages/RapBattle.png";
-import valorant from "../../assets/eventImages/Valorant.png";
-import moneyheist from "../../assets/eventImages/money heist.png";
-import lostinspace from "../../assets/eventImages/Lost in Space.png";
+import bgmi from "../../../assets/eventImages/bgmi.png";
+import cs2 from "../../../assets/eventImages/CS2.png";
+import boxCricket from "../../../assets/eventImages/box cricket 1.png";
+import civilCastle from "../../../assets/eventImages/civil's castle.jpeg";
+import squidGame2 from "../../../assets/eventImages/Squid Game2.jpeg";
+import wireLoop from "../../../assets/eventImages/wire loop game.jpeg";
+import boxSoccer from "../../../assets/eventImages/box soccer.png";
+import ballGun from "../../../assets/eventImages/ball gun.png";
+import paintDate from "../../../assets/eventImages/paint date.png";
+import rapbattle from "../../../assets/eventImages/RapBattle.png";
+import valorant from "../../../assets/eventImages/Valorant.png";
+import moneyheist from "../../../assets/eventImages/money heist.png";
+import lostinspace from "../../../assets/eventImages/Lost in Space.png";
 
 const NonTechEvents = (props) => {
     const data = [

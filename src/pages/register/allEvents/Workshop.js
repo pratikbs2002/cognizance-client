@@ -1,18 +1,13 @@
 import React from "react";
-import blockchain from "../../assets/eventImages/blockChain.png";
-import blender from "../../assets/eventImages/blender.png";
-import cloud from "../../assets/eventImages/Cloud.png";
-import image4 from "../../assets/eventRegister/register4.jpeg";
-import machinoMania from "../../assets/eventImages/Machino Mania.png";
-import web3 from "../../assets/eventImages/Web3.png";
-import cable from "../../assets/eventImages/Cable.png";
-import image8 from "../../assets/eventRegister/djnight.jpg";
-import CyberSecurity from "../../assets/eventImages/Cyber.png";
-import BIM from "../../assets/eventImages/BIM.png";
-import Aws from "../../assets/eventImages/AWS.png";
-import Iot from "../../assets/eventImages/IoT.png";
+import blockchain from "../../../assets/eventImages/blockChain.png";
+import image4 from "../../../assets/eventRegister/register4.jpeg";
+import cable from "../../../assets/eventImages/Cable.png";
+import CyberSecurity from "../../../assets/eventImages/Cyber.png";
+import BIM from "../../../assets/eventImages/BIM.png";
+import Aws from "../../../assets/eventImages/AWS.png";
+import Iot from "../../../assets/eventImages/IoT.png";
 
-import EventCard from "./EventCard";
+import EventCard from "../EventCard";
 
 const Workshop = (props) => {
     const data = [

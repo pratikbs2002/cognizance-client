@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Box, Image, Text, Button, useColorModeValue } from "@chakra-ui/react";
-import AddEventModal from "./AddEventModal";
-import EditProfile from "./EditProfile";
+import AddEventModal from "../modals/AddEventModal";
+import EditProfile from "../modals/EditProfile";
 import { set } from "lodash";
-import { deleteEvent } from "../../service/eventRegistrationService";
+import { deleteEvent } from "../../../service/eventRegistrationService";
 import "./ComboCard.css";
 
 const ComboCard = ({

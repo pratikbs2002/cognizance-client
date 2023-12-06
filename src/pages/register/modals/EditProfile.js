@@ -22,10 +22,10 @@ import {
     isProfileUpdatedAPI,
     login,
     updateProfileAPI,
-} from "../../service/authService";
+} from "../../../service/authService";
 import { useGoogleLogin } from "@react-oauth/google";
-import Payment from "./Payment";
-import { registerEvent } from "../../service/eventRegistrationService";
+import Payment from "../Payment";
+import { registerEvent } from "../../../service/eventRegistrationService";
 
 const EditProfile = (props) => {
     const {

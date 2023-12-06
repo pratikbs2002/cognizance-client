@@ -1,6 +1,5 @@
 import React from "react";
 import ComboCard from "./ComboCard";
-import DJNight from "../../assets/eventImages/dj.png";
 import {
     Box,
     Button,
@@ -22,8 +21,8 @@ import {
     Heading,
 } from "@chakra-ui/react";
 import { FaQuestion } from "react-icons/fa";
-import Payment from "./Payment";
-import MusicalNight from "../../assets/eventImages/dj.png";
+import Payment from "../Payment";
+import MusicalNight from "../../../assets/eventImages/dj.png";
 import "./ComboContainer.css";
 
 export default function ComboContainer() {

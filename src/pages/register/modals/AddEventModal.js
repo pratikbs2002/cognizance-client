@@ -20,7 +20,7 @@ import {
 } from "@chakra-ui/react";
 
 import { CiCirclePlus } from "react-icons/ci";
-import TechEvents from "./TechEvents";
+import TechEvents from "../allEvents/TechEvents";
 const AddEventModal = (props) => {
     const {
         isOpen: isEventModalOpen,

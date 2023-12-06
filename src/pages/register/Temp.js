@@ -1,10 +1,10 @@
 import React from "react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import Workshop from "./Workshop";
-import TechEvents from "./TechEvents";
-import NonTechEvents from "./NonTechEvents";
-import ComboEvents from "./ComboEvents";
-import MusicalNight from "./MusicalNight";
+import Workshop from "./allEvents/Workshop";
+import TechEvents from "./allEvents/TechEvents";
+import NonTechEvents from "./allEvents/NonTechEvents";
+import ComboEvents from "./comboPage/ComboEvents";
+import MusicalNight from "./allEvents/MusicalNight";
 
 const Temp = (props) => {
     return (
