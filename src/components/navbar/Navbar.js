@@ -75,11 +75,11 @@ export default function Navbar() {
                                 Home
                             </CurrentPath>
                         </li>
-                        <li>
+                        {/* <li>
                             <CurrentPath to="" smooth={true}>
                                 About
                             </CurrentPath>
-                        </li>
+                        </li> */}
                         {/* <li>
               <CurrentPath to="section1" smooth={true}>
                 Workshops
