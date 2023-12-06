@@ -210,7 +210,7 @@ export default function ComboContainer() {
                         flexDirection={"column"}
                         paddingTop={"30px"}
                         paddingBottom={"30px"}
-                        className="card highlight"
+                        className="card"
                     >
                         <Text
                             fontSize={"30"}

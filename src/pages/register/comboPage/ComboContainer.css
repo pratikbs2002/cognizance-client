@@ -53,18 +53,24 @@
 /* Apply random animation to each card */
 .card {
     height: fit-content;
-    animation-duration: 3s;
-    /* Duration for all animations */
-    animation-iteration-count: infinite;
-    /* Loop infinitely */
+    background-color: rgba(0, 0, 0, 0.5);
+
 }
 
 .card:hover {
     transform: scale(1);
     cursor: unset !important;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 
+.highlight {
+    animation-duration: 3s;
+    /* Duration for all animations */
+    animation-iteration-count: infinite;
+    /* Loop infinitely */
+
+}
 
 .highlight:nth-of-type(2) {
     animation-name: highlightColorChange;
