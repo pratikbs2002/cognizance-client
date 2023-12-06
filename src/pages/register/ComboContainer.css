@@ -59,6 +59,11 @@
     /* Loop infinitely */
 }
 
+.card:hover {
+    transform: scale(1);
+    cursor: unset !important;
+}
+
 
 
 .highlight:nth-of-type(2) {
