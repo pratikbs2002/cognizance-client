@@ -76,9 +76,10 @@ export default function ComboContainer() {
         >
             <Card backgroundColor={"rgba(0, 0, 0, 0.442)"} padding={"30px"}>
                 <Container
-                    marginBottom={"100px"}
+                    marginBottom={"50px"}
                     style={{
                         display: "flex",
+                        flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "center",
                     }}
@@ -92,6 +93,39 @@ export default function ComboContainer() {
                     <Text width={"100%"} maxW={"100%"}>
                         Combo Offer
                     </Text>
+                    <Divider width={"30%"} />
+                </Container>
+                <Container
+                    marginBottom={"50px"}
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}
+                    fontWeight={"400"}
+                    color={"white"}
+                    fontSize={"20px"}
+                    width={"100%"}
+                    maxW={"100%"}
+                    textAlign={"center"}
+                >
+                    <div
+                        style={{
+                            display: "flex",
+                            gap: "10px",
+                            padding: "20px",
+                            borderRadius: "10px",
+                            border: "2px solid white",
+                            backgroundColor: "rgba(0, 0, 0, 0.5)",
+                        }}
+                    >
+                        <div>Note:</div>
+                        <div>
+                            Act now! Register your squad before{" "}
+                            <b>January 15, 2024</b>, and seize the exclusive
+                            benefits of our limited-time combo offer!
+                        </div>
+                    </div>
                 </Container>
                 <Container className="events-combo" maxW={"90%"}>
                     <Container
@@ -116,9 +150,6 @@ export default function ComboContainer() {
                         />
                         <ComboCard
                             isActive={false}
-                            image={DJNight}
-                            name="Musical Night"
-                            price="100"
                             selectedEvents={selectedEvents}
                             setSelectedEvents={setSelectedEvents}
                             setPriceDetails={setPriceDetails}
@@ -128,9 +159,6 @@ export default function ComboContainer() {
                         />
                         <ComboCard
                             isActive={false}
-                            image={DJNight}
-                            name="Musical Night"
-                            price="100"
                             selectedEvents={selectedEvents}
                             setSelectedEvents={setSelectedEvents}
                             setPriceDetails={setPriceDetails}
