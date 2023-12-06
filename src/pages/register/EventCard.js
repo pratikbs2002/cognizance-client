@@ -120,19 +120,32 @@ export default function EventCard(props) {
                                     </Button>
                                 </>
                             )}
-                            <Modal
-                                about={props.about}
-                                eventName={props.eventName}
-                                image={props.image}
-                                department={props.department}
-                                task={props.task}
-                                price={props.price}
-                                teamSize={props.teamSize}
-                                taskEnabled={props.taskEnabled}
-                                prizesEnabled={props.prizesEnabled}
-                                winningPrizes={props.winningPrizes}
-                                pdfName={props.pdfName}
-                            />
+                            {!props.isExploreMoreDeactived ? (
+                                <Modal
+                                    about={props.about}
+                                    eventName={props.eventName}
+                                    image={props.image}
+                                    department={props.department}
+                                    task={props.task}
+                                    price={props.price}
+                                    teamSize={props.teamSize}
+                                    taskEnabled={props.taskEnabled}
+                                    prizesEnabled={props.prizesEnabled}
+                                    winningPrizes={props.winningPrizes}
+                                    pdfName={props.pdfName}
+                                />
+                            ) : (
+                                <Button
+                                    backgroundColor="#54cadd"
+                                    color={"black"}
+                                    as="a"
+                                    mr={3}
+                                    download
+                                    href={`pdfs/${props.pdfName}.pdf`}
+                                >
+                                    Download PDF
+                                </Button>
+                            )}
                         </Flex>
                     </Box>
                 </Box>
