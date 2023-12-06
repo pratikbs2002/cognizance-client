@@ -107,7 +107,6 @@ export default function ComboContainer() {
                     fontSize={"20px"}
                     width={"100%"}
                     maxW={"100%"}
-                    textAlign={"center"}
                 >
                     <div
                         style={{
@@ -115,7 +114,7 @@ export default function ComboContainer() {
                             gap: "10px",
                             padding: "20px",
                             borderRadius: "10px",
-                            border: "2px solid white",
+                            border: "2px solid green",
                             backgroundColor: "rgba(0, 0, 0, 0.5)",
                         }}
                     >
@@ -166,6 +165,39 @@ export default function ComboContainer() {
                                 setIsAllEventTeamRegistered
                             }
                         />
+                    </Container>
+                    <Container
+                        mt={"20px"}
+                        marginBottom={"50px"}
+                        style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }}
+                        fontWeight={"400"}
+                        color={"white"}
+                        fontSize={"20px"}
+                        width={"100%"}
+                        maxW={"100%"}
+                    >
+                        <div
+                            style={{
+                                display: "flex",
+                                gap: "10px",
+                                padding: "20px",
+                                borderRadius: "10px",
+                                border: "2px solid green",
+                                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                            }}
+                        >
+                            <div>
+                                Take advantage of our exclusive combo offer!
+                                Click on the cards above to select 1 or 2 tech
+                                events. Remember to register your squad for all
+                                selected events to proceed to payment and unlock
+                                the special combo offer!
+                            </div>
+                        </div>
                     </Container>
                     <Card
                         backgroundColor={"rgba(0, 0, 0, 0.642)"}
