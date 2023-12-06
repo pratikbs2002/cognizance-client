@@ -1,0 +1,41 @@
+/* Define the animation */
+@keyframes highlightAnimation {
+    0% {
+        background-color: #ff6347;
+        /* Initial color (Tomato) */
+    }
+
+    50% {
+        background-color: #dfbf07;
+        /* Highlight color (Gold) */
+    }
+
+    100% {
+        background-color: #ff6347;
+        /* Return to initial color */
+    }
+}
+
+/* Define the animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation to the note */
+.noteCard {
+    animation: slideIn 2s ease forwards;
+}
+
+/* Apply the animation to the div */
+.note {
+    animation: highlightAnimation 3s ease-in-out infinite;
+    /* 3s duration, ease-in-out timing function, infinite loop */
+}

@@ -24,6 +24,7 @@ import {
 import { FaQuestion } from "react-icons/fa";
 import Payment from "./Payment";
 import MusicalNight from "../../assets/eventImages/dj.png";
+import "./ComboContainer.css";
 
 export default function ComboContainer() {
     const [selectedEvents, setSelectedEvents] = React.useState([]);
@@ -107,6 +108,7 @@ export default function ComboContainer() {
                     fontSize={"20px"}
                     width={"100%"}
                     maxW={"100%"}
+                    className="noteCard"
                 >
                     <div
                         style={{
@@ -117,6 +119,7 @@ export default function ComboContainer() {
                             border: "2px solid green",
                             backgroundColor: "rgba(0, 0, 0, 0.5)",
                         }}
+                        className="note"
                     >
                         <div>Note:</div>
                         <div>
