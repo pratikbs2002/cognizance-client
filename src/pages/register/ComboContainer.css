@@ -1,17 +1,17 @@
 /* Define the animation */
 @keyframes highlightAnimation {
     0% {
-        background-color: #ff6347;
+        background-color: #ff634777;
         /* Initial color (Tomato) */
     }
 
     50% {
-        background-color: #dfbf07;
+        background-color: #dfbf0789;
         /* Highlight color (Gold) */
     }
 
     100% {
-        background-color: #ff6347;
+        background-color: #ff63476b;
         /* Return to initial color */
     }
 }
@@ -39,3 +39,34 @@
     animation: highlightAnimation 3s ease-in-out infinite;
     /* 3s duration, ease-in-out timing function, infinite loop */
 }
+
+@keyframes highlightColorChange {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* Apply random animation to each card */
+.card {
+    height: fit-content;
+    animation-duration: 3s;
+    /* Duration for all animations */
+    animation-iteration-count: infinite;
+    /* Loop infinitely */
+}
+
+
+
+.highlight:nth-of-type(2) {
+    animation-name: highlightColorChange;
+}
+
+.highlight:nth-of-type(3) {
+    animation-name: highlightColorChange;
+}
+
+/* Add more nth-of-type selectors for more cards and animations */

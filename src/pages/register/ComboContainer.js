@@ -182,6 +182,7 @@ export default function ComboContainer() {
                         fontSize={"20px"}
                         width={"100%"}
                         maxW={"100%"}
+                        className="noteCard"
                     >
                         <div
                             style={{
@@ -192,6 +193,7 @@ export default function ComboContainer() {
                                 border: "2px solid green",
                                 backgroundColor: "rgba(0, 0, 0, 0.5)",
                             }}
+                            className="note"
                         >
                             <div>
                                 Take advantage of our exclusive combo offer!
@@ -202,142 +204,138 @@ export default function ComboContainer() {
                             </div>
                         </div>
                     </Container>
-                    <Card
-                        backgroundColor={"rgba(0, 0, 0, 0.642)"}
-                        width={"100%"}
+                    <Container
+                        display={"flex"}
+                        alignItems={"center"}
+                        justifyContent={"center"}
+                        flexDirection={"column"}
+                        paddingTop={"30px"}
+                        paddingBottom={"30px"}
+                        className="card highlight"
                     >
-                        <Container
-                            display={"flex"}
-                            alignItems={"center"}
-                            justifyContent={"center"}
-                            flexDirection={"column"}
-                            paddingTop={"30px"}
-                            paddingBottom={"30px"}
+                        <Text
+                            fontSize={"30"}
+                            fontWeight={"800"}
+                            color={"white"}
                         >
-                            <Text
-                                fontSize={"30"}
-                                fontWeight={"800"}
-                                color={"white"}
-                            >
-                                Combo Offer Summary
-                            </Text>
-                            <Divider />
+                            Combo Offer Summary
+                        </Text>
+                        <Divider />
 
-                            <VStack>
-                                {priceDetails?.map((value) => {
-                                    return (
-                                        <HStack
-                                            width={"100%"}
-                                            justifyContent={"space-between"}
-                                            marginTop={"20px"}
-                                            gap={"100px"}
+                        <VStack>
+                            {priceDetails?.map((value) => {
+                                return (
+                                    <HStack
+                                        width={"100%"}
+                                        justifyContent={"space-between"}
+                                        marginTop={"20px"}
+                                        gap={"100px"}
+                                    >
+                                        <Text
+                                            color={"white"}
+                                            fontWeight={"600"}
                                         >
-                                            <Text
-                                                color={"white"}
-                                                fontWeight={"600"}
-                                            >
-                                                {Object.keys(value)[0]}
-                                            </Text>
-                                            <Text
-                                                color={"white"}
-                                                fontWeight={"600"}
-                                            >
-                                                {Object.values(value)[0]} ₹
-                                            </Text>
-                                        </HStack>
-                                    );
-                                })}
+                                            {Object.keys(value)[0]}
+                                        </Text>
+                                        <Text
+                                            color={"white"}
+                                            fontWeight={"600"}
+                                        >
+                                            {Object.values(value)[0]} ₹
+                                        </Text>
+                                    </HStack>
+                                );
+                            })}
 
-                                <Divider />
-                                <HStack
-                                    width={"100%"}
-                                    justifyContent={"space-between"}
-                                    marginTop={"20px"}
-                                    gap={"100px"}
-                                >
-                                    <Text color={"white"} fontWeight={"600"}>
-                                        Total
-                                    </Text>
-                                    <Text color={"white"} fontWeight={"600"}>
-                                        {totalPrice} ₹
-                                    </Text>
-                                </HStack>
-                                <HStack
-                                    width={"100%"}
-                                    justifyContent={"space-between"}
-                                    marginTop={"20px"}
-                                    gap={"100px"}
-                                >
-                                    <Text color={"white"} fontWeight={"600"}>
-                                        Discount
-                                    </Text>
-                                    <Text color={"white"} fontWeight={"600"}>
-                                        - {discount} ₹
-                                    </Text>
-                                </HStack>
-                                <Divider height={"10px"} />
-
-                                <HStack
-                                    width={"100%"}
-                                    justifyContent={"space-between"}
-                                    marginTop={"20px"}
-                                    gap={"100px"}
-                                >
-                                    <Text color={"white"} fontWeight={"600"}>
-                                        Final Amount
-                                    </Text>
-                                    <Text color={"white"} fontWeight={"600"}>
-                                        {finalPrice} ₹
-                                    </Text>
-                                </HStack>
-                                <Divider />
-                            </VStack>
-                            <Divider></Divider>
-                            <Button
-                                marginTop={"30px"}
-                                width={"100px"}
-                                color={"black"}
-                                onClick={onOpen}
-                                isDisabled={
-                                    priceDetails.length === 1 ||
-                                    isAllEventTeamRegistered.length !==
-                                        priceDetails.length
-                                }
+                            <Divider />
+                            <HStack
+                                width={"100%"}
+                                justifyContent={"space-between"}
+                                marginTop={"20px"}
+                                gap={"100px"}
                             >
-                                Pay
-                            </Button>
-
-                            <Modal
-                                isOpen={isOpen}
-                                onClose={onClose}
-                                size={"6xl"}
-                                closeOnOverlayClick={false}
-                                isCentered
+                                <Text color={"white"} fontWeight={"600"}>
+                                    Total
+                                </Text>
+                                <Text color={"white"} fontWeight={"600"}>
+                                    {totalPrice} ₹
+                                </Text>
+                            </HStack>
+                            <HStack
+                                width={"100%"}
+                                justifyContent={"space-between"}
+                                marginTop={"20px"}
+                                gap={"100px"}
                             >
-                                <ModalOverlay />
-                                <ModalContent
-                                    bg="white"
-                                    p={10}
-                                    paddingBottom={10}
-                                    h={"80%"}
-                                    overflowY={"scroll"}
-                                >
-                                    <ModalHeader>
-                                        <Heading as="h1" size={"lg"}>
-                                            Payment For Combo Offer ({" "}
-                                            {finalPrice} ₹)
-                                        </Heading>
-                                    </ModalHeader>
+                                <Text color={"white"} fontWeight={"600"}>
+                                    Discount
+                                </Text>
+                                <Text color={"white"} fontWeight={"600"}>
+                                    - {discount} ₹
+                                </Text>
+                            </HStack>
+                            <Divider height={"10px"} />
 
-                                    <ModalCloseButton />
+                            <HStack
+                                width={"100%"}
+                                justifyContent={"space-between"}
+                                marginTop={"20px"}
+                                gap={"100px"}
+                            >
+                                <Text color={"white"} fontWeight={"600"}>
+                                    Final Amount
+                                </Text>
+                                <Text color={"white"} fontWeight={"600"}>
+                                    {finalPrice} ₹
+                                </Text>
+                            </HStack>
+                            <Divider />
+                        </VStack>
+                        <Divider></Divider>
+                        <Button
+                            marginTop={"30px"}
+                            width={"100px"}
+                            color={"black"}
+                            onClick={onOpen}
+                            isDisabled={
+                                priceDetails.length === 1 ||
+                                isAllEventTeamRegistered.length !==
+                                    priceDetails.length
+                            }
+                        >
+                            Pay
+                        </Button>
 
-                                    <ModalBody>
-                                        <Payment price={finalPrice} />
-                                    </ModalBody>
-                                </ModalContent>
-                            </Modal>
-                        </Container>
-                    </Card>
+                        <Modal
+                            isOpen={isOpen}
+                            onClose={onClose}
+                            size={"6xl"}
+                            closeOnOverlayClick={false}
+                            isCentered
+                        >
+                            <ModalOverlay />
+                            <ModalContent
+                                bg="white"
+                                p={10}
+                                paddingBottom={10}
+                                h={"80%"}
+                                overflowY={"scroll"}
+                            >
+                                <ModalHeader>
+                                    <Heading as="h1" size={"lg"}>
+                                        Payment For Combo Offer ( {finalPrice}{" "}
+                                        ₹)
+                                    </Heading>
+                                </ModalHeader>
+
+                                <ModalCloseButton />
+
+                                <ModalBody>
+                                    <Payment price={finalPrice} />
+                                </ModalBody>
+                            </ModalContent>
+                        </Modal>
+                    </Container>
                     <Card>
                         <Container>
                             {/* <Box border={"2px solid black"} backgroundColor={"white"} boxSize='100px' borderRadius={"100%"} display={"flex"} alignItems={"center"} justifyContent={"center"}>

@@ -4,6 +4,7 @@ import AddEventModal from "./AddEventModal";
 import EditProfile from "./EditProfile";
 import { set } from "lodash";
 import { deleteEvent } from "../../service/eventRegistrationService";
+import "./ComboCard.css";
 
 const ComboCard = ({
     name,
@@ -162,6 +163,7 @@ const ComboCard = ({
                     display={"flex"}
                     alignItems={"center"}
                     justifyContent={"center"}
+                    className={"card highlight"}
                 >
                     <AddEventModal
                         addEventHandler={addEventHandler}

@@ -1,0 +1,28 @@
+@keyframes highlightColorChange {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* Apply random animation to each card */
+.card {
+    animation-duration: 3s;
+    /* Duration for all animations */
+    animation-iteration-count: infinite;
+    /* Loop infinitely */
+}
+
+
+.highlight:nth-of-type(2) {
+    animation-name: highlightColorChange;
+}
+
+.highlight:nth-of-type(3) {
+    animation-name: highlightColorChange;
+}
+
+/* Add more nth-of-type selectors for more cards and animations */
