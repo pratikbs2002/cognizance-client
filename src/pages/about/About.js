@@ -105,27 +105,28 @@ export default function About() {
                                     direction={{ base: "column", md: "row" }}
                                     gap={{ base: 2, md: 10 }}
                                 >
-                                    <a href="pdfs/cz_poster_24.pdf" target="_blank" download>
+                                    {/* <a > */}
                                         <Button
+                                            as="a"
                                             width={"150px"}
                                             leftIcon={<HiDownload />}
-                                            backgroundColor="#54cadd"
+                                            backgroundColor="#54cadd"href="pdfs/cz_poster_24.pdf" target="_blank" download
                                         // color="#a33aa3"
                                         // variant={"solid"}
                                         >
                                             Poster
                                         </Button>
-                                    </a>
-                                    <a href="pdfs/cz_brochure_24.pdf" target="_blank" download>
+                                    {/* </a> */}
+                                    {/* <a > */}
                                         <Button
                                             width={"150px"}
                                             leftIcon={<HiDownload />}
                                             backgroundColor="#54cadd"
-                                            variant={"solid"}
+                                            variant={"solid"} href="pdfs/cz_brochure_24.pdf" target="_blank" download
                                         >
                                             Brochure
                                         </Button>
-                                    </a>
+                                    {/* </a> */}
                                 </Stack>
                             </Container>
                             <Container maxWidth={"100%"} marginTop={10} marginInline={0}>
@@ -135,7 +136,7 @@ export default function About() {
                                         md: "space-around",
                                     }}
                                     alignItems="center"
-                                    maxWidth={"100%"}
+                                    maxWidth={"85%"}
                                     padding={0}
                                     direction={{ base: "column", md: "row" }}
                                 >
@@ -171,6 +172,7 @@ export default function About() {
                                             </Container>
                                         </Stack>
                                     </Container>
+
                                     <Container
                                         padding={0}
                                         maxWidth={{ base: "100%", md: "300px" }}

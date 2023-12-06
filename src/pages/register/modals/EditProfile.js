@@ -453,6 +453,7 @@ const EditProfile = (props) => {
                             paddingBottom={10}
                             h={"80%"}
                             overflowY={"scroll"}
+                            className="event-registration-modal"
                         >
                             <ModalHeader>
                                 <Heading as="h1" size={"lg"}>

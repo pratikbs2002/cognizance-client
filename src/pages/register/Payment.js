@@ -1,20 +1,26 @@
 import React from "react";
 import { Button, Text } from "@chakra-ui/react";
+
+import { Table, Tbody, Tr, Td } from "@chakra-ui/react";
+
 export default function Payment(props) {
+    const note1 = `Make a payment of ₹${props.price} to above mentioned bank details.
+    After payment, please proceed by clicking following button to fill out the form. Our coordinators will contact you shortly. `;
     return (
         <div
             style={{
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "column"
             }}
         >
             <div
                 style={{
                     display: "flex",
                     width: "100%",
-                    maxHeight: "45vh",
+                    maxHeight: "65vh",
                     paddingTop: "50px",
-                    justifyContent: "center",
+                    justifyContent: "center"
+                    // overflow: "auto"
                 }}
             >
                 <div
@@ -23,13 +29,17 @@ export default function Payment(props) {
                         display: "flex",
                         alignItems: "center",
                         flexDirection: "column",
+                        overflow: "auto"
                     }}
                 >
                     <div
                         className="title"
-                        style={{ fontSize: "30px", fontWeight: "400" }}
+                        style={{
+                            fontSize: "30px",
+                            fontWeight: "400"
+                        }}
                     >
-                        Payment With Account Details
+                        Account Details
                     </div>
                     <div
                         className="body"
@@ -39,7 +49,7 @@ export default function Payment(props) {
                             alignItems: "center",
                             justifyContent: "center",
                             flexDirection: "column",
-                            width: "100%",
+                            width: "100%"
                         }}
                     >
                         <div
@@ -48,33 +58,63 @@ export default function Payment(props) {
                                 paddingLeft: "100px",
                                 display: "flex",
                                 flexDirection: "column",
-                                gap: "10px",
+                                gap: "10px"
                             }}
                         >
-                            <Text fontSize={"20px"}>
-                                ● Bank A/c Name : Chandubhai S. Patel Institute
-                                of Technology
-                            </Text>
-                            <Text fontSize={"20px"}>
-                                ● Bank A/c Number : 30762646817
-                            </Text>
-                            <Text fontSize={"20px"}>
-                                ● Bank A/c Type : Current A/c
-                            </Text>
-                            <Text fontSize={"20px"}>
-                                ● Bank Branch CODE : 10961
-                            </Text>
-                            <Text fontSize={"20px"}>
-                                ● Bank IFSC code : SBIN0010961
-                            </Text>
-                            <Text fontSize={"20px"}>
-                                ● Bank MICR CODE : 388002502
-                            </Text>
-                            <Text fontSize={"20px"}>
-                                ● Bank Branch Address : Darshan Hostel,
-                                Changa-Valetla Road, Changa. Dist. Anand
-                            </Text>
+                            <Table variant={"simple"}>
+                                <Tbody>
+                                    <Tr>
+                                        <Td>Bank A/c Name</Td>
+                                        <Td>
+                                            Chandubhai S. Patel
+                                            Institute of Technology
+                                        </Td>
+                                    </Tr>
+                                    <Tr>
+                                        <Td>Bank A/c Number</Td>
+                                        <Td>30762646817</Td>
+                                    </Tr>
+                                    <Tr>
+                                        <Td>Bank A/c Type</Td>
+                                        <Td>Current A/C</Td>
+                                    </Tr>
+                                    <Tr>
+                                        <Td>Bank Branch Code</Td>
+                                        <Td>10961</Td>
+                                    </Tr>
+                                    <Tr>
+                                        <Td> Bank IFSC Code</Td>
+                                        <Td>SBIN0010961</Td>
+                                    </Tr>
+                                    <Tr>
+                                        <Td>Bank MICR Code</Td>
+                                        <Td>388002502</Td>
+                                    </Tr>
+                                    <Tr>
+                                        <Td>Bank Branch Address</Td>
+                                        <Td>
+                                            Darshan Hostel,
+                                            Changa-Valetla Road,
+                                            Changa. Dist. Anand
+                                        </Td>
+                                    </Tr>
+                                </Tbody>
+                            </Table>
                             {/* <Text fontSize={"20px"}>Amount : </Text> */}
+
+                            {/* <Table>
+                                <Header>
+                                    <HeaderRow>sd</HeaderRow>
+                                    <HeaderRow>sd</HeaderRow>
+                                </Header>
+
+                                <Body>
+                                    <Row>
+                                        <Cell>df</Cell>
+                                        
+                                    </Row>
+                                </Body>
+                            </Table> */}
                         </div>
                     </div>
                 </div>
@@ -122,7 +162,7 @@ export default function Payment(props) {
                     style={{
                         display: "flex",
                         paddingTop: "5%",
-                        paddingBottom: "20px",
+                        paddingBottom: "20px"
                     }}
                 >
                     <div
@@ -130,7 +170,7 @@ export default function Payment(props) {
                             display: "flex",
                             fontSize: "20px",
                             fontWeight: "700",
-                            paddingRight: "10px",
+                            paddingRight: "10px"
                         }}
                     >
                         Note:
@@ -139,20 +179,18 @@ export default function Payment(props) {
                         style={{
                             display: "flex",
                             fontSize: "20px",
-                            fontWeight: "700",
+                            fontWeight: "700"
                         }}
                     >
-                        After payment, please proceed by clicking following
-                        button to fill out the form. Our coordinators will
-                        contact you shortly.
+                        {note1}
                     </div>
                 </div>
                 <div
                     style={{
                         display: "flex",
                         width: "100%",
-                        paddingBottom: "50px",
-                        justifyContent: "center",
+                        // paddingBottom: "50px",
+                        justifyContent: "center"
                     }}
                 >
                     <Button colorScheme="blue" mr={3}>

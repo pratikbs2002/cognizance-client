@@ -155,6 +155,7 @@ export default function Footer() {
                                     allowfullscreen=""
                                     loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade"
+                                    title="venue"
                                 ></iframe>
                             </div>
                         </div>
