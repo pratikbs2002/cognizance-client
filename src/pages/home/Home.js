@@ -4,7 +4,7 @@ import { MdDateRange } from "react-icons/md";
 import { Link } from "react-scroll";
 import RocketAnimation from "../../components/rocketAnimation/RocketAnimation";
 import { useNavigate } from "react-router-dom";
-import CSPIT from "../../assets/cspit.png";
+import CSPIT from "../../assets/CSPIT_Final.png";
 import DEPSTAR from "../../assets/depstar.png";
 import CHARUSAT from "../../assets/CHARUSAT_RGTD_LOGO.webp";
 export default function Home() {
@@ -96,7 +96,10 @@ export default function Home() {
                         >
                             <Image
                                 src={CHARUSAT}
-                                height={"7vh"}
+                                height={"9vh"}
+                                borderRadius={5}
+                                padding={1}
+                                backgroundColor={"white"}
                                 alt="sds"
                                 aspectRatio={"auto"}
                                 objectFit={"cover"}
@@ -124,19 +127,23 @@ export default function Home() {
                         >
                             <Image
                                 src={CSPIT}
-                                width="13vh"
+                                width="10vh"
                                 alt="sds"
+                                border={"solid"}
+                                borderWidth={5}
+                                borderColor={"white"}
+                                backgroundColor={"white"}
                                 aspectRatio={"auto"}
                                 objectFit={"cover"}
-                                borderRadius={15}
+                                borderRadius={5}
                             />
                             <Image
                                 src={DEPSTAR}
-                                width="9.5vh"
+                                width="10vh"
                                 alt="sds"
                                 aspectRatio={"auto"}
                                 objectFit={"cover"}
-                                borderRadius={15}
+                                borderRadius={5}
                             />
                         </Container>
 
@@ -159,16 +166,16 @@ export default function Home() {
                                 variant={"solid"}
                                 onClick={() => navigate(`/register`)}
                             >
-                                Register
+                                Register Now
                             </Button>
-                            <Button
+                            {/* <Button
                                 width={{ base: "80%", md: "30%" }}
                                 variant={"solid"}
                             >
                                 <Link to="footer-section" smooth="true">
                                     Contact Us
                                 </Link>
-                            </Button>
+                            </Button> */}
                         </Container>
                     </Container>
                     <Container
