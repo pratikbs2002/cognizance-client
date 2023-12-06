@@ -12,12 +12,12 @@ import _6 from "../../assets/committee_photo/6.TU1.png";
 
 export default function Conveners() {
     const arr = [
-        // {
-        //     id: 5,
-        //     name: "Dr. Vijay Chaudhary",
-        //     description: "FTE, CHARUSAT, India [Convener]",
-        //     profile: _5,
-        // },
+        {
+            id: 5,
+            name: "Dr. Vijay Chaudhary",
+            description: "FTE, CHARUSAT, India [Convener]",
+            profile: _5,
+        },
         {
             id: 6,
             name: "Dr. Trushit Upadhyaya",

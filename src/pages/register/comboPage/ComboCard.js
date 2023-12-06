@@ -79,6 +79,17 @@ const ComboCard = ({
             }
         }
         setIsTeamRegistered(false);
+        setPriceDetails((values) =>
+            values.filter((value) => Object.keys(value)[0] !== data.title)
+        );
+        setSelectedEvents(
+            selectedEvents.filter((event) => event !== data.eventId)
+        );
+        setIsAllEventTeamRegistered((value) =>
+            value.filter((obj) => {
+                return Object.keys(obj)[0] !== data.title;
+            })
+        );
         setActive(!active);
     };
 
