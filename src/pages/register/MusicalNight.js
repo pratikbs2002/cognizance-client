@@ -16,6 +16,7 @@ const MusicalNight = (props) => {
         about: "Experience an electrifying Musical Night at our college function, featuring pulsating beats, vibrant lights, and an atmosphere brimming with energy that promises an unforgettable evening of music and dance.",
         teamSize: 1,
         eventFee: 150,
+        eventType: "WORKSHOP",
     };
 
     return (
@@ -52,7 +53,7 @@ const MusicalNight = (props) => {
             >
                 <EventCard
                     eventId={IData.id}
-                    eventType={"DJ NIGHT"}
+                    eventType={IData.eventType}
                     about={IData.about}
                     show={true}
                     image={IData.image}

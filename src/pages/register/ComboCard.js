@@ -16,7 +16,7 @@ const ComboCard = ({
     selectedEvents,
     setSelectedEvents,
     setPriceDetails,
-    priceDetails,
+    setIsAllEventTeamRegistered,
 }) => {
     const [isTeamRegistered, setIsTeamRegistered] = useState(false);
 
@@ -29,7 +29,11 @@ const ComboCard = ({
         isTeamRegistered ? "green.300" : "red.300"
     );
     const handleRegisterTeam = () => {
-        setIsTeamRegistered(!isTeamRegistered);
+        setIsTeamRegistered(true);
+        setIsAllEventTeamRegistered((value) => [
+            ...value,
+            { [isActive ? name : data.title]: true },
+        ]);
     };
 
     const addEventHandler = (
@@ -63,11 +67,18 @@ const ComboCard = ({
                 setSelectedEvents(
                     selectedEvents.filter((event) => event !== data.eventId)
                 );
+                setIsAllEventTeamRegistered((value) =>
+                    value.filter((obj) => {
+                        return Object.keys(obj)[0] !== data.title;
+                    })
+                );
                 setActive(!active);
             } else {
                 setIsTeamRegistered(true);
             }
         }
+        setIsTeamRegistered(false);
+        setActive(!active);
     };
 
     const [active, setActive] = useState(isActive);

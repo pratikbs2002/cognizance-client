@@ -38,6 +38,7 @@ export default function ComboContainer() {
         about: "Experience an electrifying Musical Night at our college function, featuring pulsating beats, vibrant lights, and an atmosphere brimming with energy that promises an unforgettable evening of music and dance.",
         teamSize: 1,
         eventFee: 150,
+        eventType: "WORKSHOP",
     };
 
     const [priceDetails, setPriceDetails] = React.useState([
@@ -47,6 +48,8 @@ export default function ComboContainer() {
     const [totalPrice, setTotalPrice] = React.useState(0);
     const [discount, setDiscount] = React.useState(0);
     const [finalPrice, setFinalPrice] = React.useState(0);
+    const [isAllEventTeamRegistered, setIsAllEventTeamRegistered] =
+        React.useState([]);
 
     React.useEffect(() => {
         let dt = 0;
@@ -64,7 +67,7 @@ export default function ComboContainer() {
     }, [priceDetails]);
 
     const { isOpen, onOpen, onClose } = useDisclosure();
-
+    console.log(isAllEventTeamRegistered);
     return (
         <Container
             maxW={"100%"}
@@ -107,6 +110,9 @@ export default function ComboContainer() {
                             eventType={IData.eventType}
                             eventId={IData.id}
                             teamSize={IData.teamSize}
+                            setIsAllEventTeamRegistered={
+                                setIsAllEventTeamRegistered
+                            }
                         />
                         <ComboCard
                             isActive={false}
@@ -116,7 +122,9 @@ export default function ComboContainer() {
                             selectedEvents={selectedEvents}
                             setSelectedEvents={setSelectedEvents}
                             setPriceDetails={setPriceDetails}
-                            priceDetails={priceDetails}
+                            setIsAllEventTeamRegistered={
+                                setIsAllEventTeamRegistered
+                            }
                         />
                         <ComboCard
                             isActive={false}
@@ -126,7 +134,9 @@ export default function ComboContainer() {
                             selectedEvents={selectedEvents}
                             setSelectedEvents={setSelectedEvents}
                             setPriceDetails={setPriceDetails}
-                            priceDetails={priceDetails}
+                            setIsAllEventTeamRegistered={
+                                setIsAllEventTeamRegistered
+                            }
                         />
                     </Container>
                     <Card
@@ -225,7 +235,11 @@ export default function ComboContainer() {
                                 width={"100px"}
                                 color={"black"}
                                 onClick={onOpen}
-                                isDisabled={priceDetails.length === 1}
+                                isDisabled={
+                                    priceDetails.length === 1 ||
+                                    isAllEventTeamRegistered.length !==
+                                        priceDetails.length
+                                }
                             >
                                 Pay
                             </Button>

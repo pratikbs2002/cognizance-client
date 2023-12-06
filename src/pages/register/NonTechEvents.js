@@ -17,7 +17,7 @@ import wireLoop from "../../assets/eventImages/wire loop game.jpeg";
 import boxSoccer from "../../assets/eventImages/box soccer.png";
 import ballGun from "../../assets/eventImages/ball gun.png";
 import paintDate from "../../assets/eventImages/paint date.png";
-import rapbattle from "../../assets/eventImages/RapBattle 2.png";
+import rapbattle from "../../assets/eventImages/RapBattle.png";
 import valorant from "../../assets/eventImages/Valorant.png";
 import moneyheist from "../../assets/eventImages/money heist.png";
 import lostinspace from "../../assets/eventImages/Lost in Space.png";
