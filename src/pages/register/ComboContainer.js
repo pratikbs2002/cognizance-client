@@ -166,7 +166,7 @@ export default function ComboContainer() {
                                         <HStack
                                             width={"100%"}
                                             justifyContent={"space-between"}
-                                            marginTop={"40px"}
+                                            marginTop={"20px"}
                                             gap={"100px"}
                                         >
                                             <Text
@@ -189,7 +189,7 @@ export default function ComboContainer() {
                                 <HStack
                                     width={"100%"}
                                     justifyContent={"space-between"}
-                                    marginTop={"40px"}
+                                    marginTop={"20px"}
                                     gap={"100px"}
                                 >
                                     <Text color={"white"} fontWeight={"600"}>
@@ -202,7 +202,7 @@ export default function ComboContainer() {
                                 <HStack
                                     width={"100%"}
                                     justifyContent={"space-between"}
-                                    marginTop={"40px"}
+                                    marginTop={"20px"}
                                     gap={"100px"}
                                 >
                                     <Text color={"white"} fontWeight={"600"}>
@@ -217,7 +217,7 @@ export default function ComboContainer() {
                                 <HStack
                                     width={"100%"}
                                     justifyContent={"space-between"}
-                                    marginTop={"40px"}
+                                    marginTop={"20px"}
                                     gap={"100px"}
                                 >
                                     <Text color={"white"} fontWeight={"600"}>
