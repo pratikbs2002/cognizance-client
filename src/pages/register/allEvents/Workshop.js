@@ -29,10 +29,10 @@ const Workshop = (props) => {
         {
             id: 31,
             image: Aws,
-            title: "AWS Cloud",
+            title: "AWS-DevOps",
             description:
                 "Embark on an immersive learning experience and gain comprehensive expertise to revolutionize your capabilities within the dynamic realm of AWS Cloud at our transformative and hands-on workshop.",
-            pdfName: "AWS Cloud - Workshop - Cognizance 2024",
+            pdfName: "AWS-DevOps - Workshop - Cognizance 2024",
         },
         {
             id: 32,
@@ -64,7 +64,7 @@ const Workshop = (props) => {
             title: "Solid Works & 3D Printing",
             description:
                 "Experience working with SolidWorks, a 3D CAD software which includes modeling, analysis and AMP, Animation and more.",
-            pdfName: "SolidWorks & 3D Printing - Workshop - Cognizance 2024",
+            pdfName: "Solidworks & 3D Printing - Workshop - Cognizance 2024",
         },
         {
             id: 36,
