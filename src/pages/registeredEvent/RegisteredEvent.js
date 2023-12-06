@@ -49,7 +49,7 @@ export default function RegisterdEvent() {
                         backgroundColor: "rgba(0, 0, 0, 0.442)",
                     }}
                 >
-                    Event Registrations
+                    Registered Events
                 </div>
 
                 <div

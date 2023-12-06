@@ -182,7 +182,7 @@ export default function ContactUs() {
                             style={{
                                 height: "50vh",
                                 width: "83%",
-                                marginLeft: "",
+                                marginBottom: "50px",
                             }}
                         >
                             <div
