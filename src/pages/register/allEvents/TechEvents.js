@@ -387,6 +387,26 @@ const TechEvents = (props) => {
             pdfName: "graphicsgladiator",
         },
     ];
+
+    // const [finalData, setFinalData] = React.useState([]);
+    // console.log(finalData);
+    // React.useEffect(() => {
+    //     if (props.registeredEvent) {
+    //         data.forEach((item) => {
+    //             if (
+    //                 props?.registeredTech?.filter((i) => {
+    //                     console.log(i.srNo, item.id);
+    //                     return i.srNo === item.id;
+    //                 })
+    //             ) {
+    //                 setFinalData((prev) => [...prev, item]);
+    //             }
+    //         });
+    //     } else {
+    //         setFinalData(data);
+    //     }
+    // }, []);
+
     return (
         <>
             <div

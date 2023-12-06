@@ -89,6 +89,7 @@ const EditProfile = (props) => {
                 id: props.eventId,
                 eventType: props.eventType,
                 eventTitle: props.eventName,
+                isMusicalNight: props.isMusicalNight ? true : false,
                 // eventDate: "",
                 // eventLocation: "",
                 eventFees: props.price,

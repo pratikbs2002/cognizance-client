@@ -64,6 +64,7 @@ const MusicalNight = (props) => {
                     price={IData.eventFee}
                     teamSize={IData.teamSize}
                     taskEnabled={false}
+                    isMusicalNight={true}
                 />
             </div>
         </>

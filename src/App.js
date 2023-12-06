@@ -8,6 +8,7 @@ import Register from "./pages/register/Register";
 import UploadImages from "./pages/admin/UploadImages";
 import ContactUs from "./pages/contactUs/ContactUs";
 import Committee from "./pages/committee/Committee";
+import RegisterdEvent from "./pages/registeredEvent/RegisteredEvent";
 // import Payment from "./pages/register/Payment";
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
                 <Route path="*" element={<LandingPage />} />
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/committee" element={<Committee />} />
+                <Route path="/registeredEvents" element={<RegisterdEvent />} />
             </Routes>
         </BrowserRouter>
     );

@@ -87,7 +87,7 @@ const Temp = (props) => {
                             </Tab>
                         )}
 
-                        {!props.addEventModal && (
+                        {!props.addEventModal && !props.registeredEvent && (
                             <Tab
                                 color={"white"}
                                 variant="enclosed"
@@ -113,6 +113,8 @@ const Temp = (props) => {
                                 addEventModal={props.addEventModal}
                                 setAddEventData={props.setAddEventData}
                                 addEventHandler={props.addEventHandler}
+                                registeredEvent={props.registeredEvent}
+                                registeredTech={props.registeredTech}
                             />
                         </TabPanel>
 
@@ -121,6 +123,8 @@ const Temp = (props) => {
                                 addEventModal={props.addEventModal}
                                 setAddEventData={props.setAddEventData}
                                 addEventHandler={props.addEventHandler}
+                                registeredEvent={props.registeredEvent}
+                                registeredNonTech={props.registeredNonTech}
                             />
                         </TabPanel>
 
@@ -129,14 +133,19 @@ const Temp = (props) => {
                                 addEventModal={props.addEventModal}
                                 setAddEventData={props.setAddEventData}
                                 addEventHandler={props.addEventHandler}
+                                registeredEvent={props.registeredEvent}
+                                registeredWorkshop={props.registeredWorkshop}
                             />
                         </TabPanel>
                         {!props.addEventModal && (
                             <TabPanel>
-                                <MusicalNight />
+                                <MusicalNight
+                                    registeredEvent={props.registeredEvent}
+                                    isRegistered={props.isRegistered}
+                                />
                             </TabPanel>
                         )}
-                        {!props.addEventModal && (
+                        {!props.addEventModal && !props.registeredEvent && (
                             <TabPanel>
                                 <ComboEvents />
                             </TabPanel>

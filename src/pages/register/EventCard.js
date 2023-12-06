@@ -99,6 +99,7 @@ export default function EventCard(props) {
                                     teamSize={props.teamSize}
                                     price={props.price}
                                     image={props.image}
+                                    isMusicalNight={props.isMusicalNight}
                                 />
                             ) : (
                                 <>
