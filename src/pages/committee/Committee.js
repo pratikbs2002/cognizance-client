@@ -44,9 +44,10 @@ export default function Committee() {
             paddingBottom: "10px",
             marginBottom: "10px",
             backgroundColor: "rgba(0, 0, 0, 0.442)",
+            textAlign: "center",
           }}
         >
-          Organizing Committee
+          <Text>Organizing Committee</Text>
         </div>
         <Container
           background={"transparent"}
