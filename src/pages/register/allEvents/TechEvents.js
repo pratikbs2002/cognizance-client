@@ -166,7 +166,7 @@ const TechEvents = (props) => {
             ],
             contact: "",
             about: "Code Mania is an intense and fast-paced coding competition that challenges participants' coding skills, problem-solving abilities, and time management. The event is designed to push participants to their limits as they tackle a series of coding challenges within a limited timeframe. Participants will have the opportunity to showcase their technical prowess and compete against other talented coders.",
-            teamSize: "2-3",
+            teamSize: "1",
             eventFee: 50,
             winningPrice: [
                 "● 1st Prize: ₹ 4,000",
