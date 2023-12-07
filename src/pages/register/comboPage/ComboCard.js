@@ -117,7 +117,7 @@ const ComboCard = ({
             {isActive ? name : data.title}
           </Text>
           <Text mt={2} color="white">
-            ${isActive ? price : data.price}
+            ₹{isActive ? price : data.price}
           </Text>
           <div
             style={{
