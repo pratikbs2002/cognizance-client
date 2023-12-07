@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="Container">
+      <nav className="navbar-container">
         <div
           className="navbar-logo"
           style={{

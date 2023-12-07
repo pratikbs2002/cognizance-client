@@ -154,7 +154,7 @@ export default function Home() {
             backgroundColor={"rgba(0, 0, 0, 0.442)"}
             maxW={"100%"}
             width={"100%"}
-            padding={"20px"}
+            padding={{ base: "5px", md: "20px" }}
           >
             <Container
               maxW={"100%"}
