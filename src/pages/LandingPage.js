@@ -1,39 +1,62 @@
-import React from "react";
-import { Container } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { Container, Image } from "@chakra-ui/react";
 import mainbg from "../assets/bg8.png";
 import Committee from "./committee/Committee";
-
+import "./ImageTransition.css";
 import Navbar from "../components/navbar/Navbar";
 import About from "./about/About";
 import Footer from "../components/footer/Footer";
 import PhotoGallery from "./photoGallery/PhotoGallery";
 import Count from "../components/Count";
 import Home from "./home/Home";
+import NewHome from "./home/NewHome";
 import ScrollButton from "../components/scrollButton/ScrollButton";
-
+import aboutVideo from "./Cognizance 2023.mp4";
+import aboutIm from "./posterCz.png";
+import aboutIm2 from "./posterCz2.png";
+import aboutIm3 from "./homePage.png";
 export default function LandingPage() {
-    return (
-        <>
-            <Container
-                padding={0}
-                margin={0}
-                maxWidth={"100%"}
-                backgroundImage={mainbg}
-                backgroundSize="cover"
-                backgroundAttachment="fixed"
-                backgroundColor="blackAlpha.800"
-                backdropBlur={"lg"}
-                backgroundRepeat={"no-repeat"}
-            >
-                <Navbar />
-                {/* <div style={{ height: "130px" }}></div>  */}
-                <Home />
-                <About />
-                {/* <Committee /> */}
-                {/* <PhotoGallery /> */}
-                <Footer />
-                <ScrollButton />
-            </Container>
-        </>
-    );
+  const [isImage1Visible, setIsImage1Visible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsImage1Visible((prev) => !prev);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+  return (
+    <>
+      <Container
+        padding={0}
+        margin={0}
+        maxWidth={"100%"}
+        backgroundImage={mainbg}
+        backgroundSize="cover"
+        backgroundAttachment="fixed"
+        backgroundColor="blackAlpha.800"
+        backdropBlur={"lg"}
+        backgroundRepeat={"n  o-repeat"}
+      >
+        <Navbar />
+
+        <Container marginTop={"10px"} maxWidth={{ base: "100%", md: "100%" }}>
+          {/* <video
+            style={{ Width: "70%", height: "auto" }}
+            src={aboutVideo}
+            alt="About Video"
+            autoPlay
+            loop
+            muted   
+          /> */}
+          <img className="homePageImage1" src={aboutIm3} alt="about image1" />
+        </Container>
+        {/* <Home /> */}
+        <NewHome />
+        <About />
+        <Footer />
+        <ScrollButton />
+      </Container>
+    </>
+  );
 }
