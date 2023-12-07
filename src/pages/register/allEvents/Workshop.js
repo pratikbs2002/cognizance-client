@@ -101,7 +101,7 @@ const Workshop = (props) => {
                         department={IData.department}
                         task={IData.task}
                         price={IData.eventFee}
-                        teamSize={IData.teamSize}
+                        teamSize={1}
                         taskEnabled={true}
                         show={true}
                         image={IData.image}
