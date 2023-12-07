@@ -58,6 +58,8 @@ export default function Navbar() {
                     flexDirection: "column",
                     textDecoration: "none",
                     listStyle: "none",
+                    alignItems: "center",
+                    width: "100%",
                   }
             }
           >
