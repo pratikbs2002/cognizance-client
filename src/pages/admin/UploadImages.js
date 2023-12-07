@@ -11,13 +11,59 @@ import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { useDropzone } from "react-dropzone";
 import { MdCloudUpload } from "react-icons/md";
-import { uploadImage } from "../../service/privateService";
+import {
+    downloadNonTechEventRegistrationSheet,
+    downloadTechEventRegistrationSheet,
+    uploadImage,
+} from "../../service/privateService";
 import styles from "./fileUploader";
 import "../photoGallery/PhotoGallery.css";
 
 export default function UploadImages() {
     const navigate = useNavigate();
     const [files, setFiles] = useState([]);
+
+    const handleDownloadTechEventRegistrationSheet = async () => {
+        const res = await downloadTechEventRegistrationSheet();
+
+        if (res.status === 200) {
+            const data = await res.blob();
+            const url = window.URL.createObjectURL(data);
+            const link = document.createElement("a");
+            link.href = url;
+            const d = new Date();
+            link.setAttribute(
+                "download",
+                `Tech Events Registrations Sheet - Cognizance 2024.xlsx`
+            );
+            document.body.appendChild(link);
+            link.click();
+        } else {
+            const parseRes = await res.json();
+            alert(parseRes.message);
+        }
+    };
+
+    const handleDownloadNonTechEventRegistrationSheet = async () => {
+        const res = await downloadNonTechEventRegistrationSheet();
+
+        if (res.status === 200) {
+            const data = await res.blob();
+            const url = window.URL.createObjectURL(data);
+            const link = document.createElement("a");
+            link.href = url;
+            const d = new Date();
+            link.setAttribute(
+                "download",
+                `Non Tech Events Registrations Sheet - Cognizance 2024.xlsx`
+            );
+            document.body.appendChild(link);
+            link.click();
+        } else {
+            const parseRes = await res.json();
+            alert(parseRes.message);
+        }
+    };
 
     const thumbs = files.map((file) => (
         <div style={styles.thumb} key={file.name}>
@@ -90,7 +136,6 @@ export default function UploadImages() {
                     textAlign="center"
                 >
                     <FormControl maxW="100%" paddingTop={10}>
-                        <FormLabel>Payment Receipt</FormLabel>
                         <section className="container">
                             <div {...getRootProps({ className: "dropzone" })}>
                                 <aside style={styles.thumbsContainer}>
@@ -122,6 +167,28 @@ export default function UploadImages() {
                         </FormHelperText>
                     </FormControl>
                     <Button onClick={handleSubmit}>Submit</Button>
+                </Box>
+                <Box
+                    display={"flex"}
+                    flexDirection={"column"}
+                    gap={20}
+                    mt={20}
+                    width={"100%"}
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                >
+                    <Button
+                        onClick={handleDownloadTechEventRegistrationSheet}
+                        width={"fit-content"}
+                    >
+                        Download Tech Event Registration Sheet
+                    </Button>
+                    <Button
+                        onClick={handleDownloadNonTechEventRegistrationSheet}
+                        width={"fit-content"}
+                    >
+                        Download Non Tech Event Registration Sheet
+                    </Button>
                 </Box>
             </div>
         </>

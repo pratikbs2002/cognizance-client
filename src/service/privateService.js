@@ -22,3 +22,31 @@ export async function uploadImage(files, image) {
         body: formData,
     });
 }
+
+export async function downloadTechEventRegistrationSheet() {
+    let locationData = await getLocationData();
+    return await fetch(`${hostUrl}/get-tech-event-registration-sheet`, {
+        method: "POST",
+        headers: {
+            token: sessionStorage.token,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            locationData: locationData,
+        }),
+    });
+}
+
+export async function downloadNonTechEventRegistrationSheet() {
+    let locationData = await getLocationData();
+    return await fetch(`${hostUrl}/get-non-tech-event-registration-sheet`, {
+        method: "POST",
+        headers: {
+            token: sessionStorage.token,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            locationData: locationData,
+        }),
+    });
+}
