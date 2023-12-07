@@ -51,7 +51,7 @@ const TechEvents = (props) => {
             ],
             contact: "",
             about: "Its football time and no-one plays soccer better than the engineers, in their own sophisticated way we hail this event ROBO SOCCER. All your soccer fans hold your breath, as we present to your soccer with an entirely new dimension. So if you are up for the challenge get your manual soccer playing bots ready in order to compete on the biggest stage and bring out the hidden RONALDO, MESSI in you…its time you to stop watching soccer on screens. Participate and have lots of fun it’s going to be thrilling for sure…..enjoy the event!",
-            teamSize: 3,
+            teamSize: 4,
             eventFee: 200,
             winningPrice: [
                 "● 1st Prize: ₹ 4,000",
@@ -78,9 +78,12 @@ const TechEvents = (props) => {
             contact: "",
             about: "'RoboRace' refers to an innovative motorsport concept that involves fully autonomous, electric race cars competing against each other. It's a high-tech, futuristic take on traditional racing, with a focus on showcasing the capabilities of artificial intelligence, machine learning, and autonomous driving technology.",
             teamSize: 4,
-            eventFee: "_________",
-            winningPrice: ["Coming Soon"],
-            isPrizesEnabled: false,
+            eventFee: 500,
+            winningPrice: [
+                "● Winner Prize: ₹ 5,000",
+                "● Runner up Prize: ₹ 2,500",
+            ],
+            isPrizesEnabled: true,
             pdfName: "roborace",
         },
         {
@@ -139,7 +142,7 @@ const TechEvents = (props) => {
             ],
             contact: "",
             about: "Host an ArtTech Extravaganza where participants create tech-inspired artwork, designs, and games by using code, Graphic design, or blueprints in a race against the clock.",
-            teamSize: "1-3",
+            teamSize: 1,
             eventFee: 50,
             winningPrice: [
                 "● 1st Prize: ₹ 4,000",
@@ -163,7 +166,7 @@ const TechEvents = (props) => {
             ],
             contact: "",
             about: "Code Mania is an intense and fast-paced coding competition that challenges participants' coding skills, problem-solving abilities, and time management. The event is designed to push participants to their limits as they tackle a series of coding challenges within a limited timeframe. Participants will have the opportunity to showcase their technical prowess and compete against other talented coders.",
-            teamSize: "2-3",
+            teamSize: "1",
             eventFee: 50,
             winningPrice: [
                 "● 1st Prize: ₹ 4,000",
