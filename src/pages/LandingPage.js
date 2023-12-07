@@ -11,7 +11,6 @@ import Count from "../components/Count";
 import Home from "./home/Home";
 import NewHome from "./home/NewHome";
 import ScrollButton from "../components/scrollButton/ScrollButton";
-import aboutVideo from "./Cognizance 2023.mp4";
 import aboutIm from "./posterCz.png";
 import aboutIm2 from "./posterCz2.png";
 import aboutIm3 from "./homePage.png";
