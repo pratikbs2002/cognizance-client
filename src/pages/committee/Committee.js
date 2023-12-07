@@ -17,6 +17,7 @@ import CoPatrons from "./CoPatrons";
 import Conveners from "./Coveners";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import backd from "../../assets/main-bg.jpg";
 
 export default function Committee() {
   const navigate = useNavigate();
@@ -82,8 +83,13 @@ export default function Committee() {
                   textAlign={"center"}
                   size="sm"
                   color="white"
-                  bg="#161d37 !important"
+                  // bg="#161d37 !important"
                   border="1px solid white"
+                  style={{
+                    background: `url(${backd})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
                 >
                   Chief Patrons
                 </Heading>
@@ -111,8 +117,13 @@ export default function Committee() {
                   textAlign={"center"}
                   size="sm"
                   color="white"
-                  bg="#161d37 !important"
+                  // bg="#161d37 !important"
                   border="1px solid white"
+                  style={{
+                    background: `url(${backd})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
                 >
                   Patrons
                 </Heading>
@@ -140,8 +151,13 @@ export default function Committee() {
                   textAlign={"center"}
                   size="sm"
                   color="white"
-                  bg="#161d37 !important"
+                  // bg="#161d37 !important"
                   border="1px solid white"
+                  style={{
+                    background: `url(${backd})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
                 >
                   Co-Patrons
                 </Heading>
@@ -169,8 +185,13 @@ export default function Committee() {
                   textAlign={"center"}
                   size="sm"
                   color="white"
-                  bg="#161d37 !important"
+                  // bg="#161d37 !important"
                   border="1px solid white"
+                  style={{
+                    background: `url(${backd})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
                 >
                   Conveners
                 </Heading>
@@ -200,8 +221,13 @@ export default function Committee() {
                   textAlign={"center"}
                   size="sm"
                   color="white"
-                  bg="#161d37 !important"
+                  // bg="#161d37 !important"
                   border="1px solid white"
+                  style={{
+                    background: `url(${backd})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
                   marginBottom={"10px"}
                 >
                   Coordinators

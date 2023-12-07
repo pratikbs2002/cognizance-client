@@ -12,8 +12,10 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useDropzone } from "react-dropzone";
 import { MdCloudUpload } from "react-icons/md";
 import {
+    downloadMusicalNightRegistrationSheet,
     downloadNonTechEventRegistrationSheet,
     downloadTechEventRegistrationSheet,
+    downloadWorkshopRegistrationSheet,
     uploadImage,
 } from "../../service/privateService";
 import styles from "./fileUploader";
@@ -44,6 +46,46 @@ export default function UploadImages() {
         }
     };
 
+    const handleDownloadWorkshopRegistrationSheet = async () => {
+        const res = await downloadWorkshopRegistrationSheet();
+
+        if (res.status === 200) {
+            const data = await res.blob();
+            const url = window.URL.createObjectURL(data);
+            const link = document.createElement("a");
+            link.href = url;
+            const d = new Date();
+            link.setAttribute(
+                "download",
+                `Workshops Registrations Sheet - Cognizance 2024.xlsx`
+            );
+            document.body.appendChild(link);
+            link.click();
+        } else {
+            const parseRes = await res.json();
+            alert(parseRes.message);
+        }
+    };
+    const handleDownloadMusicalNightRegistrationSheet = async () => {
+        const res = await downloadMusicalNightRegistrationSheet();
+
+        if (res.status === 200) {
+            const data = await res.blob();
+            const url = window.URL.createObjectURL(data);
+            const link = document.createElement("a");
+            link.href = url;
+            const d = new Date();
+            link.setAttribute(
+                "download",
+                `Musical Nights Registrations Sheet - Cognizance 2024.xlsx`
+            );
+            document.body.appendChild(link);
+            link.click();
+        } else {
+            const parseRes = await res.json();
+            alert(parseRes.message);
+        }
+    };
     const handleDownloadNonTechEventRegistrationSheet = async () => {
         const res = await downloadNonTechEventRegistrationSheet();
 
@@ -188,6 +230,18 @@ export default function UploadImages() {
                         width={"fit-content"}
                     >
                         Download Non Tech Event Registration Sheet
+                    </Button>
+                    <Button
+                        onClick={handleDownloadWorkshopRegistrationSheet}
+                        width={"fit-content"}
+                    >
+                        Download Workshop Registration Sheet
+                    </Button>
+                    <Button
+                        onClick={handleDownloadMusicalNightRegistrationSheet}
+                        width={"fit-content"}
+                    >
+                        Download Musical Night Registration Sheet
                     </Button>
                 </Box>
             </div>
