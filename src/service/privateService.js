@@ -50,3 +50,31 @@ export async function downloadNonTechEventRegistrationSheet() {
         }),
     });
 }
+
+export async function downloadWorkshopRegistrationSheet() {
+    let locationData = await getLocationData();
+    return await fetch(`${hostUrl}/get-workshop-registration-sheet`, {
+        method: "POST",
+        headers: {
+            token: sessionStorage.token,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            locationData: locationData,
+        }),
+    });
+}
+
+export async function downloadMusicalNightRegistrationSheet() {
+    let locationData = await getLocationData();
+    return await fetch(`${hostUrl}/get-musical-night-registration-sheet`, {
+        method: "POST",
+        headers: {
+            token: sessionStorage.token,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            locationData: locationData,
+        }),
+    });
+}
