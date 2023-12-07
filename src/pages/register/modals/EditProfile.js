@@ -17,6 +17,7 @@ import {
     Box,
     Spinner,
     Image,
+    Select 
 } from "@chakra-ui/react";
 import {
     isProfileUpdatedAPI,
@@ -76,7 +77,6 @@ const EditProfile = (props) => {
             [name]: value,
         }));
     };
-
     const handleRegisterEvent = async (event) => {
         event.preventDefault();
         if (validateRegisterEventCredentials()) {
@@ -118,6 +118,7 @@ const EditProfile = (props) => {
             }
         }
     };
+    console.log(eventRegisterCredentials);
 
     const validateRegisterEventCredentials = () => {
         return true;
@@ -131,7 +132,14 @@ const EditProfile = (props) => {
                 ...values,
                 [name]: value,
             }));
-        } else {
+        } else if(name==="teamSize"){
+            const value=event.target.value;
+            setEventRegisterCredentials((values)=>({
+                ...values,
+                [name]:value,
+            }));
+        }
+        else {
             const value = event.target.value;
             setEventRegisterCredentials((values) => ({
                 ...values,
@@ -265,6 +273,87 @@ const EditProfile = (props) => {
             </VStack>
         );
     }
+
+    const optoinList=[];
+    const dynParticipantsField=[];
+    if(typeof props.teamSize === "string"){
+
+        const ts=props.teamSize.split("-").pop();
+        for(let i=0;i<ts;i++){
+            optoinList.push(<option value={i+1}>{i+1}</option>);
+        }
+
+        for(let i=0; i<eventRegisterCredentials.teamSize;i++){
+            console.log("123");
+            dynParticipantsField.push(
+                <VStack
+                w="full"
+                spacing={2}
+                alignItems="flex-start"
+                key={i}
+                paddingBottom={5}
+            >
+                <Text fontSize={16} align="left" fontWeight={500}>
+                    {i === 0
+                        ? "Enter Your Details"
+                        : `Enter Participant ${i} Details`}
+                </Text>
+                <FormControl>
+                    <Input
+                        name="name"
+                        type="text"
+                        pr="4.5rem"
+                        fontSize={15}
+                        variant="outline"
+                        placeholder={
+                            i === 0
+                                ? "Enter Your Name"
+                                : `Enter Participant${i}'s Name`
+                        }
+                        onChange={(event) => {
+                            handleChangeEvent(event, i);
+                        }}
+                    />
+                </FormControl>
+                <FormControl>
+                    <Input
+                        name="email"
+                        type="email"
+                        fontSize={15}
+                        pr="4.5rem"
+                        variant="outline"
+                        placeholder={
+                            i === 0
+                                ? "Enter Your Email"
+                                : `Enter Participant${i}'s Email`
+                        }
+                        onChange={(event) => {
+                            handleChangeEvent(event, i);
+                        }}
+                    />
+                </FormControl>
+                <FormControl>
+                    <Input
+                        name="mobileNumber"
+                        type="tel"
+                        fontSize={15}
+                        pr="4.5rem"
+                        variant="outline"
+                        placeholder={
+                            i === 0
+                                ? "Enter Your Mobile Number"
+                                : `Enter Participant${i}'s Mobile Number`
+                        }
+                        onChange={(event) => {
+                            handleChangeEvent(event, i);
+                        }}
+                    />
+                </FormControl>
+            </VStack>
+            )
+        }
+    }
+    
 
     return (
         <>
@@ -449,6 +538,7 @@ const EditProfile = (props) => {
                     >
                         <ModalOverlay />
                         <ModalContent
+                        // style={{overflowY:"hidden"}}
                             bg="white"
                             p={10}
                             paddingBottom={10}
@@ -517,6 +607,64 @@ const EditProfile = (props) => {
                                                         p={6}
                                                         spacing={5}
                                                     >
+                                                        {typeof props.teamSize==="string"?(
+                                                            <>
+                                                                <FormControl>
+                                                                    <Select
+                                                                        variant='outline'
+                                                                        name="teamSize"
+                                                                        placeholder="Select Team Size"
+                                                                        onChange={handleChangeEvent}
+                                                                        value={eventRegisterCredentials.teamSize}
+                                                                    >
+                                                                        {optoinList}
+                                                                    </Select>
+                                                                </FormControl>
+                                                                {
+                                                                    eventRegisterCredentials.teamSize>1?(                                                                
+                                                                        <VStack
+                                                                            w="full"
+                                                                            spacing={2}
+                                                                            alignItems="flex-start"
+                                                                            paddingBottom={
+                                                                                5
+                                                                            }
+                                                                        >
+                                                                            <Text
+                                                                                fontSize={
+                                                                                    16
+                                                                                }
+                                                                                align="left"
+                                                                                fontWeight={
+                                                                                    500
+                                                                                }
+                                                                            >
+                                                                                Team Name
+                                                                            </Text>
+                                                                            <FormControl>
+                                                                                <Input
+                                                                                    name="teamName"
+                                                                                    type="text"
+                                                                                    fontSize={
+                                                                                        15
+                                                                                    }
+                                                                                    pr="4.5rem"
+                                                                                    variant="outline"
+                                                                                    placeholder="Enter Team Name"
+                                                                                    onChange={
+                                                                                        handleChangeEvent
+                                                                                    }
+                                                                                />
+                                                                            </FormControl>
+                                                                        </VStack>
+                                                                        ):(
+                                                                            <></>
+                                                                        )
+                                                                }
+                                                                {dynParticipantsField}
+                                                            </>
+                                                        )
+                                                        :(<></>)}
                                                         {props.teamSize > 1 && (
                                                             <VStack
                                                                 w="full"
@@ -554,8 +702,7 @@ const EditProfile = (props) => {
                                                                 </FormControl>
                                                             </VStack>
                                                         )}
-
-                                                        {participantsField}
+                                                        {typeof props.teamSize==="number"&&participantsField}
                                                     </VStack>
 
                                                     <VStack>
