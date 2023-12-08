@@ -28,7 +28,7 @@ const BasicUsage = (props) => {
 
     return (
         <>
-            <Button onClick={onOpen} color="black">
+            <Button onClick={onOpen} color="black" bg="white">
                 Explore more
             </Button>
 

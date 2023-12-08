@@ -72,7 +72,7 @@ export default function ContactUs() {
                                     <Text
                                         fontSize={{ base: "16px", md: "20px" }}
                                     >
-                                        +91 7698362613
+                                        +91 76983 62613
                                     </Text>
                                 </Container>
                                 <Container textAlign={"center"}>
@@ -84,7 +84,7 @@ export default function ContactUs() {
                                     <Text
                                         fontSize={{ base: "16px", md: "20px" }}
                                     >
-                                        +91 7069312561
+                                        +91 70693 12561
                                     </Text>
                                 </Container>
                             </Container>
@@ -145,7 +145,7 @@ export default function ContactUs() {
                                     <Text
                                         fontSize={{ base: "16px", md: "20px" }}
                                     >
-                                        +91 820007 78757
+                                        +91 82007 78757
                                     </Text>
                                 </Container>
                             </Container>

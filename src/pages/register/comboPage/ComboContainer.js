@@ -325,6 +325,7 @@ export default function ComboContainer() {
                             marginTop={"30px"}
                             width={"100px"}
                             color={"black"}
+                            bg="white"
                             onClick={onOpen}
                             isDisabled={
                                 priceDetails.length === 1 ||

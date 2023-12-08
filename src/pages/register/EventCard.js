@@ -140,7 +140,7 @@ export default function EventCard(props) {
                                         backgroundColor="#54cadd"
                                         color={"black"}
                                         as="a"
-                                        mr={3}
+                                        // mr={3}
                                         download
                                         href={`pdfs/${props.pdfName}.pdf`}
                                     >
