@@ -3,7 +3,7 @@ import {
     Button,
     Modal,
     FormControl,
-    FormErrorMessage,
+    FormHelperText,
     Input,
     Text,
     useDisclosure,
@@ -40,10 +40,11 @@ const EditProfile = (props) => {
         onOpen: onEventRegisterModalOpen,
         onClose: onEventRegisterModalClose,
     } = useDisclosure();
+    const teamSize=typeof props.teamSize==="string"?undefined:props.teamSize;
     const [registerCredentials, setRegisterCredentials] = useState({name:"", universityName:"", mobileNumber:""});
     const [userData,setUserData]=useState({});
     const [eventRegisterCredentials, setEventRegisterCredentials] = useState({
-        teamSize: props.teamSize,
+        teamSize: teamSize,
     });
     const [eventRegistrationErrors,setEventRegistrationErrors]=useState({});
     const [profileError,setProfileErrors]=useState({});
@@ -100,8 +101,7 @@ const EditProfile = (props) => {
         }else if(registerCredentials.mobileNumber.length>10||registerCredentials.mobileNumber.length<10){
             errors.mobileNumber="Length must be of 10 digits";
             flag=false;
-        }
-        else if(!/^[6-9][0-9]{9}$/.test(registerCredentials.mobileNumber)||registerCredentials.mobileNumber==="6666666666"|| registerCredentials.mobileNumber==="7777777777"||registerCredentials.mobileNumber==="8888888888"||registerCredentials.mobileNumber==="9999999999"){
+        }else if(!/^[6-9][0-9]{9}$/.test(registerCredentials.mobileNumber)||registerCredentials.mobileNumber==="6666666666"|| registerCredentials.mobileNumber==="7777777777"||registerCredentials.mobileNumber==="8888888888"||registerCredentials.mobileNumber==="9999999999"){
             errors.mobileNumber="Invalid mobile number";
             flag=false;
         }else{
@@ -166,6 +166,33 @@ const EditProfile = (props) => {
 
     console.log(eventRegisterCredentials);
     const validateRegisterEventCredentials = () => {
+        let errors={};
+        if(typeof props.teamSize==="string"){
+            if(!eventRegisterCredentials.teamSize){
+                errors.teamSize="Team size required";
+            }else{
+                errors.teamSize="";
+            }
+        }
+        if(eventRegisterCredentials.teamSize>1){
+            if(!eventRegisterCredentials?.teamName){
+                errors.teamName="Team name is rquired";
+            }else{
+                errors.teamName="";
+            }
+        }
+
+        for(let i=0; i< eventRegisterCredentials.teamSize;i++){
+            if(!eventRegisterCredentials[`participant${i}`].name.trim()){
+                errors[`participant${i}`].name="Name is require";
+            }else if(!/^[a-z ]+$/.test(eventRegisterCredentials[`participant${i}`].name)){
+                errors[`participant${i}`].name="Name must be alphabets"
+            }else{
+                errors[`participant${i}`].name=""
+            }
+        }
+
+        console.log(errors)
         return true;
     };
 
@@ -181,7 +208,7 @@ const EditProfile = (props) => {
             const value=event.target.value;
             setEventRegisterCredentials((values)=>({
                 ...values,
-                [name]:value,
+                [name]:parseInt(value),
             }));
         }
         else {
@@ -518,7 +545,7 @@ const EditProfile = (props) => {
                                                         placeholder="Enter Name"
                                                         onChange={handleChange}
                                                     />
-                                                    {profileError.name?(<FormErrorMessage>{profileError.name}</FormErrorMessage>):(<></>)}
+                                                    {profileError.name ? (<FormHelperText color={"#e74d4d"} fontSize={13}> {profileError.name} </FormHelperText>):(<></>)}
                                                 </FormControl>
                                             </VStack>
 
@@ -535,6 +562,7 @@ const EditProfile = (props) => {
                                                 </Text>
                                                 <FormControl>
                                                     <Input
+                                                        isInvalid={profileError.universityName}
                                                         name="universityName"
                                                         type="text"
                                                         pr="4.5rem"
@@ -542,6 +570,7 @@ const EditProfile = (props) => {
                                                         placeholder="Enter University Name"
                                                         onChange={handleChange}
                                                     />
+                                                    {profileError.universityName ? (<FormHelperText color={"#e74d4d"} fontSize={13}> {profileError.universityName}</FormHelperText>):(<></>)}
                                                 </FormControl>
                                             </VStack>
 
@@ -558,6 +587,7 @@ const EditProfile = (props) => {
                                                 </Text>
                                                 <FormControl>
                                                     <Input
+                                                        isInvalid={profileError.mobileNumber}
                                                         name="mobileNumber"
                                                         type="number"
                                                         pr="4.5rem"
@@ -565,6 +595,7 @@ const EditProfile = (props) => {
                                                         placeholder="Enter Mobile Number"
                                                         onChange={handleChange}
                                                     />
+                                                    {profileError.mobileNumber? (<FormHelperText color={"#e74d4d"} fontSize={13}> {profileError.mobileNumber} </FormHelperText>):(<></>)}
                                                 </FormControl>
                                             </VStack>
                                         </VStack>
@@ -675,7 +706,7 @@ const EditProfile = (props) => {
                                                                     </Select>
                                                                 </FormControl>
                                                                 {
-                                                                    eventRegisterCredentials.teamSize>1?(                                                                
+                                                                    eventRegisterCredentials?.teamSize>1?(                                                                
                                                                         <VStack
                                                                             w="full"
                                                                             spacing={2}
@@ -719,7 +750,7 @@ const EditProfile = (props) => {
                                                             </>
                                                         )
                                                         :(<></>)}
-                                                        {props.teamSize > 1 && (
+                                                        {props.teamSize > 1 &typeof props.teamSize==="number" && (
                                                             <VStack
                                                                 w="full"
                                                                 spacing={2}

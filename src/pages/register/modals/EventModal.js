@@ -44,7 +44,6 @@ const BasicUsage = (props) => {
                     bg="white"
                     p={10}
                     paddingBottom={0}
-                    h="700px"
                     // maxH="600px"
                 >
                     <ModalHeader>

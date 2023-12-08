@@ -58,7 +58,6 @@ const TechEvents = (props) => {
       winningPrice: [
         "● 1st Prize: ₹ 4,000",
         "● 2nd Prize: ₹ 2,500",
-        "● 3rd Prize: ₹ 1,500",
       ],
       isPrizesEnabled: true,
       pdfName: "robosoccer",
@@ -146,11 +145,10 @@ const TechEvents = (props) => {
       about:
         "Host an ArtTech Extravaganza where participants create tech-inspired artwork, designs, and games by using code, Graphic design, or blueprints in a race against the clock.",
       teamSize: 1,
-      eventFee: 50,
+      eventFee: 150,
       winningPrice: [
-        "● 1st Prize: ₹ 4,000",
-        "● 2nd Prize: ₹ 2,500",
-        "● 3rd Prize: ₹ 1,500",
+        "● 1st Prize: ₹ 5,000",
+        "● 2nd Prize: ₹ 3,000",
       ],
       isPrizesEnabled: true,
       pdfName: "arttech",
@@ -170,12 +168,11 @@ const TechEvents = (props) => {
       contact: "",
       about:
         "Code Mania is an intense and fast-paced coding competition that challenges participants' coding skills, problem-solving abilities, and time management. The event is designed to push participants to their limits as they tackle a series of coding challenges within a limited timeframe. Participants will have the opportunity to showcase their technical prowess and compete against other talented coders.",
-      teamSize: "1",
-      eventFee: 50,
+      teamSize: "2",
+      eventFee: 150,
       winningPrice: [
-        "● 1st Prize: ₹ 4,000",
-        "● 2nd Prize: ₹ 2,500",
-        "● 3rd Prize: ₹ 1,500",
+        "● 1st Prize: ₹ 5,000",
+        "● 2nd Prize: ₹ 3,000",
       ],
       isPrizesEnabled: true,
       pdfName: "codemania",
@@ -194,9 +191,8 @@ const TechEvents = (props) => {
       teamSize: 3,
       eventFee: 750,
       winningPrice: [
-        "● 1st Prize: ₹ 7,000",
+        "● 1st Prize: ₹ 10,000",
         "● 2nd Prize: ₹ 5,000",
-        "● 3rd Prize: ₹ 3,000",
       ],
       isPrizesEnabled: true,
       pdfName: "civilsaga",
@@ -219,9 +215,8 @@ const TechEvents = (props) => {
       teamSize: 3,
       eventFee: 200,
       winningPrice: [
-        "● 1st Prize: ₹ 2,500",
-        "● 2nd Prize: ₹ 1,500",
-        "● 3rd Prize: ₹ 1,000",
+        "● 1st Prize: ₹ 3,000",
+        "● 2nd Prize: ₹ 2,000",
       ],
       isPrizesEnabled: true,
       pdfName: "rollercoaster",
@@ -240,9 +235,8 @@ const TechEvents = (props) => {
       teamSize: 3,
       eventFee: 300,
       winningPrice: [
-        "● 1st Prize: ₹ 3,000",
+        "● 1st Prize: ₹ 4,000",
         "● 2nd Prize: ₹ 2,000",
-        "● 3rd Prize: ₹ 1,000",
       ],
       isPrizesEnabled: true,
       pdfName: "relay",
@@ -261,11 +255,10 @@ const TechEvents = (props) => {
       about:
         "In this thrilling competition, participants have the opportunity to put their typing speed and accuracy to the test. With five rounds of fast-paced challenges, the event is open to individuals of all skill levels. Whether you're a seasoned typist or someone looking to enhance their typing skills, this competition offers a chance to shine and potentially win prizes.",
       teamSize: 1,
-      eventFee: 100,
+      eventFee: 150,
       winningPrice: [
-        "● 1st Prize: ₹ 3,000",
+        "● 1st Prize: ₹ 4,000",
         "● 2nd Prize: ₹ 2,000",
-        "● 3rd Prize: ₹ 1,000",
       ],
       isPrizesEnabled: true,
       pdfName: "keymasters",
@@ -282,11 +275,10 @@ const TechEvents = (props) => {
       about:
         "Welcome to the Amazing an exhilarating competition designed to test Competitive Coding Minds. Challenging young minds with problems designed to check their grip on data structures and logic building!",
       teamSize: 2,
-      eventFee: 100,
+      eventFee: 150,
       winningPrice: [
         "● 1st Prize: ₹ 1,500",
-        "● 2nd Prize: ₹ 1,200",
-        "● 3rd Prize: ₹ 1,000",
+        "● 2nd Prize: ₹ 1,000",
       ],
       isPrizesEnabled: true,
       pdfName: "breakthequery",
@@ -303,11 +295,10 @@ const TechEvents = (props) => {
       about:
         "Welcome to the Amazing an exhilarating competition designed to test Competitive Coding Minds. Challenging young minds with problems designed to check their grip on data structures and logic building!",
       teamSize: 2,
-      eventFee: 100,
+      eventFee: 150,
       winningPrice: [
         "● 1st Prize: ₹ 1,500",
-        "● 2nd Prize: ₹ 1,200",
-        "● 3rd Prize: ₹ 1,000",
+        "● 2nd Prize: ₹ 1,000",
       ],
       isPrizesEnabled: true,
       pdfName: "designingfordelight",
@@ -324,11 +315,10 @@ const TechEvents = (props) => {
       about:
         "Welcome to the Amazing Database Challenge, an exhilarating competition designed to test Competitive Coding Minds. Challenging young minds with problems designed to check their grip on data structures and logic building!",
       teamSize: 2,
-      eventFee: 100,
+      eventFee: 150,
       winningPrice: [
         "● 1st Prize: ₹ 3,000",
-        "● 2nd Prize: ₹ 2,000",
-        "● 3rd Prize: ₹ 1,000",
+        "● 2nd Prize: ₹ 1,500",
       ],
       isPrizesEnabled: true,
       pdfName: "pingdatastructure",
@@ -348,11 +338,10 @@ const TechEvents = (props) => {
       about:
         "Welcome to the Amazing Security Challenge, an exhilarating competition designed to test a series of rounds that will involve certain tasks (from decrypting ciphers, finding data hidden behind server/web pages they can find hidden info via exploiting it!",
       teamSize: 2,
-      eventFee: 100,
+      eventFee: 150,
       winningPrice: [
         "● 1st Prize: ₹ 3,000",
-        "● 2nd Prize: ₹ 2,000",
-        "● 3rd Prize: ₹ 1,000",
+        "● 2nd Prize: ₹ 1,500",
       ],
       isPrizesEnabled: true,
       pdfName: "capturetheflag",
@@ -374,9 +363,12 @@ const TechEvents = (props) => {
       about:
         "Join us for a fun-filled two-day event full of challenges and camaraderie! This event will comprise of various rounds comprising Debugging, Mini-games, GATECRASH, Treasure Hunt. This is the event shaped in such a way to test the techies and challenge their knowledge.",
       teamSize: 7,
-      eventFee: 280,
-      winningPrice: [""],
-      isPrizesEnabled: false,
+      eventFee: 420,
+      winningPrice: [ 
+        "● 1st Prize: ₹ 5,000",
+        "● 2nd Prize: ₹ 3,000",
+    ],
+      isPrizesEnabled: true,
       pdfName: "digitalscavengerhunt",
     },
     {
@@ -395,9 +387,12 @@ const TechEvents = (props) => {
       about:
         "This Event is meant to test the Graphic Designing skills of the participants and One of them will be crowned as the Graphic Gladiator for CZ ‘24.",
       teamSize: 1,
-      eventFee: 50,
-      winningPrice: [""],
-      isPrizesEnabled: false,
+      eventFee: 150,
+      winningPrice: [ 
+        "● 1st Prize: ₹ 2,500",
+        "● 2nd Prize: ₹ 2,000",
+    ],
+      isPrizesEnabled: true,
       pdfName: "graphicsgladiator",
     },
   ];
