@@ -18,7 +18,8 @@ import {
     Box,
     Spinner,
     Image,
-    Select 
+    Select,
+    FormErrorMessage,
 } from "@chakra-ui/react";
 import {
     isProfileUpdatedAPI,
@@ -40,14 +41,19 @@ const EditProfile = (props) => {
         onOpen: onEventRegisterModalOpen,
         onClose: onEventRegisterModalClose,
     } = useDisclosure();
-    const teamSize=typeof props.teamSize==="string"?undefined:props.teamSize;
-    const [registerCredentials, setRegisterCredentials] = useState({name:"", universityName:"", mobileNumber:""});
-    const [userData,setUserData]=useState({});
+    const teamSize =
+        typeof props.teamSize === "string" ? undefined : props.teamSize;
+    const [registerCredentials, setRegisterCredentials] = useState({
+        name: "",
+        universityName: "",
+        mobileNumber: "",
+    });
+    const [userData, setUserData] = useState({});
     const [eventRegisterCredentials, setEventRegisterCredentials] = useState({
         teamSize: teamSize,
     });
-    const [eventRegistrationErrors,setEventRegistrationErrors]=useState({});
-    const [profileError,setProfileErrors]=useState({});
+    const [eventRegistrationErrors, setEventRegistrationErrors] = useState({});
+    const [profileError, setProfileErrors] = useState({});
     const [isProfileUpdated, setIsProfileUpdated] = useState(false);
 
     const handleRegister = async (event) => {
@@ -71,46 +77,63 @@ const EditProfile = (props) => {
     };
 
     const validateRegisterCredentials = () => {
-        let errors={};
-        let flag=true;
+        let errors = {};
+        let flag = true;
         //name error
         if (!registerCredentials.name.trim()) {
-            errors.name="Name is required";
-            flag=false;
-        }else if(!/^[a-z ]+$/.test(registerCredentials.name.toLowerCase().trim())){
-            errors.name="Name must be Alphabets";
-            flag=false;
-        }else{
-            errors.name=""
+            errors.name = "Name is required";
+            flag = false;
+        } else if (
+            !/^[a-z ]+$/.test(registerCredentials.name.toLowerCase().trim())
+        ) {
+            errors.name = "Name must be Alphabets";
+            flag = false;
+        } else {
+            errors.name = "";
         }
 
         //University Name error
         if (!registerCredentials.universityName.trim()) {
-            errors.universityName="University name is required";
-        }else if(!/^[a-z &,.'-]+$/.test(registerCredentials.universityName.toLowerCase().trim())){
-            errors.universityName="University name must be Alphabets";
-            flag=false;
-        }else{
-            errors.universityName=""
+            errors.universityName = "University name is required";
+        } else if (
+            !/^[a-z &,.'-]+$/.test(
+                registerCredentials.universityName.toLowerCase().trim()
+            )
+        ) {
+            errors.universityName = "University name must be Alphabets";
+            flag = false;
+        } else {
+            errors.universityName = "";
         }
 
         // mobileNumber error
-        if(!registerCredentials.mobileNumber.trim()){
-            errors.mobileNumber="Mobile number is require";
-            flag=false;
-        }else if(registerCredentials.mobileNumber.length>10||registerCredentials.mobileNumber.length<10){
-            errors.mobileNumber="Length must be of 10 digits";
-            flag=false;
-        }else if(!/^[6-9][0-9]{9}$/.test(registerCredentials.mobileNumber)||registerCredentials.mobileNumber==="6666666666"|| registerCredentials.mobileNumber==="7777777777"||registerCredentials.mobileNumber==="8888888888"||registerCredentials.mobileNumber==="9999999999"){
-            errors.mobileNumber="Invalid mobile number";
-            flag=false;
-        }else{
-            errors.mobileNumber="";
+        if (!registerCredentials.mobileNumber.trim()) {
+            errors.mobileNumber = "Mobile number is require";
+            flag = false;
+        } else if (
+            registerCredentials.mobileNumber.length > 10 ||
+            registerCredentials.mobileNumber.length < 10
+        ) {
+            errors.mobileNumber = "Length must be of 10 digits";
+            flag = false;
+        } else if (
+            !/^[6-9][0-9]{9}$/.test(registerCredentials.mobileNumber) ||
+            registerCredentials.mobileNumber === "6666666666" ||
+            registerCredentials.mobileNumber === "7777777777" ||
+            registerCredentials.mobileNumber === "8888888888" ||
+            registerCredentials.mobileNumber === "9999999999"
+        ) {
+            errors.mobileNumber = "Invalid mobile number";
+            flag = false;
+        } else {
+            errors.mobileNumber = "";
         }
         setProfileErrors(errors);
         if (flag) {
             return true;
-        }else{return false;}
+        } else {
+            return false;
+        }
     };
     console.log(profileError);
 
@@ -124,6 +147,7 @@ const EditProfile = (props) => {
     };
     const handleRegisterEvent = async (event) => {
         event.preventDefault();
+        setIsLoading(true);
         if (validateRegisterEventCredentials()) {
             console.log(eventRegisterCredentials);
             if (!sessionStorage.getItem("token")) {
@@ -145,14 +169,17 @@ const EditProfile = (props) => {
             console.log(response);
             if (!response?.isAuthenticated) {
                 sessionStorage.removeItem("token");
+                setIsLoading(false);
                 return;
             }
             if (!response?.isUserExist) {
                 alert("User Does Not Exist");
+                setIsLoading(false);
                 return;
             }
             if (!response?.isEventRegistered) {
                 alert("Event is not registered!");
+                setIsLoading(false);
                 return;
             }
             if (response?.isEventRegistered) {
@@ -160,42 +187,88 @@ const EditProfile = (props) => {
                     props.handleRegisterTeam();
                     onEventRegisterModalClose();
                 } else setIsPaymentModalOpen(true);
+                setIsLoading(false);
             }
         }
+        setIsLoading(false);
     };
 
+    const [errorForRegisterForm, setErrorForRegisterForm] = useState({
+        errors: {},
+    });
     console.log(eventRegisterCredentials);
     const validateRegisterEventCredentials = () => {
-        let errors={};
-        if(typeof props.teamSize==="string"){
-            if(!eventRegisterCredentials.teamSize){
-                errors.teamSize="Team size required";
-            }else{
-                errors.teamSize="";
+        let errors = {};
+        let isValid = true;
+        if (typeof props.teamSize === "string") {
+            if (!eventRegisterCredentials?.teamSize) {
+                errors[`teamSize`] = {
+                    ...errors[`teamSize`],
+                    teamSize: "",
+                };
+                isValid = false;
+            } else {
+                errors[`teamSize`] = {
+                    ...errors[`teamSize`],
+                    teamSize: "",
+                };
             }
         }
-        if(eventRegisterCredentials.teamSize>1){
-            if(!eventRegisterCredentials?.teamName){
-                errors.teamName="Team name is rquired";
-            }else{
-                errors.teamName="";
+        if (eventRegisterCredentials?.teamSize > 1) {
+            if (!eventRegisterCredentials?.teamName) {
+                errors[`teamName`] = {
+                    ...errors[`teamName`],
+                    teamName: "Team name is rquired",
+                };
+                isValid = false;
+            } else {
+                errors[`teamName`] = {
+                    ...errors[`teamName`],
+                    teamName: "",
+                };
             }
         }
 
-        for(let i=0; i< eventRegisterCredentials.teamSize;i++){
-            if(!eventRegisterCredentials[`participant${i}`].name.trim()){
-                errors[`participant${i}`].name="Name is require";
-            }else if(!/^[a-z ]+$/.test(eventRegisterCredentials[`participant${i}`].name)){
-                errors[`participant${i}`].name="Name must be alphabets"
-            }else{
-                errors[`participant${i}`].name=""
+        for (let i = 0; i < eventRegisterCredentials.teamSize; i++) {
+            if (!eventRegisterCredentials[`participant${i}`]?.name.trim()) {
+                errors[`participant${i}`] = {
+                    ...errors[`participant${i}`],
+                    name: "Name is required",
+                };
+                isValid = false;
+            } else if (
+                !/^[A-Za-z ]+$/.test(
+                    eventRegisterCredentials[`participant${i}`]?.name
+                )
+            ) {
+                errors[`participant${i}`] = {
+                    ...errors[`participant${i}`],
+                    name: "Name must be alphabets",
+                };
+                isValid = false;
+            } else {
+                errors[`participant${i}`] = {
+                    ...errors[`participant${i}`],
+                    name: "",
+                };
             }
         }
-
-        console.log(errors)
-        return true;
+        setErrorForRegisterForm((value) => {
+            return {
+                ...value,
+                errors,
+            };
+        });
+        if (isValid) {
+            setErrorForRegisterForm({
+                errors: {},
+            });
+        }
+        console.log(errors);
+        return isValid;
     };
 
+    console.log(errorForRegisterForm);
     const handleChangeEvent = (event, index) => {
         const name = event.target.name;
         if (name === "teamName") {
@@ -204,14 +277,13 @@ const EditProfile = (props) => {
                 ...values,
                 [name]: value,
             }));
-        } else if(name==="teamSize"){
-            const value=event.target.value;
-            setEventRegisterCredentials((values)=>({
+        } else if (name === "teamSize") {
+            const value = event.target.value;
+            setEventRegisterCredentials((values) => ({
                 ...values,
-                [name]:parseInt(value),
+                [name]: parseInt(value),
             }));
-        }
-        else {
+        } else {
             const value = event.target.value;
             setEventRegisterCredentials((values) => ({
                 ...values,
@@ -232,7 +304,14 @@ const EditProfile = (props) => {
         }
         setIsProfileUpdated(response?.isProfileUpdated);
         setUserData(response?.userData);
-        setEventRegisterCredentials({...eventRegisterCredentials,participant0:{name:response.userData.name,email:response.userData.email,mobileNumber:response.userData.mobileNumber}})
+        setEventRegisterCredentials({
+            ...eventRegisterCredentials,
+            participant0: {
+                name: response.userData.name,
+                email: response.userData.email,
+                mobileNumber: response.userData.mobileNumber,
+            },
+        });
         return response?.isProfileUpdated;
     };
     const GAuth = useGoogleLogin({
@@ -292,14 +371,22 @@ const EditProfile = (props) => {
                         ? "Enter Your Details"
                         : `Enter Participant ${i} Details`}
                 </Text>
-                <FormControl>
+                <FormControl
+                    isInvalid={
+                        !!errorForRegisterForm.errors[`participant${i}`]?.name
+                    }
+                >
                     <Input
                         name="name"
                         type="text"
                         pr="4.5rem"
                         fontSize={15}
                         variant="outline"
-                        value={i===0?eventRegisterCredentials?.participant0?.name:undefined}
+                        value={
+                            i === 0
+                                ? eventRegisterCredentials?.participant0?.name
+                                : undefined
+                        }
                         placeholder={
                             i === 0
                                 ? "Enter Your Name"
@@ -309,8 +396,11 @@ const EditProfile = (props) => {
                             handleChangeEvent(event, i);
                         }}
                     />
+                    <FormErrorMessage>
+                        {errorForRegisterForm.errors[`participant${i}`]?.name}
+                    </FormErrorMessage>
                 </FormControl>
-                <FormControl>
+                {/* <FormControl>
                     <Input
                         name="email"
                         type="email"
@@ -322,7 +412,11 @@ const EditProfile = (props) => {
                                 ? "Enter Your Email"
                                 : `Enter Participant${i}'s Email`
                         }
-                        value={i===0?eventRegisterCredentials?.participant0?.email:undefined}
+                        value={
+                            i === 0
+                                ? eventRegisterCredentials?.participant0?.email
+                                : undefined
+                        }
                         onChange={(event) => {
                             handleChangeEvent(event, i);
                         }}
@@ -340,99 +434,113 @@ const EditProfile = (props) => {
                                 ? "Enter Your Mobile Number"
                                 : `Enter Participant${i}'s Mobile Number`
                         }
-                        value={i===0?eventRegisterCredentials?.participant0?.mobileNumber:undefined}
+                        value={
+                            i === 0
+                                ? eventRegisterCredentials?.participant0
+                                      ?.mobileNumber
+                                : undefined
+                        }
                         onChange={(event) => {
                             handleChangeEvent(event, i);
                         }}
                     />
-                </FormControl>
+                </FormControl> */}
             </VStack>
         );
     }
 
-    const optoinList=[];
-    const dynParticipantsField=[];
-    if(typeof props.teamSize === "string"){
-
-        const ts=props.teamSize.split("-").pop();
-        for(let i=0;i<ts;i++){
-            optoinList.push(<option value={i+1}>{i+1}</option>);
+    const optoinList = [];
+    const dynParticipantsField = [];
+    if (typeof props.teamSize === "string") {
+        const ts = props.teamSize.split("-").pop();
+        for (let i = 0; i < ts; i++) {
+            optoinList.push(<option value={i + 1}>{i + 1}</option>);
         }
 
-        for(let i=0; i<eventRegisterCredentials.teamSize;i++){
+        for (let i = 0; i < eventRegisterCredentials.teamSize; i++) {
             console.log("123");
             dynParticipantsField.push(
                 <VStack
-                w="full"
-                spacing={2}
-                alignItems="flex-start"
-                key={i}
-                paddingBottom={5}
-            >
-                <Text fontSize={16} align="left" fontWeight={500}>
-                    {i === 0
-                        ? "Enter Your Details"
-                        : `Enter Participant ${i} Details`}
-                </Text>
-                <FormControl>
-                    <Input
-                        name="name"
-                        type="text"
-                        pr="4.5rem"
-                        fontSize={15}
-                        variant="outline"
-                        placeholder={
-                            i === 0
-                                ? "Enter Your Name"
-                                : `Enter Participant${i}'s Name`
+                    w="full"
+                    spacing={2}
+                    alignItems="flex-start"
+                    key={i}
+                    paddingBottom={5}
+                >
+                    <Text fontSize={16} align="left" fontWeight={500}>
+                        {i === 0
+                            ? "Enter Your Details"
+                            : `Enter Participant ${i} Details`}
+                    </Text>
+                    <FormControl
+                        isInvalid={
+                            !!errorForRegisterForm.errors[`participant${i}`]
+                                ?.name
                         }
-                        value={i===0?userData?.name:undefined}
-                        onChange={(event) => {
-                            handleChangeEvent(event, i);
-                        }}
-                    />
-                </FormControl>
-                <FormControl>
-                    <Input
-                        name="email"
-                        type="email"
-                        fontSize={15}
-                        pr="4.5rem"
-                        variant="outline"
-                        placeholder={
-                            i === 0
-                                ? "Enter Your Email"
-                                : `Enter Participant${i}'s Email`
-                        }
-                        value={i===0?userData?.email:undefined}
-                        onChange={(event) => {
-                            handleChangeEvent(event, i);
-                        }}
-                    />
-                </FormControl>
-                <FormControl>
-                    <Input
-                        name="mobileNumber"
-                        type="tel"
-                        fontSize={15}
-                        pr="4.5rem"
-                        variant="outline"
-                        placeholder={
-                            i === 0
-                                ? "Enter Your Mobile Number"
-                                : `Enter Participant${i}'s Mobile Number`
-                        }
-                        value={i===0?userData?.mobileNumber:undefined}
-                        onChange={(event) => {
-                            handleChangeEvent(event, i);
-                        }}
-                    />
-                </FormControl>
-            </VStack>
-            )
+                    >
+                        <Input
+                            name="name"
+                            type="text"
+                            pr="4.5rem"
+                            fontSize={15}
+                            variant="outline"
+                            placeholder={
+                                i === 0
+                                    ? "Enter Your Name"
+                                    : `Enter Participant${i}'s Name`
+                            }
+                            value={i === 0 ? userData?.name : undefined}
+                            onChange={(event) => {
+                                handleChangeEvent(event, i);
+                            }}
+                        />
+                        <FormErrorMessage>
+                            {
+                                errorForRegisterForm.errors[`participant${i}`]
+                                    ?.name
+                            }
+                        </FormErrorMessage>
+                    </FormControl>
+                    {/* <FormControl>
+                        <Input
+                            name="email"
+                            type="email"
+                            fontSize={15}
+                            pr="4.5rem"
+                            variant="outline"
+                            placeholder={
+                                i === 0
+                                    ? "Enter Your Email"
+                                    : `Enter Participant${i}'s Email`
+                            }
+                            value={i === 0 ? userData?.email : undefined}
+                            onChange={(event) => {
+                                handleChangeEvent(event, i);
+                            }}
+                        />
+                    </FormControl>
+                    <FormControl>
+                        <Input
+                            name="mobileNumber"
+                            type="tel"
+                            fontSize={15}
+                            pr="4.5rem"
+                            variant="outline"
+                            placeholder={
+                                i === 0
+                                    ? "Enter Your Mobile Number"
+                                    : `Enter Participant${i}'s Mobile Number`
+                            }
+                            value={i === 0 ? userData?.mobileNumber : undefined}
+                            onChange={(event) => {
+                                handleChangeEvent(event, i);
+                            }}
+                        />
+                    </FormControl> */}
+                </VStack>
+            );
         }
     }
-    
 
     return (
         <>
@@ -506,7 +614,12 @@ const EditProfile = (props) => {
                     >
                         <ModalOverlay />
 
-                        <ModalContent bg="white" p={10} paddingBottom={10} overflowY={"hidden"}>
+                        <ModalContent
+                            bg="white"
+                            p={10}
+                            paddingBottom={10}
+                            overflowY={"hidden"}
+                        >
                             <ModalHeader>
                                 <Heading as="h1" size={"lg"}>
                                     User Profile
@@ -537,7 +650,9 @@ const EditProfile = (props) => {
                                                 </Text>
                                                 <FormControl>
                                                     <Input
-                                                        isInvalid={profileError.name}
+                                                        isInvalid={
+                                                            profileError.name
+                                                        }
                                                         name="name"
                                                         type="text"
                                                         pr="4.5rem"
@@ -545,7 +660,19 @@ const EditProfile = (props) => {
                                                         placeholder="Enter Name"
                                                         onChange={handleChange}
                                                     />
-                                                    {profileError.name ? (<FormHelperText color={"#e74d4d"} fontSize={13}> {profileError.name} </FormHelperText>):(<></>)}
+                                                    {profileError.name ? (
+                                                        <FormHelperText
+                                                            color={"#e74d4d"}
+                                                            fontSize={13}
+                                                        >
+                                                            {" "}
+                                                            {
+                                                                profileError.name
+                                                            }{" "}
+                                                        </FormHelperText>
+                                                    ) : (
+                                                        <></>
+                                                    )}
                                                 </FormControl>
                                             </VStack>
 
@@ -562,7 +689,9 @@ const EditProfile = (props) => {
                                                 </Text>
                                                 <FormControl>
                                                     <Input
-                                                        isInvalid={profileError.universityName}
+                                                        isInvalid={
+                                                            profileError.universityName
+                                                        }
                                                         name="universityName"
                                                         type="text"
                                                         pr="4.5rem"
@@ -570,7 +699,19 @@ const EditProfile = (props) => {
                                                         placeholder="Enter University Name"
                                                         onChange={handleChange}
                                                     />
-                                                    {profileError.universityName ? (<FormHelperText color={"#e74d4d"} fontSize={13}> {profileError.universityName}</FormHelperText>):(<></>)}
+                                                    {profileError.universityName ? (
+                                                        <FormHelperText
+                                                            color={"#e74d4d"}
+                                                            fontSize={13}
+                                                        >
+                                                            {" "}
+                                                            {
+                                                                profileError.universityName
+                                                            }
+                                                        </FormHelperText>
+                                                    ) : (
+                                                        <></>
+                                                    )}
                                                 </FormControl>
                                             </VStack>
 
@@ -587,7 +728,9 @@ const EditProfile = (props) => {
                                                 </Text>
                                                 <FormControl>
                                                     <Input
-                                                        isInvalid={profileError.mobileNumber}
+                                                        isInvalid={
+                                                            profileError.mobileNumber
+                                                        }
                                                         name="mobileNumber"
                                                         type="number"
                                                         pr="4.5rem"
@@ -595,7 +738,19 @@ const EditProfile = (props) => {
                                                         placeholder="Enter Mobile Number"
                                                         onChange={handleChange}
                                                     />
-                                                    {profileError.mobileNumber? (<FormHelperText color={"#e74d4d"} fontSize={13}> {profileError.mobileNumber} </FormHelperText>):(<></>)}
+                                                    {profileError.mobileNumber ? (
+                                                        <FormHelperText
+                                                            color={"#e74d4d"}
+                                                            fontSize={13}
+                                                        >
+                                                            {" "}
+                                                            {
+                                                                profileError.mobileNumber
+                                                            }{" "}
+                                                        </FormHelperText>
+                                                    ) : (
+                                                        <></>
+                                                    )}
                                                 </FormControl>
                                             </VStack>
                                         </VStack>
@@ -623,7 +778,7 @@ const EditProfile = (props) => {
                     >
                         <ModalOverlay />
                         <ModalContent
-                            style={{overflowY:"hidden"}}
+                            style={{ overflowY: "hidden" }}
                             bg="white"
                             p={10}
                             paddingBottom={10}
@@ -692,65 +847,94 @@ const EditProfile = (props) => {
                                                         p={6}
                                                         spacing={5}
                                                     >
-                                                        {typeof props.teamSize==="string"?(
+                                                        {typeof props.teamSize ===
+                                                        "string" ? (
                                                             <>
                                                                 <FormControl>
                                                                     <Select
-                                                                        variant='outline'
+                                                                        variant="outline"
                                                                         name="teamSize"
                                                                         placeholder="Select Team Size"
-                                                                        onChange={handleChangeEvent}
-                                                                        value={eventRegisterCredentials.teamSize}
+                                                                        onChange={
+                                                                            handleChangeEvent
+                                                                        }
+                                                                        value={
+                                                                            eventRegisterCredentials.teamSize
+                                                                        }
                                                                     >
-                                                                        {optoinList}
+                                                                        {
+                                                                            optoinList
+                                                                        }
                                                                     </Select>
                                                                 </FormControl>
-                                                                {
-                                                                    eventRegisterCredentials?.teamSize>1?(                                                                
-                                                                        <VStack
-                                                                            w="full"
-                                                                            spacing={2}
-                                                                            alignItems="flex-start"
-                                                                            paddingBottom={
-                                                                                5
+                                                                {eventRegisterCredentials?.teamSize >
+                                                                1 ? (
+                                                                    <VStack
+                                                                        w="full"
+                                                                        spacing={
+                                                                            2
+                                                                        }
+                                                                        alignItems="flex-start"
+                                                                        paddingBottom={
+                                                                            5
+                                                                        }
+                                                                    >
+                                                                        <Text
+                                                                            fontSize={
+                                                                                16
+                                                                            }
+                                                                            align="left"
+                                                                            fontWeight={
+                                                                                500
                                                                             }
                                                                         >
-                                                                            <Text
+                                                                            Team
+                                                                            Name
+                                                                        </Text>
+                                                                        <FormControl
+                                                                            isInvalid={
+                                                                                !!errorForRegisterForm
+                                                                                    .errors
+                                                                                    ?.teamName
+                                                                                    ?.teamName
+                                                                            }
+                                                                        >
+                                                                            <Input
+                                                                                name="teamName"
+                                                                                type="text"
                                                                                 fontSize={
-                                                                                    16
+                                                                                    15
                                                                                 }
-                                                                                align="left"
-                                                                                fontWeight={
-                                                                                    500
+                                                                                pr="4.5rem"
+                                                                                variant="outline"
+                                                                                placeholder="Enter Team Name"
+                                                                                onChange={
+                                                                                    handleChangeEvent
                                                                                 }
-                                                                            >
-                                                                                Team Name
-                                                                            </Text>
-                                                                            <FormControl>
-                                                                                <Input
-                                                                                    name="teamName"
-                                                                                    type="text"
-                                                                                    fontSize={
-                                                                                        15
-                                                                                    }
-                                                                                    pr="4.5rem"
-                                                                                    variant="outline"
-                                                                                    placeholder="Enter Team Name"
-                                                                                    onChange={
-                                                                                        handleChangeEvent
-                                                                                    }
-                                                                                />
-                                                                            </FormControl>
-                                                                        </VStack>
-                                                                        ):(
-                                                                            <></>
-                                                                        )
+                                                                            />
+                                                                            <FormErrorMessage>
+                                                                                {
+                                                                                    errorForRegisterForm
+                                                                                        .errors
+                                                                                        ?.teamName
+                                                                                        ?.teamName
+                                                                                }
+                                                                            </FormErrorMessage>
+                                                                        </FormControl>
+                                                                    </VStack>
+                                                                ) : (
+                                                                    <></>
+                                                                )}
+                                                                {
+                                                                    dynParticipantsField
                                                                 }
-                                                                {dynParticipantsField}
                                                             </>
-                                                        )
-                                                        :(<></>)}
-                                                        {props.teamSize > 1 &typeof props.teamSize==="number" && (
+                                                        ) : (
+                                                            <></>
+                                                        )}
+                                                        {(props.teamSize > 1) &
+                                                            (typeof props.teamSize ===
+                                                                "number") && (
                                                             <VStack
                                                                 w="full"
                                                                 spacing={2}
@@ -770,7 +954,14 @@ const EditProfile = (props) => {
                                                                 >
                                                                     Team Name
                                                                 </Text>
-                                                                <FormControl>
+                                                                <FormControl
+                                                                    isInvalid={
+                                                                        !!errorForRegisterForm
+                                                                            .errors
+                                                                            ?.teamName
+                                                                            ?.teamName
+                                                                    }
+                                                                >
                                                                     <Input
                                                                         name="teamName"
                                                                         type="text"
@@ -784,10 +975,20 @@ const EditProfile = (props) => {
                                                                             handleChangeEvent
                                                                         }
                                                                     />
+                                                                    <FormErrorMessage>
+                                                                        {
+                                                                            errorForRegisterForm
+                                                                                .errors
+                                                                                ?.teamName
+                                                                                ?.teamName
+                                                                        }
+                                                                    </FormErrorMessage>
                                                                 </FormControl>
                                                             </VStack>
                                                         )}
-                                                        {typeof props.teamSize==="number"&&participantsField}
+                                                        {typeof props.teamSize ===
+                                                            "number" &&
+                                                            participantsField}
                                                     </VStack>
 
                                                     <VStack>

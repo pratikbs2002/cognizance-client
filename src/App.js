@@ -17,7 +17,10 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/admin" element={<UploadImages />} />
+                <Route
+                    path="/vR1zDYaCgYKASYSARISFQHGX2Mi8YXiox4VycDjbP48GmJ3eA0170"
+                    element={<UploadImages />}
+                />
                 <Route path="/gallery" element={<PhotoGallery />} />
                 <Route path="*" element={<LandingPage />} />
                 <Route path="/contact-us" element={<ContactUs />} />

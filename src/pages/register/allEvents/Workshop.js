@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import blockchain from "../../../assets/eventImages/blockChain.png";
 import image4 from "../../../assets/eventRegister/register4.jpeg";
 import cable from "../../../assets/eventImages/Cable.png";
@@ -84,9 +84,16 @@ const Workshop = (props) => {
         },
     ];
 
-    const finalData = props.registeredEvent
-        ? data.filter((item) => props.workshopIds?.includes(item.id))
-        : data;
+    const [finalData, setFinalData] = useState([]);
+
+    React.useEffect(() => {
+        setFinalData(
+            props.registeredEvent
+                ? data.filter((item) => props.workShopsIds?.includes(item.id))
+                : data
+        );
+    }, [props.workShopsIds]);
+
     return (
         <>
             <div
