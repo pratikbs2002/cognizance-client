@@ -62,14 +62,14 @@ const EditProfile = (props) => {
     const handleRegister = async (event) => {
         // setIsLoading(true);
         // event.preventDefault();
-        console.log(registerCredentials);
+        // console.log(registerCredentials);
         if (validateRegisterCredentials()) {
             let response = await updateProfileAPI(
                 registerCredentials.mobileNumber,
                 registerCredentials.universityName,
                 registerCredentials.year
             );
-            console.log(response);
+            // console.log(response);
             if (response?.isProfileUpdated) {
                 setIsProfileUpdated(true);
                 onEditProfileModalClose();
@@ -138,7 +138,7 @@ const EditProfile = (props) => {
             return false;
         }
     };
-    console.log(profileError);
+    // console.log(profileError);
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -152,7 +152,7 @@ const EditProfile = (props) => {
         event.preventDefault();
         setIsLoading(true);
         if (validateRegisterEventCredentials()) {
-            console.log(eventRegisterCredentials);
+            // console.log(eventRegisterCredentials);
             if (!sessionStorage.getItem("token")) {
                 alert("Please Login First");
                 GAuth();
@@ -167,9 +167,9 @@ const EditProfile = (props) => {
                 eventFees: props.price,
                 eventParticipantInfo: eventRegisterCredentials,
             };
-            console.log(eventData);
+            // console.log(eventData);
             let response = await registerEvent(eventData);
-            console.log(response);
+            // console.log(response);
             if (!response?.isAuthenticated) {
                 sessionStorage.removeItem("token");
                 setIsLoading(false);
@@ -199,7 +199,7 @@ const EditProfile = (props) => {
     const [errorForRegisterForm, setErrorForRegisterForm] = useState({
         errors: {},
     });
-    console.log(eventRegisterCredentials);
+    // console.log(eventRegisterCredentials);
     const validateRegisterEventCredentials = () => {
         let errors = {};
         let isValid = true;
@@ -267,11 +267,11 @@ const EditProfile = (props) => {
                 errors: {},
             });
         }
-        console.log(errors);
+        // console.log(errors);
         return isValid;
     };
 
-    console.log(errorForRegisterForm);
+    // console.log(errorForRegisterForm);
     const handleChangeEvent = (event, index) => {
         const name = event.target.name;
         if (name === "teamName") {
@@ -301,7 +301,7 @@ const EditProfile = (props) => {
     const isProfileUpdatedRequest = async () => {
         setIsLoading(true);
         let response = await isProfileUpdatedAPI();
-        console.log(response);
+        // console.log(response);
         if (!response?.isAuthenticated) {
             sessionStorage.removeItem("token");
             setIsLoading(false);
@@ -324,22 +324,22 @@ const EditProfile = (props) => {
         clientId: process.env.REACT_APP_CLIENT_ID,
         flow: "implicit",
         onSuccess: async (credentialResponse) => {
-            console.log(credentialResponse);
+            // console.log(credentialResponse);
             sessionStorage.setItem(
                 "token",
                 "Bearer " + credentialResponse.access_token
             );
             let response = await login();
-            console.log(response);
+            // console.log(response);
             setIsLoading(true);
             if (!response?.isAuthenticated) {
-                console.log(response.message);
+                // console.log(response.message);
                 sessionStorage.removeItem("token");
                 setIsLoading(false);
             } else {
                 if (isProfileUpdated || (await isProfileUpdatedRequest())) {
                     // Call For Register Modal
-                    console.log("REGISTER MODAL");
+                    // console.log("REGISTER MODAL");
                     onEventRegisterModalOpen();
                     setIsLoading(false);
                 } else {
@@ -348,14 +348,14 @@ const EditProfile = (props) => {
                         GAuth();
                         return;
                     }
-                    console.log("PROFILE MODAL");
+                    // console.log("PROFILE MODAL");
                     onEditProfileModalOpen();
                     setIsLoading(false);
                 }
             }
         },
         onError: () => {
-            console.log("Login Failed");
+            // console.log("Login Failed");
         },
     });
 
@@ -464,7 +464,7 @@ const EditProfile = (props) => {
         }
 
         for (let i = 0; i < eventRegisterCredentials.teamSize; i++) {
-            console.log("123");
+            // console.log("123");
             dynParticipantsField.push(
                 <VStack
                     w="full"
@@ -561,7 +561,7 @@ const EditProfile = (props) => {
                             (await isProfileUpdatedRequest())
                         ) {
                             // Call For Register Modal
-                            console.log("REGISTER MODAL");
+                            // console.log("REGISTER MODAL");
                             onEventRegisterModalOpen();
                             setIsLoading(false);
                         } else {
@@ -570,7 +570,7 @@ const EditProfile = (props) => {
                                 GAuth();
                                 return;
                             }
-                            console.log("PROFILE MODAL");
+                            // console.log("PROFILE MODAL");
                             onEditProfileModalOpen();
                             setIsLoading(false);
                         }

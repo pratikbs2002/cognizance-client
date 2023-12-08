@@ -143,12 +143,12 @@ export default function UploadImages() {
     async function addImage() {
         try {
             const res = await uploadImage(files);
-            console.log(res);
+            // console.log(res);
             const parseRes = await res.json();
-            console.log(parseRes);
+            // console.log(parseRes);
             return parseRes;
         } catch (err) {
-            console.error(err.message);
+            // console.error(err.message);
         }
     }
 

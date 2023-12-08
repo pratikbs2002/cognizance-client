@@ -16,7 +16,7 @@ export async function uploadImage(files, image) {
     });
     formData.append("locationData", locationData);
     formData.append("names", names);
-    console.log(formData);
+    // console.log(formData);
     return await fetch(`${hostUrl}/uploadImage`, {
         method: "POST",
         body: formData,

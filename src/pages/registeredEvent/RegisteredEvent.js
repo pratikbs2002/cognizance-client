@@ -11,7 +11,7 @@ export default function RegisterdEvent() {
 
     const getEvents = async () => {
         let data = await getAllRegisteredEvents();
-        console.log(data);
+        // console.log(data);
         if (!data?.isAuthenticated) {
             sessionStorage.clear();
         } else if (data?.isFound) {

@@ -11,7 +11,9 @@ export async function getLocationData() {
         })
         .catch((error) => {
             locationData["isFound"] = false;
-            if (process.env.REACT_APP_MODE == "dev") console.log(error);
+            if (process.env.REACT_APP_MODE == "dev") {
+                //console.log(error);
+            }
         });
 
     return locationData;

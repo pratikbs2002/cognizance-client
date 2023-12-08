@@ -51,14 +51,14 @@ const ShowRegisteredEventButton = (props) => {
     const handleRegister = async (event) => {
         setIsLoading(true);
         event.preventDefault();
-        console.log(registerCredentials);
+        // console.log(registerCredentials);
         if (validateRegisterCredentials()) {
             let response = await updateProfileAPI(
                 registerCredentials.mobileNumber,
                 registerCredentials.universityName,
                 registerCredentials.year
             );
-            console.log(response);
+            // console.log(response);
             if (response?.isProfileUpdated) {
                 setIsProfileUpdated(true);
                 onEditProfileModalClose();
@@ -138,7 +138,7 @@ const ShowRegisteredEventButton = (props) => {
 
     const isProfileUpdatedRequest = async () => {
         let response = await isProfileUpdatedAPI();
-        console.log(response);
+        // console.log(response);
         if (!response?.isAuthenticated) {
             sessionStorage.removeItem("token");
             return false;
@@ -151,16 +151,16 @@ const ShowRegisteredEventButton = (props) => {
         clientId: process.env.REACT_APP_CLIENT_ID,
         flow: "implicit",
         onSuccess: async (credentialResponse) => {
-            console.log(credentialResponse);
+            // console.log(credentialResponse);
             sessionStorage.setItem(
                 "token",
                 "Bearer " + credentialResponse.access_token
             );
             let response = await login();
-            console.log(response);
+            // console.log(response);
             setIsLoading(true);
             if (!response?.isAuthenticated) {
-                console.log(response.message);
+                // console.log(response.message);
                 sessionStorage.removeItem("token");
                 setIsLoading(false);
             } else {
@@ -174,14 +174,14 @@ const ShowRegisteredEventButton = (props) => {
                         GAuth();
                         return;
                     }
-                    console.log("PROFILE MODAL");
+                    // console.log("PROFILE MODAL");
                     onEditProfileModalOpen();
                     setIsLoading(false);
                 }
             }
         },
         onError: () => {
-            console.log("Login Failed");
+            // console.log("Login Failed");
         },
     });
 

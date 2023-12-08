@@ -36,11 +36,11 @@ export default function PhotoGallery() {
         async function fetchImages() {
             let response = await getImagesLinks();
             let data = await response.json();
-            console.log(data);
+            // console.log(data);
             if (data.isFound) {
                 setData(data.listOfFiles);
             } else {
-                console.log("No images found");
+                // console.log("No images found");
             }
 
             setIsImageFetched(true);
