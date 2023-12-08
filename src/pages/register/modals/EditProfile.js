@@ -20,6 +20,9 @@ import {
     Image,
     Select,
     FormErrorMessage,
+    Container,
+    StackDivider,
+    HStack,
 } from "@chakra-ui/react";
 import {
     isProfileUpdatedAPI,
@@ -84,7 +87,7 @@ const EditProfile = (props) => {
             errors.name = "Name is required";
             flag = false;
         } else if (
-            !/^[a-z ]+$/.test(registerCredentials.name.toLowerCase().trim())
+            !/^[A-Za-z ]+$/.test(registerCredentials.name.toLowerCase().trim())
         ) {
             errors.name = "Name must be Alphabets";
             flag = false;
@@ -296,10 +299,12 @@ const EditProfile = (props) => {
     };
 
     const isProfileUpdatedRequest = async () => {
+        setIsLoading(true);
         let response = await isProfileUpdatedAPI();
         console.log(response);
         if (!response?.isAuthenticated) {
             sessionStorage.removeItem("token");
+            setIsLoading(false);
             return false;
         }
         setIsProfileUpdated(response?.isProfileUpdated);
@@ -312,6 +317,7 @@ const EditProfile = (props) => {
                 mobileNumber: response.userData.mobileNumber,
             },
         });
+        setIsLoading(false);
         return response?.isProfileUpdated;
     };
     const GAuth = useGoogleLogin({
@@ -769,6 +775,8 @@ const EditProfile = (props) => {
                             </ModalFooter>
                         </ModalContent>
                     </Modal>
+
+                    {/* registrationf form and payment model */}
                     <Modal
                         isOpen={isEventRegisterModalOpen && !isLoading}
                         onClose={onEventRegisterModalClose}
@@ -778,12 +786,12 @@ const EditProfile = (props) => {
                     >
                         <ModalOverlay />
                         <ModalContent
-                            style={{ overflowY: "hidden" }}
                             bg="white"
-                            p={10}
-                            paddingBottom={10}
-                            h={"80%"}
-                            overflowY={"scroll"}
+                            p={{ base: "0", md: "10" }}
+                            paddingBottom={20}
+                            h={{ base: "unset", md: "80%" }}
+                            maxHeight={{ base: "unset", md: "100vh" }}
+                            overflowY={"auto"}
                             className="event-registration-modal"
                         >
                             <ModalHeader>
@@ -795,48 +803,61 @@ const EditProfile = (props) => {
 
                             <ModalCloseButton />
 
-                            <ModalBody>
+                            <ModalBody maxWidth={{ base: "100%" }}>
                                 {props.addEventModal || !isPaymentModalOpen ? (
-                                    <Box>
-                                        <div
-                                            style={{
-                                                display: "flex",
-                                                flexDirection: "row",
-                                                gap: "10px",
-                                                justifyContent: "space-between",
+                                    <Box padding={0} margin={0}>
+                                        <HStack
+                                            padding={0}
+                                            margin={0}
+                                            spacing={10}
+                                            divider={
+                                                <StackDivider borderColor="gray.200" />
+                                            }
+                                            justifyContent={{
+                                                base: "center",
+                                                md: "space-between",
                                             }}
+                                            flexDirection={{
+                                                base: "column",
+                                                md: "row",
+                                            }}
+                                            gap={{ base: "10px", md: "2px" }}
                                         >
-                                            <div
-                                                style={{
-                                                    display: "flex",
-                                                    flex: 1,
-                                                    overflowY: "hidden",
-                                                    alignItems: "center",
-                                                }}
+                                            <Box
+                                                display={"flex"}
+                                                alignItems={"center"}
+                                                justifyContent={"center"}
+                                                padding={0}
+                                                margin={0}
+                                                w={{ base: "100%", md: "auto" }}
                                             >
                                                 <Image
                                                     src={props.image}
                                                     alt="Image"
-                                                    objectFit="cover"
-                                                    aspectRatio="1/1"
-                                                    w="100%"
-                                                    h="80%"
+                                                    style={{
+                                                        width: "300px",
+                                                        aspectRatio: "1/1",
+                                                        objectFit: "contain",
+                                                        borderColor: "gray",
+                                                        borderRadius: "10px",
+                                                    }}
                                                 />
-                                            </div>
-                                            <div
+                                            </Box>
+                                            <Container
                                                 className="event-registration-description"
-                                                style={{
-                                                    display: "flex",
-                                                    flex: 1,
-                                                    maxHeight: "55vh",
-                                                    borderLeft:
-                                                        "1px solid gray",
-                                                    padding: "10px",
-                                                    flexDirection: "column",
-                                                    overflowY: "auto",
+                                                display={"flex"}
+                                                flex="2"
+                                                padding={0}
+                                                margin={0}
+                                                flexDirection="column"
+                                                maxHeight={{
+                                                    base: "fit-content",
+                                                    md: "unset",
                                                 }}
+                                                overflow={"auto"}
                                             >
                                                 <form
+                                                    style={{}}
                                                     onSubmit={
                                                         handleRegisterEvent
                                                     }
@@ -844,7 +865,7 @@ const EditProfile = (props) => {
                                                     <VStack
                                                         w="full"
                                                         bg="white"
-                                                        p={6}
+                                                        p={2}
                                                         spacing={5}
                                                     >
                                                         {typeof props.teamSize ===
@@ -989,22 +1010,22 @@ const EditProfile = (props) => {
                                                         {typeof props.teamSize ===
                                                             "number" &&
                                                             participantsField}
-                                                    </VStack>
 
-                                                    <VStack>
-                                                        <Button
-                                                            colorScheme="blue"
-                                                            mr={3}
-                                                            onClick={
-                                                                handleRegisterEvent
-                                                            }
-                                                        >
-                                                            Submit
-                                                        </Button>
+                                                        <VStack>
+                                                            <Button
+                                                                colorScheme="blue"
+                                                                mr={3}
+                                                                onClick={
+                                                                    handleRegisterEvent
+                                                                }
+                                                            >
+                                                                Submit
+                                                            </Button>
+                                                        </VStack>
                                                     </VStack>
                                                 </form>
-                                            </div>
-                                        </div>
+                                            </Container>
+                                        </HStack>
                                     </Box>
                                 ) : (
                                     <Payment price={props.price} />
