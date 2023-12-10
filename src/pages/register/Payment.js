@@ -1,6 +1,6 @@
 import React from "react";
-import { Button, Text } from "@chakra-ui/react";
-
+import { Button } from "@chakra-ui/react";
+import "./EventCard.css";
 import { Table, Tbody, Tr, Td } from "@chakra-ui/react";
 
 export default function Payment(props) {
@@ -24,7 +24,7 @@ export default function Payment(props) {
                 }}
             >
                 <div
-                    className="part1"
+                    className="part1 event-registration-description"
                     style={{
                         display: "flex",
                         alignItems: "center",
@@ -65,10 +65,7 @@ export default function Payment(props) {
                                 <Tbody>
                                     <Tr>
                                         <Td>Bank A/c Name</Td>
-                                        <Td>
-                                            Chandubhai S. Patel
-                                            Institute of Technology
-                                        </Td>
+                                        <Td>Chandubhai S. Patel Institute of Technology</Td>
                                     </Tr>
                                     <Tr>
                                         <Td>Bank A/c Number</Td>
@@ -92,11 +89,7 @@ export default function Payment(props) {
                                     </Tr>
                                     <Tr>
                                         <Td>Bank Branch Address</Td>
-                                        <Td>
-                                            Darshan Hostel,
-                                            Changa-Valetla Road,
-                                            Changa. Dist. Anand
-                                        </Td>
+                                        <Td>Darshan Hostel, Changa-Valetla Road, Changa. Dist. Anand</Td>
                                     </Tr>
                                 </Tbody>
                             </Table>
@@ -193,15 +186,16 @@ export default function Payment(props) {
                         justifyContent: "center"
                     }}
                 >
-                    <Button colorScheme="blue" mr={3}>
-                        <a
-                            href="https://forms.gle/DaqEYXgjcx9kCNpe6"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{ color: "white" }}
-                        >
-                            Submit Payment Reciept
-                        </a>
+                    <Button
+                        colorScheme="blue"
+                        mr={3}
+                        as="a"
+                        href="https://forms.gle/DaqEYXgjcx9kCNpe6"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color={"white"}
+                    >
+                        Submit Payment Reciept
                     </Button>
                 </div>
             </div>

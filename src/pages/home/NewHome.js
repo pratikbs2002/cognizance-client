@@ -3,8 +3,8 @@ import React from "react";
 import { MdDateRange } from "react-icons/md";
 import RocketAnimation from "../../components/rocketAnimation/RocketAnimation";
 import { useNavigate } from "react-router-dom";
-import CSPIT from "../../assets/cspit.png";
-import DEPSTAR from "../../assets/depstar.png";
+import CSPIT from "../../assets/Cspit.png";
+import DEPSTAR from "../../assets/Depstar.png";
 import CHARUSAT from "../../assets/Charusat.png";
 export default function Home() {
   const navigate = useNavigate();
@@ -170,7 +170,7 @@ export default function Home() {
                 p={1}
                 borderRadius={5}
                 padding={1}
-                backgroundColor={"gray.500"}
+                backgroundColor={"white"}
                 alt="sds"
                 aspectRatio={"auto"}
                 objectFit={"cover"}
@@ -182,7 +182,7 @@ export default function Home() {
                 border={"solid"}
                 borderWidth={5}
                 borderColor={"white"}
-                backgroundColor={"pink"}
+                backgroundColor={"white"}
                 aspectRatio={"auto"}
                 objectFit={"cover"}
                 borderRadius={5}

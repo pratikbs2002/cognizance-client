@@ -59,7 +59,6 @@ export default function About() {
 
                             <Text
                                 color={"white"}
-                                bg="green"
                                 align={"justify"}
                                 maxW={{ base: "100%", md: "100%" }}
                                 fontSize={"20px"}

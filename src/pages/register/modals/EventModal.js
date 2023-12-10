@@ -113,6 +113,8 @@ const BasicUsage = (props) => {
                                                         overflowY: "auto",
                                                         maxHeight: "20vh",
                                                     }}
+                                                    className="event-registration-description"
+
                                                 >
                                                     {props.about}
                                                 </div>
@@ -131,6 +133,7 @@ const BasicUsage = (props) => {
                                                             overflowY: "auto",
                                                             maxHeight: "20vh",
                                                         }}
+                                                        className="event-registration-description"
                                                     >
                                                         <UnorderedList>
                                                             {props?.task?.map(

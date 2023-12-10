@@ -794,7 +794,7 @@ const EditProfile = (props) => {
                             h={{ base: "unset", md: "80%" }}
                             maxHeight={{ base: "unset", md: "100vh" }}
                             overflowY={"auto"}
-                            className="event-registration-modal"
+                            className="event-registration-modal event-registration-description"
                         >
                             <ModalHeader>
                                 <Heading as="h1" size={"lg"}>
