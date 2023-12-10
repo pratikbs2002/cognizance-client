@@ -80,6 +80,7 @@ const EditProfile = (props) => {
     };
 
     const validateRegisterCredentials = () => {
+        console.log(registerCredentials);
         let errors = {};
         let flag = true;
         //name error
@@ -495,7 +496,7 @@ const EditProfile = (props) => {
                                     ? "Enter Your Name"
                                     : `Enter Participant${i}'s Name`
                             }
-                            value={i === 0 ? userData?.name : undefined}
+                            value={i === 0 ? eventRegisterCredentials?.participant0?.name : undefined}
                             onChange={(event) => {
                                 handleChangeEvent(event, i);
                             }}
@@ -734,6 +735,7 @@ const EditProfile = (props) => {
                                                 </Text>
                                                 <FormControl>
                                                     <Input
+                                                        maxLength={10}
                                                         isInvalid={
                                                             profileError.mobileNumber
                                                         }

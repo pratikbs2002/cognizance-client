@@ -17,6 +17,7 @@ const MusicalNight = (props) => {
         teamSize: 1,
         eventFee: 1000,
         eventType: "WORKSHOP",
+        pdfName:"musicalnight"
     };
 
     return (
@@ -68,6 +69,7 @@ const MusicalNight = (props) => {
                         taskEnabled={false}
                         isMusicalNight={true}
                         registeredEvent={props.registeredEvent}
+                        pdfName={IData.pdfName}
                     />
                 </div>
             ) : null}

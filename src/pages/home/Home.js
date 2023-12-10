@@ -4,8 +4,8 @@ import { MdDateRange } from "react-icons/md";
 import { Link } from "react-scroll";
 import RocketAnimation from "../../components/rocketAnimation/RocketAnimation";
 import { useNavigate } from "react-router-dom";
-import CSPIT from "../../assets/Cspit.png";
-import DEPSTAR from "../../assets/Depstar.png";
+import CSPIT from "../../assets/cspit.png";
+import DEPSTAR from "../../assets/depstar.png";
 import CHARUSAT from "../../assets/Charusat.png";
 export default function Home() {
   const navigate = useNavigate();

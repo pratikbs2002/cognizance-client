@@ -187,7 +187,7 @@ export default function Footer() {
                         </div>
                         <div className="rights">
                             <span style={{ fontSize: "18px" }}>
-                                &#169;2024. Charusat. All rights revserved
+                                &#169;2024. Charusat. All rights reserved
                             </span>
                         </div>
                     </div>
