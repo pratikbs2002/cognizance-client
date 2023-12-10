@@ -3,8 +3,8 @@
   right: 50px;
   bottom: 50px;
   opacity: 0;
-  transition: opacity 0.5s, transform 1s;
-  transform: scale(100);
+  transition: opacity 0.5s, transform 2s;
+  transform: scale(20);
   z-index: -10000;
 }
 
