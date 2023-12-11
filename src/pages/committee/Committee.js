@@ -87,7 +87,7 @@ export default function Committee() {
                     backgroundPosition: "center",
                   }}
                 >
-                  Chief Patrons
+                  CHIEF PATRONS
                 </Heading>
                 <ChiefPatrons />
               </Card>
@@ -121,7 +121,7 @@ export default function Committee() {
                     backgroundPosition: "center",
                   }}
                 >
-                  Patrons
+                  PATRONS
                 </Heading>
                 <Patrons />
               </Card>
@@ -155,7 +155,7 @@ export default function Committee() {
                     backgroundPosition: "center",
                   }}
                 >
-                  Co-Patrons
+                  CO-PATRONS
                 </Heading>
                 <CoPatrons />
               </Card>
@@ -189,7 +189,7 @@ export default function Committee() {
                     backgroundPosition: "center",
                   }}
                 >
-                  Conveners
+                  CONVENERS
                 </Heading>
                 <Conveners />
               </Card>
@@ -226,7 +226,7 @@ export default function Committee() {
                   }}
                   marginBottom={"10px"}
                 >
-                  Coordinators
+                  COORDINATORS
                 </Heading>
                 <CommitteeMembers />
               </Card>
