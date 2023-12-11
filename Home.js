@@ -1,7 +1,7 @@
 import { Button, Container, Text, Image, Card } from "@chakra-ui/react";
 import React from "react";
 import { MdDateRange } from "react-icons/md";
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
 import RocketAnimation from "./src/components/rocketAnimation/RocketAnimation";
 import { useNavigate } from "react-router-dom";
 import CSPIT from "../../assets/Cspit.png";

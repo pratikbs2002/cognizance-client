@@ -3,7 +3,7 @@ import React from "react";
 import { MdDateRange } from "react-icons/md";
 import RocketAnimation from "../../components/rocketAnimation/RocketAnimation";
 import { useNavigate } from "react-router-dom";
-import CSPIT from "../../assets/Cspit.png";
+// import CSPIT from "../../assets/Cspit.png";
 import DEPSTAR from "../../assets/Depstar.png";
 import CHARUSAT from "../../assets/Charusat.png";
 export default function NewHome() {
@@ -176,7 +176,7 @@ export default function NewHome() {
                 objectFit={"cover"}
               />
               <Image
-                src={CSPIT}
+                src={DEPSTAR}
                 width="10vh"
                 alt="sds"
                 border={"solid"}
