@@ -13,7 +13,7 @@ import NewHome from "./home/NewHome";
 import ScrollButton from "../components/scrollButton/ScrollButton";
 // import aboutIm from "./posterCz.png";
 // import aboutIm2 from "./posterCz2.png";
-import aboutIm3 from "./homePage2.png";
+import aboutIm3 from "./homePage3.png";
 export default function LandingPage() {
     const [isImage1Visible, setIsImage1Visible] = useState(true);
 
