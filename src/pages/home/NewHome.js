@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import CSPIT from "../../assets/Cspit.png";
 import DEPSTAR from "../../assets/Depstar.png";
 import CHARUSAT from "../../assets/Charusat.png";
-export default function Home() {
+export default function NewHome() {
   const navigate = useNavigate();
   return (
     <>
@@ -191,6 +191,7 @@ export default function Home() {
                 src={DEPSTAR}
                 width="10vh"
                 alt="sds"
+
                 border={"solid"}
                 borderWidth={5}
                 borderColor={"white"}

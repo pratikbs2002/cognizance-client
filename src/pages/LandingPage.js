@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Container, Image } from "@chakra-ui/react";
 import mainbg from "../assets/bg8.png";
-import Committee from "./committee/Committee";
+// import Committee from "./committee/Committee";
 import "./ImageTransition.css";
 import Navbar from "../components/navbar/Navbar";
 import About from "./about/About";
 import Footer from "../components/footer/Footer";
-import PhotoGallery from "./photoGallery/PhotoGallery";
-import Count from "../components/Count";
-import Home from "./home/Home";
+// import PhotoGallery from "./photoGallery/PhotoGallery";
+// import Count from "../components/Count";
+// import Home from "./home/Home";
 import NewHome from "./home/NewHome";
 import ScrollButton from "../components/scrollButton/ScrollButton";
-import aboutIm from "./posterCz.png";
-import aboutIm2 from "./posterCz2.png";
+// import aboutIm from "./posterCz.png";
+// import aboutIm2 from "./posterCz2.png";
 import aboutIm3 from "./homePage.png";
 export default function LandingPage() {
   const [isImage1Visible, setIsImage1Visible] = useState(true);
