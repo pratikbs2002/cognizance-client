@@ -90,7 +90,7 @@ const NonTechEvents = (props) => {
       teamSize: 5,
       eventFee: 250,
       maxNumberOfTeams: 256,
-      winningPrice: ["●	Winner: Rs. 7,000/-", "●	Runner up: Rs. 5,000/-"],
+      winningPrice: ["●	Winner: Rs. 7,500/-", "●	Runner up: Rs. 5,000/-"],
       isPrizesEnabled: true,
       pdfName: "valorant",
     },
