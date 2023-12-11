@@ -54,6 +54,7 @@ export default function Navbar() {
                             objectFit={"cover"}
                             bg="white"
                             p={2}
+                            
                             borderRadius={{ base: 4, md: 7 }}
                         />
                     </Container>

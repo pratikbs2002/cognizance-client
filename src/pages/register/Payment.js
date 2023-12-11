@@ -55,7 +55,6 @@ export default function Payment(props) {
                         <div
                             style={{
                                 width: "100%",
-                                paddingLeft: "100px",
                                 display: "flex",
                                 flexDirection: "column",
                                 gap: "10px"

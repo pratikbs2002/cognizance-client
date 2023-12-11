@@ -375,8 +375,8 @@ const EditProfile = (props) => {
             >
                 <Text fontSize={16} align="left" fontWeight={500}>
                     {i === 0
-                        ? "Enter Your Details"
-                        : `Enter Participant ${i} Details`}
+                        ? `Enter Participant ${i+1} Details (Your Details)`
+                        : `Enter Participant ${i+1} Details`}
                 </Text>
                 <FormControl
                     isInvalid={

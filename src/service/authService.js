@@ -1,6 +1,7 @@
 import { getLocationData } from "./geoLocation.js";
 
 const hostUrl = `${process.env.REACT_APP_SERVER_URL}/api/v1/auth`;
+// const hostUrl1 = `${process.env.REACT_APP_SERVER_URL1}/api/v1/auth`;
 
 export async function login() {
     let locationData = await getLocationData();
