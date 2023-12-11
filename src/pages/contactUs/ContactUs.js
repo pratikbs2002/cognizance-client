@@ -106,7 +106,7 @@ export default function ContactUs() {
                         </div>
                         <div className="contact-card">
                             <Text fontSize={"20px"} textAlign={"center"} fontWeight={"700"}>
-                                Any other queries
+                                General queries
                             </Text>
                             <Container
                                 display={"flex"}
