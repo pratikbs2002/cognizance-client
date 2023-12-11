@@ -3,9 +3,9 @@ import React from "react";
 import { MdDateRange } from "react-icons/md";
 import RocketAnimation from "../../components/rocketAnimation/RocketAnimation";
 import { useNavigate } from "react-router-dom";
-// import CSPIT from "../../assets/Cspit.png";
-// import DEPSTAR from "../../assets/Depstar.png";
-import CHARUSAT from "../../assets/Charusat.png";
+import CSPIT from "../../assets/logos/cspit.png";
+import DEPSTAR from "../../assets/logos/depstar.png";
+import CHARUSAT from "../../assets/logos/charusat.png";
 export default function NewHome() {
   const navigate = useNavigate();
   return (
@@ -176,7 +176,7 @@ export default function NewHome() {
                 objectFit={"cover"}
               />
               <Image
-                src={CHARUSAT}
+                src={CSPIT}
                 width="10vh"
                 alt="sds"
                 border={"solid"}
@@ -188,7 +188,7 @@ export default function NewHome() {
                 borderRadius={5}
               />
               <Image
-                src={CHARUSAT}
+                src={DEPSTAR}
                 width="10vh"
                 alt="sds"
 
