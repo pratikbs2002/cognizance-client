@@ -243,7 +243,7 @@ export default function Home() {
             maxWidth={"100%"}
             alignItems={"center"}
             justifyContent={"center"}
-            className="second-part"
+            // className="second-part"
           >
             <RocketAnimation />
           </Container>

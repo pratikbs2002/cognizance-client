@@ -12,10 +12,7 @@ export default function ContactUs() {
         <>
             <div className="photo-gallery-parent-container">
                 <div className="photo-gallery-navbar">
-                    <div
-                        className="photo-gallery-back-button"
-                        onClick={() => navigate(`/`)}
-                    >
+                    <div className="photo-gallery-back-button" onClick={() => navigate(`/`)}>
                         <IoIosArrowBack />
                         Back
                     </div>
@@ -31,7 +28,7 @@ export default function ContactUs() {
                         color: "white",
                         paddingBottom: "10px",
                         marginBottom: "10px",
-                        backgroundColor: "rgba(0, 0, 0, 0.442)",
+                        backgroundColor: "rgba(0, 0, 0, 0.442)"
                     }}
                 >
                     Contact Us
@@ -42,17 +39,13 @@ export default function ContactUs() {
                         alignItems: "center",
                         justifyContent: "center",
                         width: "100%",
-                        marginTop: "100px",
+                        marginTop: "100px"
                     }}
                 >
                     <div className="contact-card-container">
                         <div className="contact-card">
-                            <Text
-                                fontSize={"20px"}
-                                textAlign={"center"}
-                                fontWeight={"700"}
-                            >
-                                Registrations related queries
+                            <Text fontSize={"20px"} textAlign={"center"} fontWeight={"700"}>
+                                Registrations queries
                             </Text>
                             <Container
                                 display={"flex"}
@@ -64,68 +57,55 @@ export default function ContactUs() {
                                 flexDirection={{ base: "column", md: "row" }}
                             >
                                 <Container textAlign={"center"}>
-                                    <Text
-                                        fontSize={{ base: "16px", md: "20px" }}
-                                    >
-                                        Pratik Suthar
-                                    </Text>
-                                    <Text
-                                        fontSize={{ base: "16px", md: "20px" }}
-                                    >
-                                        +91 76983 62613
-                                    </Text>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>Pratik Suthar</Text>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>+91 76983 62613</Text>
                                 </Container>
                                 <Container textAlign={"center"}>
-                                    <Text
-                                        fontSize={{ base: "16px", md: "20px" }}
-                                    >
-                                        Ketan Tiwari
-                                    </Text>
-                                    <Text
-                                        fontSize={{ base: "16px", md: "20px" }}
-                                    >
-                                        +91 70693 12561
-                                    </Text>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>Ketan Tiwari</Text>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>+91 70693 12561</Text>
                                 </Container>
                             </Container>
                         </div>
 
                         <div className="contact-card">
-                            <Text
-                                fontSize={"20px"}
-                                textAlign={"center"}
-                                fontWeight={"700"}
-                            >
-                                Accomodation & Transport related queries
+                            <Text fontSize={"20px"} textAlign={"center"} fontWeight={"700"}>
+                                Accomodation & Transport queries
                             </Text>
                             <Container
                                 display={"flex"}
                                 alignItems={"center"}
+                                flexDirection={"column"}
                                 justifyContent={"center"}
                                 gap={"30px"}
                                 textAlign={"center"}
                                 marginTop={"30px"}
                             >
                                 <Container textAlign={"center"}>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>Srushti Gajjar</Text>
                                     <Text
                                         fontSize={{ base: "16px", md: "20px" }}
+                                        onClick={() => {
+                                            window.open("mailto:srushtigajjar.cse@charusat.ac.in");
+                                        }}
                                     >
-                                        Srushti Gajjar
+                                        srushtigajjar.cse@charusat.ac.in
                                     </Text>
+                                </Container>
+                                <Container textAlign={"center"}>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>Vaibhavi Patel</Text>
                                     <Text
                                         fontSize={{ base: "16px", md: "20px" }}
+                                        onClick={() => {
+                                            window.open("mailto:vaibhavipatel.cse@charusat.ac.in");
+                                        }}
                                     >
-                                        +91 94095 47741
+                                        vaibhavipatel.cse@charusat.ac.in
                                     </Text>
                                 </Container>
                             </Container>
                         </div>
                         <div className="contact-card">
-                            <Text
-                                fontSize={"20px"}
-                                textAlign={"center"}
-                                fontWeight={"700"}
-                            >
+                            <Text fontSize={"20px"} textAlign={"center"} fontWeight={"700"}>
                                 Any other queries
                             </Text>
                             <Container
@@ -137,25 +117,13 @@ export default function ContactUs() {
                                 marginTop={"30px"}
                             >
                                 <Container textAlign={"center"}>
-                                    <Text
-                                        fontSize={{ base: "16px", md: "20px" }}
-                                    >
-                                        Jay Shah
-                                    </Text>
-                                    <Text
-                                        fontSize={{ base: "16px", md: "20px" }}
-                                    >
-                                        +91 82007 78757
-                                    </Text>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>Jay Shah</Text>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>+91 82007 78757</Text>
                                 </Container>
                             </Container>
                         </div>
                         <div className="contact-card">
-                            <Text
-                                fontSize={"20px"}
-                                textAlign={"center"}
-                                fontWeight={"700"}
-                            >
+                            <Text fontSize={"20px"} textAlign={"center"} fontWeight={"700"}>
                                 Email
                             </Text>
                             <Container
@@ -170,6 +138,9 @@ export default function ContactUs() {
                                     <Text
                                         fontSize={{ base: "16px", md: "20px" }}
                                         width={"100%"}
+                                        onClick={() => {
+                                            window.open("mailto:cognizance@charusat.edu.in");
+                                        }}
                                     >
                                         cognizance@charusat.edu.in
                                     </Text>
@@ -182,24 +153,17 @@ export default function ContactUs() {
                             style={{
                                 height: "50vh",
                                 width: "83%",
-                                marginBottom: "50px",
+                                marginBottom: "50px"
                             }}
                         >
                             <div
                                 className="card_logo_container"
                                 style={{
-                                    marginBottom: "20px",
+                                    marginBottom: "20px"
                                 }}
                             >
-                                <RiMapPinRangeLine
-                                    fontSize={25}
-                                    color="#00b2d2"
-                                />
-                                <Text
-                                    fontSize={"20px"}
-                                    textAlign={"center"}
-                                    fontWeight={"700"}
-                                >
+                                <RiMapPinRangeLine fontSize={25} color="#00b2d2" />
+                                <Text fontSize={"20px"} textAlign={"center"} fontWeight={"700"}>
                                     Event Venue
                                 </Text>
                             </div>
@@ -212,7 +176,7 @@ export default function ContactUs() {
                                 referrerpolicy="no-referrer-when-downgrade"
                                 title="venue"
                                 style={{
-                                    borderRadius: "10px",
+                                    borderRadius: "10px"
                                 }}
                             ></iframe>
                         </div>

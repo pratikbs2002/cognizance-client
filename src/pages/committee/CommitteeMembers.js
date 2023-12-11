@@ -62,7 +62,7 @@ export default function CommitteeMembers() {
             id: 6,
             name: "Dr. Nirav Bhatt",
             description:
-                "Head of the Department, Department of AI & ML Engineering, CSPIT, CHARUSAT, , India",
+                "Head of the Department, Department of AI & ML Engineering, CSPIT, CHARUSAT, India",
             profile: _7,
         },
         {
@@ -162,7 +162,7 @@ export default function CommitteeMembers() {
                                 src={index.profile}
                                 alt="sponsor"
                             />
-                            <Text>{index.name}</Text>
+                            <Text fontWeight={700}>{index.name}</Text>
                             <Text>{index.description}</Text>
                         </Container>
                     </Card>

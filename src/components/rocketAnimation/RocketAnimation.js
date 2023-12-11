@@ -52,7 +52,7 @@ export default function RocketAnimation() {
               border={"5px solid yellow"}
               backgroundColor={"#353535"}
               padding={"30px"}
-              variant={"unstyled"}
+              variant={"unstyled"}z
             >
               <Text color={"white"} display={"flex"} flexWrap={"wrap"}>
                 Let's

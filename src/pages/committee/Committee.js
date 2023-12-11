@@ -2,15 +2,11 @@ import {
   Container,
   Text,
   Card,
-  Stack,
-  HStack,
-  VStack,
-  CardHeader,
   Heading,
 } from "@chakra-ui/react";
 import React from "react";
 import CommitteeMembers from "./CommitteeMembers";
-import CoreTeam from "./ChiefPatrons";
+// import CoreTeam from "./ChiefPatrons";
 import ChiefPatrons from "./ChiefPatrons";
 import Patrons from "./Patrons";
 import CoPatrons from "./CoPatrons";
@@ -81,7 +77,7 @@ export default function Committee() {
                 <Heading
                   padding={5}
                   textAlign={"center"}
-                  size="sm"
+                  size="md"
                   color="white"
                   // bg="#161d37 !important"
                   border="1px solid white"
@@ -115,7 +111,7 @@ export default function Committee() {
                 <Heading
                   padding={5}
                   textAlign={"center"}
-                  size="sm"
+                  size="md"
                   color="white"
                   // bg="#161d37 !important"
                   border="1px solid white"
@@ -149,7 +145,7 @@ export default function Committee() {
                 <Heading
                   padding={5}
                   textAlign={"center"}
-                  size="sm"
+                  size="md"
                   color="white"
                   // bg="#161d37 !important"
                   border="1px solid white"
@@ -183,7 +179,7 @@ export default function Committee() {
                 <Heading
                   padding={5}
                   textAlign={"center"}
-                  size="sm"
+                  size="md"
                   color="white"
                   // bg="#161d37 !important"
                   border="1px solid white"
@@ -219,7 +215,7 @@ export default function Committee() {
                 <Heading
                   padding={5}
                   textAlign={"center"}
-                  size="sm"
+                  size="md"
                   color="white"
                   // bg="#161d37 !important"
                   border="1px solid white"
@@ -232,7 +228,6 @@ export default function Committee() {
                 >
                   Coordinators
                 </Heading>
-
                 <CommitteeMembers />
               </Card>
             </Container>

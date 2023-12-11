@@ -1,78 +1,85 @@
 .navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: #000000c5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #000000c5;
 }
 
 .navbar-toggle-button {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .navbar-menu {
-  font-weight: 500;
-  color: #54cadd;
-  font-size: 1.2rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+    font-weight: 500;
+    color: #54cadd;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .navbar-menu.active {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-  color: #54cadd;
-  gap: 200rem;
-  background-color: #35353900;
-  padding: 1rem;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    color: #54cadd;
+    gap: 200rem;
+    background-color: #35353900;
+    padding: 1rem;
 }
 
-@media screen and (max-width: 1260px) {
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 1rem;
-    justify-content: flex-start;
-  }
-  .navbar-toggle-button {
-    color: rgb(240, 240, 240);
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 23px;
-    margin-left: auto;
-  }
-  .navbar-menu {
-    gap: 1rem;
-    width: 100%;
-    display: none;
-    transform: translateX(100%);
-    transition: transform 10s ease-in-out;
-  }
-  .navbar-menu.active {
-    transform: translateX(0);
-  }
-
-  .navbar-logo {
+/* .navbar-logo {
     display: flex;
     width: 50%;
-    justify-content: center;
-  }
-  .navbar-logo img {
-    width: 400px;
-  }
+    background: red;
+    float: left;
+} */
+@media screen and (max-width: 1260px) {
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem;
+        justify-content: flex-start;
+    }
+    .navbar-toggle-button {
+        color: rgb(240, 240, 240);
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 23px;
+        margin-left: auto;
+    }
+    .navbar-menu {
+        gap: 1rem;
+        width: 100%;
+        display: none;
+        transform: translateX(100%);
+        transition: transform 10s ease-in-out;
+    }
+    .navbar-menu.active {
+        transform: translateX(0);
+    }
+
+    .navbar-logo {
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        background: "red" !important;
+    }
+    .navbar-logo img {
+        width: 400px;
+    }
 }
 
 li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

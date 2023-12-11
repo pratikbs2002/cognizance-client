@@ -1,12 +1,12 @@
 import { Card, Container, Image, Text } from "@chakra-ui/react";
 import React from "react";
-import profileImage from "../../assets/committee_photo/p1.png";
-import Carousel from "react-multi-carousel";
+// import profileImage from "../../assets/committee_photo/p1.png";
+// import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import _1 from "../../assets/committee_photo/1.SurendraSir.png";
-import _2 from "../../assets/committee_photo/2.Dr M C Patel.jpeg";
-import _3 from "../../assets/committee_photo/3.Provost_RVU1.webp";
-import _4 from "../../assets/committee_photo/4.AP1.png";
+// import _1 from "../../assets/committee_photo/1.SurendraSir.png";
+// import _2 from "../../assets/committee_photo/2.Dr M C Patel.jpeg";
+// import _3 from "../../assets/committee_photo/3.Provost_RVU1.webp";
+// import _4 from "../../assets/committee_photo/4.AP1.png";
 import _5 from "../../assets/committee_photo/5.VC1.png";
 import _6 from "../../assets/committee_photo/6.TU1.png";
 
@@ -15,13 +15,13 @@ export default function Conveners() {
         {
             id: 5,
             name: "Dr. Vijay Chaudhary",
-            description: "FTE, CHARUSAT, India [Convener]",
+            description: "I/C FTE Dean, CHARUSAT",
             profile: _5,
         },
         {
             id: 6,
             name: "Dr. Trushit Upadhyaya",
-            description: "Principal, CSPIT, CHARUSAT, Gujarat, India",
+            description: "I/C Principal, CSPIT, CHARUSAT",
             profile: _6,
         },
     ];
@@ -58,10 +58,12 @@ export default function Conveners() {
                             <Image
                                 boxSize="100px"
                                 objectFit="cover"
+                                objectPosition={"top"}
+                                aspectRatio={1 / 1}
                                 src={index.profile}
                                 alt="sponsor"
                             />
-                            <Text color="black">{index.name}</Text>
+                            <Text color="black" fontWeight={700}>{index.name}</Text>
                             <Text color="black">{index.description}</Text>
                         </Container>
                     </Card>

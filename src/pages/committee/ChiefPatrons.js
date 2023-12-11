@@ -65,7 +65,7 @@ export default function ChiefPatrons() {
                                 src={index.profile}
                                 alt="sponsor"
                             />
-                            <Text color="black">{index.name}</Text>
+                            <Text color="black" fontWeight={700}>{index.name}</Text>
                             <Text color="black">{index.description}</Text>
                         </Container>
                     </Card>
