@@ -128,7 +128,7 @@ export default function About() {
                                         leftIcon={<HiDownload />}
                                         backgroundColor="#54cadd"
                                         variant={"solid"}
-                                        href="pdfs/cz_sponsorship_242.pdf"
+                                        href="pdfs/cz_brochure_242.pdf"
                                         target="_blank"
                                         download
                                     >
