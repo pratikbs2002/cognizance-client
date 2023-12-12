@@ -117,6 +117,7 @@ const ComboCard = ({
                             addEventModal={true}
                             handleRegisterTeam={handleRegisterTeam}
                             isMusicalNight={isMusicalNight}
+                            isCombo={true}
                         />
                         {!isActive && (
                             <Button

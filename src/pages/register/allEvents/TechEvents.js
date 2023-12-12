@@ -17,6 +17,7 @@ import pingDataStructure from "../../../assets/eventImages/ping.png";
 import rollerCoaster from "../../../assets/eventImages/roller coaster.png";
 import theDigitalScavangerHunt from "../../../assets/eventImages/TDSH.png";
 import relayAndBlindCoding from "../../../assets/eventImages/relayAndBlindCoding.png";
+import pingData from "../../../assets/eventImages/pingData.jpg"
 
 const TechEvents = (props) => {
     const data = [
@@ -271,7 +272,7 @@ const TechEvents = (props) => {
         },
         {
             id: 14,
-            image: pingDataStructure,
+            image: pingData,
             title: "Ping Data Structure",
             department: "DEPSTAR CSE",
             description:
