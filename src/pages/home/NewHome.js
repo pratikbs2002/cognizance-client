@@ -1,4 +1,4 @@
-import { Button, Container, Text } from "@chakra-ui/react";
+import { Button, Container, ListItem, OrderedList, Text } from "@chakra-ui/react";
 import React from "react";
 import { MdDateRange } from "react-icons/md";
 import RocketAnimation from "../../components/rocketAnimation/RocketAnimation";
@@ -244,8 +244,8 @@ export default function NewHome() {
                         // bg="lime"
                     >
                         <Button
-                            fontSize={"20px"}
-                            padding={"25px"}
+                            fontSize={{ base: "20px", md: "25px" }}
+                            padding={{base:"25px", md: "30px" }}
                             colorScheme="none"
                             backgroundColor={"#353535"}
                             border={"1px solid yellow"}
@@ -272,10 +272,23 @@ export default function NewHome() {
                         <Text
                             color={"white"}
                             textAlign={{ base: "center", md: "left" }}
-                            fontSize={{ base: "20px", md: "50px" }}
+                            fontSize={{ base: "20px", md: "40px" }}
                             fontWeight={"bold"}
                         >
-                            Charotar University of Science and Technology
+                            Steps for the regsitration process
+                            <OrderedList
+                            // color={"white"}
+                            // textAlign={{ base: "center", md: "left" }}
+                            // fontSize={"md"}
+                            // fontWeight={"bold"}
+                            >
+                                <ListItem>1. Select the desired Event</ListItem>
+                                <ListItem>2. Login with Google</ListItem>
+                                <ListItem>3. Update your details info</ListItem>
+                                <ListItem>4. Register for the events.</ListItem>
+                                <ListItem>5. Pay the fees.</ListItem>
+                                {/* </Text> */}
+                            </OrderedList>
                         </Text>
                     </Container>
 
@@ -311,7 +324,7 @@ export default function NewHome() {
                     width={{ base: "100%", md: "60%" }}
                     maxWidth={"100%"}
                     alignItems={"center"}
-                    justifyContent={{base:"center", md:"flex-start"}}
+                    justifyContent={{ base: "center", md: "flex-start" }}
                     margin={{ base: "-50px", md: "0" }}
                     // className="second-part"
                 >

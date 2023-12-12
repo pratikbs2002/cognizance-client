@@ -182,7 +182,7 @@ const EditProfile = (props) => {
                 return;
             }
             if (!response?.isEventRegistered) {
-                alert("Event is not registered!");
+                alert("Event is already registered!");
                 setIsLoading(false);
                 return;
             }
@@ -375,8 +375,8 @@ const EditProfile = (props) => {
             >
                 <Text fontSize={16} align="left" fontWeight={500}>
                     {i === 0
-                        ? `Enter Participant ${i+1} Details (Your Details)`
-                        : `Enter Participant ${i+1} Details`}
+                        ? `Enter Participant ${i+1} Name (Your Name)`
+                        : `Enter Participant ${i+1} Name`}
                 </Text>
                 <FormControl
                     isInvalid={
@@ -397,7 +397,7 @@ const EditProfile = (props) => {
                         placeholder={
                             i === 0
                                 ? "Enter Your Name"
-                                : `Enter Participant${i}'s Name`
+                                : `Enter Participant${i+1}'s Name`
                         }
                         onChange={(event) => {
                             handleChangeEvent(event, i);
@@ -476,8 +476,8 @@ const EditProfile = (props) => {
                 >
                     <Text fontSize={16} align="left" fontWeight={500}>
                         {i === 0
-                            ? "Enter Your Details"
-                            : `Enter Participant ${i} Details`}
+                            ? `Enter Participant ${i+1} Name (Your Name)`
+                            : `Enter Participant ${i+1} Name`}
                     </Text>
                     <FormControl
                         isInvalid={
@@ -494,7 +494,7 @@ const EditProfile = (props) => {
                             placeholder={
                                 i === 0
                                     ? "Enter Your Name"
-                                    : `Enter Participant${i}'s Name`
+                                    : `Enter Participant${i+1}'s Name`
                             }
                             value={i === 0 ? eventRegisterCredentials?.participant0?.name : undefined}
                             onChange={(event) => {
