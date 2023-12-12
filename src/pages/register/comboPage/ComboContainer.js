@@ -18,7 +18,7 @@ import {
     ModalBody,
     ModalCloseButton,
     useDisclosure,
-    Heading,
+    Heading
 } from "@chakra-ui/react";
 import { FaQuestion } from "react-icons/fa";
 import Payment from "../Payment";
@@ -38,18 +38,15 @@ export default function ComboContainer() {
         about: "Experience an electrifying Musical Night at our college function, featuring pulsating beats, vibrant lights, and an atmosphere brimming with energy that promises an unforgettable evening of music and dance.",
         teamSize: 1,
         eventFee: 1000,
-        eventType: "WORKSHOP",
+        eventType: "WORKSHOP"
     };
 
-    const [priceDetails, setPriceDetails] = React.useState([
-        { "Musical Night": IData.eventFee },
-    ]);
+    const [priceDetails, setPriceDetails] = React.useState([{ "Musical Night": IData.eventFee }]);
 
     const [totalPrice, setTotalPrice] = React.useState(0);
     const [discount, setDiscount] = React.useState(0);
     const [finalPrice, setFinalPrice] = React.useState(0);
-    const [isAllEventTeamRegistered, setIsAllEventTeamRegistered] =
-        React.useState([]);
+    const [isAllEventTeamRegistered, setIsAllEventTeamRegistered] = React.useState([]);
 
     React.useEffect(() => {
         let dt = 0;
@@ -98,7 +95,7 @@ export default function ComboContainer() {
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
-                        justifyContent: "center",
+                        justifyContent: "center"
                     }}
                     fontWeight={"800"}
                     color={"white"}
@@ -119,7 +116,7 @@ export default function ComboContainer() {
                     style={{
                         display: "flex",
                         alignItems: "center",
-                        justifyContent: "center",
+                        justifyContent: "center"
                     }}
                     fontWeight={"400"}
                     color={"white"}
@@ -135,24 +132,18 @@ export default function ComboContainer() {
                             padding: "20px",
                             borderRadius: "10px",
                             border: "2px solid green",
-                            backgroundColor: "rgba(0, 0, 0, 0.5)",
+                            backgroundColor: "rgba(0, 0, 0, 0.5)"
                         }}
                         className="note"
                     >
                         <div>Note:</div>
                         <div>
-                            Act now! Register your squad before{" "}
-                            <b>January 15, 2024</b>, and seize the exclusive
+                            Act now! Register your squad before <b>January 15, 2024</b>, and seize the exclusive
                             benefits of our limited-time combo offer!
                         </div>
                     </div>
                 </Container>
-                <Container
-                    padding={0}
-                    margin={0}
-                    className="events-combo"
-                    maxW={"90%"}
-                >
+                <Container padding={0} margin={0} className="events-combo" maxW={"90%"}>
                     <Container
                         padding={"10px"}
                         display={"flex"}
@@ -169,27 +160,22 @@ export default function ComboContainer() {
                             eventType={IData.eventType}
                             eventId={IData.id}
                             teamSize={IData.teamSize}
-                            setIsAllEventTeamRegistered={
-                                setIsAllEventTeamRegistered
-                            }
+                            isMusicalNight={true}
+                            setIsAllEventTeamRegistered={setIsAllEventTeamRegistered}
                         />
                         <ComboCard
                             isActive={false}
                             selectedEvents={selectedEvents}
                             setSelectedEvents={setSelectedEvents}
                             setPriceDetails={setPriceDetails}
-                            setIsAllEventTeamRegistered={
-                                setIsAllEventTeamRegistered
-                            }
+                            setIsAllEventTeamRegistered={setIsAllEventTeamRegistered}
                         />
                         <ComboCard
                             isActive={false}
                             selectedEvents={selectedEvents}
                             setSelectedEvents={setSelectedEvents}
                             setPriceDetails={setPriceDetails}
-                            setIsAllEventTeamRegistered={
-                                setIsAllEventTeamRegistered
-                            }
+                            setIsAllEventTeamRegistered={setIsAllEventTeamRegistered}
                         />
                     </Container>
                     <Container
@@ -198,7 +184,7 @@ export default function ComboContainer() {
                         style={{
                             display: "flex",
                             alignItems: "center",
-                            justifyContent: "center",
+                            justifyContent: "center"
                         }}
                         fontWeight={"400"}
                         color={"white"}
@@ -214,16 +200,14 @@ export default function ComboContainer() {
                                 padding: "20px",
                                 borderRadius: "10px",
                                 border: "2px solid green",
-                                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                                backgroundColor: "rgba(0, 0, 0, 0.5)"
                             }}
                             className="note"
                         >
                             <div>
-                                Take advantage of our exclusive combo offer!
-                                Click on the cards above to select 1 or 2 tech
-                                events. Remember to register your squad for all
-                                selected events to proceed to payment and unlock
-                                the special combo offer!
+                                Take advantage of our exclusive combo offer! Click on the cards above to select 1 or 2
+                                tech events. Remember to register your squad for all selected events to proceed to
+                                payment and unlock the special combo offer!
                             </div>
                         </div>
                     </Container>
@@ -241,12 +225,7 @@ export default function ComboContainer() {
                         minWidth={"270px"}
                         maxW={"100%"}
                     >
-                        <Text
-                            fontSize={"30"}
-                            textAlign={"center"}
-                            fontWeight={"700"}
-                            color={"white"}
-                        >
+                        <Text fontSize={"30"} textAlign={"center"} fontWeight={"700"} color={"white"}>
                             Combo Offer Summary
                         </Text>
                         <Divider />
@@ -260,16 +239,10 @@ export default function ComboContainer() {
                                         marginTop={"20px"}
                                         gap={"100px"}
                                     >
-                                        <Text
-                                            color={"white"}
-                                            fontWeight={"600"}
-                                        >
+                                        <Text color={"white"} fontWeight={"600"}>
                                             {Object.keys(value)[0]}
                                         </Text>
-                                        <Text
-                                            color={"white"}
-                                            fontWeight={"600"}
-                                        >
+                                        <Text color={"white"} fontWeight={"600"}>
                                             {Object.values(value)[0]} ₹
                                         </Text>
                                     </HStack>
@@ -277,12 +250,7 @@ export default function ComboContainer() {
                             })}
 
                             <Divider />
-                            <HStack
-                                width={"100%"}
-                                justifyContent={"space-between"}
-                                marginTop={"20px"}
-                                gap={"100px"}
-                            >
+                            <HStack width={"100%"} justifyContent={"space-between"} marginTop={"20px"} gap={"100px"}>
                                 <Text color={"white"} fontWeight={"600"}>
                                     Total
                                 </Text>
@@ -290,12 +258,7 @@ export default function ComboContainer() {
                                     {totalPrice} ₹
                                 </Text>
                             </HStack>
-                            <HStack
-                                width={"100%"}
-                                justifyContent={"space-between"}
-                                marginTop={"20px"}
-                                gap={"100px"}
-                            >
+                            <HStack width={"100%"} justifyContent={"space-between"} marginTop={"20px"} gap={"100px"}>
                                 <Text color={"white"} fontWeight={"600"}>
                                     Discount
                                 </Text>
@@ -305,12 +268,7 @@ export default function ComboContainer() {
                             </HStack>
                             <Divider height={"10px"} />
 
-                            <HStack
-                                width={"100%"}
-                                justifyContent={"space-between"}
-                                marginTop={"20px"}
-                                gap={"100px"}
-                            >
+                            <HStack width={"100%"} justifyContent={"space-between"} marginTop={"20px"} gap={"100px"}>
                                 <Text color={"white"} fontWeight={"600"}>
                                     Final Amount
                                 </Text>
@@ -328,33 +286,18 @@ export default function ComboContainer() {
                             bg="white"
                             onClick={onOpen}
                             isDisabled={
-                                priceDetails.length === 1 ||
-                                isAllEventTeamRegistered.length !==
-                                    priceDetails.length
+                                priceDetails.length === 1 || isAllEventTeamRegistered.length !== priceDetails.length
                             }
                         >
                             Pay
                         </Button>
 
-                        <Modal
-                            isOpen={isOpen}
-                            onClose={onClose}
-                            size={"6xl"}
-                            closeOnOverlayClick={false}
-                            isCentered
-                        >
+                        <Modal isOpen={isOpen} onClose={onClose} size={"6xl"} closeOnOverlayClick={false} isCentered>
                             <ModalOverlay />
-                            <ModalContent
-                                bg="white"
-                                p={10}
-                                paddingBottom={10}
-                                h={"80%"}
-                                overflowY={"scroll"}
-                            >
+                            <ModalContent bg="white" p={10} paddingBottom={10} h={"80%"} overflowY={"scroll"}>
                                 <ModalHeader>
                                     <Heading as="h1" size={"lg"}>
-                                        Payment For Combo Offer ( {finalPrice}{" "}
-                                        ₹)
+                                        Payment For Combo Offer ( {finalPrice} ₹)
                                     </Heading>
                                 </ModalHeader>
 

@@ -14,10 +14,11 @@ const ComboCard = ({
     teamSize,
     eventId,
     isActive,
+    isMusicalNight,
     selectedEvents,
     setSelectedEvents,
     setPriceDetails,
-    setIsAllEventTeamRegistered,
+    setIsAllEventTeamRegistered
 }) => {
     const [isTeamRegistered, setIsTeamRegistered] = useState(false);
 
@@ -31,20 +32,10 @@ const ComboCard = ({
     );
     const handleRegisterTeam = () => {
         setIsTeamRegistered(true);
-        setIsAllEventTeamRegistered((value) => [
-            ...value,
-            { [isActive ? name : data.title]: true },
-        ]);
+        setIsAllEventTeamRegistered((value) => [...value, { [isActive ? name : data.title]: true }]);
     };
 
-    const addEventHandler = (
-        image,
-        title,
-        price,
-        eventId,
-        eventType,
-        teamSize
-    ) => {
+    const addEventHandler = (image, title, price, eventId, eventType, teamSize) => {
         setData({ image, title, price, eventId, eventType, teamSize });
         setPriceDetails((values) => [...values, { [title]: price }]);
         setSelectedEvents([...selectedEvents, eventId]);
@@ -60,14 +51,8 @@ const ComboCard = ({
                 sessionStorage.removeItem("token");
             } else if (response?.isEventDeleted) {
                 setIsTeamRegistered(false);
-                setPriceDetails((values) =>
-                    values.filter(
-                        (value) => Object.keys(value)[0] !== data.title
-                    )
-                );
-                setSelectedEvents(
-                    selectedEvents.filter((event) => event !== data.eventId)
-                );
+                setPriceDetails((values) => values.filter((value) => Object.keys(value)[0] !== data.title));
+                setSelectedEvents(selectedEvents.filter((event) => event !== data.eventId));
                 setIsAllEventTeamRegistered((value) =>
                     value.filter((obj) => {
                         return Object.keys(obj)[0] !== data.title;
@@ -79,12 +64,8 @@ const ComboCard = ({
             }
         }
         setIsTeamRegistered(false);
-        setPriceDetails((values) =>
-            values.filter((value) => Object.keys(value)[0] !== data.title)
-        );
-        setSelectedEvents(
-            selectedEvents.filter((event) => event !== data.eventId)
-        );
+        setPriceDetails((values) => values.filter((value) => Object.keys(value)[0] !== data.title));
+        setSelectedEvents(selectedEvents.filter((event) => event !== data.eventId));
         setIsAllEventTeamRegistered((value) =>
             value.filter((obj) => {
                 return Object.keys(obj)[0] !== data.title;
@@ -111,18 +92,8 @@ const ComboCard = ({
                     mx="auto"
                     mb={4}
                 >
-                    <Image
-                        src={isActive ? image : data.image}
-                        alt={name}
-                        w="100%"
-                        h="auto"
-                    />
-                    <Text
-                        color="white"
-                        mt={2}
-                        fontSize="xl"
-                        fontWeight="semibold"
-                    >
+                    <Image src={isActive ? image : data.image} alt={name} w="100%" h="auto" />
+                    <Text color="white" mt={2} fontSize="xl" fontWeight="semibold">
                         {isActive ? name : data.title}
                     </Text>
                     <Text mt={2} color="white">
@@ -133,7 +104,7 @@ const ComboCard = ({
                             display: "flex",
                             justifyContent: "space-between",
                             alignItems: "center",
-                            marginTop: "5%",
+                            marginTop: "5%"
                         }}
                     >
                         <EditProfile
@@ -145,6 +116,7 @@ const ComboCard = ({
                             image={isActive ? image : data.image}
                             addEventModal={true}
                             handleRegisterTeam={handleRegisterTeam}
+                            isMusicalNight={isMusicalNight}
                         />
                         {!isActive && (
                             <Button
@@ -177,10 +149,7 @@ const ComboCard = ({
                     className={"card highlight"}
                     minWidth={"260px"}
                 >
-                    <AddEventModal
-                        addEventHandler={addEventHandler}
-                        selectedEvents={selectedEvents}
-                    />
+                    <AddEventModal addEventHandler={addEventHandler} selectedEvents={selectedEvents} />
                 </Box>
             )}
         </>
