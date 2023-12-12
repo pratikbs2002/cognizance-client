@@ -121,7 +121,6 @@ export default function About() {
                                         as="a"
                                         justifyContent={"center"}
                                         alignItems={"center"}
-                                        
                                         width={{ base: "80%", md: "auto" }}
                                         paddingX={7}
                                         // width={"150px"}
