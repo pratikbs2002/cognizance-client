@@ -1,11 +1,33 @@
-import React from "react";
+import React,{useState} from "react";
 import { Button } from "@chakra-ui/react";
 import "./EventCard.css";
-import { Table, Tbody, Tr, Td, Input } from "@chakra-ui/react";
+import { Table, Tbody, Tr, Td, Input,FormControl,FormErrorMessage } from "@chakra-ui/react";
+// import transaction from "../../assets/transaction.jpg"
 
 export default function Payment(props) {
+    const [transactionId,setTransactionId]=useState("");
+    const [transactionError,setTransactionError]=useState({transactionIdError:"",photoProofError:""});
     const note1 = `Make a payment of ₹${props.price} to above mentioned bank details.
     After payment, please proceed by clicking following button to fill out the form. Our coordinators will contact you shortly. `;
+    const handleChangeTransactionId=(e)=>{
+        setTransactionId(e.target.value)
+    }
+    const handleBlur=()=>{
+        let error={};
+        if(!transactionId.trim()){
+            error={
+                ...error,
+                transactionIdError:'Transaction Id is require'
+            }
+        }else{
+            error={
+                ...error,
+                transactionIdError:"",
+            }
+        }
+        setTransactionError({...transactionError,...error});
+    }
+    console.log(transactionError);
     return (
         <div
             style={{
@@ -17,7 +39,7 @@ export default function Payment(props) {
                 style={{
                     display: "flex",
                     width: "100%",
-                    maxHeight: "65vh",
+                    // maxHeight: "65vh",
                     paddingTop: "50px",
                     justifyContent: "center"
                     // overflow: "auto"
@@ -29,7 +51,7 @@ export default function Payment(props) {
                         display: "flex",
                         alignItems: "center",
                         flexDirection: "column",
-                        overflow: "auto"
+                        // overflow: "auto"
                     }}
                 >
                     <div
@@ -93,15 +115,19 @@ export default function Payment(props) {
                                     <Tr>
                                         <Td>Transaction Id</Td>
                                         <Td>
-                                            <Input
-                                                name="transactionId"
-                                                type="text"
-                                                fontSize={15}
-                                                pr="4.5rem"
-                                                variant="outline"
-                                                placeholder="Enter Transaction Id"
-                                                // onChange={handleChangeEvent}
-                                            />
+                                            <FormControl isInvalid={!!transactionError.transactionIdError}>
+                                                <Input
+                                                    name="transactionId"
+                                                    type="text"
+                                                    fontSize={15}
+                                                    pr="4.5rem"
+                                                    variant="outline"
+                                                    placeholder="Enter Transaction Id"
+                                                    onBlur={handleBlur}
+                                                    onChange={handleChangeTransactionId}
+                                                />
+                                                <FormErrorMessage>{transactionError.transactionIdError}</FormErrorMessage>
+                                            </FormControl>
                                         </Td>
                                     </Tr>
                                     <Tr>
@@ -117,6 +143,7 @@ export default function Payment(props) {
                                                 placeholder="Enter Transaction Id"
                                                 // onChange={handleChangeEvent}
                                             />
+                                            {/* <img src={transaction} alt="transaation image" width={100} /> */}
                                         </Td>
                                     </Tr>
                                 </Tbody>

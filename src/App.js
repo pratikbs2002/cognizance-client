@@ -7,8 +7,9 @@ import PhotoGallery from "./pages/photoGallery/PhotoGallery";
 import Register from "./pages/register/Register";
 import UploadImages from "./pages/admin/UploadImages";
 import ContactUs from "./pages/contactUs/ContactUs";
-import Committee from "./pages/committee/Committee";
+// import Committee from "./pages/committee/Committee";
 import RegisterdEvent from "./pages/registeredEvent/RegisteredEvent";
+import NewCommittee from "./pages/committee/NewCommittee";
 // import Payment from "./pages/register/Payment";
 
 const App = () => {
@@ -21,8 +22,9 @@ const App = () => {
                 <Route path="/gallery" element={<PhotoGallery />} />
                 <Route path="*" element={<LandingPage />} />
                 <Route path="/contact-us" element={<ContactUs />} />
-                <Route path="/committee" element={<Committee />} />
+                <Route path="/committee" element={<NewCommittee />} />
                 <Route path="/registeredEvents" element={<RegisterdEvent />} />
+                {/* <Route path="newComm" element={<NewCommittee/>}/> */}
             </Routes>
         </BrowserRouter>
     );

@@ -103,7 +103,7 @@ export default function ContactUs() {
                                 marginTop={"30px"}
                             >
                                 <Container textAlign={"center"}>
-                                    <Text fontSize={{ base: "16px", md: "20px" }}>Srushti Gajjar</Text>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>Prof. Srushti Gajjar</Text>
                                     <Text
                                         fontSize={{ base: "16px", md: "20px" }}
                                         onClick={() => {
@@ -114,7 +114,7 @@ export default function ContactUs() {
                                     </Text>
                                 </Container>
                                 <Container textAlign={"center"}>
-                                    <Text fontSize={{ base: "16px", md: "20px" }}>Vaibhavi Patel</Text>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>Prof. Vaibhavi Patel</Text>
                                     <Text
                                         fontSize={{ base: "16px", md: "20px" }}
                                         onClick={() => {
