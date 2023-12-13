@@ -74,6 +74,7 @@ export default function EventCard(props) {
                                     className="event-registration-description"
                                     // overflowY={"scroll"}
                                     // maxHeight={"100px"}
+                                    textAlign={"justify"}
                                     pb={4}
                                 >
                                     {!show ? (

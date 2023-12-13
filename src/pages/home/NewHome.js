@@ -275,18 +275,18 @@ export default function NewHome() {
                             fontSize={{ base: "20px", md: "40px" }}
                             fontWeight={"bold"}
                         >
-                            Steps for the regsitration process
+                            Steps for the registration process
                             <OrderedList
                             // color={"white"}
                             // textAlign={{ base: "center", md: "left" }}
                             // fontSize={"md"}
                             // fontWeight={"bold"}
                             >
-                                <ListItem>1. Select the desired Event</ListItem>
+                                <ListItem onClick={()=>navigate("/register")} style={{cursor:"pointer"}}>1. Select the desired Event</ListItem>
                                 <ListItem>2. Login with Google</ListItem>
                                 <ListItem>3. Update your details info</ListItem>
                                 <ListItem>4. Register for the events.</ListItem>
-                                <ListItem>5. Pay the fees.</ListItem>
+                                <ListItem onClick={()=>navigate("/register")} style={{cursor:"pointer"}}>5. Pay the fees.</ListItem>
                                 {/* </Text> */}
                             </OrderedList>
                         </Text>

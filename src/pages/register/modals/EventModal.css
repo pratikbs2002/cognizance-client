@@ -1,3 +1,19 @@
 li {
     justify-content: start;
 }
+.exploreMore-note{
+    width: fit-content;
+    margin-top: 4%;
+    background-color: #f68a1c;
+    color:#2b1805;
+    padding:.5rem 1rem;
+    border-radius: 5px;
+    font-size: 13px;
+    .title{
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .message{
+        padding-left: 5px;
+    }
+}

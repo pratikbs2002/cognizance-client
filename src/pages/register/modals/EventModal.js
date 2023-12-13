@@ -118,8 +118,17 @@ const BasicUsage = (props) => {
                                                 >
                                                     {props.about}
                                                 </div>
+                                                {props.eventName.toLowerCase()==="musical night"&&
+                                                    <div className="exploreMore-note">
+                                                        <span className="title">
+                                                            Note:
+                                                        </span>
+                                                        <span className="message">
+                                                            Registration will be done offline on campus.
+                                                        </span>
+                                                    </div>
+                                                }
                                             </TabPanel>
-
                                             {props.taskEnabled && (
                                                 <TabPanel>
                                                     <div

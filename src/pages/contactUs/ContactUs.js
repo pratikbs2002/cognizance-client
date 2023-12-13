@@ -65,6 +65,28 @@ export default function ContactUs() {
                                     <Text fontSize={{ base: "16px", md: "20px" }}>+91 70693 12561</Text>
                                 </Container>
                             </Container>
+                            <Text marginTop={"25px"} fontSize={"20px"} textAlign={"center"} fontWeight={"700"}>
+                                Email
+                            </Text>
+                            <Container
+                                display={"flex"}
+                                alignItems={"center"}
+                                justifyContent={"center"}
+                                textAlign={"center"}
+                                marginTop={"5px"}
+                            >
+                                <Container width={"100%"} textAlign={"center"}>
+                                    <Text
+                                        fontSize={{ base: "16px", md: "20px" }}
+                                        width={"100%"}
+                                        onClick={() => {
+                                            window.open("mailto:cognizance@charusat.edu.in");
+                                        }}
+                                    >
+                                        cognizance@charusat.edu.in
+                                    </Text>
+                                </Container>
+                            </Container>
                         </div>
 
                         <div className="contact-card">
@@ -119,31 +141,6 @@ export default function ContactUs() {
                                 <Container textAlign={"center"}>
                                     <Text fontSize={{ base: "16px", md: "20px" }}>Jay Shah</Text>
                                     <Text fontSize={{ base: "16px", md: "20px" }}>+91 82007 78757</Text>
-                                </Container>
-                            </Container>
-                        </div>
-                        <div className="contact-card">
-                            <Text fontSize={"20px"} textAlign={"center"} fontWeight={"700"}>
-                                Email
-                            </Text>
-                            <Container
-                                display={"flex"}
-                                alignItems={"center"}
-                                justifyContent={"center"}
-                                gap={"30px"}
-                                textAlign={"center"}
-                                marginTop={"30px"}
-                            >
-                                <Container width={"100%"} textAlign={"center"}>
-                                    <Text
-                                        fontSize={{ base: "16px", md: "20px" }}
-                                        width={"100%"}
-                                        onClick={() => {
-                                            window.open("mailto:cognizance@charusat.edu.in");
-                                        }}
-                                    >
-                                        cognizance@charusat.edu.in
-                                    </Text>
                                 </Container>
                             </Container>
                         </div>

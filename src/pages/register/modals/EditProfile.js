@@ -839,7 +839,7 @@ const EditProfile = (props) => {
                                                                 mr={3}
                                                                 onClick={handleRegisterEvent}
                                                             >
-                                                                Submit
+                                                                Next
                                                             </Button>
                                                         </VStack>
                                                     </VStack>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@chakra-ui/react";
 import "./EventCard.css";
-import { Table, Tbody, Tr, Td } from "@chakra-ui/react";
+import { Table, Tbody, Tr, Td, Input } from "@chakra-ui/react";
 
 export default function Payment(props) {
     const note1 = `Make a payment of ₹${props.price} to above mentioned bank details.
@@ -89,6 +89,35 @@ export default function Payment(props) {
                                     <Tr>
                                         <Td>Bank Branch Address</Td>
                                         <Td>Darshan Hostel, Changa-Valetla Road, Changa. Dist. Anand</Td>
+                                    </Tr>
+                                    <Tr>
+                                        <Td>Transaction Id</Td>
+                                        <Td>
+                                            <Input
+                                                name="transactionId"
+                                                type="text"
+                                                fontSize={15}
+                                                pr="4.5rem"
+                                                variant="outline"
+                                                placeholder="Enter Transaction Id"
+                                                // onChange={handleChangeEvent}
+                                            />
+                                        </Td>
+                                    </Tr>
+                                    <Tr>
+                                        <Td>Photo Proof</Td>
+                                        <Td>
+                                            <Input
+                                                name="photoProof"
+                                                accept="image/*"
+                                                type="file"
+                                                fontSize={15}
+                                                pr="4.5rem"
+                                                variant="outline"
+                                                placeholder="Enter Transaction Id"
+                                                // onChange={handleChangeEvent}
+                                            />
+                                        </Td>
                                     </Tr>
                                 </Tbody>
                             </Table>
