@@ -488,34 +488,37 @@ const EditProfile = (props) => {
 
     return (
         <>
-            <Button
-                backgroundColor="#54cadd"
-                color={"black"}
-                onClick={async () => {
-                    if (sessionStorage.getItem("token") !== null) {
-                        setIsLoading(true);
-                        if (isProfileUpdated || (await isProfileUpdatedRequest())) {
-                            // Call For Register Modal
-                            // console.log("REGISTER MODAL");
-                            onEventRegisterModalOpen();
-                            setIsLoading(false);
-                        } else {
-                            // Call For Profile Modal
-                            if (!sessionStorage.getItem("token")) {
-                                GAuth();
-                                return;
+            {
+                props.eventId!==36&&
+                    <Button
+                    backgroundColor="#54cadd"
+                    color={"black"}
+                    onClick={async () => {
+                        if (sessionStorage.getItem("token") !== null) {
+                            setIsLoading(true);
+                            if (isProfileUpdated || (await isProfileUpdatedRequest())) {
+                                // Call For Register Modal
+                                // console.log("REGISTER MODAL");
+                                onEventRegisterModalOpen();
+                                setIsLoading(false);
+                            } else {
+                                // Call For Profile Modal
+                                if (!sessionStorage.getItem("token")) {
+                                    GAuth();
+                                    return;
+                                }
+                                // console.log("PROFILE MODAL");
+                                onEditProfileModalOpen();
+                                setIsLoading(false);
                             }
-                            // console.log("PROFILE MODAL");
-                            onEditProfileModalOpen();
-                            setIsLoading(false);
+                        } else {
+                            GAuth();
                         }
-                    } else {
-                        GAuth();
-                    }
-                }}
-            >
-                Register
-            </Button>
+                    }}
+                >
+                    Register
+                </Button>
+            }
             {isLoading ? (
                 <div
                     style={{

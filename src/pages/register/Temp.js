@@ -100,7 +100,7 @@ const Temp = (props) => {
                             </Tab>
                         )}
 
-                        {!props.addEventModal && !props.registeredEvent && (
+                        {/* {!props.addEventModal && !props.registeredEvent && (
                             <Tab
                                 color={"white"}
                                 variant="enclosed"
@@ -117,7 +117,7 @@ const Temp = (props) => {
                             >
                                 Combo Events
                             </Tab>
-                        )}
+                        )} */}
                     </TabList>
 
                     <TabPanels padding={0} margin={0}>
@@ -163,11 +163,11 @@ const Temp = (props) => {
                                 />
                             </TabPanel>
                         )}
-                        {!props.addEventModal && !props.registeredEvent && (
+                        {/* {!props.addEventModal && !props.registeredEvent && (
                             <TabPanel padding={0} margin={0}>
                                 <ComboEvents />
                             </TabPanel>
-                        )}
+                        )} */}
                     </TabPanels>
                 </Tabs>
             </Container>
