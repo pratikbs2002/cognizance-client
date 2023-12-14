@@ -57,36 +57,33 @@ export default function ContactUs() {
                                 flexDirection={{ base: "column", md: "row" }}
                             >
                                 <Container textAlign={"center"}>
-                                    <Text fontSize={{ base: "16px", md: "20px" }}>Pratik Suthar</Text>
-                                    <Text fontSize={{ base: "16px", md: "20px" }}>+91 76983 62613</Text>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>Dhyan Patel</Text>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>+91 73836 37444</Text>
                                 </Container>
                                 <Container textAlign={"center"}>
-                                    <Text fontSize={{ base: "16px", md: "20px" }}>Ketan Tiwari</Text>
-                                    <Text fontSize={{ base: "16px", md: "20px" }}>+91 70693 12561</Text>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>Rahul Mistry</Text>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>+91 95583 53148</Text>
                                 </Container>
-                            </Container>
-                            <Text marginTop={"25px"} fontSize={"20px"} textAlign={"center"} fontWeight={"700"}>
-                                Email
-                            </Text>
-                            <Container
-                                display={"flex"}
-                                alignItems={"center"}
-                                justifyContent={"center"}
-                                textAlign={"center"}
-                                marginTop={"5px"}
-                            >
-                                <Container width={"100%"} textAlign={"center"}>
-                                    <Text
-                                        fontSize={{ base: "16px", md: "20px" }}
-                                        width={"100%"}
-                                        onClick={() => {
-                                            window.open("mailto:cognizance@charusat.edu.in");
-                                        }}
-                                    >
-                                        cognizance@charusat.edu.in
-                                    </Text>
                                 </Container>
-                            </Container>
+                                <Container
+                                    display={"flex"}
+                                    alignItems={"center"}
+                                    justifyContent={"center"}
+                                    gap={"30px"}
+                                    textAlign={"center"}
+                                    marginTop={"30px"}
+                                    flexDirection={{ base: "column", md: "row" }}
+                                >
+                                    <Container textAlign={"center"}>
+                                        <Text fontSize={{ base: "16px", md: "20px" }}>Dhairya Bhavsar</Text>
+                                        <Text fontSize={{ base: "16px", md: "20px" }}>+91 90994 39337</Text>
+                                    </Container>
+                                    <Container textAlign={"center"}>
+                                        <Text fontSize={{ base: "16px", md: "20px" }}>Khushi Kathiriya</Text>
+                                        <Text fontSize={{ base: "16px", md: "20px" }}>+91 80005 06433</Text>
+                                    </Container>
+                                </Container>
+                        
                         </div>
 
                         <div className="contact-card">

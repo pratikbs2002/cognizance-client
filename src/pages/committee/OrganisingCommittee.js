@@ -39,12 +39,6 @@ const OrganisingCommittee = () => {
           padding={5}
           maxW={"100%"}
         >
-          <Card
-            background={"transparent"}
-            padding={0}
-            align="flex-start"
-            // bg="white"
-          >
             <Container
               padding={0}
               marginTop={10}
@@ -193,11 +187,9 @@ const OrganisingCommittee = () => {
               }}
             >
               <Card
-                // backgroundColor={"rgba(0, 0, 0, 0.442)"}
+                backgroundColor={"rgba(0, 0, 0, 0.442)"}
                 maxW={"100%"}
                 padding={0}
-                marginTop={"50px"}
-                paddingBottom={"50px"}
               >
                 <Heading
                   padding={5}
@@ -218,7 +210,7 @@ const OrganisingCommittee = () => {
                 <CommitteeMembers />
               </Card>
             </Container>
-          </Card>
+
         </Container>
     </>
   )

@@ -1,7 +1,5 @@
 import { Card, Container, Heading, Image, Text } from "@chakra-ui/react";
 import React from "react";
-import profileImage from "../../assets/committee_photo/p1.png";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import _1 from "../../assets/committee_photo/1. VijayPanchal.webp";
 import _2 from "../../assets/committee_photo/2.dr_chirag-patel.png";
@@ -24,20 +22,6 @@ export default function CommitteeMembers() {
             profile: _1,
         },
         {
-            id: 1,
-            name: "Dr. Chirag Patel",
-            description:
-                "Associate Professor and Head, Computer Science and Engineering Department, DEPSTAR, CHARUSAT, India",
-            profile: _2,
-        },
-        {
-            id: 2,
-            name: "Dr. Nilay Patel",
-            description:
-                "Head of the Department, Department of Electrical Engineering, CSPIT, CHARUSAT, India",
-            profile: _3,
-        },
-        {
             id: 3,
             name: "Dr. Amit Thakkar",
             description:
@@ -52,99 +36,74 @@ export default function CommitteeMembers() {
             profile: _5,
         },
         {
-            id: 5,
-            name: "Dr. Upesh Patel",
+            id: 2,
+            name: "Dr. Nilay Patel",
             description:
-                "Head of the Department, Department of Electronics & Communication Engineering, CSPIT, CHARUSAT, India",
-            profile: _6,
-        },
-        {
-            id: 6,
-            name: "Dr. Nirav Bhatt",
-            description:
-                "Head of the Department, Department of AI & ML Engineering, CSPIT, CHARUSAT, India",
-            profile: _7,
-        },
-        {
-            id: 7,
-            name: "Dr. Nikita Bhatt",
-            description:
-                "Head of the Department, Department of Computer Engineering, CSPIT, CHARUSAT, India",
-            profile: _8,
-        },
-        {
-            id: 8,
-            name: "Dr. Amit Nayak",
-            description:
+                "Head of the Department, Department of Electrical Engineering, CSPIT, CHARUSAT, India",
+                profile: _3,
+            },
+            {
+                id: 5,
+                name: "Dr. Upesh Patel",
+                description:
+                    "Head of the Department, Department of Electronics & Communication Engineering, CSPIT, CHARUSAT, India",
+                profile: _6,
+            },
+            {
+                id: 8,
+                name: "Dr. Amit Nayak",
+                description:
                 "Head of the Department, Department of Information Technology Department, DEPSTAR, CHARUSAT, India",
-            profile: _9,
-        },
-        {
-            id: 9,
-            name: "Dr. Dweepna Garg",
-            description:
+                profile: _9,
+            },
+            {
+                id: 6,
+                name: "Dr. Nirav Bhatt",
+                description:
+                "Head of the Department, Department of AI & ML Engineering, CSPIT, CHARUSAT, India",
+                profile: _7,
+            },
+            {
+                id: 7,
+                name: "Dr. Nikita Bhatt",
+                description:
+                "Head of the Department, Department of Computer Engineering, CSPIT, CHARUSAT, India",
+                profile: _8,
+            },
+            {
+                id: 9,
+                name: "Dr. Dweepna Garg",
+                description:
                 "Head of the Department, Department of Computer Engineering, DEPSTAR, CHARUSAT, India",
-            profile: _10,
-        },
+                profile: _10,
+            },
+            {
+                id: 1,
+                name: "Dr. Chirag Patel",
+                description:
+                "Associate Professor and Head, Computer Science and Engineering Department, DEPSTAR, CHARUSAT, India",
+                profile: _2,
+            },
     ];
     return (
         <>
-            <Carousel
-                additionalTransfrom={0}
-                arrows={true}
-                autoPlay
-                autoPlaySpeed={3000}
-                centerMode={false}
-                className="team-preview"
-                containerClass="container-with-dots"
-                dotListClass=""
-                draggable
-                focusOnSelect={false}
-                infinite
-                itemClass=""
-                keyBoardControl
-                minimumTouchDrag={80}
-                pauseOnHover
-                renderArrowsWhenDisabled={false}
-                renderButtonGroupOutside={false}
-                renderDotsOutside={false}
-                responsive={{
-                    desktop: {
-                        breakpoint: {
-                            max: 3000,
-                            min: 1024,
-                        },
-                        items: 3,
-                        partialVisibilityGutter: 40,
-                    },
-                    mobile: {
-                        breakpoint: {
-                            max: 464,
-                            min: 0,
-                        },
-                        items: 1,
-                        partialVisibilityGutter: 30,
-                    },
-                    tablet: {
-                        breakpoint: {
-                            max: 1024,
-                            min: 464,
-                        },
-                        items: 2,
-                        partialVisibilityGutter: 30,
-                    },
-                }}
-                rewind={false}
-                rewindWithAnimation={false}
-                rtl={false}
-                shouldResetAutoplay
-                showDots={false}
-                sliderClass=""
-                slidesToSlide={1}
-                swipeable
+            <Container
+                marginTop={"20px"}
+                padding={"10px"}
+                maxW={"100%"}
+                display={"flex"}
+                flexWrap={"wrap"}
+                gap={"20px"}
+                alignItems={"center"}
+                justifyContent={"center"}
             >
                 {arr.map((index) => (
-                    <Card width={"100%"} height={"300px"} key={index.id}>
+                    <Card
+                        background={"white"}
+                        width={"300px"}
+                        height={"300px"}
+                        key={index.id}
+                    >
                         <Container
                             paddingTop={30}
                             display={"flex"}
@@ -162,12 +121,12 @@ export default function CommitteeMembers() {
                                 src={index.profile}
                                 alt="sponsor"
                             />
-                            <Text fontWeight={700}>{index.name}</Text>
-                            <Text>{index.description}</Text>
+                            <Text color="black" fontWeight={700}>{index.name}</Text>
+                            <Text color="black">{index.description}</Text>
                         </Container>
                     </Card>
                 ))}
-            </Carousel>
+            </Container>
         </>
     );
 }
