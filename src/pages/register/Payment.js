@@ -13,21 +13,27 @@ export default function Payment(props) {
     const [transactionError, setTransactionError] = useState({ transactionIdError: "", photoProofError: "" });
     const note1 = `Make a payment of ₹${props.price} to above mentioned bank details.
     After payment, please proceed by clicking following button to fill out the form. Our coordinators will contact you shortly. `;
+
     const handleRegister = async (e) => {
-        e.preventDefault();
+        if (handleBlur()) {
+            e.preventDefault();
 
-        let eventData = {
-            id: props.eventId,
-            eventType: props.eventType,
-            eventTitle: props.eventName,
-            isMusicalNight: props.isMusicalNight ? true : false,
-            eventFees: props.price,
-            eventParticipantInfo: props.eventRegisterCredentials,
-            eventIsAccomodationNeeded: props.isAccomodationNeeded,
-            transactionId: eventTransactionId.transactionId
-        };
+            let eventData = {
+                id: props.eventId,
+                eventType: props.eventType,
+                eventTitle: props.eventName,
+                isMusicalNight: props.isMusicalNight ? true : false,
+                eventFees: props.price,
+                eventParticipantInfo: props.eventRegisterCredentials,
+                eventIsAccomodationNeeded: props.isAccomodationNeeded,
+                transactionId: eventTransactionId.transactionId
+            };
 
-        const data = await registerEvent(eventData);
+            const data = await registerEvent(eventData);
+
+            props.onClose();
+            console.log(data);
+        } else alert("Error registering event");
     };
 
     // console.log(transactionId);
@@ -46,12 +52,14 @@ export default function Payment(props) {
     };
 
     const handleBlur = () => {
+        let flag = true;
         let error = {};
-        if (!transactionId.trim()) {
+        if (!eventTransactionId.transactionId.trim()) {
             error = {
                 ...error,
                 transactionIdError: "Transaction Id is require"
             };
+            flag = false;
         } else {
             error = {
                 ...error,
@@ -63,6 +71,7 @@ export default function Payment(props) {
                 ...error,
                 photoProofError: "Photo proof is require"
             };
+            flag = false;
         } else {
             error = {
                 ...error,
@@ -70,6 +79,8 @@ export default function Payment(props) {
             };
         }
         setTransactionError({ ...transactionError, ...error });
+        if (flag) return true;
+        else return false;
     };
 
     const convert64 = (file) => {

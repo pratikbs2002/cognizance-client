@@ -189,7 +189,7 @@ const EditProfile = (props) => {
             //     if (props.addEventModal) {
             //         props.handleRegisterTeam();
             //         onEventRegisterModalClose();
-                // } else setIsPaymentModalOpen(true);
+            // } else setIsPaymentModalOpen(true);
             //     setIsLoading(false);
             // }
             setIsPaymentModalOpen(true);
@@ -884,6 +884,7 @@ const EditProfile = (props) => {
                                         isMusicalNight={props.isMusicalNight}
                                         isAccomodationNeeded={eventRegisterCredAcco.isAccomodationNeeded}
                                         eventRegisterCredentials={eventRegisterCredentials}
+                                        onClose={onEventRegisterModalClose}
                                     />
                                 )}
                             </ModalBody>
