@@ -138,6 +138,18 @@ export default function ContactUs() {
                                 <Container textAlign={"center"}>
                                     <Text fontSize={{ base: "16px", md: "20px" }}>Jay Shah</Text>
                                     <Text fontSize={{ base: "16px", md: "20px" }}>+91 82007 78757</Text>
+                                    <Text  marginTop={"30px"} fontSize={"20px"} textAlign={"center"} fontWeight={"700"}>
+                                        Email
+                                    </Text>
+                                    <Text
+                                        fontSize={{ base: "16px", md: "20px" }}
+                                        width={"100%"}
+                                        onClick={() => {
+                                            window.open("mailto:cognizance@charusat.edu.in");
+                                        }}
+                                    >
+                                        cognizance@charusat.edu.in
+                                    </Text>
                                 </Container>
                             </Container>
                         </div>

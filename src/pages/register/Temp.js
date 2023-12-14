@@ -81,7 +81,7 @@ const Temp = (props) => {
                             Technical Workshops
                         </Tab>
 
-                        {!props.addEventModal && (
+                        {/* {!props.addEventModal && (
                             <Tab
                                 color={"white"}
                                 variant="enclosed"
@@ -98,7 +98,7 @@ const Temp = (props) => {
                             >
                                 Musical Night
                             </Tab>
-                        )}
+                        )} */}
 
                         {/* {!props.addEventModal && !props.registeredEvent && (
                             <Tab
@@ -153,7 +153,7 @@ const Temp = (props) => {
                                 workShopsIds={props?.workShopsIds}
                             />
                         </TabPanel>
-                        {!props.addEventModal && (
+                        {/* {!props.addEventModal && (
                             <TabPanel padding={0} margin={0}>
                                 <MusicalNight
                                     registeredEvent={props.registeredEvent}
@@ -162,7 +162,7 @@ const Temp = (props) => {
                                     }
                                 />
                             </TabPanel>
-                        )}
+                        )} */}
                         {/* {!props.addEventModal && !props.registeredEvent && (
                             <TabPanel padding={0} margin={0}>
                                 <ComboEvents />
