@@ -10,7 +10,7 @@ import {
 import Workshop from "./allEvents/Workshop";
 import TechEvents from "./allEvents/TechEvents";
 import NonTechEvents from "./allEvents/NonTechEvents";
-import ComboEvents from "./comboPage/ComboEvents";
+// import ComboEvents from "./comboPage/ComboEvents";
 import MusicalNight from "./allEvents/MusicalNight";
 
 const Temp = (props) => {

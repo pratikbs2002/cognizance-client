@@ -1,57 +1,90 @@
-import React,{useState} from "react";
-import { Button } from "@chakra-ui/react";
+import { Button, FormControl, FormErrorMessage, Input, Table, Tbody, Td, Tr } from "@chakra-ui/react";
+import React, { useState } from "react";
 import "./EventCard.css";
-import { Table, Tbody, Tr, Td, Input,FormControl,FormErrorMessage } from "@chakra-ui/react";
-import transaction from "../../assets/transaction.jpg"
+// import transaction from "../../assets/transaction.jpg";
+import { registerEvent } from "../../service/eventRegistrationService";
 
 export default function Payment(props) {
-    const [transactionId,setTransactionId]=useState("");
-    const [base64,setBase64]=useState("");
-    const [transactionError,setTransactionError]=useState({transactionIdError:"",photoProofError:""});
+    let transactionId = "";
+    const [eventTransactionId, setEventTransactionId] = useState({
+        transactionId: transactionId
+    });
+    const [base64, setBase64] = useState("");
+    const [transactionError, setTransactionError] = useState({ transactionIdError: "", photoProofError: "" });
     const note1 = `Make a payment of ₹${props.price} to above mentioned bank details.
     After payment, please proceed by clicking following button to fill out the form. Our coordinators will contact you shortly. `;
-    const handleChangeTransactionId=(e)=>{
-        setTransactionId(e.target.value)
-    }
-    const handleBlur=()=>{
-        let error={};
-        if(!transactionId.trim()){
-            error={
-                ...error,
-                transactionIdError:'Transaction Id is require',
-            }
-        }else{
-            error={
-                ...error,
-                transactionIdError:"",
-            }
+    const handleRegister = async (e) => {
+        e.preventDefault();
+
+        let eventData = {
+            id: props.eventId,
+            eventType: props.eventType,
+            eventTitle: props.eventName,
+            isMusicalNight: props.isMusicalNight ? true : false,
+            eventFees: props.price,
+            eventParticipantInfo: props.eventRegisterCredentials,
+            eventIsAccomodationNeeded: props.isAccomodationNeeded,
+            transactionId: eventTransactionId.transactionId
+        };
+
+        const data = await registerEvent(eventData);
+    };
+
+    // console.log(transactionId);
+    const handleChange = (e) => {
+        const name = e.target.name;
+
+        if (name === "transactionId") {
+            const value = e.target.value;
+            setEventTransactionId((values) => ({
+                ...values,
+                transactionId: value
+            }));
         }
-        if(!base64.trim()){
-            error={
+
+        // console.log(eventTransactionId);
+    };
+
+    const handleBlur = () => {
+        let error = {};
+        if (!transactionId.trim()) {
+            error = {
                 ...error,
-                photoProofError:"Photo proof is require",
-            }
-        }else{
-            error={
+                transactionIdError: "Transaction Id is require"
+            };
+        } else {
+            error = {
                 ...error,
-                photoProofError:"",
-            }
+                transactionIdError: ""
+            };
         }
-        setTransactionError({...transactionError,...error});
-    }
+        if (!base64.trim()) {
+            error = {
+                ...error,
+                photoProofError: "Photo proof is require"
+            };
+        } else {
+            error = {
+                ...error,
+                photoProofError: ""
+            };
+        }
+        setTransactionError({ ...transactionError, ...error });
+    };
+
     const convert64 = (file) => {
         return new Promise((resolve, reject) => {
             const fileReader = new FileReader();
             fileReader.readAsDataURL(file);
             fileReader.onload = () => {
-            resolve(fileReader.result);
-        };
-        fileReader.onerror = (error) => {
-            reject(error);
-        };
+                resolve(fileReader.result);
+            };
+            fileReader.onerror = (error) => {
+                reject(error);
+            };
         });
     };
-    console.log(transactionError);
+    // console.log(transactionError);
     return (
         <div
             style={{
@@ -74,7 +107,7 @@ export default function Payment(props) {
                     style={{
                         display: "flex",
                         alignItems: "center",
-                        flexDirection: "column",
+                        flexDirection: "column"
                         // overflow: "auto"
                     }}
                 >
@@ -147,53 +180,54 @@ export default function Payment(props) {
                                                     pr="4.5rem"
                                                     variant="outline"
                                                     placeholder="Enter Transaction Id"
-                                                    onBlur={handleBlur}
-                                                    onChange={handleChangeTransactionId}
+                                                    // onBlur={handleBlur}
+                                                    onChange={handleChange}
                                                 />
-                                                <FormErrorMessage>{transactionError.transactionIdError}</FormErrorMessage>
+                                                <FormErrorMessage>
+                                                    {transactionError.transactionIdError}
+                                                </FormErrorMessage>
                                             </FormControl>
                                         </Td>
                                     </Tr>
                                     <Tr>
                                         <Td>Photo Proof</Td>
                                         <Td>
-                                            {
-                                                base64?(
-                                                    <div
+                                            {base64 ? (
+                                                <div
+                                                    style={{
+                                                        width: "80%",
+                                                        padding: "1.03125rem .875rem",
+                                                        border: "1px solid #999",
+                                                        borderRadius: ".3rem",
+                                                        display: "flex",
+                                                        gap: "2rem",
+                                                        color: "black",
+                                                        alignItems: "center"
+                                                    }}
+                                                >
+                                                    <img
+                                                        src={base64}
+                                                        alt="cover"
                                                         style={{
-                                                            width: "80%",
-                                                            padding: "1.03125rem .875rem",
-                                                            border: "1px solid #999",
-                                                            borderRadius: ".3rem",
-                                                            display: "flex",
-                                                            gap: "2rem",
-                                                            color: "black",
-                                                            alignItems: "center",
+                                                            width: "150px",
+                                                            objectFit: "cover"
+                                                        }}
+                                                    />
+                                                    <p>{transactionId}</p>
+                                                    <span
+                                                        onClick={() => {
+                                                            setBase64("");
+                                                        }}
+                                                        style={{
+                                                            fontWeight: "bold",
+                                                            fontSize: "1.2rem",
+                                                            cursor: "pointer"
                                                         }}
                                                     >
-                                                        <img
-                                                            src={base64}
-                                                            alt="cover"
-                                                            style={{
-                                                                width:"150px",
-                                                                objectFit: "cover",
-                                                            }}
-                                                        />
-                                                        <p>{transactionId}</p>
-                                                        <span
-                                                            onClick={() => {
-                                                                setBase64("");
-                                                            }}
-                                                            style={{
-                                                                fontWeight: "bold",
-                                                                fontSize: "1.2rem",
-                                                                cursor: "pointer",
-                                                            }}
-                                                        >
-                                                            X
-                                                        </span>
-                                                    </div>
-                                                ):(
+                                                        X
+                                                    </span>
+                                                </div>
+                                            ) : (
                                                 <FormControl isInvalid={!!transactionError.photoProofError}>
                                                     <Input
                                                         name="photoProof"
@@ -203,22 +237,30 @@ export default function Payment(props) {
                                                         pr="4.5rem"
                                                         variant="outline"
                                                         onBlur={handleBlur}
-                                                        onChange={async(e)=>{
-                                                            const file=e.target.files[0];
-                                                            const ext=file.name.split(".").pop();
-                                                            if(ext!=="jpg"&& ext!=="png"&&ext!=="jpeg"){
-                                                                e.target.value="";
-                                                                setTransactionError({...transactionError,photoProofError:"Only Images are allowed"});
-                                                            }else{
-                                                                setTransactionError({...transactionError,photoProofError:""});
-                                                                const base=await convert64(file);
+                                                        onChange={async (e) => {
+                                                            const file = e.target.files[0];
+                                                            const ext = file.name.split(".").pop();
+                                                            if (ext !== "jpg" && ext !== "png" && ext !== "jpeg") {
+                                                                e.target.value = "";
+                                                                setTransactionError({
+                                                                    ...transactionError,
+                                                                    photoProofError: "Only Images are allowed"
+                                                                });
+                                                            } else {
+                                                                setTransactionError({
+                                                                    ...transactionError,
+                                                                    photoProofError: ""
+                                                                });
+                                                                const base = await convert64(file);
                                                                 setBase64(base);
                                                             }
                                                         }}
                                                     />
-                                                    <FormErrorMessage>{transactionError.photoProofError}</FormErrorMessage>
+                                                    <FormErrorMessage>
+                                                        {transactionError.photoProofError}
+                                                    </FormErrorMessage>
                                                 </FormControl>
-                                                )}
+                                            )}
                                             {/* <img src={transaction} alt="transaation" width={150} /> */}
                                         </Td>
                                     </Tr>
@@ -321,12 +363,13 @@ export default function Payment(props) {
                         colorScheme="blue"
                         mr={3}
                         as="a"
-                        href="https://forms.gle/DaqEYXgjcx9kCNpe6"
+                        // href="https://forms.gle/DaqEYXgjcx9kCNpe6"
                         target="_blank"
                         rel="noopener noreferrer"
                         color={"white"}
+                        onClick={handleRegister}
                     >
-                        Submit Payment Reciept
+                        Submit Payment
                     </Button>
                 </div>
             </div>
