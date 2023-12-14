@@ -1,33 +1,34 @@
-import React, { useEffect, useState } from "react";
 import {
-    Button,
-    Modal,
-    FormControl,
-    FormHelperText,
-    Input,
-    Text,
-    useDisclosure,
-    VStack,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalCloseButton,
-    ModalBody,
-    ModalFooter,
-    Heading,
     Box,
-    Spinner,
-    Image,
-    Select,
-    FormErrorMessage,
+    Button,
+    Checkbox,
+    CheckboxGroup,
     Container,
+    FormControl,
+    FormErrorMessage,
+    FormHelperText,
+    HStack,
+    Heading,
+    Image,
+    Input,
+    Modal,
+    ModalBody,
+    ModalCloseButton,
+    ModalContent,
+    ModalFooter,
+    ModalHeader,
+    ModalOverlay,
+    Select,
+    Spinner,
     StackDivider,
-    HStack
+    Text,
+    VStack,
+    useDisclosure
 } from "@chakra-ui/react";
-import { isProfileUpdatedAPI, login, updateProfileAPI } from "../../../service/authService";
 import { useGoogleLogin } from "@react-oauth/google";
+import React, { useState } from "react";
+import { isProfileUpdatedAPI, login, updateProfileAPI } from "../../../service/authService";
 import Payment from "../Payment";
-import { registerEvent } from "../../../service/eventRegistrationService";
 
 const EditProfile = (props) => {
     const {
@@ -41,18 +42,25 @@ const EditProfile = (props) => {
         onClose: onEventRegisterModalClose
     } = useDisclosure();
     const teamSize = typeof props.teamSize === "string" ? undefined : props.teamSize;
+    const isAccomodationNeeded = props.isAccomodationNeeded ? true : false;
     const [registerCredentials, setRegisterCredentials] = useState({
         name: "",
         universityName: "",
         mobileNumber: ""
     });
+
     const [userData, setUserData] = useState({});
     const [eventRegisterCredentials, setEventRegisterCredentials] = useState({
         teamSize: teamSize
     });
-    const [eventRegistrationErrors, setEventRegistrationErrors] = useState({});
+    const [eventRegisterCredAcco, setEventRegisterCredAcco] = useState({
+        isAccomodationNeeded: isAccomodationNeeded
+    });
+    // const [eventRegistrationErrors, setEventRegistrationErrors] = useState({});
     const [profileError, setProfileErrors] = useState({});
     const [isProfileUpdated, setIsProfileUpdated] = useState(false);
+
+    // let accomodationNote = By checking this you agree that you need accomodation for the event <b>${props.eventName}</b> at Charusat campus.
 
     const handleRegister = async (event) => {
         // setIsLoading(true);
@@ -135,6 +143,7 @@ const EditProfile = (props) => {
             [name]: value
         }));
     };
+
     const handleRegisterEvent = async (event) => {
         event.preventDefault();
         setIsLoading(true);
@@ -153,34 +162,38 @@ const EditProfile = (props) => {
                 // eventDate: "",
                 // eventLocation: "",
                 eventFees: props.price,
-                eventParticipantInfo: eventRegisterCredentials
+                eventParticipantInfo: eventRegisterCredentials,
+                eventIsAccomodationNeeded: eventRegisterCredAcco.isAccomodationNeeded
             };
-            // console.log(eventData);
-            let response = await registerEvent(eventData);
-            // console.log(response);
-            if (!response?.isAuthenticated) {
-                sessionStorage.removeItem("token");
-                alert("Please Login First to Register for any event!");
-                setIsLoading(false);
-                return;
-            }
-            if (!response?.isUserExist) {
-                alert("User Does Not Exist");
-                setIsLoading(false);
-                return;
-            }
-            if (!response?.isEventRegistered) {
-                alert(response.msg);
-                setIsLoading(false);
-                return;
-            }
-            if (response?.isEventRegistered) {
-                if (props.addEventModal) {
-                    props.handleRegisterTeam();
-                    onEventRegisterModalClose();
-                } else setIsPaymentModalOpen(true);
-                setIsLoading(false);
-            }
+            console.log(eventData);
+            // console.log(eventData.eventParticipantInfo);
+            // let response = await registerEvent(eventData);
+            // // console.log(response);
+            // if (!response?.isAuthenticated) {
+            //     sessionStorage.removeItem("token");
+            //     alert("Please Login First to Register for any event!");
+            //     setIsLoading(false);
+            //     return;
+            // }
+            // if (!response?.isUserExist) {
+            //     alert("User Does Not Exist");
+            //     setIsLoading(false);
+            //     return;
+            // }
+            // if (!response?.isEventRegistered) {
+            //     alert(response.msg);
+            //     setIsLoading(false);
+            //     return;
+            // }
+            // if (response?.isEventRegistered) {
+            //     if (props.addEventModal) {
+            //         props.handleRegisterTeam();
+            //         onEventRegisterModalClose();
+                // } else setIsPaymentModalOpen(true);
+            //     setIsLoading(false);
+            // }
+            setIsPaymentModalOpen(true);
+            setIsLoading(false);
         }
         setIsLoading(false);
     };
@@ -189,6 +202,7 @@ const EditProfile = (props) => {
         errors: {}
     });
     // console.log(eventRegisterCredentials);
+    // console.log(eventRegisterCredAcco);
     const validateRegisterEventCredentials = () => {
         let errors = {};
         let isValid = true;
@@ -220,7 +234,6 @@ const EditProfile = (props) => {
                 };
             }
         }
-
         for (let i = 0; i < eventRegisterCredentials.teamSize; i++) {
             if (!eventRegisterCredentials[`participant${i}`]?.name.trim()) {
                 errors[`participant${i}`] = {
@@ -270,6 +283,13 @@ const EditProfile = (props) => {
             setEventRegisterCredentials((values) => ({
                 ...values,
                 [name]: parseInt(value)
+            }));
+        } else if (name === "checkbox") {
+            const value = event.target.checked;
+            setEventRegisterCredAcco((values) => ({
+                ...values,
+                // checkAcc: value,
+                isAccomodationNeeded: value
             }));
         } else {
             const value = event.target.value;
@@ -488,9 +508,8 @@ const EditProfile = (props) => {
 
     return (
         <>
-            {
-                props.eventId!==36&&
-                    <Button
+            {props.eventId !== 36 && (
+                <Button
                     backgroundColor="#54cadd"
                     color={"black"}
                     onClick={async () => {
@@ -518,7 +537,7 @@ const EditProfile = (props) => {
                 >
                     Register
                 </Button>
-            }
+            )}
             {isLoading ? (
                 <div
                     style={{
@@ -831,7 +850,16 @@ const EditProfile = (props) => {
                                                                 </FormControl>
                                                             </VStack>
                                                         )}
+
                                                         {typeof props.teamSize === "number" && participantsField}
+
+                                                        <CheckboxGroup>
+                                                            <Checkbox onChange={handleChangeEvent} name="checkbox">
+                                                                By checking this you agree that you need accomodation
+                                                                for the event <b>{props.eventName}</b> at Charusat
+                                                                campus.
+                                                            </Checkbox>
+                                                        </CheckboxGroup>
 
                                                         <VStack>
                                                             <Button
@@ -848,7 +876,15 @@ const EditProfile = (props) => {
                                         </HStack>
                                     </Box>
                                 ) : (
-                                    <Payment price={props.price} />
+                                    <Payment
+                                        price={props.price}
+                                        eventId={props.eventId}
+                                        eventType={props.eventType}
+                                        eventName={props.eventName}
+                                        isMusicalNight={props.isMusicalNight}
+                                        isAccomodationNeeded={eventRegisterCredAcco.isAccomodationNeeded}
+                                        eventRegisterCredentials={eventRegisterCredentials}
+                                    />
                                 )}
                             </ModalBody>
                         </ModalContent>
