@@ -256,7 +256,7 @@ export default function NewHome() {
                         </Button>
                     </Container>
 
-                    <Container
+                    {/* <Container
                         display={"flex"}
                         padding={0}
                         // paddingTop={10}
@@ -287,10 +287,9 @@ export default function NewHome() {
                                 <ListItem>3. Update your details info</ListItem>
                                 <ListItem>4. Register for the events.</ListItem>
                                 <ListItem onClick={()=>navigate("/register")} style={{cursor:"pointer"}}>5. Pay the fees.</ListItem>
-                                {/* </Text> */}
                             </OrderedList>
                         </Text>
-                    </Container>
+                    </Container> */}
 
                     <Container
                         display={"flex"}
