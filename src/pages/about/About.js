@@ -6,7 +6,7 @@ import count_icon from "../../assets/count_icon.png";
 import Count from "../../components/Count";
 import aboutVideo from "../../assets/video/intro1.mp4";
 
-export default function About({registerCount}) {
+export default function About({registerCount,visitorCount}) {
     // const date = new Date();
     return (
         <>
@@ -147,7 +147,7 @@ export default function About({registerCount}) {
                                     padding={0}
                                     direction={{ base: "column", md: "row" }}
                                 >
-                                    {/* <Container padding={0} margin="0" maxWidth={{ base: "100%", md: "300px" }} bg="green">
+                                    <Container padding={0} margin="0" maxWidth={{ base: "100%", md: "300px" }} bg="green">
                                         <Stack padding={0} direction={"row"}>
                                             <Container padding={0} justifyContent={"center"} alignItems="center">
                                                 <Card>
@@ -163,14 +163,14 @@ export default function About({registerCount}) {
                                                             alignItems={"flex-start"}
                                                             direction={"column"}
                                                         >
-                                                            <Count countValue={100} />
+                                                            <Count countValue={visitorCount} />
                                                             <Text>Total Visitors</Text>
                                                         </Stack>
                                                     </Stack>
                                                 </Card>
                                             </Container>
                                         </Stack>
-                                    </Container> */}
+                                    </Container>
 
                                     <Container padding={0} maxWidth={{ base: "100%", md: "300px" }}>
                                         <Stack padding={0} direction={"row"}>

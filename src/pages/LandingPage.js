@@ -14,12 +14,17 @@ import ScrollButton from "../components/scrollButton/ScrollButton";
 // import aboutIm from "./posterCz.png";
 // import aboutIm2 from "./posterCz2.png";
 import aboutIm3 from "./homePage5.png";
-import { getTechCount } from "../service/eventService";
+import { getTechCount, getVisitorCount } from "../service/eventService";
 
 export default function LandingPage() {
     const [isImage1Visible, setIsImage1Visible] = useState(true);
     const [registerCount,setRegisterCount]=useState();
+    const [visitorCount,setVisitorCount]=useState(0);
 
+    const updateCounter=async(type)=>{
+        let data=await getVisitorCount(type);
+        setVisitorCount(data.visitorCount);
+    }
     useEffect(async() => {
         const interval = setInterval(() => {
             setIsImage1Visible((prev) => !prev);
@@ -28,6 +33,12 @@ export default function LandingPage() {
         let data= await getTechCount();
         setRegisterCount(data.totalCount);
         
+        if(sessionStorage.getItem("visit")===null){
+            updateCounter("type=visit-pageview");
+        }else{
+            sessionStorage.setItem("visit","x");
+            updateCounter("type=pageview");
+        }
 
         return () => clearInterval(interval);
     }, []);
@@ -59,7 +70,7 @@ export default function LandingPage() {
                 </Container>
                 {/* <Home /> */}
                 <NewHome />
-                <About registerCount={registerCount} />
+                <About registerCount={registerCount} visitorCount={visitorCount} />
                 <Footer />
                 <ScrollButton />
             </Container>
