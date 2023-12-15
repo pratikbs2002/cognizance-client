@@ -24,8 +24,6 @@ export default function Payment(props) {
     After payment, please proceed by clicking following button to fill out the form. Our coordinators will contact you shortly. `;
 
     useEffect(() => {
-        // This block will be executed when newImage changes
-        // console.log("New image state updated:", newImage);
         setTemp(newImage);
     }, [newImage]);
 
