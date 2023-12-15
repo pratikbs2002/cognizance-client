@@ -432,9 +432,6 @@ export default function Payment(props) {
                         isLoading={load}
                         colorScheme="blue"
                         mr={3}
-                        // href="https://forms.gle/DaqEYXgjcx9kCNpe6"
-                        // target="_blank"
-                        // rel="noopener noreferrer"
                         color={"white"}
                         onClick={handleRegister}
                     >
