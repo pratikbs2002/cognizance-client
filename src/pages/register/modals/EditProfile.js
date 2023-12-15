@@ -165,7 +165,6 @@ const EditProfile = (props) => {
                 eventParticipantInfo: eventRegisterCredentials,
                 eventIsAccomodationNeeded: eventRegisterCredAcco.isAccomodationNeeded
             };
-            console.log(eventData);
             // console.log(eventData.eventParticipantInfo);
             // let response = await registerEvent(eventData);
             // // console.log(response);

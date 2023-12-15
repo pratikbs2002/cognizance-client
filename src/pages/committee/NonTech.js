@@ -50,7 +50,7 @@ const NonTech = () => {
             name:"Bhavin Bhetariya",
             email:"",
             department:"",
-            profile:_1,
+            profile:_6,
         },
     ];
     return (
