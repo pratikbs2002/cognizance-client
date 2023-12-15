@@ -18,6 +18,7 @@ export default function Payment(props) {
     const [temp, setTemp] = useState();
     // const [selectedFile, setSelectedFile] = useState(null);
     const [base64, setBase64] = useState("");
+    const [load, setLoad] = useState(false);
     const [transactionError, setTransactionError] = useState({ transactionIdError: "", photoProofError: "" });
     const note1 = `Make a payment of ₹${props.price} to above mentioned bank details.
     After payment, please proceed by clicking following button to fill out the form. Our coordinators will contact you shortly. `;
@@ -44,6 +45,7 @@ export default function Payment(props) {
 
     const handleRegister = async (e) => {
         if (handleBlur()) {
+            setLoad(true);
             e.preventDefault();
 
             let eventData = {
@@ -61,40 +63,31 @@ export default function Payment(props) {
             await registerEvent(eventData);
 
             // await uploadTransactionImage(base64);
-            await fireUpload();
+            // await fireUpload();
             console.log(eventData);
 
-            if (newImage !== undefined) props.onClose();
+            if (newImage !== undefined) {
+                // setLoad();
+                props.onClose();
+            }
             // console.log(data);
         } else alert("Error registering event");
+        setLoad(false);
     };
 
     const handlefileChange = async (e) => {
         const file = e.target.files[0];
-        setSelectedImage(file);
         const ext = file.name.split(".").pop();
         if (ext !== "jpg" && ext !== "png" && ext !== "jpeg") {
             e.target.value = "";
-            setTransactionError({
-                ...transactionError,
-                photoProofError: "Only Images are allowed"
-            });
+            setTransactionError({ ...transactionError, photoProofError: "Only Images are allowed" });
         } else {
-            setTransactionError({
-                ...transactionError,
-                photoProofError: ""
-            });
-
-            // fireUpload();
-            // const compressedImage = await compressImage(file);
-            // const base = await convert64(file);
-            // setBase64(base);
-            // console.log(base);
+            setTransactionError({ ...transactionError, photoProofError: "" });
+            const base = await convert64(file);
+            setBase64(base);
         }
 
-        console.log(file);
-        // console.log(base64);
-        // console.log(selectedFile);
+        await fireUpload();
     };
     // console.log(transactionId);
     const handleChange = (e) => {
@@ -143,18 +136,18 @@ export default function Payment(props) {
         else return false;
     };
 
-    // const convert64 = (file) => {
-    //     return new Promise((resolve, reject) => {
-    //         const fileReader = new FileReader();
-    //         fileReader.readAsDataURL(file);
-    //         fileReader.onload = () => {
-    //             resolve(fileReader.result);
-    //         };
-    //         fileReader.onerror = (error) => {
-    //             reject(error);
-    //         };
-    //     });
-    // };
+    const convert64 = (file) => {
+        return new Promise((resolve, reject) => {
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(file);
+            fileReader.onload = () => {
+                resolve(fileReader.result);
+            };
+            fileReader.onerror = (error) => {
+                reject(error);
+            };
+        });
+    };
     // console.log(transactionError);
     return (
         <div
@@ -413,7 +406,9 @@ export default function Payment(props) {
                         justifyContent: "center"
                     }}
                 >
+                    {/* {load ? } */}
                     <Button
+                        isLoading={load}
                         colorScheme="blue"
                         mr={3}
                         // href="https://forms.gle/DaqEYXgjcx9kCNpe6"
