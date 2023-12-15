@@ -508,7 +508,7 @@ const EditProfile = (props) => {
 
     return (
         <>
-            {props.eventId !== 36 && (
+            {props.eventName !== "Musical Night" && (
                 <Button
                     backgroundColor="#54cadd"
                     color={"black"}

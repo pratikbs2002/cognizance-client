@@ -70,7 +70,7 @@ export default function Register() {
             justifyContent: "center",
           }}
         >
-          <Temp addEventModal={false} />
+          <Temp addEventModal={false} registeredEvent={false}/>
         </div>
         {/* <div
           style={{
