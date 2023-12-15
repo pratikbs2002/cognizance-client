@@ -71,7 +71,7 @@ const EventCommittee=()=>{
                                 backgroundPosition: "center",
                             }}
                         >
-                            Website
+                            WEBSITE COMMITTEE
                         </Heading>
                         <Website/>
                     </Card>
@@ -106,7 +106,7 @@ const EventCommittee=()=>{
                                 backgroundPosition: "center",
                             }}
                             >
-                            Musical Event
+                            MUSICAL EVENT COMMITTEE
                         </Heading>
                         <MusicalEvent/>
                     </Card>
@@ -141,7 +141,7 @@ const EventCommittee=()=>{
                                 backgroundPosition: "center",
                             }}
                         >
-                            Media and Press
+                            MEDIA AND PRESS COMMITTEE
                         </Heading>
                         <MediaPress/>
                     </Card>
@@ -176,7 +176,7 @@ const EventCommittee=()=>{
                                 backgroundPosition: "center",
                             }}
                         >
-                            Sponsorship
+                            SPONSORSHIP COMMITTEE
                         </Heading>
                         <Sponsorship/>
                     </Card>
@@ -211,7 +211,7 @@ const EventCommittee=()=>{
                                 backgroundPosition: "center",
                             }}
                         >
-                            Campaining
+                            CAMPAINING COMMITTEE
                         </Heading>
                         <Campaining/>
                     </Card>
@@ -247,6 +247,7 @@ const EventCommittee=()=>{
                             }}
                         >
                             Accommodation, Transportation and Hospitality Committee 
+                            ACCOMMODATION, TRANSPORTATION AND HOSPITALITY COMMITTEE
                         </Heading>
                         <AcTrHos/>
                     </Card>
@@ -280,7 +281,7 @@ const EventCommittee=()=>{
                                 backgroundPosition: "center",
                             }}
                         >
-                            Register
+                            REGISTRATION COMMITTEE
                         </Heading>
                         <RegisterComm/>
                     </Card>
@@ -314,7 +315,7 @@ const EventCommittee=()=>{
                                 backgroundPosition: "center",
                             }}
                         >
-                            Non Technical Event
+                            NON TECHNICAL EVENT COMMITTEE
                         </Heading>
                         <NonTech/>
                     </Card>
@@ -348,7 +349,7 @@ const EventCommittee=()=>{
                                 backgroundPosition: "center",
                             }}
                         >
-                            Technical Event
+                            TECHNICAL EVENT COMMITTEE
                         </Heading>
                         <Technical/>
                     </Card>

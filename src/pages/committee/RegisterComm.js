@@ -2,40 +2,48 @@ import React from 'react'
 import { Card, Container, Image, Text } from "@chakra-ui/react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import _1 from "../../assets/event_committee_photo/register/1dhyan.jpg";
-import _2 from "../../assets/event_committee_photo/register/2dhairya.jpg";
-import _3 from "../../assets/event_committee_photo/register/3khushi.png";
-import _4 from "../../assets/event_committee_photo/register/4rahul.jpg";
+import _1 from "../../assets/event_committee_photo/register/1dhaval.jpg";
+import _2 from "../../assets/event_committee_photo/register/1dhyan.jpg";
+import _3 from "../../assets/event_committee_photo/register/2dhairya.jpg";
+import _4 from "../../assets/event_committee_photo/register/3khushi.png";
+import _5 from "../../assets/event_committee_photo/register/4rahul.jpg";
 
 const RegisterComm = () => {
     const arr=[
         {
             id:1,
-            name:'Dhyan Patel',
-            email:"21cs042@charusat.edu.in",
-            department:"Computer Science & Engineering, CSPIT",
+            name:'Prof. Dhaval Bhoi',
+            email:"dhavalbhoi.ce@charusat.ac.in",
+            department:"Computer Engineering, CSPIT",
             profile:_1,
         },
         {
             id:2,
-            name:'Dhairya Bhavsar',
-            email:"21cs003@charusat.edu.in",
+            name:'Dhyan Patel',
+            email:"21cs042@charusat.edu.in",
             department:"Computer Science & Engineering, CSPIT",
             profile:_2,
         },
         {
             id:3,
-            name:'Khushi Kathiriya',
-            email:"21cs022@charusat.edu.in",
+            name:'Dhairya Bhavsar',
+            email:"21cs003@charusat.edu.in",
             department:"Computer Science & Engineering, CSPIT",
             profile:_3,
         },
         {
             id:4,
+            name:'Khushi Kathiriya',
+            email:"21cs022@charusat.edu.in",
+            department:"Computer Science & Engineering, CSPIT",
+            profile:_4,
+        },
+        {
+            id:5,
             name:'Rahul Mistry',
             email:"22cs042@charusat.edu.in",
             department:"Computer Science & Engineering, CSPIT",
-            profile:_4,
+            profile:_5,
         }
     ];
     return (
