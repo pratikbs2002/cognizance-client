@@ -2,7 +2,7 @@ import { Button, FormControl, FormErrorMessage, Input, Table, Tbody, Td, Tr } fr
 import React, { useEffect, useState } from "react";
 import "./EventCard.css";
 // import transaction from "../../assets/transaction.jpg";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { v4 } from "uuid";
 import { cz } from "../../firebase";
 import { registerEvent } from "../../service/eventRegistrationService";
@@ -18,11 +18,12 @@ export default function Payment(props) {
     const [temp, setTemp] = useState();
     // const [selectedFile, setSelectedFile] = useState(null);
     const [base64, setBase64] = useState("");
+
     const [load, setLoad] = useState(false);
     const [transactionError, setTransactionError] = useState({ transactionIdError: "", photoProofError: "" });
     const note1 = `Make a payment of ₹${props.price} to above mentioned bank details.
     After payment, please proceed by clicking following button to fill out the form. Our coordinators will contact you shortly. `;
-
+    const note2 = `Please wait a moment for your proof to upload, depending on your internet connection.`;
     useEffect(() => {
         setTemp(newImage);
     }, [newImage]);
@@ -30,15 +31,18 @@ export default function Payment(props) {
     const fireUpload = async () => {
         const imgRef = ref(cz, `cz/${v4()}`);
 
-        await uploadBytes(imgRef, selectedImage);
+        await uploadBytesResumable(imgRef, selectedImage);
 
+        // uploadTask.resume();
         try {
             const data = await getDownloadURL(imgRef);
+
             setNewImage(data);
             // console.log("Image uploaded Successfully");
         } catch (e) {
             console.log(e);
         }
+        // uploadTask.resume();
     };
 
     const handleRegister = async (e) => {
@@ -372,8 +376,9 @@ export default function Payment(props) {
                 <div
                     style={{
                         display: "flex",
-                        paddingTop: "5%",
-                        paddingBottom: "20px"
+                        // flexDirection: "column",
+                        paddingTop: "5%"
+                        // paddingBottom: "20px"
                     }}
                 >
                     <div
@@ -399,12 +404,30 @@ export default function Payment(props) {
                 <div
                     style={{
                         display: "flex",
+                        // flexDirection: "column",
+                        paddingTop: "5%",
+                        paddingBottom: "40px"
+                    }}
+                >
+                    <div
+                        style={{
+                            display: "flex",
+                            fontSize: "20px",
+                            fontWeight: "500",
+                            paddingLeft: "40px"
+                        }}
+                    >
+                        {note2}
+                    </div>
+                </div>
+                <div
+                    style={{
+                        display: "flex",
                         width: "100%",
                         // paddingBottom: "50px",
                         justifyContent: "center"
                     }}
                 >
-                    {/* {load ? } */}
                     <Button
                         isLoading={load}
                         colorScheme="blue"
