@@ -147,7 +147,7 @@ export default function About({registerCount}) {
                                     padding={0}
                                     direction={{ base: "column", md: "row" }}
                                 >
-                                    <Container padding={0} margin="0" maxWidth={{ base: "100%", md: "300px" }} bg="green">
+                                    {/* <Container padding={0} margin="0" maxWidth={{ base: "100%", md: "300px" }} bg="green">
                                         <Stack padding={0} direction={"row"}>
                                             <Container padding={0} justifyContent={"center"} alignItems="center">
                                                 <Card>
@@ -170,7 +170,7 @@ export default function About({registerCount}) {
                                                 </Card>
                                             </Container>
                                         </Stack>
-                                    </Container>
+                                    </Container> */}
 
                                     <Container padding={0} maxWidth={{ base: "100%", md: "300px" }}>
                                         <Stack padding={0} direction={"row"}>
