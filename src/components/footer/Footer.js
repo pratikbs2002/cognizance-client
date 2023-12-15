@@ -152,9 +152,9 @@ export default function Footer() {
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.458099229622!2d72.81789177603518!3d22.59936243198752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e50c43cdea6c7%3A0x5074fe9e0c1c8bd!2sCharotar%20University%20of%20Science%20and%20Technology%20(CHARUSAT)!5e0!3m2!1sen!2sin!4v1701723489178!5m2!1sen!2sin"
                                     width="100%"
                                     height="100%"
-                                    allowfullscreen=""
+                                    allowFullScreen=""
                                     loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"
+                                    referrerPolicy="no-referrer-when-downgrade"
                                     title="venue"
                                 ></iframe>
                             </div>

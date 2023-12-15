@@ -179,7 +179,7 @@ export default function ContactUs() {
                                 height="100%"
                                 allowfullscreen=""
                                 loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
+                                referrerPolicy="no-referrer-when-downgrade"
                                 title="venue"
                                 style={{
                                     borderRadius: "10px"
