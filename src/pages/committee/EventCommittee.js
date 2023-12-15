@@ -13,6 +13,8 @@ import Sponsorship from './Sponsorship';
 import Campaining from './Campaining';
 import AcTrHos from './AcTrHos';
 import RegisterComm from './RegisterComm';
+import NonTech from './NonTech';
+import Technical from './Technical';
 
 const EventCommittee=()=>{
     return(
@@ -281,6 +283,74 @@ const EventCommittee=()=>{
                             Register
                         </Heading>
                         <RegisterComm/>
+                    </Card>
+                </Container>
+                <Container
+                    padding={0}
+                    marginTop={10}
+                    maxW={{
+                        base: "100%",
+                        md: "100%",
+                        lg: "100%",
+                        xl: "80%",
+                        "2xl": "60%",
+                    }}
+                >
+                    <Card
+                        backgroundColor={"rgba(0, 0, 0, 0.442)"}
+                        maxW={"100%"}
+                        padding={0}
+                    >
+                        <Heading
+                            padding={5}
+                            textAlign={"center"}
+                            size="md"
+                            color="white"
+                            // bg="#161d37 !important"
+                            border="1px solid white"
+                            style={{
+                                background: `url(${backd})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                            }}
+                        >
+                            Non Technical Event
+                        </Heading>
+                        <NonTech/>
+                    </Card>
+                </Container>
+                <Container
+                    padding={0}
+                    marginTop={10}
+                    maxW={{
+                        base: "100%",
+                        md: "100%",
+                        lg: "100%",
+                        xl: "80%",
+                        "2xl": "60%",
+                    }}
+                >
+                    <Card
+                        backgroundColor={"rgba(0, 0, 0, 0.442)"}
+                        maxW={"100%"}
+                        padding={0}
+                    >
+                        <Heading
+                            padding={5}
+                            textAlign={"center"}
+                            size="md"
+                            color="white"
+                            // bg="#161d37 !important"
+                            border="1px solid white"
+                            style={{
+                                background: `url(${backd})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                            }}
+                        >
+                            Technical Event
+                        </Heading>
+                        <Technical/>
                     </Card>
                 </Container>
             </Container>

@@ -6,7 +6,7 @@ import count_icon from "../../assets/count_icon.png";
 import Count from "../../components/Count";
 import aboutVideo from "../../assets/video/intro1.mp4";
 
-export default function About() {
+export default function About({registerCount}) {
     // const date = new Date();
     return (
         <>
@@ -163,7 +163,7 @@ export default function About() {
                                                             alignItems={"flex-start"}
                                                             direction={"column"}
                                                         >
-                                                            <Count countValue={1000} />
+                                                            <Count countValue={100} />
                                                             <Text>Total Visitors</Text>
                                                         </Stack>
                                                     </Stack>
@@ -188,7 +188,7 @@ export default function About() {
                                                             alignItems={"flex-start"}
                                                             direction={"column"}
                                                         >
-                                                            <Count countValue={10000} />
+                                                            <Count countValue={registerCount} />
                                                             <Text>Total Registration</Text>
                                                         </Stack>
                                                     </Stack>
