@@ -25,7 +25,7 @@ export default function Payment(props) {
 
     useEffect(() => {
         // This block will be executed when newImage changes
-        console.log("New image state updated:", newImage);
+        // console.log("New image state updated:", newImage);
         setTemp(newImage);
     }, [newImage]);
 
@@ -37,7 +37,7 @@ export default function Payment(props) {
         try {
             const data = await getDownloadURL(imgRef);
             setNewImage(data);
-            console.log("Image uploaded Successfully");
+            // console.log("Image uploaded Successfully");
         } catch (e) {
             console.log(e);
         }
@@ -64,7 +64,7 @@ export default function Payment(props) {
 
             // await uploadTransactionImage(base64);
             // await fireUpload();
-            console.log(eventData);
+            // console.log(eventData);
 
             if (newImage !== undefined) {
                 // setLoad();
