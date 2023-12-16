@@ -27,7 +27,7 @@ const DecComm = () => {
             id: 3,
             name: "Jeet Vansjaliya",
             email: "21ce149@charusat.edu.in",
-            department: "Infomation Technology, CSPIT",
+            department: "Computer Engineering, CSPIT",
             profile: _3
         },
         {
