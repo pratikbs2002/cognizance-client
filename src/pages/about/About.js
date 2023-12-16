@@ -172,7 +172,7 @@ export default function About({registerCount,visitorCount}) {
                                         </Stack>
                                     </Container> */}
 
-                                    <Container padding={0} maxWidth={{ base: "100%", md: "300px" }}>
+                                    {/* <Container padding={0} maxWidth={{ base: "100%", md: "300px" }}>
                                         <Stack padding={0} direction={"row"}>
                                             <Container padding={0} justifyContent={"center"} alignItems="center">
                                                 <Card>
@@ -195,7 +195,7 @@ export default function About({registerCount,visitorCount}) {
                                                 </Card>
                                             </Container>
                                         </Stack>
-                                    </Container>
+                                    </Container> */}
                                 </Stack>
                             </Container>
                         </Stack>

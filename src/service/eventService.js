@@ -17,12 +17,12 @@ export async function getAllRegisteredEvents() {
     let data = await response.json();
     return data;
 }
-export async function getTechCount(){
-    let res=await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/getEventCount`);
-    let data=await res.json();
-    console.log(data);
-    return data;
-}
+// export async function getTechCount(){
+//     let res=await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/getEventCount`);
+//     let data=await res.json();
+//     console.log(data);
+//     return data;
+// }
 // export async function getVisitorCount(type){
 //     let res=await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/getVisitorCount?${type}`);
 //     let data=await res.json();
