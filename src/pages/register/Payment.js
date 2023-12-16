@@ -2,7 +2,7 @@ import { Button, FormControl, FormErrorMessage, Input, Table, Tbody, Td, Tr } fr
 import React, { useEffect, useState } from "react";
 import "./EventCard.css";
 // import transaction from "../../assets/transaction.jpg";
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
 import { cz } from "../../firebase";
 import { registerEvent } from "../../service/eventRegistrationService";
@@ -13,8 +13,8 @@ export default function Payment(props) {
         transactionId: transactionId
     });
     // const imgRef = useRef()
-    const [selectedImage, setSelectedImage] = useState(null);
-    const [newImage, setNewImage] = useState();
+    // const [selectedImage, setSelectedImage] = useState();
+    const [newImage, setNewImage] = useState("");
     const [temp, setTemp] = useState();
     // const [selectedFile, setSelectedFile] = useState(null);
     const [base64, setBase64] = useState("");
@@ -24,25 +24,38 @@ export default function Payment(props) {
     const note1 = `Make a payment of ₹${props.price} to above mentioned bank details.
     After payment, please proceed by clicking following button to fill out the form. Our coordinators will contact you shortly. `;
     const note2 = `Please wait a moment for your proof to upload, depending on your internet connection.`;
+
     useEffect(() => {
         setTemp(newImage);
     }, [newImage]);
 
-    const fireUpload = async () => {
+    const fireUpload = async (file) => {
+        if (!file) {
+            console.error("No image selected for upload");
+            return;
+        }
+
         const imgRef = ref(cz, `cz/${v4()}`);
 
-        await uploadBytesResumable(imgRef, selectedImage);
+        // Get the file extension
+        const fileExtension = file.name && file.name.split(".").pop().toLowerCase();
 
-        // uploadTask.resume();
+        // Set content type based on file extension
+        const contentType = `image/${fileExtension}`;
+
+        // Create metadata with content type
+        const metadata = { contentType };
+
+        // Upload the image with metadata
+        await uploadBytes(imgRef, file, metadata);
         try {
             const data = await getDownloadURL(imgRef);
-
             setNewImage(data);
+            // console.log(data);
             // console.log("Image uploaded Successfully");
         } catch (e) {
             console.log(e);
         }
-        // uploadTask.resume();
     };
 
     const handleRegister = async (e) => {
@@ -67,6 +80,7 @@ export default function Payment(props) {
             // await uploadTransactionImage(base64);
             // await fireUpload();
             // console.log(eventData);
+            // console.log("newImage", newImage);
 
             if (newImage !== undefined) {
                 // setLoad();
@@ -79,6 +93,8 @@ export default function Payment(props) {
 
     const handlefileChange = async (e) => {
         const file = e.target.files[0];
+        // setSelectedImage(file);
+
         const ext = file.name.split(".").pop();
         if (ext !== "jpg" && ext !== "png" && ext !== "jpeg") {
             e.target.value = "";
@@ -88,8 +104,9 @@ export default function Payment(props) {
             const base = await convert64(file);
             setBase64(base);
         }
-
-        await fireUpload();
+        // console.log("selectedImage", file);
+        // console.log("newImage", newImage);
+        await fireUpload(file);
     };
     // console.log(transactionId);
     const handleChange = (e) => {
@@ -428,15 +445,31 @@ export default function Payment(props) {
                         justifyContent: "center"
                     }}
                 >
-                    <Button
-                        isLoading={load}
-                        colorScheme="blue"
-                        mr={3}
-                        color={"white"}
-                        onClick={handleRegister}
-                    >
-                        Submit Payment
-                    </Button>
+                    {!newImage ? (
+                        <Button
+                            colorScheme="blue"
+                            mr={3}
+                            color={"white"}
+                            onClick={handleRegister}
+                            isDisabled
+                            // isLoading
+                            // loadingText="Image is being uploaded"
+                            // spinnerPlacement="start"
+                        >
+                            Submit Payment
+                        </Button>
+                    ) : (
+                        <Button
+                            isLoading={load}
+                            colorScheme="blue"
+                            mr={3}
+                            color={"white"}
+                            onClick={handleRegister}
+                            loadingText="Processing"
+                        >
+                            Submit Payment
+                        </Button>
+                    )}
                 </div>
             </div>
         </div>

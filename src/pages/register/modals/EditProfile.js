@@ -100,7 +100,7 @@ const EditProfile = (props) => {
         //University Name error
         if (!registerCredentials.universityName.trim()) {
             errors.universityName = "University name is required";
-        } else if (!/^[a-z &,.'-]+$/.test(registerCredentials.universityName.toLowerCase().trim())) {
+        } else if (!/^[a-z &,.'#-]+$/.test(registerCredentials.universityName.toLowerCase().trim())) {
             errors.universityName = "University name must be Alphabets";
             flag = false;
         } else {
