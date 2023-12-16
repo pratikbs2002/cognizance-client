@@ -245,8 +245,7 @@ const EventCommittee=()=>{
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                             }}
-                        >
-                            Accommodation, Transportation and Hospitality Committee 
+                        > 
                             ACCOMMODATION, TRANSPORTATION AND HOSPITALITY COMMITTEE
                         </Heading>
                         <AcTrHos/>
