@@ -211,7 +211,7 @@ const EventCommittee=()=>{
                                 backgroundPosition: "center",
                             }}
                         >
-                            CAMPAINING COMMITTEE
+                            CAMPAIGNING COMMITTEE
                         </Heading>
                         <Campaining/>
                     </Card>
