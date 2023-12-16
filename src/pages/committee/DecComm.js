@@ -18,9 +18,9 @@ const DecComm = () => {
         },
         {
             id: 2,
-            name: "Prof. Ritika Patel",
-            email: "",
-            department: "",
+            name: "Prof. Ritika Jani",
+            email: "ritikajani.it@charusat.ac.in",
+            department: "Information Technology, DEPSTAR",
             profile: _2
         },
         {
