@@ -21,10 +21,10 @@ export default function LandingPage() {
     const [registerCount,setRegisterCount]=useState();
     const [visitorCount,setVisitorCount]=useState(0);
 
-    const updateCounter=async(type)=>{
-        let data=await getVisitorCount(type);
-        setVisitorCount(data.visitorCount);
-    }
+    // const updateCounter=async(type)=>{
+    //     let data=await getVisitorCount(type);
+    //     setVisitorCount(data.visitorCount);
+    // }
     useEffect(async() => {
         const interval = setInterval(() => {
             setIsImage1Visible((prev) => !prev);
@@ -33,12 +33,12 @@ export default function LandingPage() {
         let data= await getTechCount();
         setRegisterCount(data.totalCount);
         
-        if(sessionStorage.getItem("visit")===null){
-            updateCounter("type=visit-pageview");
-        }else{
-            sessionStorage.setItem("visit","x");
-            updateCounter("type=pageview");
-        }
+        // if(sessionStorage.getItem("visit")===null){
+        //     updateCounter("type=visit-pageview");
+        // }else{
+        //     sessionStorage.setItem("visit","x");
+        //     updateCounter("type=pageview");
+        // }
 
         return () => clearInterval(interval);
     }, []);

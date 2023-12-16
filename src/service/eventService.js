@@ -23,8 +23,8 @@ export async function getTechCount(){
     console.log(data);
     return data;
 }
-export async function getVisitorCount(type){
-    let res=await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/getVisitorCount?${type}`);
-    let data=await res.json();
-    return data;
-}
+// export async function getVisitorCount(type){
+//     let res=await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/getVisitorCount?${type}`);
+//     let data=await res.json();
+//     return data;
+// }
