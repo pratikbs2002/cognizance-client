@@ -1,23 +1,18 @@
-import React from 'react'
-import {
-    Container,
-    Text,
-    Card,
-    Heading,
-} from "@chakra-ui/react";
+import React from "react";
+import { Container, Text, Card, Heading } from "@chakra-ui/react";
 import backd from "../../assets/main-bg.jpg";
-import Website from './Website';
-import MusicalEvent from './MusicalEvent';
-import MediaPress from './MediaPress';
-import Sponsorship from './Sponsorship';
-import Campaining from './Campaining';
-import AcTrHos from './AcTrHos';
-import RegisterComm from './RegisterComm';
-import NonTech from './NonTech';
-import Technical from './Technical';
-
-const EventCommittee=()=>{
-    return(
+import Website from "./Website";
+import MusicalEvent from "./MusicalEvent";
+import MediaPress from "./MediaPress";
+import Sponsorship from "./Sponsorship";
+import Campaining from "./Campaining";
+import AcTrHos from "./AcTrHos";
+import RegisterComm from "./RegisterComm";
+import NonTech from "./NonTech";
+import Technical from "./Technical";
+import DecComm from "./DecComm";
+const EventCommittee = () => {
+    return (
         <>
             <div
                 style={{
@@ -31,17 +26,12 @@ const EventCommittee=()=>{
                     paddingBottom: "10px",
                     marginBottom: "10px",
                     backgroundColor: "rgba(0, 0, 0, 0.442)",
-                    textAlign: "center",
+                    textAlign: "center"
                 }}
             >
                 <Text>Event Committee</Text>
             </div>
-            <Container
-                background={"transparent"}
-                className="committee-section"
-                padding={5}
-                maxW={"100%"}
-            >
+            <Container background={"transparent"} className="committee-section" padding={5} maxW={"100%"}>
                 <Container
                     padding={0}
                     marginTop={10}
@@ -50,14 +40,10 @@ const EventCommittee=()=>{
                         md: "100%",
                         lg: "100%",
                         xl: "80%",
-                        "2xl": "60%",
+                        "2xl": "60%"
                     }}
                 >
-                    <Card
-                        backgroundColor={"rgba(0, 0, 0, 0.442)"}
-                        maxW={"100%"}
-                        padding={0}
-                    >
+                    <Card backgroundColor={"rgba(0, 0, 0, 0.442)"} maxW={"100%"} padding={0}>
                         <Heading
                             padding={5}
                             textAlign={"center"}
@@ -68,12 +54,12 @@ const EventCommittee=()=>{
                             style={{
                                 background: `url(${backd})`,
                                 backgroundSize: "cover",
-                                backgroundPosition: "center",
+                                backgroundPosition: "center"
                             }}
                         >
                             WEBSITE COMMITTEE
                         </Heading>
-                        <Website/>
+                        <Website />
                     </Card>
                 </Container>
 
@@ -85,14 +71,10 @@ const EventCommittee=()=>{
                         md: "100%",
                         lg: "100%",
                         xl: "80%",
-                        "2xl": "60%",
+                        "2xl": "60%"
                     }}
                 >
-                    <Card
-                        backgroundColor={"rgba(0, 0, 0, 0.442)"}
-                        maxW={"100%"}
-                        padding={0}
-                    >
+                    <Card backgroundColor={"rgba(0, 0, 0, 0.442)"} maxW={"100%"} padding={0}>
                         <Heading
                             padding={5}
                             textAlign={"center"}
@@ -103,12 +85,12 @@ const EventCommittee=()=>{
                             style={{
                                 background: `url(${backd})`,
                                 backgroundSize: "cover",
-                                backgroundPosition: "center",
+                                backgroundPosition: "center"
                             }}
-                            >
+                        >
                             MUSICAL EVENT COMMITTEE
                         </Heading>
-                        <MusicalEvent/>
+                        <MusicalEvent />
                     </Card>
                 </Container>
 
@@ -120,14 +102,10 @@ const EventCommittee=()=>{
                         md: "100%",
                         lg: "100%",
                         xl: "80%",
-                        "2xl": "60%",
+                        "2xl": "60%"
                     }}
                 >
-                    <Card
-                        backgroundColor={"rgba(0, 0, 0, 0.442)"}
-                        maxW={"100%"}
-                        padding={0}
-                    >
+                    <Card backgroundColor={"rgba(0, 0, 0, 0.442)"} maxW={"100%"} padding={0}>
                         <Heading
                             padding={5}
                             textAlign={"center"}
@@ -138,12 +116,12 @@ const EventCommittee=()=>{
                             style={{
                                 background: `url(${backd})`,
                                 backgroundSize: "cover",
-                                backgroundPosition: "center",
+                                backgroundPosition: "center"
                             }}
                         >
                             MEDIA AND PRESS COMMITTEE
                         </Heading>
-                        <MediaPress/>
+                        <MediaPress />
                     </Card>
                 </Container>
 
@@ -155,14 +133,10 @@ const EventCommittee=()=>{
                         md: "100%",
                         lg: "100%",
                         xl: "80%",
-                        "2xl": "60%",
+                        "2xl": "60%"
                     }}
                 >
-                    <Card
-                        backgroundColor={"rgba(0, 0, 0, 0.442)"}
-                        maxW={"100%"}
-                        padding={0}
-                    >
+                    <Card backgroundColor={"rgba(0, 0, 0, 0.442)"} maxW={"100%"} padding={0}>
                         <Heading
                             padding={5}
                             textAlign={"center"}
@@ -173,12 +147,12 @@ const EventCommittee=()=>{
                             style={{
                                 background: `url(${backd})`,
                                 backgroundSize: "cover",
-                                backgroundPosition: "center",
+                                backgroundPosition: "center"
                             }}
                         >
                             SPONSORSHIP COMMITTEE
                         </Heading>
-                        <Sponsorship/>
+                        <Sponsorship />
                     </Card>
                 </Container>
 
@@ -190,14 +164,10 @@ const EventCommittee=()=>{
                         md: "100%",
                         lg: "100%",
                         xl: "80%",
-                        "2xl": "60%",
+                        "2xl": "60%"
                     }}
                 >
-                    <Card
-                        backgroundColor={"rgba(0, 0, 0, 0.442)"}
-                        maxW={"100%"}
-                        padding={0}
-                    >
+                    <Card backgroundColor={"rgba(0, 0, 0, 0.442)"} maxW={"100%"} padding={0}>
                         <Heading
                             padding={5}
                             textAlign={"center"}
@@ -208,12 +178,12 @@ const EventCommittee=()=>{
                             style={{
                                 background: `url(${backd})`,
                                 backgroundSize: "cover",
-                                backgroundPosition: "center",
+                                backgroundPosition: "center"
                             }}
                         >
                             CAMPAIGNING COMMITTEE
                         </Heading>
-                        <Campaining/>
+                        <Campaining />
                     </Card>
                 </Container>
 
@@ -225,14 +195,10 @@ const EventCommittee=()=>{
                         md: "100%",
                         lg: "100%",
                         xl: "80%",
-                        "2xl": "60%",
+                        "2xl": "60%"
                     }}
                 >
-                    <Card
-                        backgroundColor={"rgba(0, 0, 0, 0.442)"}
-                        maxW={"100%"}
-                        padding={0}
-                    >
+                    <Card backgroundColor={"rgba(0, 0, 0, 0.442)"} maxW={"100%"} padding={0}>
                         <Heading
                             padding={5}
                             textAlign={"center"}
@@ -243,12 +209,12 @@ const EventCommittee=()=>{
                             style={{
                                 background: `url(${backd})`,
                                 backgroundSize: "cover",
-                                backgroundPosition: "center",
+                                backgroundPosition: "center"
                             }}
-                        > 
+                        >
                             ACCOMMODATION, TRANSPORTATION AND HOSPITALITY COMMITTEE
                         </Heading>
-                        <AcTrHos/>
+                        <AcTrHos />
                     </Card>
                 </Container>
                 <Container
@@ -259,14 +225,10 @@ const EventCommittee=()=>{
                         md: "100%",
                         lg: "100%",
                         xl: "80%",
-                        "2xl": "60%",
+                        "2xl": "60%"
                     }}
                 >
-                    <Card
-                        backgroundColor={"rgba(0, 0, 0, 0.442)"}
-                        maxW={"100%"}
-                        padding={0}
-                    >
+                    <Card backgroundColor={"rgba(0, 0, 0, 0.442)"} maxW={"100%"} padding={0}>
                         <Heading
                             padding={5}
                             textAlign={"center"}
@@ -277,12 +239,12 @@ const EventCommittee=()=>{
                             style={{
                                 background: `url(${backd})`,
                                 backgroundSize: "cover",
-                                backgroundPosition: "center",
+                                backgroundPosition: "center"
                             }}
                         >
                             REGISTRATION COMMITTEE
                         </Heading>
-                        <RegisterComm/>
+                        <RegisterComm />
                     </Card>
                 </Container>
                 <Container
@@ -293,14 +255,10 @@ const EventCommittee=()=>{
                         md: "100%",
                         lg: "100%",
                         xl: "80%",
-                        "2xl": "60%",
+                        "2xl": "60%"
                     }}
                 >
-                    <Card
-                        backgroundColor={"rgba(0, 0, 0, 0.442)"}
-                        maxW={"100%"}
-                        padding={0}
-                    >
+                    <Card backgroundColor={"rgba(0, 0, 0, 0.442)"} maxW={"100%"} padding={0}>
                         <Heading
                             padding={5}
                             textAlign={"center"}
@@ -311,12 +269,12 @@ const EventCommittee=()=>{
                             style={{
                                 background: `url(${backd})`,
                                 backgroundSize: "cover",
-                                backgroundPosition: "center",
+                                backgroundPosition: "center"
                             }}
                         >
                             NON TECHNICAL EVENT COMMITTEE
                         </Heading>
-                        <NonTech/>
+                        <NonTech />
                     </Card>
                 </Container>
                 <Container
@@ -327,14 +285,10 @@ const EventCommittee=()=>{
                         md: "100%",
                         lg: "100%",
                         xl: "80%",
-                        "2xl": "60%",
+                        "2xl": "60%"
                     }}
                 >
-                    <Card
-                        backgroundColor={"rgba(0, 0, 0, 0.442)"}
-                        maxW={"100%"}
-                        padding={0}
-                    >
+                    <Card backgroundColor={"rgba(0, 0, 0, 0.442)"} maxW={"100%"} padding={0}>
                         <Heading
                             padding={5}
                             textAlign={"center"}
@@ -345,16 +299,46 @@ const EventCommittee=()=>{
                             style={{
                                 background: `url(${backd})`,
                                 backgroundSize: "cover",
-                                backgroundPosition: "center",
+                                backgroundPosition: "center"
                             }}
                         >
                             TECHNICAL EVENT COMMITTEE
                         </Heading>
-                        <Technical/>
+                        <Technical />
+                    </Card>
+                </Container>
+                <Container
+                    padding={0}
+                    marginTop={10}
+                    maxW={{
+                        base: "100%",
+                        md: "100%",
+                        lg: "100%",
+                        xl: "80%",
+                        "2xl": "60%"
+                    }}
+                >
+                    <Card backgroundColor={"rgba(0, 0, 0, 0.442)"} maxW={"100%"} padding={0}>
+                        <Heading
+                            padding={5}
+                            textAlign={"center"}
+                            size="md"
+                            color="white"
+                            // bg="#161d37 !important"
+                            border="1px solid white"
+                            style={{
+                                background: `url(${backd})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center"
+                            }}
+                        >
+                            DECORATION COMMITTEE
+                        </Heading>
+                        <DecComm />
                     </Card>
                 </Container>
             </Container>
         </>
     );
-}
+};
 export default EventCommittee;

@@ -2,77 +2,44 @@ import React from "react";
 import { Card, Container, Image, Text } from "@chakra-ui/react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import _1 from "../../assets/event_committee_photo/musical_event/1nishatmam.jpeg";
-import _2 from "../../assets/event_committee_photo/musical_event/2dhavalsir.gif";
-import _3 from "../../assets/event_committee_photo/musical_event/3mohit.JPG";
-import _4 from "../../assets/event_committee_photo/musical_event/4aum.jpg";
+import _1 from "../../assets/event_committee_photo/decComm/1krishna.jpg";
+import _2 from "../../assets/event_committee_photo/decComm/2ritika.jpg";
+import _3 from "../../assets/event_committee_photo/decComm/3jeet.jpg";
+import _4 from "../../assets/event_committee_photo/decComm/4harsh.jpg";
 
-const MusicalEvent = () => {
+const DecComm = () => {
     const arr = [
         {
             id: 1,
-            name: "Prof. Nishat Shaikh",
-            email: "nishatshaikh.it@charusat.ac.in",
-            department: "Infomation Technology, CSPIT",
+            name: "Prof. Krishna Patel",
+            email: "krishnapatel.ce@charusat.ac.in",
+            department: "Computer Engineering, DEPSTAR",
             profile: _1
         },
         {
             id: 2,
-            name: "Prof. Dhaval Patel",
-            email: "dhavalpatel.it@charusat.ac.in",
-            department: "Infomation Technology, CSPIT",
+            name: "Prof. Ritika Patel",
+            email: "",
+            department: "",
             profile: _2
         },
         {
             id: 3,
-            name: "Mohit Mungra",
-            email: "21it092@charusat.edu.in",
+            name: "Jeet Vansjaliya",
+            email: "21ce149@charusat.edu.in",
             department: "Infomation Technology, CSPIT",
             profile: _3
         },
         {
             id: 4,
-            name: "Aum Patel",
-            email: "22aiml002@charusat.edu.in",
-            department: "Computer Science & Engineering: AIML, CSPIT",
+            name: "Harsh Prajapati",
+            email: "22cl013@charusat.edu.in",
+            department: "Civil Department, CSPIT",
             profile: _4
         }
     ];
     return (
         <>
-            {/* <Container
-                marginTop={"20px"}
-                padding={"10px"}
-                maxW={"100%"}
-                display={"flex"}
-                flexWrap={"wrap"}
-                gap={"20px"}
-                alignItems={"center"}
-                justifyContent={"center"}
-            >
-                {arr.map((index) => (
-                    <Card background={"white"} width={"300px"} height={"300px"} key={index.id}>
-                        <Container
-                            paddingTop={30}
-                            display={"flex"}
-                            flexDirection="column"
-                            gap={"5"}
-                            width={"100"}
-                            alignItems={"center"}
-                            justifyContent="center"
-                            textAlign={"center"}
-                            margin="0"
-                        >
-                            <Image boxSize="100px" objectFit="cover" src={index.profile} alt="sponsor" />
-                            <Text color="black" fontWeight={700}>
-                                {index.name}
-                            </Text>
-                            <Text color="black">{index.email}</Text>
-                            <Text color="black">{index.department}</Text>
-                        </Container>
-                    </Card>
-                ))}
-            </Container> */}
             <Carousel
                 additionalTransfrom={0}
                 arrows={true}
@@ -140,7 +107,13 @@ const MusicalEvent = () => {
                             textAlign={"center"}
                             margin="0"
                         >
-                            <Image boxSize="100px" objectFit="cover" src={index.profile} alt="sponsor" />
+                            <Image
+                                boxSize="100px"
+                                objectFit="cover"
+                                objectPosition="top"
+                                src={index.profile}
+                                alt="sponsor"
+                            />
                             <Text fontWeight={700}>{index.name}</Text>
                             <Text>{index.email}</Text>
                             <Text>{index.department}</Text>
@@ -152,4 +125,4 @@ const MusicalEvent = () => {
     );
 };
 
-export default MusicalEvent;
+export default DecComm;
