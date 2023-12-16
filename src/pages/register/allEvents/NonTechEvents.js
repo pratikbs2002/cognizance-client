@@ -30,7 +30,8 @@ const NonTechEvents = (props) => {
             id: 18,
             image: roadies,
             title: "Roadies",
-            description: "",
+            description:
+                "Join the ultimate 'Roadies' challenge on campus—an adventure pushing mental and physical boundaries, fostering friendships, and competing for the coveted collegiate 'Roadie' title.",
             about: "Await the ultimate challenge of perseverance and fortitude as we introduce the          exhilarating 'Roadies' experience to our campus! Participants in this exhilarating event will be put through a series of difficult exercises that will test their mental and physical boundaries. The chosen 'Roadies' will set out on an adventure filled with friendship and personal development. Are you prepared to take the ultimate collegiate 'Roadie' title by proving your mettle?",
             task: [
                 "●	Task 1: Quiz",
@@ -48,7 +49,8 @@ const NonTechEvents = (props) => {
             id: 19,
             image: rapbattle,
             title: "Rap Battle",
-            description: "",
+            description:
+                "Unleash your unique perspective through the rhythm of rap—express your inner voice, let others see the world through your eyes, in your own powerful words.",
             about: "Express your inner voice in the form of a rap. Let the others see the world through your eyes in your own words.",
             task: [
                 "●	Task 1 : Participants can perform their own written lyrics for round 1.",
@@ -66,7 +68,7 @@ const NonTechEvents = (props) => {
             image: bgmi,
             title: "BGMI",
             description:
-                "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
+                "Experience the adrenaline of the BGMI Championship as university players engage in epic battles, demonstrating skills, strategies, and teamwork in a dynamic mobile e-sports tournament.",
             about:
                 "Join us for an exhilarating gaming experience in the BattleGrounds Mobile India (BGMI) Championship, where players from across various universities will battle it out for supremacy! Get ready to showcase your skills, strategies, and teamwork as you participate in one of the most exciting mobile e-sports tournaments." +
                 "Don't miss this opportunity to be a part of the BGMI Championship and prove your skills on the battlefield. Get ready for epic battles, nail-biting moments, and unforgettable gaming action! Whether you're a seasoned pro or just starting your BGMI journey, this championship is your chance to shine.",
@@ -81,9 +83,9 @@ const NonTechEvents = (props) => {
             id: 21,
             image: valorant,
             title: "Valorant",
-            description: "",
-            about:
-                `This 2-day e-sports tournament will feature 256 teams competing in a 5-round tournament across various Valorant game modes.Round 1 on Day 1 will have 256 teams divided into 16 groups playing best-of-3 Team Deathmatch matches. The field will be narrowed down to the top 128 teams for Round 2 best-of-3 Competitive matches. On Day 2, the top 32 teams from the previous day will compete in the final two rounds, with the top 2 teams playing a best-of-5 match to determine the tournament champion.Matches will take place in up to 15 labs simultaneously each day from 9AM to 5PM. The tournament will showcase top collegiate Valorant teams and players.
+            description:
+                "Dive into a 2-day Valorant esports showdown with 256 teams, spanning 5 rounds and various game modes. From Day 1's Team Deathmatch battles to Day 2's final rounds, witness top collegiate talent competing in best-of-3 and best-of-5 matches, showcasing the pinnacle of Valorant skill and strategy.",
+            about: `This 2-day e-sports tournament will feature 256 teams competing in a 5-round tournament across various Valorant game modes.Round 1 on Day 1 will have 256 teams divided into 16 groups playing best-of-3 Team Deathmatch matches. The field will be narrowed down to the top 128 teams for Round 2 best-of-3 Competitive matches. On Day 2, the top 32 teams from the previous day will compete in the final two rounds, with the top 2 teams playing a best-of-5 match to determine the tournament champion.Matches will take place in up to 15 labs simultaneously each day from 9AM to 5PM. The tournament will showcase top collegiate Valorant teams and players.
                 
                 Note: Player who wants to add their in game name and thier #id can write as: Name InGameName #1234`,
             task: ["●	Task 1 : Team Deathmatch", "●	Task 2 : Competitive Round", "●	Task 3 : Swift Play"],
@@ -100,7 +102,7 @@ const NonTechEvents = (props) => {
             image: boxSoccer,
             title: "Box Soccer",
             description:
-                "Get ready for the ultimate frenzy of Machino Mania, a thrilling competition where machines clash in a high-octane showdown! ",
+                "Experience a seated twist on soccer with Box Football—an entertaining game played inside a marked rectangular area, challenging teams to score goals while seated, adding a unique spin to traditional soccer dynamics.",
             about: "A large rectangular area is marked, usually with cones or lines, to create a box. The size of the box can vary depending on the number of players and available space. Two teams are formed, and each team has players sitting inside the designated box. The number of players per team can vary but typically ranges from 3 to 5. The objective is to score goals by kicking the ball with your feet while remaining seated inside the box. Players can pass the ball to their teammates or attempt to shoot directly at the opponents' goal. The ball should remain on the ground during play. Box football offers a unique twist to the traditional game of soccer, as players have to adapt their playing style while seated. It can be a fun and entertaining activity, especially in situations where space or mobility is limited.",
             task: [],
             teamSize: 1,
@@ -113,7 +115,8 @@ const NonTechEvents = (props) => {
             id: 23,
             image: moneyheist,
             title: "Money Heist: The Treasure Hunt Caper",
-            description: "",
+            description:
+                "Embark on an exhilarating real-life treasure hunt inspired by 'Money Heist': Solve puzzles, decipher codes, and evade the 'police' to uncover hidden treasure in this immersive experience",
             about: `"Money Heist: The Treasure Hunt Caper" is an exciting real-life treasure hunt experience 
             inspired by the popular TV series "Money Heist." In this treasure hunt game, players 
             immerse themselves in the world of heists, solving puzzles, deciphering codes, and
@@ -142,7 +145,7 @@ const NonTechEvents = (props) => {
             image: cs2,
             title: "Counter-Strike 2(CS2)",
             description:
-                "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
+                "Join the CS2 Tournament at Cognizance 23—an electrifying gaming event uniting enthusiasts, showcasing skills, and fostering healthy competition within the gaming community.",
             about: "The CS2 Tournament is an exciting gaming event organized as part of Cognizance 23, the annual techfest of our esteemed institution. This tournament aims to bring together gaming enthusiasts, showcase their skills, and promote a spirit of healthy competition within the gaming community.",
             task: [
                 "●	The tournament will consist of a double-elimination bracket.",
@@ -159,7 +162,8 @@ const NonTechEvents = (props) => {
             id: 25,
             image: paintDate,
             title: "Paint Date",
-            description: "",
+            description:
+                "Express creativity in a dynamic canvas exchange: Participants paint on 6x6 inch boards, swapping every 5 mins in this 30-min event where artistic freedom meets collaborative innovation.",
             about:
                 "1.	The participants will be given 2 6x6 inch canvas boards." +
                 "2.	They are given freedom to paint anything." +
@@ -178,7 +182,8 @@ const NonTechEvents = (props) => {
             id: 26,
             image: wireLoop,
             title: "Wire Loop Game",
-            description: "",
+            description:
+                "Master precision and steady hands in the wire loop game—an engaging physical skill challenge where players navigate a metal loop along a twisted wire, aiming to reach the end without a single mistake.",
             about: `The wire loop game is a physical skill game that challenges players to navigate a 
             metal loop along a twisted wire without touching the wire. The goal is to guide the 
             metal loop from the beginning to the end without allowing the loop to come into 
@@ -200,7 +205,8 @@ const NonTechEvents = (props) => {
             id: 27,
             image: squidGame2,
             title: "Squid Game",
-            description: "",
+            description:
+                "Experience 'Squid Game' live at our college—an action-packed event with three challenging rounds, testing your skill, strategy, and courage to emerge as the champion!",
             about: "Our college is bringing the sensation of the hit series 'Squid Game' to life with an adrenaline-pumping event. Join us for an action-packed experience that features three challenging rounds: 'Human Node', 'Tricky Lights', and 'Twisted Snakes'. Participants will be pushed to their limits as they navigate a world of competition, strategy, and entertainment. Can you outsmart your opponents, complete tasks under pressure, and emerge as a champion? Get ready to test your skill and courage in our thrilling Squid Game event!",
             task: [
                 `● Task 1: Prepare teams of 4 members in the 1st Round.`,
@@ -217,7 +223,8 @@ const NonTechEvents = (props) => {
             id: 28,
             image: lostinspace,
             title: "Galactic Quest: Lost in Space Adventure",
-            description: "",
+            description:
+                "Embark on a cosmic journey where teams navigate space, encounter challenges, and make critical decisions to determine their fate and return safely to Earth.",
             about: `Teams (or individuals) embark on a mission to navigate through the vastness of space and return safely to Earth. Along the way, they'll encounter challenges and make decisions that will determine their fate.`,
             task: [
                 `1. Cosmic Puzzle Relay:`,
@@ -244,7 +251,7 @@ const NonTechEvents = (props) => {
             image: TakeshisChamber,
             title: "Takeshis Chamber",
             description:
-                "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
+                "Join the excitement of Exclusive Games in Campus—an exhilarating day filled with fun challenges, crazy obstacles, and laughter, inspired by a famous TV show, promising a blast of adventure for all!",
             about: `Join us for an exciting Exclusive Games in Campus! Experience a day of fun challenges and 
             crazy obstacles inspired by the famous TV show. Test your skills and coordination to have a 
             blast with your friends as you tackle hilarious hurdles, big bouncy inflatables, and tricky tasks. 
@@ -257,8 +264,8 @@ const NonTechEvents = (props) => {
             ],
             teamSize: 4,
             eventFee: 200,
-            winningPrice: ["Coming Soon"],
-            isPrizesEnabled: false,
+            winningPrice: ["●	Winner: Rs. 3,000/-", "●	Runner up: Rs. 1,500/-"],
+            isPrizesEnabled: true,
             pdfName: "takeshischamber"
         }
         // {
