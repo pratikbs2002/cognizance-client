@@ -158,11 +158,16 @@ export default function Payment(props) {
             e.target.value = "";
             setTransactionError({ ...transactionError, photoProofError: "Only Images are allowed" });
         } else {
-            setTransactionError({ ...transactionError, photoProofError: "" });
-            const base = await convert64(file);
-            setBase64(base);
+            if (file.size > 2 * 1024 * 1024) {
+                e.target.value = "";
+                setTransactionError({ ...transactionError, photoProofError: "File size exceeds 5MB" });
+            } else {
+                setTransactionError({ ...transactionError, photoProofError: "" });
+                const base = await convert64(file);
+                setBase64(base);
+                setTransactionProof(file);
+            }
         }
-        setTransactionProof(file);
     };
 
     console.log(transactionProof);
