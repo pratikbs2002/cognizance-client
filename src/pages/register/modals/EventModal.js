@@ -19,7 +19,7 @@ import {
     StackDivider,
     ListItem,
     UnorderedList,
-    Text,
+    Text
 } from "@chakra-ui/react";
 import "./EventModal.css";
 
@@ -32,43 +32,37 @@ const BasicUsage = (props) => {
                 Explore more
             </Button>
 
-            <Modal
-                isOpen={isOpen}
-                onClose={onClose}
-                size={"6xl"}
-                closeOnOverlayClick={false}
-                isCentered
-            >
+            <Modal isOpen={isOpen} onClose={onClose} size={"6xl"} closeOnOverlayClick={false} isCentered>
                 <ModalOverlay />
                 <ModalContent
+                    margin={0}
                     bg="white"
                     p={10}
                     paddingBottom={0}
+                    paddingTop={"40px"}
                     // maxH="600px"
                 >
                     <ModalHeader>
-                        <Heading as="h1" size={"lg"}>
+                        <Heading textAlign={{ base: "center", md: "initial" }} as="h1" size={"lg"}>
                             {props.eventName}
                         </Heading>
                     </ModalHeader>
 
                     <ModalCloseButton />
 
-                    <ModalBody>
-                        <Text fontSize={"xl"} p={5} pt={0}>
+                    <ModalBody margin={0} padding={0}>
+                        <Text textAlign={{ base: "center", md: "initial" }} fontSize={"xl"} p={5} pt={0}>
                             Team Size: {props.teamSize}
                         </Text>
 
                         <Box>
                             <HStack
                                 spacing={10}
-                                divider={
-                                    <StackDivider borderColor="gray.200" />
-                                }
+                                divider={<StackDivider borderColor="gray.200" />}
                                 align={{ base: "flex-start", md: "flex-start" }}
                                 justifyContent={{
                                     base: "center",
-                                    md: "space-between",
+                                    md: "space-between"
                                 }}
                                 flexDirection={{ base: "column", md: "row" }}
                             >
@@ -80,105 +74,108 @@ const BasicUsage = (props) => {
                                             objectFit: "contain",
                                             // border: "1px solid",
                                             borderColor: "gray",
-                                            borderRadius: "10px",
+                                            borderRadius: "10px"
                                         }}
                                         src={props.image}
                                         alt={props.eventName}
                                     />
                                 </Box>
 
-                                <Box w={{ base: "100%", md: "65%" }}>
+                                <Box margin={0} padding={0} marginTop="10px" w={{ base: "100%", md: "65%" }}>
                                     <Tabs
                                         size="md"
                                         variant="enclosed"
                                         style={{
-                                            textAlign: "left",
+                                            textAlign: "left"
                                         }}
                                     >
-                                        <TabList mb="1em">
+                                        <TabList
+                                            margin={0}
+                                            padding={0}
+                                            display={"flex"}
+                                            // gap={"10px"}
+                                            alignItems={"center"}
+                                            justifyContent={{ base: "space-between", md: "initial" }}
+                                            maxWidth={{ base: "100%", md: "initial" }}
+                                            mb="1em"
+                                        >
                                             <Tab>About</Tab>
-                                            {props.taskEnabled && (
-                                                <Tab>Task</Tab>
-                                            )}
-                                            {props.prizesEnabled && (
-                                                <Tab>Prizes</Tab>
-                                            )}
-                                            {/* <Tab>Contact</Tab> */}
+                                            {props.taskEnabled && <Tab>Task</Tab>}
+                                            {props.prizesEnabled && <Tab>Prizes</Tab>}
                                         </TabList>
 
                                         <TabPanels>
-                                            <TabPanel>
+                                            <TabPanel
+                                                style={{
+                                                    backgroundColor: "#e2e8f0"
+                                                }}
+                                                padding={3}
+                                                margin={0}
+                                            >
                                                 <div
                                                     style={{
                                                         overflowY: "auto",
-                                                        maxHeight: "20vh",
+                                                        maxHeight: "20vh"
                                                     }}
                                                     className="event-registration-description"
-
                                                 >
                                                     {props.about}
                                                 </div>
-                                                {props.eventName.toLowerCase()==="musical night"&&
+                                                {props.eventName.toLowerCase() === "musical night" && (
                                                     <div className="exploreMore-note">
-                                                        <span className="title">
-                                                            Note:
-                                                        </span>
+                                                        <span className="title">Note:</span>
                                                         <span className="message">
                                                             Registration will be done offline on campus.
                                                         </span>
                                                     </div>
-                                                }
+                                                )}
                                             </TabPanel>
                                             {props.taskEnabled && (
-                                                <TabPanel>
+                                                <TabPanel
+                                                    style={{
+                                                        backgroundColor: "#e2e8f0"
+                                                    }}
+                                                >
                                                     <div
                                                         style={{
                                                             textAlign: "left",
                                                             display: "flex",
-                                                            flexDirection:
-                                                                "column",
-                                                            alignItems:
-                                                                "flex-start",
+                                                            flexDirection: "column",
+                                                            alignItems: "flex-start",
                                                             overflowY: "auto",
-                                                            maxHeight: "20vh",
+                                                            maxHeight: "20vh"
                                                         }}
                                                         className="event-registration-description"
                                                     >
                                                         <UnorderedList>
-                                                            {props?.task?.map(
-                                                                (t) => (
-                                                                    <ListItem>
-                                                                        {t}
-                                                                    </ListItem>
-                                                                )
-                                                            )}
+                                                            {props?.task?.map((t) => (
+                                                                <ListItem>{t}</ListItem>
+                                                            ))}
                                                         </UnorderedList>
                                                     </div>
                                                 </TabPanel>
                                             )}
 
                                             {props.prizesEnabled && (
-                                                <TabPanel>
+                                                <TabPanel
+                                                    style={{
+                                                        backgroundColor: "#e2e8f0"
+                                                    }}
+                                                >
                                                     <div
                                                         style={{
                                                             textAlign: "left",
                                                             display: "flex",
-                                                            flexDirection:
-                                                                "column",
-                                                            alignItems:
-                                                                "flex-start",
+                                                            flexDirection: "column",
+                                                            alignItems: "flex-start",
                                                             overflowY: "auto",
-                                                            maxHeight: "20vh",
+                                                            maxHeight: "20vh"
                                                         }}
                                                     >
                                                         <UnorderedList>
-                                                            {props?.winningPrizes?.map(
-                                                                (t) => (
-                                                                    <ListItem>
-                                                                        {t}
-                                                                    </ListItem>
-                                                                )
-                                                            )}
+                                                            {props?.winningPrizes?.map((t) => (
+                                                                <ListItem>{t}</ListItem>
+                                                            ))}
                                                         </UnorderedList>
                                                     </div>
                                                 </TabPanel>
@@ -191,13 +188,7 @@ const BasicUsage = (props) => {
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button
-                            as="a"
-                            colorScheme="blue"
-                            mr={3}
-                            download
-                            href={`pdfs/${props.pdfName}.pdf`}
-                        >
+                        <Button as="a" colorScheme="blue" mr={3} download href={`pdfs/${props.pdfName}.pdf`}>
                             Download PDF
                         </Button>
                         {/* <Button variant="outline" colorScheme="black">
