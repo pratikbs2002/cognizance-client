@@ -689,11 +689,13 @@ const EditProfile = (props) => {
 
                     {/* registrationf form and payment model */}
                     <Modal
+                        className="event-registration-general-modal"
                         isOpen={isEventRegisterModalOpen && !isLoading}
                         onClose={onEventRegisterModalClose}
                         size={"6xl"}
                         closeOnOverlayClick={false}
                         isCentered
+                        scrollBehavior="inside"
                     >
                         <ModalOverlay />
                         <ModalContent
@@ -701,13 +703,11 @@ const EditProfile = (props) => {
                             p={{ base: "0", md: "10" }}
                             paddingBottom={20}
                             h={{ base: "unset", md: "80%" }}
-                            maxHeight={{ base: "unset", md: "100vh" }}
+                            maxHeight={{ base: "90vh", md: "100vh" }}
                             overflowY={"auto"}
                             className="event-registration-modal event-registration-description"
                         >
-                            <ModalHeader 
-                            marginTop={"30px"}
-                            >
+                            <ModalHeader>
                                 <Heading as="h1" size={"lg"}>
                                     Register for {props.eventName} | ₹{props.price}/-
                                 </Heading>
