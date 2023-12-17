@@ -8,14 +8,14 @@ import { cz } from "../../firebase";
 import { registerEvent } from "../../service/eventRegistrationService";
 
 export default function Payment(props) {
-    let transactionId = "";
+    // let transactionId = "";
     const [eventTransactionId, setEventTransactionId] = useState({
-        transactionId: transactionId
+        transactionId: ""
     });
     // const imgRef = useRef()
     // const [selectedImage, setSelectedImage] = useState();
     const [newImage, setNewImage] = useState("");
-    const [temp, setTemp] = useState();
+    // const [temp, setTemp] = useState();
     // const [selectedFile, setSelectedFile] = useState(null);
     const [base64, setBase64] = useState("");
 
@@ -25,9 +25,9 @@ export default function Payment(props) {
     After payment, please proceed by clicking following button to fill out the form. Our coordinators will contact you shortly. `;
     const note2 = `Please wait a moment for your proof to upload, depending on your internet connection.`;
 
-    useEffect(() => {
-        setTemp(newImage);
-    }, [newImage]);
+    // useEffect(() => {
+    //     setTemp(newImage);
+    // }, [newImage]);
 
     const fireUpload = async (file) => {
         if (!file) {
@@ -50,7 +50,9 @@ export default function Payment(props) {
         await uploadBytes(imgRef, file, metadata);
         try {
             const data = await getDownloadURL(imgRef);
+            console.log(data);
             setNewImage(data);
+            return data;
             // console.log(data);
             // console.log("Image uploaded Successfully");
         } catch (e) {
@@ -64,6 +66,10 @@ export default function Payment(props) {
             setLoad(true);
             e.preventDefault();
 
+            const data = await fireUpload(transactionProof);
+
+            console.log("newImage", data);
+
             let eventData = {
                 id: props.eventId,
                 eventType: props.eventType,
@@ -73,20 +79,66 @@ export default function Payment(props) {
                 eventParticipantInfo: props.eventRegisterCredentials,
                 eventIsAccomodationNeeded: props.isAccomodationNeeded,
                 transactionId: eventTransactionId.transactionId,
-                eventTransactionImage: newImage
+                eventTransactionImage: data
             };
 
-            await registerEvent(eventData);
+            let response = await registerEvent(eventData);
 
+            if (!response?.isAuthenticated) {
+                sessionStorage.removeItem("token");
+                toast({
+                    description: "Please login again",
+                    status: "error",
+                    duration: 5000,
+                    position: "top",
+                    isClosable: true
+                });
+                setLoad(false);
+                return;
+            }
+            if (!response?.isUserExist) {
+                toast({
+                    description: "User does not exist",
+                    status: "error",
+                    duration: 5000,
+                    position: "top",
+                    isClosable: true
+                });
+                setLoad(false);
+                return;
+            }
+            if (!response?.isEventRegistered) {
+                toast({
+                    description: response.message,
+                    status: "error",
+                    duration: 5000,
+                    position: "top",
+                    isClosable: true
+                });
+                props.onClose();
+                setLoad(false);
+                return;
+            }
+            if (response?.isEventRegistered) {
+                toast({
+                    description: response.message,
+                    status: "success",
+                    duration: 5000,
+                    position: "top",
+                    isClosable: true
+                });
+                props.onClose();
+                setLoad(false);
+            }
             // await uploadTransactionImage(base64);
             // await fireUpload();
             // console.log(eventData);
             // console.log("newImage", newImage);
 
-            if (newImage !== undefined) {
-                // setLoad();
-                props.onClose();
-            }
+            // if (newImage !== undefined) {
+            //     // setLoad();
+            //     props.onClose();
+            // }
             // console.log(data);
         } else {
             toast({
@@ -100,12 +152,14 @@ export default function Payment(props) {
         setLoad(false);
     };
 
+    const [transactionProof, setTransactionProof] = useState(null);
+
     const handlefileChange = async (e) => {
         const file = e.target.files[0];
         // setSelectedImage(file);
-
-        const ext = file.name.split(".").pop();
-        if (ext !== "jpg" && ext !== "png" && ext !== "jpeg") {
+        // file.type = "image/*";
+        // const ext = file.name.split(".").pop();
+        if (file.type !== "image/jpeg" && file.type !== "image/png" && file.type !== "image/jpg") {
             e.target.value = "";
             setTransactionError({ ...transactionError, photoProofError: "Only Images are allowed" });
         } else {
@@ -115,8 +169,10 @@ export default function Payment(props) {
         }
         // console.log("selectedImage", file);
         // console.log("newImage", newImage);
-        await fireUpload(file);
+        setTransactionProof(file);
     };
+
+    console.log(transactionProof);
     // console.log(transactionId);
     const handleChange = (e) => {
         const name = e.target.name;
@@ -305,7 +361,7 @@ export default function Payment(props) {
                                                             objectFit: "cover"
                                                         }}
                                                     />
-                                                    <p>{transactionId}</p>
+                                                    {/* <p>{transactionId}</p> */}
                                                     <span
                                                         onClick={() => {
                                                             setBase64("");
@@ -454,31 +510,16 @@ export default function Payment(props) {
                         justifyContent: "center"
                     }}
                 >
-                    {!newImage ? (
-                        <Button
-                            colorScheme="blue"
-                            mr={3}
-                            color={"white"}
-                            onClick={handleRegister}
-                            isDisabled
-                            // isLoading
-                            // loadingText="Image is being uploaded"
-                            // spinnerPlacement="start"
-                        >
-                            Submit Payment
-                        </Button>
-                    ) : (
-                        <Button
-                            isLoading={load}
-                            colorScheme="blue"
-                            mr={3}
-                            color={"white"}
-                            onClick={handleRegister}
-                            loadingText="Processing"
-                        >
-                            Submit Payment
-                        </Button>
-                    )}
+                    <Button
+                        isLoading={load}
+                        colorScheme="blue"
+                        mr={3}
+                        color={"white"}
+                        onClick={handleRegister}
+                        loadingText="Processing"
+                    >
+                        Submit Payment
+                    </Button>
                 </div>
             </div>
         </div>

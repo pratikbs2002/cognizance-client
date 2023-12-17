@@ -214,7 +214,13 @@ const TechEvents = (props) => {
             department: "DEPSTAR CE",
             description:
                 "Engage in collaborative coding excitement: 3-round competition with Problem Statement Discussion and Blind-Relay Coding phases, where teams strategize and code blindly in a relay-style challenge, aiming for participating certificates and exciting prizes for the top 3 teams.",
-            task: ["●	g"],
+            task: [
+                `Round 1: Discuss solution of the problem for 5-7 minutes and then blind code one after another.`,
+                `Those who pass 1st round would proceed for 2nd round.`,
+                `Round 2: No discussion time; blind code one after another; Code rechecking for 3-4 minutes (Not allowed to have code sheet during rechecking).`,
+                `Those who pass 2nd round would proceed for 3rd round.`,
+                `Round 3: Discuss solution of the problem for 8-10 minutes and then blind code one after another with keyboard placed upside down.`
+            ],
             contact: "",
             about: "Divide students into groups of 3. Competition is of 3 rounds. Each round features two key phases: Problem Statement Discussion and Blind-Relay Coding. In the initial phase, team members collaborate to strategize based on a provided problem statement. After discussing the problem statement, participants move to the Blind Coding phase, where they write code on a blank screen. The challenge continues with a relay-style queue, with each student coding for a specific time period while performing blind coding, and their co-team members taking turns to complete the task within a specific time duration. A participating certificate will be provided to all Participants and the top 3 teams can win exciting prizes.",
             teamSize: 3,

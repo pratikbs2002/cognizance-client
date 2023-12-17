@@ -32,7 +32,7 @@ const MusicalEvent = () => {
         },
         {
             id: 4,
-            name: "Aum Patel",
+            name: "Aum Barai",
             email: "22aiml002@charusat.edu.in",
             department: "Computer Science & Engineering: AIML, CSPIT",
             profile: _4

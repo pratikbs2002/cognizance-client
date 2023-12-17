@@ -18,14 +18,10 @@ import {
     Box,
     Spinner,
     FormHelperText,
-    Image,
+    Image
 } from "@chakra-ui/react";
 import { IoIosArrowForward } from "react-icons/io";
-import {
-    isProfileUpdatedAPI,
-    login,
-    updateProfileAPI,
-} from "../../service/authService";
+import { isProfileUpdatedAPI, login, updateProfileAPI } from "../../service/authService";
 import { useGoogleLogin } from "@react-oauth/google";
 
 const ShowRegisteredEventButton = (props) => {
@@ -34,16 +30,16 @@ const ShowRegisteredEventButton = (props) => {
     const {
         isOpen: isEditProfileModalOpen,
         onOpen: onEditProfileModalOpen,
-        onClose: onEditProfileModalClose,
+        onClose: onEditProfileModalClose
     } = useDisclosure();
     const {
         isOpen: isEventRegisterModalOpen,
         onOpen: onEventRegisterModalOpen,
-        onClose: onEventRegisterModalClose,
+        onClose: onEventRegisterModalClose
     } = useDisclosure();
     const [registerCredentials, setRegisterCredentials] = useState({});
     const [eventRegisterCredentials, setEventRegisterCredentials] = useState({
-        teamSize: props.teamSize,
+        teamSize: props.teamSize
     });
     const [isProfileUpdated, setIsProfileUpdated] = useState(false);
     const [profileError, setProfileErrors] = useState({});
@@ -74,9 +70,7 @@ const ShowRegisteredEventButton = (props) => {
         if (!registerCredentials.name?.trim()) {
             errors.name = "Name is required";
             flag = false;
-        } else if (
-            !/^[A-Za-z ]+$/.test(registerCredentials.name.toLowerCase().trim())
-        ) {
+        } else if (!/^[A-Za-z ]+$/.test(registerCredentials.name.toLowerCase().trim())) {
             errors.name = "Name must be Alphabets";
             flag = false;
         } else {
@@ -86,11 +80,7 @@ const ShowRegisteredEventButton = (props) => {
         //University Name error
         if (!registerCredentials.universityName?.trim()) {
             errors.universityName = "University name is required";
-        } else if (
-            !/^[a-z &,.'-]+$/.test(
-                registerCredentials.universityName.toLowerCase().trim()
-            )
-        ) {
+        } else if (!/^[a-z &,.'-]+$/.test(registerCredentials.universityName.toLowerCase().trim())) {
             errors.universityName = "University name must be Alphabets";
             flag = false;
         } else {
@@ -101,10 +91,7 @@ const ShowRegisteredEventButton = (props) => {
         if (!registerCredentials.mobileNumber?.trim()) {
             errors.mobileNumber = "Mobile number is require";
             flag = false;
-        } else if (
-            registerCredentials.mobileNumber.length > 10 ||
-            registerCredentials.mobileNumber.length < 10
-        ) {
+        } else if (registerCredentials.mobileNumber.length > 10 || registerCredentials.mobileNumber.length < 10) {
             errors.mobileNumber = "Length must be of 10 digits";
             flag = false;
         } else if (
@@ -132,7 +119,7 @@ const ShowRegisteredEventButton = (props) => {
         const value = event.target.value;
         setRegisterCredentials((values) => ({
             ...values,
-            [name]: value,
+            [name]: value
         }));
     };
 
@@ -152,10 +139,7 @@ const ShowRegisteredEventButton = (props) => {
         flow: "implicit",
         onSuccess: async (credentialResponse) => {
             // console.log(credentialResponse);
-            sessionStorage.setItem(
-                "token",
-                "Bearer " + credentialResponse.access_token
-            );
+            sessionStorage.setItem("token", "Bearer " + credentialResponse.access_token);
             let response = await login();
             // console.log(response);
             setIsLoading(true);
@@ -182,7 +166,7 @@ const ShowRegisteredEventButton = (props) => {
         },
         onError: () => {
             // console.log("Login Failed");
-        },
+        }
     });
 
     const [isLoading, setIsLoading] = useState(false);
@@ -195,15 +179,13 @@ const ShowRegisteredEventButton = (props) => {
                 onClick={async () => {
                     if (sessionStorage.getItem("token") !== null) {
                         setIsLoading(true);
-                        if (
-                            isProfileUpdated ||
-                            (await isProfileUpdatedRequest())
-                        ) {
+                        if (isProfileUpdated || (await isProfileUpdatedRequest())) {
                             setIsLoading(false);
                             navigate("/registeredEvents");
                         } else {
                             if (!sessionStorage.getItem("token")) {
                                 GAuth();
+                                setIsLoading(false);
                                 return;
                             }
                             onEditProfileModalOpen();
@@ -225,7 +207,7 @@ const ShowRegisteredEventButton = (props) => {
                         left: "0",
                         top: "0",
                         zIndex: "100",
-                        backgroundColor: "rgba(0,0,0,0.5)",
+                        backgroundColor: "rgba(0,0,0,0.5)"
                     }}
                 >
                     <Spinner
@@ -240,7 +222,7 @@ const ShowRegisteredEventButton = (props) => {
                             position: "fixed",
                             left: "47.5%",
                             top: "45%",
-                            zIndex: "100",
+                            zIndex: "100"
                         }}
                     />
                 </div>
@@ -267,28 +249,14 @@ const ShowRegisteredEventButton = (props) => {
                             <ModalBody>
                                 <Box>
                                     <form>
-                                        <VStack
-                                            w="full"
-                                            bg="white"
-                                            p={6}
-                                            spacing={5}
-                                        >
-                                            <VStack
-                                                w="full"
-                                                spacing={2}
-                                                alignItems="flex-start"
-                                            >
-                                                <Text
-                                                    fontSize={14}
-                                                    align="left"
-                                                >
+                                        <VStack w="full" bg="white" p={6} spacing={5}>
+                                            <VStack w="full" spacing={2} alignItems="flex-start">
+                                                <Text fontSize={14} align="left">
                                                     Name
                                                 </Text>
                                                 <FormControl>
                                                     <Input
-                                                        isInvalid={
-                                                            profileError.name
-                                                        }
+                                                        isInvalid={profileError.name}
                                                         name="name"
                                                         type="text"
                                                         pr="4.5rem"
@@ -297,14 +265,9 @@ const ShowRegisteredEventButton = (props) => {
                                                         onChange={handleChange}
                                                     />
                                                     {profileError.name ? (
-                                                        <FormHelperText
-                                                            color={"#e74d4d"}
-                                                            fontSize={13}
-                                                        >
+                                                        <FormHelperText color={"#e74d4d"} fontSize={13}>
                                                             {" "}
-                                                            {
-                                                                profileError.name
-                                                            }{" "}
+                                                            {profileError.name}{" "}
                                                         </FormHelperText>
                                                     ) : (
                                                         <></>
@@ -312,22 +275,13 @@ const ShowRegisteredEventButton = (props) => {
                                                 </FormControl>
                                             </VStack>
 
-                                            <VStack
-                                                w="full"
-                                                spacing={2}
-                                                alignItems="flex-start"
-                                            >
-                                                <Text
-                                                    fontSize={14}
-                                                    align="left"
-                                                >
+                                            <VStack w="full" spacing={2} alignItems="flex-start">
+                                                <Text fontSize={14} align="left">
                                                     University Name
                                                 </Text>
                                                 <FormControl>
                                                     <Input
-                                                        isInvalid={
-                                                            profileError.universityName
-                                                        }
+                                                        isInvalid={profileError.universityName}
                                                         name="universityName"
                                                         type="text"
                                                         pr="4.5rem"
@@ -336,14 +290,9 @@ const ShowRegisteredEventButton = (props) => {
                                                         onChange={handleChange}
                                                     />
                                                     {profileError.universityName ? (
-                                                        <FormHelperText
-                                                            color={"#e74d4d"}
-                                                            fontSize={13}
-                                                        >
+                                                        <FormHelperText color={"#e74d4d"} fontSize={13}>
                                                             {" "}
-                                                            {
-                                                                profileError.universityName
-                                                            }
+                                                            {profileError.universityName}
                                                         </FormHelperText>
                                                     ) : (
                                                         <></>
@@ -351,22 +300,13 @@ const ShowRegisteredEventButton = (props) => {
                                                 </FormControl>
                                             </VStack>
 
-                                            <VStack
-                                                w="full"
-                                                spacing={2}
-                                                alignItems="flex-start"
-                                            >
-                                                <Text
-                                                    fontSize={14}
-                                                    align="left"
-                                                >
+                                            <VStack w="full" spacing={2} alignItems="flex-start">
+                                                <Text fontSize={14} align="left">
                                                     Mobile Number
                                                 </Text>
                                                 <FormControl>
                                                     <Input
-                                                        isInvalid={
-                                                            profileError.mobileNumber
-                                                        }
+                                                        isInvalid={profileError.mobileNumber}
                                                         name="mobileNumber"
                                                         type="number"
                                                         pr="4.5rem"
@@ -375,14 +315,9 @@ const ShowRegisteredEventButton = (props) => {
                                                         onChange={handleChange}
                                                     />
                                                     {profileError.mobileNumber ? (
-                                                        <FormHelperText
-                                                            color={"#e74d4d"}
-                                                            fontSize={13}
-                                                        >
+                                                        <FormHelperText color={"#e74d4d"} fontSize={13}>
                                                             {" "}
-                                                            {
-                                                                profileError.mobileNumber
-                                                            }{" "}
+                                                            {profileError.mobileNumber}{" "}
                                                         </FormHelperText>
                                                     ) : (
                                                         <></>
@@ -395,11 +330,7 @@ const ShowRegisteredEventButton = (props) => {
                             </ModalBody>
 
                             <ModalFooter>
-                                <Button
-                                    colorScheme="blue"
-                                    mr={3}
-                                    onClick={handleRegister}
-                                >
+                                <Button colorScheme="blue" mr={3} onClick={handleRegister}>
                                     Submit
                                 </Button>
                             </ModalFooter>
