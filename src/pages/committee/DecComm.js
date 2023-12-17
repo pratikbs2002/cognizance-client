@@ -19,7 +19,7 @@ const DecComm = () => {
         {
             id: 2,
             name: "Prof. Ritika Jani",
-            email: "ritikajani.it@charusat.ac.in",
+            email: "ritikajani.dit@charusat.ac.in",
             department: "Information Technology, DEPSTAR",
             profile: _2
         },
