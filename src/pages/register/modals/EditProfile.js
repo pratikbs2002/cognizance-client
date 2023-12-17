@@ -4,6 +4,7 @@ import {
     Checkbox,
     CheckboxGroup,
     Container,
+    Divider,
     FormControl,
     FormErrorMessage,
     FormHelperText,
@@ -708,12 +709,19 @@ const EditProfile = (props) => {
                             className="event-registration-modal event-registration-description"
                         >
                             <ModalHeader>
-                                <Heading as="h1" size={"lg"}>
-                                    Register for {props.eventName} | ₹{props.price}/-
+                                <Heading as="h1" size={"lg"} maxWidth={"70%"}>
+                                    Registration | {props.eventName} | ₹{props.price}/-
                                 </Heading>
+                                <Divider marginTop={"3px"} />
                             </ModalHeader>
 
-                            <ModalCloseButton />
+                            <ModalCloseButton
+                                padding={6}
+                                color={"black"}
+                                borderRadius={"100%"}
+                                backgroundColor={"#f0f0f0"}
+                                fontSize={{ base: "15px", md: "20px" }}
+                            />
 
                             <ModalBody maxWidth={{ base: "100%" }}>
                                 {props.addEventModal || !isPaymentModalOpen ? (

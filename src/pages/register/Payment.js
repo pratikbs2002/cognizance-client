@@ -15,7 +15,7 @@ import {
     useToast
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { CloseButton } from '@chakra-ui/react'
+import { CloseButton } from "@chakra-ui/react";
 import "./EventCard.css";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
@@ -23,11 +23,10 @@ import { cz } from "../../firebase";
 import { registerEvent } from "../../service/eventRegistrationService";
 import { IoReceipt } from "react-icons/io5";
 export default function Payment(props) {
-
     const [eventTransactionId, setEventTransactionId] = useState({
         transactionId: ""
     });
-    
+
     const [newImage, setNewImage] = useState("");
     const [base64, setBase64] = useState("");
 
@@ -251,15 +250,16 @@ export default function Payment(props) {
                     Note
                 </div>
                 <Divider />
-                <div
+                <Text
+                    fontSize={{ base: "15px", md: "20px" }}
                     style={{
                         marginTop: "10px",
-                        fontSize: "20px",
+
                         textAlign: "center"
                     }}
                 >
                     {note1}
-                </div>
+                </Text>
             </div>
             <div
                 style={{
@@ -539,7 +539,7 @@ export default function Payment(props) {
                             }}
                         >
                             Note:
-                        </span>
+                        </span>{" "}
                         {note2}
                     </Text>
                 </div>
