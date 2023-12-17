@@ -187,8 +187,13 @@ const BasicUsage = (props) => {
                         </Box>
                     </ModalBody>
 
-                    <ModalFooter>
-                        <Button as="a" colorScheme="blue" mr={3} download href={`pdfs/${props.pdfName}.pdf`}>
+                    <ModalFooter
+                        display={"flex"}
+                        alignItems={"center"}
+                        maxWidth={"100%"}
+                        justifyContent={{ base: "center", md: "flex-end" }}
+                    >
+                        <Button as="a" colorScheme="blue" download href={`pdfs/${props.pdfName}.pdf`}>
                             Download PDF
                         </Button>
                         {/* <Button variant="outline" colorScheme="black">
