@@ -1,4 +1,4 @@
-import { Button, FormControl, FormErrorMessage, Input, Table, Tbody, Td, Tr } from "@chakra-ui/react";
+import { Button, FormControl, FormErrorMessage, Input, Table, Tbody, Td, Tr, useToast } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import "./EventCard.css";
 // import transaction from "../../assets/transaction.jpg";
@@ -57,6 +57,7 @@ export default function Payment(props) {
             console.log(e);
         }
     };
+    const toast = useToast();
 
     const handleRegister = async (e) => {
         if (handleBlur()) {
@@ -87,7 +88,15 @@ export default function Payment(props) {
                 props.onClose();
             }
             // console.log(data);
-        } else alert("Error registering event");
+        } else {
+            toast({
+                description: "Error registering event",
+                status: "error",
+                duration: 5000,
+                position: "top",
+                isClosable: true
+            });
+        }
         setLoad(false);
     };
 

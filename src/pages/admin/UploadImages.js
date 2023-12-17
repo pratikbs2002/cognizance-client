@@ -1,12 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import {
-    Box,
-    Button,
-    FormControl,
-    FormLabel,
-    FormHelperText,
-} from "@chakra-ui/react";
+import { Box, Button, FormControl, FormLabel, FormHelperText, useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { useDropzone } from "react-dropzone";
@@ -16,12 +10,13 @@ import {
     downloadNonTechEventRegistrationSheet,
     downloadTechEventRegistrationSheet,
     downloadWorkshopRegistrationSheet,
-    uploadImage,
+    uploadImage
 } from "../../service/privateService";
 import styles from "./fileUploader";
 import "../photoGallery/PhotoGallery.css";
 
 export default function UploadImages() {
+    const toast = useToast();
     const navigate = useNavigate();
     const [files, setFiles] = useState([]);
 
@@ -34,15 +29,19 @@ export default function UploadImages() {
             const link = document.createElement("a");
             link.href = url;
             const d = new Date();
-            link.setAttribute(
-                "download",
-                `Tech Events Registrations Sheet - Cognizance 2024.xlsx`
-            );
+            link.setAttribute("download", `Tech Events Registrations Sheet - Cognizance 2024.xlsx`);
             document.body.appendChild(link);
             link.click();
         } else {
             const parseRes = await res.json();
-            alert(parseRes.message);
+            // alert(parseRes.message);
+            toast({
+                description: parseRes.message,
+                status: "info",
+                duration: 5000,
+                position: "top",
+                isClosable: true
+            });
         }
     };
 
@@ -55,15 +54,19 @@ export default function UploadImages() {
             const link = document.createElement("a");
             link.href = url;
             const d = new Date();
-            link.setAttribute(
-                "download",
-                `Workshops Registrations Sheet - Cognizance 2024.xlsx`
-            );
+            link.setAttribute("download", `Workshops Registrations Sheet - Cognizance 2024.xlsx`);
             document.body.appendChild(link);
             link.click();
         } else {
             const parseRes = await res.json();
-            alert(parseRes.message);
+            // alert(parseRes.message);
+            toast({
+                description: parseRes.message,
+                status: "info",
+                duration: 5000,
+                position: "top",
+                isClosable: true
+            });
         }
     };
     const handleDownloadMusicalNightRegistrationSheet = async () => {
@@ -75,15 +78,19 @@ export default function UploadImages() {
             const link = document.createElement("a");
             link.href = url;
             const d = new Date();
-            link.setAttribute(
-                "download",
-                `Musical Nights Registrations Sheet - Cognizance 2024.xlsx`
-            );
+            link.setAttribute("download", `Musical Nights Registrations Sheet - Cognizance 2024.xlsx`);
             document.body.appendChild(link);
             link.click();
         } else {
             const parseRes = await res.json();
-            alert(parseRes.message);
+            // alert(parseRes.message);
+            toast({
+                description: parseRes.message,
+                status: "info",
+                duration: 5000,
+                position: "top",
+                isClosable: true
+            });
         }
     };
     const handleDownloadNonTechEventRegistrationSheet = async () => {
@@ -95,15 +102,19 @@ export default function UploadImages() {
             const link = document.createElement("a");
             link.href = url;
             const d = new Date();
-            link.setAttribute(
-                "download",
-                `Non Tech Events Registrations Sheet - Cognizance 2024.xlsx`
-            );
+            link.setAttribute("download", `Non Tech Events Registrations Sheet - Cognizance 2024.xlsx`);
             document.body.appendChild(link);
             link.click();
         } else {
             const parseRes = await res.json();
-            alert(parseRes.message);
+            // alert(parseRes.message);
+            toast({
+                description: parseRes.message,
+                status: "info",
+                duration: 5000,
+                position: "top",
+                isClosable: true
+            });
         }
     };
 
@@ -127,17 +138,17 @@ export default function UploadImages() {
         accept: {
             "image/jpeg": [],
             "image/png": [],
-            "image/jpg": [],
+            "image/jpg": []
         },
         onDrop: (acceptedFiles) => {
             setFiles(
                 acceptedFiles.map((file) =>
                     Object.assign(file, {
-                        preview: URL.createObjectURL(file),
+                        preview: URL.createObjectURL(file)
                     })
                 )
             );
-        },
+        }
     });
 
     async function addImage() {
@@ -164,47 +175,26 @@ export default function UploadImages() {
         <>
             <div className="photo-gallery-parent-container">
                 <div className="photo-gallery-navbar">
-                    <div
-                        className="photo-gallery-back-button"
-                        onClick={() => navigate(`/`)}
-                    >
+                    <div className="photo-gallery-back-button" onClick={() => navigate(`/`)}>
                         <IoIosArrowBack />
                         Back
                     </div>
                 </div>
-                <Box
-                    justifyContent={"center"}
-                    alignItems="center"
-                    textAlign="center"
-                >
+                <Box justifyContent={"center"} alignItems="center" textAlign="center">
                     <FormControl maxW="100%" paddingTop={10}>
                         <section className="container">
                             <div {...getRootProps({ className: "dropzone" })}>
-                                <aside style={styles.thumbsContainer}>
-                                    {thumbs}
-                                </aside>
-                                <Button
-                                    leftIcon={<MdCloudUpload fontSize={20} />}
-                                    colorScheme="blue"
-                                    variant={"solid"}
-                                >
+                                <aside style={styles.thumbsContainer}>{thumbs}</aside>
+                                <Button leftIcon={<MdCloudUpload fontSize={20} />} colorScheme="blue" variant={"solid"}>
                                     <input {...getInputProps()} />
                                     Upload
                                 </Button>
                             </div>
                         </section>
-                        <FormLabel
-                            textAlign={"center"}
-                            marginTop={"10px"}
-                            fontSize={"sm"}
-                        >
+                        <FormLabel textAlign={"center"} marginTop={"10px"} fontSize={"sm"}>
                             JPEG/JPG
                         </FormLabel>
-                        <FormHelperText
-                            id="name-helper-text"
-                            fontSize="sm"
-                            color="red.500"
-                        >
+                        <FormHelperText id="name-helper-text" fontSize="sm" color="red.500">
                             {/* {paymentInformationErrors.paymentTransactionReceipt} */}
                         </FormHelperText>
                     </FormControl>
@@ -219,28 +209,16 @@ export default function UploadImages() {
                     alignItems={"center"}
                     justifyContent={"center"}
                 >
-                    <Button
-                        onClick={handleDownloadTechEventRegistrationSheet}
-                        width={"fit-content"}
-                    >
+                    <Button onClick={handleDownloadTechEventRegistrationSheet} width={"fit-content"}>
                         Download Tech Event Registration Sheet
                     </Button>
-                    <Button
-                        onClick={handleDownloadNonTechEventRegistrationSheet}
-                        width={"fit-content"}
-                    >
+                    <Button onClick={handleDownloadNonTechEventRegistrationSheet} width={"fit-content"}>
                         Download Non Tech Event Registration Sheet
                     </Button>
-                    <Button
-                        onClick={handleDownloadWorkshopRegistrationSheet}
-                        width={"fit-content"}
-                    >
+                    <Button onClick={handleDownloadWorkshopRegistrationSheet} width={"fit-content"}>
                         Download Workshop Registration Sheet
                     </Button>
-                    <Button
-                        onClick={handleDownloadMusicalNightRegistrationSheet}
-                        width={"fit-content"}
-                    >
+                    <Button onClick={handleDownloadMusicalNightRegistrationSheet} width={"fit-content"}>
                         Download Musical Night Registration Sheet
                     </Button>
                 </Box>

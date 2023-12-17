@@ -23,7 +23,8 @@ import {
     StackDivider,
     Text,
     VStack,
-    useDisclosure
+    useDisclosure,
+    useToast
 } from "@chakra-ui/react";
 import { useGoogleLogin } from "@react-oauth/google";
 import React, { useState } from "react";
@@ -143,6 +144,7 @@ const EditProfile = (props) => {
             [name]: value
         }));
     };
+    const toast = useToast();
 
     const handleRegisterEvent = async (event) => {
         event.preventDefault();
@@ -150,7 +152,15 @@ const EditProfile = (props) => {
         if (validateRegisterEventCredentials()) {
             // console.log(eventRegisterCredentials);
             if (!sessionStorage.getItem("token")) {
-                alert("Please Login First to Register for any event!");
+                // alert("Please Login First to Register for any event!");
+                toast({
+                    title: "Authentication Failed",
+                    description: "Please Login First to Register for any event!",
+                    status: "warning",
+                    duration: 5000,
+                    position: "top",
+                    isClosable: true
+                });
                 GAuth();
             }
             let eventData = {
