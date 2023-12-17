@@ -353,7 +353,12 @@ const TechEvents = (props) => {
     const [finalData, setFinalData] = useState([]);
 
     React.useEffect(() => {
-        setFinalData(props.registeredEvent ? data.filter((item) => props.techEventIds?.includes(item.id)) : data);
+        if (props.registeredEvent) {
+            setFinalData(data.filter((item) => props.techEventIds?.includes(item.id)));
+        } else {
+            setFinalData(data.filter((item) => !props.techEventIds?.includes(item.id)));
+            setFinalData((value) => [...value, ...data.filter((item) => props.techEventIds?.includes(item.id))]);
+        }
     }, [props.techEventIds]);
 
     return (
@@ -391,6 +396,7 @@ const TechEvents = (props) => {
                                 addEventModal={props.addEventModal}
                                 addEventHandler={props.addEventHandler}
                                 registeredEvent={props.registeredEvent}
+                                isAlreadyRegistered={props.techEventIds?.includes(IData.id)}
                             />
                         )
                 )}

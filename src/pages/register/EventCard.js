@@ -8,7 +8,7 @@ import {
     AccordionButton,
     AccordionPanel,
     AccordionIcon,
-    Button,
+    Button
     // useDisclosure
 } from "@chakra-ui/react";
 import { useState } from "react";
@@ -39,17 +39,12 @@ export default function EventCard(props) {
                         objectFit="cover"
                         w="100%"
                         style={{
-                            aspectRatio: "1/1",
+                            aspectRatio: "1/1"
                         }}
                     />
 
                     <Box p={4}>
-                        <Text
-                            fontSize="20px"
-                            fontWeight="bold"
-                            height={"50px"}
-                            mb={2}
-                        >
+                        <Text fontSize="20px" fontWeight="bold" height={"50px"} mb={2}>
                             {props.title}
                         </Text>
 
@@ -77,22 +72,13 @@ export default function EventCard(props) {
                                     textAlign={"justify"}
                                     pb={4}
                                 >
-                                    {!show ? (
-                                        <>Coming Soon!!</>
-                                    ) : (
-                                        <>{props.description}</>
-                                    )}
+                                    {!show ? <>Coming Soon!!</> : <>{props.description}</>}
                                 </AccordionPanel>
                             </AccordionItem>
                         </Accordion>
 
                         {!props.registeredEvent && (
-                            <Flex
-                                width={"100%"}
-                                justify="space-between"
-                                mt={4}
-                                gap={2}
-                            >
+                            <Flex width={"100%"} justify="space-between" mt={4} gap={2}>
                                 {!props.addEventModal ? (
                                     <EditProfile
                                         eventType={props.eventType}
@@ -103,6 +89,7 @@ export default function EventCard(props) {
                                         image={props.image}
                                         isMusicalNight={props.isMusicalNight}
                                         isAccomodationNeeded={false}
+                                        isAlreadyRegistered={props.isAlreadyRegistered}
                                     />
                                 ) : (
                                     <>

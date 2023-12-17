@@ -317,7 +317,17 @@ const NonTechEvents = (props) => {
         // },
     ];
 
-    const finalData = props.registeredEvent ? data.filter((item) => props.nonTechEventIds?.includes(item.id)) : data;
+    const [finalData, setFinalData] = React.useState([]);
+
+    React.useEffect(() => {
+        if (props.registeredEvent) {
+            setFinalData(data.filter((item) => props.nonTechEventIds?.includes(item.id)));
+        } else {
+            setFinalData(data.filter((item) => !props.nonTechEventIds?.includes(item.id)));
+            setFinalData((value) => [...value, ...data.filter((item) => props.nonTechEventIds?.includes(item.id))]);
+        }
+    }, [props.nonTechEventIds]);
+
     return (
         <>
             <div
@@ -351,6 +361,7 @@ const NonTechEvents = (props) => {
                         addEventModal={props.addEventModal}
                         addEventHandler={props.addEventHandler}
                         registeredEvent={props.registeredEvent}
+                        isAlreadyRegistered={props.nonTechEventIds?.includes(IData.id)}
                     />
                 ))}
             </div>

@@ -28,11 +28,13 @@ import {
     useToast
 } from "@chakra-ui/react";
 import { useGoogleLogin } from "@react-oauth/google";
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { isProfileUpdatedAPI, login, updateProfileAPI } from "../../../service/authService";
 import Payment from "../Payment";
 
 const EditProfile = (props) => {
+    const navigate = useNavigate();
     const {
         isOpen: isEditProfileModalOpen,
         onOpen: onEditProfileModalOpen,
@@ -78,7 +80,8 @@ const EditProfile = (props) => {
             if (response?.isProfileUpdated) {
                 setIsProfileUpdated(true);
                 onEditProfileModalClose();
-                onEventRegisterModalOpen();
+                // onEventRegisterModalOpen();
+                navigate("/register");
                 setIsLoading(false);
             }
         }
@@ -352,7 +355,8 @@ const EditProfile = (props) => {
                 if (isProfileUpdated || (await isProfileUpdatedRequest())) {
                     // Call For Register Modal
                     // console.log("REGISTER MODAL");
-                    onEventRegisterModalOpen();
+                    // onEventRegisterModalOpen();
+                    navigate("/register");
                     setIsLoading(false);
                 } else {
                     // Call For Profile Modal
@@ -518,36 +522,48 @@ const EditProfile = (props) => {
 
     return (
         <>
-            {props.eventName !== "Musical Night" && (
-                <Button
-                    backgroundColor="#54cadd"
-                    color={"black"}
-                    onClick={async () => {
-                        if (sessionStorage.getItem("token") !== null) {
-                            setIsLoading(true);
-                            if (isProfileUpdated || (await isProfileUpdatedRequest())) {
-                                // Call For Register Modal
-                                // console.log("REGISTER MODAL");
-                                onEventRegisterModalOpen();
-                                setIsLoading(false);
-                            } else {
-                                // Call For Profile Modal
-                                if (!sessionStorage.getItem("token")) {
-                                    GAuth();
-                                    return;
+            {props.eventName !== "Musical Night" ? (
+                !props.isAlreadyRegistered ? (
+                    <Button
+                        backgroundColor="#54cadd"
+                        color={"black"}
+                        onClick={async () => {
+                            if (sessionStorage.getItem("token") !== null) {
+                                setIsLoading(true);
+                                if (isProfileUpdated || (await isProfileUpdatedRequest())) {
+                                    // Call For Register Modal
+                                    // console.log("REGISTER MODAL");
+                                    onEventRegisterModalOpen();
+                                    setIsLoading(false);
+                                } else {
+                                    // Call For Profile Modal
+                                    if (!sessionStorage.getItem("token")) {
+                                        GAuth();
+                                        return;
+                                    }
+                                    // console.log("PROFILE MODAL");
+                                    onEditProfileModalOpen();
+                                    setIsLoading(false);
                                 }
-                                // console.log("PROFILE MODAL");
-                                onEditProfileModalOpen();
-                                setIsLoading(false);
+                            } else {
+                                GAuth();
                             }
-                        } else {
-                            GAuth();
-                        }
-                    }}
-                >
-                    Register
-                </Button>
-            )}
+                        }}
+                    >
+                        Register
+                    </Button>
+                ) : (
+                    <Box
+                        alignSelf={"center"}
+                        color={"white"}
+                        backgroundColor={"green"}
+                        padding={"8px 5px"}
+                        borderRadius={"5px"}
+                    >
+                        Already Registered
+                    </Box>
+                )
+            ) : null}
             {isLoading ? (
                 <div
                     style={{
