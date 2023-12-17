@@ -705,7 +705,9 @@ const EditProfile = (props) => {
                             overflowY={"auto"}
                             className="event-registration-modal event-registration-description"
                         >
-                            <ModalHeader>
+                            <ModalHeader 
+                            marginTop={"30px"}
+                            >
                                 <Heading as="h1" size={"lg"}>
                                     Register for {props.eventName} | ₹{props.price}/-
                                 </Heading>
