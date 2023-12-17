@@ -10,6 +10,7 @@ import ContactUs from "./pages/contactUs/ContactUs";
 // import Committee from "./pages/committee/Committee";
 import RegisterdEvent from "./pages/registeredEvent/RegisteredEvent";
 import NewCommittee from "./pages/committee/NewCommittee";
+import ImageGallery from "./pages/TransactionImages/GetImages";
 // import Payment from "./pages/register/Payment";
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/committee" element={<NewCommittee />} />
                 <Route path="/registeredEvents" element={<RegisterdEvent />} />
+                <Route path="/paymentReceipts" element={<ImageGallery />} />
                 {/* <Route path="newComm" element={<NewCommittee/>}/> */}
             </Routes>
         </BrowserRouter>
