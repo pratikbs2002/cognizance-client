@@ -19,7 +19,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/sfbhsdmaswSM" element={<UploadImages />} />
+                <Route path="/f3d0ad4e-7a64-4571-9770-b7347920ab6d" element={<UploadImages />} />
                 <Route path="/gallery" element={<PhotoGallery />} />
                 <Route path="*" element={<LandingPage />} />
                 <Route path="/contact-us" element={<ContactUs />} />
