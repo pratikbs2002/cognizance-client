@@ -600,22 +600,37 @@ const EditProfile = (props) => {
                         size={"xl"}
                         closeOnOverlayClick={false}
                         isCentered
+                        scrollBehavior="inside"
                     >
                         <ModalOverlay />
 
-                        <ModalContent bg="white" p={10} paddingBottom={10} overflowY={"hidden"}>
+                        <ModalContent
+                            bg="white"
+                            p={{ base: "5", md: "10" }}
+                            paddingBottom={20}
+                            h={{ base: "unset", md: "80%" }}
+                            maxHeight={{ base: "90vh", md: "100vh" }}
+                            overflowY={"auto"}
+                        >
                             <ModalHeader>
-                                <Heading as="h1" size={"lg"}>
+                                <Heading as="h1" size={"lg"} maxWidth={"70%"}>
                                     User Profile
                                 </Heading>
+                                <Divider marginTop={"3px"} />
                             </ModalHeader>
 
-                            <ModalCloseButton />
+                            <ModalCloseButton
+                                padding={6}
+                                color={"black"}
+                                borderRadius={"100%"}
+                                backgroundColor={"#f0f0f0"}
+                                fontSize={{ base: "15px", md: "20px" }}
+                            />
 
-                            <ModalBody>
-                                <Box>
+                            <ModalBody padding={0} margin={0} maxWidth={{ base: "100%" }}>
+                                <Box padding={0} margin={0}>
                                     <form>
-                                        <VStack w="full" bg="white" p={6} spacing={5}>
+                                        <VStack padding={0} margin={0} w="full" bg="white" spacing={5}>
                                             <VStack w="full" spacing={2} alignItems="flex-start">
                                                 <Text fontSize={14} align="left">
                                                     Name
@@ -697,9 +712,23 @@ const EditProfile = (props) => {
                             </ModalBody>
 
                             <ModalFooter>
-                                <Button colorScheme="blue" mr={3} onClick={handleRegister}>
-                                    Submit
-                                </Button>
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        width: "100%",
+                                        justifyContent: "center",
+                                        marginTop: "20px"
+                                    }}
+                                >
+                                    <Button
+                                        onClick={handleRegister}
+                                        colorScheme="blue"
+                                        color={"white"}
+                                        style={{ maxWidth: "400px" }}
+                                    >
+                                        Submit
+                                    </Button>
+                                </div>
                             </ModalFooter>
                         </ModalContent>
                     </Modal>
