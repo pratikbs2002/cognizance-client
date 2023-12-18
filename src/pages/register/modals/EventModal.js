@@ -22,6 +22,7 @@ import {
     Text
 } from "@chakra-ui/react";
 import "./EventModal.css";
+import "./modalScrollBar.css";
 
 const BasicUsage = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -40,6 +41,8 @@ const BasicUsage = (props) => {
                     p={10}
                     paddingBottom={0}
                     paddingTop={"40px"}
+                    scrollBehavior="outside"
+                    className="general-modal"
                     // maxH="600px"
                 >
                     <ModalHeader>

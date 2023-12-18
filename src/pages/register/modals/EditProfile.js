@@ -32,6 +32,7 @@ import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { isProfileUpdatedAPI, login, updateProfileAPI } from "../../../service/authService";
 import Payment from "../Payment";
+import "./modalScrollBar.css";
 
 const EditProfile = (props) => {
     const navigate = useNavigate();
@@ -627,7 +628,7 @@ const EditProfile = (props) => {
                                 fontSize={{ base: "15px", md: "20px" }}
                             />
 
-                            <ModalBody padding={0} margin={0} maxWidth={{ base: "100%" }}>
+                            <ModalBody className="general-modal" padding={0} margin={0} maxWidth={{ base: "100%" }}>
                                 <Box padding={0} margin={0}>
                                     <form>
                                         <VStack padding={0} margin={0} w="full" bg="white" spacing={5}>
@@ -735,7 +736,6 @@ const EditProfile = (props) => {
 
                     {/* registrationf form and payment model */}
                     <Modal
-                        className="event-registration-general-modal"
                         isOpen={isEventRegisterModalOpen && !isLoading}
                         onClose={onEventRegisterModalClose}
                         size={"6xl"}
@@ -751,7 +751,6 @@ const EditProfile = (props) => {
                             h={{ base: "unset", md: "80%" }}
                             maxHeight={{ base: "90vh", md: "100vh" }}
                             overflowY={"auto"}
-                            className="event-registration-modal event-registration-description"
                         >
                             <ModalHeader>
                                 <Heading as="h1" size={"lg"} maxWidth={"70%"}>
@@ -768,7 +767,7 @@ const EditProfile = (props) => {
                                 fontSize={{ base: "15px", md: "20px" }}
                             />
 
-                            <ModalBody maxWidth={{ base: "100%" }}>
+                            <ModalBody className="general-modal" maxWidth={{ base: "100%" }}>
                                 {props.addEventModal || !isPaymentModalOpen ? (
                                     <Box padding={0} margin={0}>
                                         <HStack

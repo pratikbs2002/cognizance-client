@@ -4,10 +4,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
-
 }
-
-/* photo-gallery-navbar */
 
 .photo-gallery-navbar {
     display: flex;
@@ -28,7 +25,7 @@
     color: #54cadd;
 }
 
-/* gallery - part */
+/* gallery - part
 .gallery-container {
     padding: 100px;
 }
@@ -37,23 +34,23 @@
     height: 600px;
     overflow: scroll;
     overflow-x: hidden;
-}
+} */
 
 /* scrollbar of inside container */
-.main-container-gallery::-webkit-scrollbar {
+/* .main-container-gallery::-webkit-scrollbar {
     width: 10px;
-}
-
+} */
+/* 
 .main-container-gallery::-webkit-scrollbar-track {
     border-radius: 30px;
     background-color: rgb(247, 255, 255);
-}
+} */
 
-.main-container-gallery::-webkit-scrollbar-thumb {
+/* .main-container-gallery::-webkit-scrollbar-thumb {
     border-radius: 30px 30px 30px 30px;
     background-color: rgb(200, 155, 155);
-}
-
+} */
+/* 
 .gallery {
     -webkit-column-count: 6;
     -moz-column-count: 6;
@@ -65,10 +62,10 @@
     background-color: rgba(0, 0, 0, 0.442);
     border-radius: 10px;
     min-height: -webkit-fill-available;
-    /* height: 1000px; */
-}
+    height: 1000px;
+} */
 
-.gallery .pics {
+/* .gallery .pics {
     -webkit-transition: all 350ms ease;
     transition: all 350ms ease;
     cursor: pointer;
@@ -77,15 +74,14 @@
 }
 
 .gallery .pics:hover {
-    /* filter: opacity(0.8); */
     -ms-transform: scale(1.05);
-    /* IE 9 */
-    -webkit-transform: scale(1.05);
-    /* Safari 3-8 */
-    transform: scale(1.05);
-}
 
-@media (max-width: 991px) {
+    -webkit-transform: scale(1.05);
+ 
+    transform: scale(1.05);
+} */
+
+/* @media (max-width: 991px) {
     .gallery {
         -webkit-column-count: 5;
         -moz-column-count: 5;
@@ -131,7 +127,7 @@
         padding-left: 10px;
         height: 64px;
     }
-}
+} */
 
 .chakra-modal__close-btn {
     color: red;
@@ -140,21 +136,14 @@
 ::-webkit-scrollbar {
     width: 10px;
     background-color: #9f454e;
-    /* background-color: rgba(255, 255, 255, 0); */
-
-    /* background-image: url("../../assets/bg8.png"); */
 }
 
 ::-webkit-scrollbar-track {
     background: transparent;
     background-color: rgba(255, 0, 0, 0);
-    /* background-color: rgba(77, 76, 76, 0.1); */
-
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 30px 30px 30px 30px;
     background-color: rgb(255, 255, 255);
-    /* background-color: rgb(202, 141, 141); */
-
 }
