@@ -4,10 +4,10 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import _1 from "../../assets/event_committee_photo/nonTech/1ankursir.jpg";
 import _2 from "../../assets/event_committee_photo/nonTech/2jaysir.png";
-import _3 from "../../assets/event_committee_photo/nonTech/3jevin.jpg";
-import _4 from "../../assets/event_committee_photo/nonTech/4kushal.jpg";
-import _5 from "../../assets/event_committee_photo/nonTech/5smit.jpg";
-import _6 from "../../assets/event_committee_photo/nonTech/6bhavin.jpg";
+import _3 from "../../assets/event_committee_photo/nonTech/3mihir.jpg";
+import _4 from "../../assets/event_committee_photo/nonTech/4prapti.jpg";
+import _5 from "../../assets/event_committee_photo/nonTech/5harsh.jpg";
+// import _6 from "../../assets/event_committee_photo/nonTech/6bhavin.jpg";
 const NonTech = () => {
     const arr = [
         {
