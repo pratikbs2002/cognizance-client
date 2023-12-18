@@ -26,7 +26,7 @@ const ImageGallery = () => {
                 // Update state with the list of images
                 setImageList(images);
             } catch (error) {
-                console.error("Error fetching images:", error);
+                // console.error("Error fetching images:", error);
             }
         };
 

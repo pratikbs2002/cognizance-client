@@ -39,7 +39,7 @@ export default function Payment(props) {
 
     const fireUpload = async (file) => {
         if (!file) {
-            console.error("No image selected for upload");
+            // console.error("No image selected for upload");
             return;
         }
         const uniqueTransactionId = eventTransactionId.transactionId;
@@ -58,13 +58,13 @@ export default function Payment(props) {
         await uploadBytes(imgRef, file, metadata);
         try {
             const data = await getDownloadURL(imgRef);
-            console.log(data);
+            // console.log(data);
             setNewImage(data);
             return data;
             // console.log(data);
             // console.log("Image uploaded Successfully");
         } catch (e) {
-            console.log(e);
+            // console.log(e);
         }
     };
     const toast = useToast();
@@ -76,7 +76,7 @@ export default function Payment(props) {
 
             const data = await fireUpload(transactionProof);
 
-            console.log("newImage", data);
+            // console.log("newImage", data);
 
             let eventData = {
                 id: props.eventId,
@@ -139,7 +139,7 @@ export default function Payment(props) {
                 });
                 props.onClose();
                 setLoad(false);
-                console.log("Registered");
+                // console.log("Registered");
                 navigate(0);
             }
         }
@@ -166,7 +166,7 @@ export default function Payment(props) {
         }
     };
 
-    console.log(transactionProof);
+    // console.log(transactionProof);
     const handleChange = (e) => {
         const name = e.target.name;
 

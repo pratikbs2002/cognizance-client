@@ -12,7 +12,7 @@ export default function Register() {
     const [data, setData] = React.useState([]);
 
     const getEvents = async () => {
-        console.log("Inside");
+        // console.log("Inside");
         setIsLoading(true);
         let data = await getAllRegisteredEvents();
         // console.log(data);

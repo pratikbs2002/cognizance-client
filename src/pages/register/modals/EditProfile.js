@@ -89,7 +89,7 @@ const EditProfile = (props) => {
     };
 
     const validateRegisterCredentials = () => {
-        console.log(registerCredentials);
+        // console.log(registerCredentials);
         let errors = {};
         let flag = true;
         //name error
@@ -168,18 +168,18 @@ const EditProfile = (props) => {
                 });
                 GAuth();
             }
-            let eventData = {
-                id: props.eventId,
-                eventType: props.eventType,
-                eventTitle: props.eventName,
-                isMusicalNight: props.isMusicalNight ? true : false,
-                isCombo: props.addEventModal ? true : false,
-                // eventDate: "",
-                // eventLocation: "",
-                eventFees: props.price,
-                eventParticipantInfo: eventRegisterCredentials,
-                eventIsAccomodationNeeded: eventRegisterCredAcco.isAccomodationNeeded
-            };
+            // let eventData = {
+            //     id: props.eventId,
+            //     eventType: props.eventType,
+            //     eventTitle: props.eventName,
+            //     isMusicalNight: props.isMusicalNight ? true : false,
+            //     isCombo: props.addEventModal ? true : false,
+            //     // eventDate: "",
+            //     // eventLocation: "",
+            //     eventFees: props.price,
+            //     eventParticipantInfo: eventRegisterCredentials,
+            //     eventIsAccomodationNeeded: eventRegisterCredAcco.isAccomodationNeeded
+            // };
             // console.log(eventData.eventParticipantInfo);
             // let response = await registerEvent(eventData);
             // // console.log(response);
@@ -215,7 +215,7 @@ const EditProfile = (props) => {
     const [errorForRegisterForm, setErrorForRegisterForm] = useState({
         errors: {}
     });
-    console.log(eventRegisterCredentials);
+    // console.log(eventRegisterCredentials);
     // console.log(eventRegisterCredAcco);
     const validateRegisterEventCredentials = () => {
         let errors = {};
@@ -291,14 +291,14 @@ const EditProfile = (props) => {
                 };
             }
         }
-        console.log(errors);
+        // console.log(errors);
         setErrorForRegisterForm((value) => {
             return {
                 ...value,
                 errors
             };
         });
-        console.log(isValid);
+        // console.log(isValid);
         if (isValid) {
             setErrorForRegisterForm({
                 errors: {}
