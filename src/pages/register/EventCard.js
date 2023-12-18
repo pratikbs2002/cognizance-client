@@ -90,6 +90,7 @@ export default function EventCard(props) {
                                         isMusicalNight={props.isMusicalNight}
                                         isAccomodationNeeded={false}
                                         isAlreadyRegistered={props.isAlreadyRegistered}
+                                        isAdditionalFieldRequired={props.isAdditionalFieldRequired}
                                     />
                                 ) : (
                                     <>

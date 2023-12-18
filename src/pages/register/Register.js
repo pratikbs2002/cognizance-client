@@ -3,7 +3,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import Temp from "./Temp";
 import ShowRegisteredEventButton from "../registeredEvent/ShowRegisteredEventButton";
-import { Container, Text } from "@chakra-ui/react";
+import { Container, Text, Spinner } from "@chakra-ui/react";
 import { getAllRegisteredEvents } from "../../service/eventService";
 
 export default function Register() {
@@ -12,6 +12,8 @@ export default function Register() {
     const [data, setData] = React.useState([]);
 
     const getEvents = async () => {
+        console.log("Inside");
+        setIsLoading(true);
         let data = await getAllRegisteredEvents();
         // console.log(data);
         if (!data?.isAuthenticated) {
@@ -19,12 +21,16 @@ export default function Register() {
         } else if (data?.isFound) {
             let d = data?.data;
             setData(d);
+            setIsLoading(false);
         }
     };
 
     React.useEffect(() => {
         if (sessionStorage.getItem("token")) getEvents();
+        else setIsLoading(false);
     }, [sessionStorage.getItem("token")]);
+
+    const [isLoading, setIsLoading] = React.useState(true);
 
     return (
         <>
@@ -44,7 +50,7 @@ export default function Register() {
                         style={{
                             marginTop: "20px"
                         }}
-                        onClick={() => navigate(-1)}
+                        onClick={() => navigate("/")}
                     >
                         <IoIosArrowBack />
                         Back
@@ -81,26 +87,57 @@ export default function Register() {
                 >
                     <ShowRegisteredEventButton />
                 </Container>
-                <div
-                    style={{
-                        marginTop: "10px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center"
-                    }}
-                >
-                    <Temp
-                        addEventModal={false}
-                        registeredEvent={false}
-                        techEvents={data?.techEvents}
-                        nonTechEvents={data?.nonTechEvents}
-                        workshops={data?.workshops}
-                        techEventIds={data?.techEventIds}
-                        nonTechEventIds={data?.nonTechEventIds}
-                        workShopsIds={data?.workShopsIds}
-                    />
-                </div>
-                {/* <div
+                {isLoading && (
+                    <div
+                        style={{
+                            height: "100vh",
+                            width: "100vw",
+                            position: "fixed",
+                            left: "0",
+                            top: "0",
+                            zIndex: "100",
+                            backgroundColor: "rgba(0,0,0,0.5)"
+                        }}
+                    >
+                        <Spinner
+                            thickness="6px"
+                            speed="0.6s"
+                            emptyColor="rgba(0,0,0,0)"
+                            color="red"
+                            size="xl"
+                            style={{
+                                height: "100px",
+                                width: "100px",
+                                position: "fixed",
+                                left: "47.5%",
+                                top: "45%",
+                                zIndex: "100"
+                            }}
+                        />
+                    </div>
+                )}
+                {!isLoading && (
+                    <>
+                        <div
+                            style={{
+                                marginTop: "10px",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center"
+                            }}
+                        >
+                            <Temp
+                                addEventModal={false}
+                                registeredEvent={false}
+                                techEvents={data?.techEvents}
+                                nonTechEvents={data?.nonTechEvents}
+                                workshops={data?.workshops}
+                                techEventIds={data?.techEventIds}
+                                nonTechEventIds={data?.nonTechEventIds}
+                                workShopsIds={data?.workShopsIds}
+                            />
+                        </div>
+                        {/* <div
           style={{
             display: "flex",
             alignItems: "center",
@@ -118,6 +155,8 @@ export default function Register() {
             />
           ))}
         </div> */}
+                    </>
+                )}
             </div>
         </>
     );

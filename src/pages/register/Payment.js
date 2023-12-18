@@ -17,12 +17,14 @@ import {
 import React, { useEffect, useState } from "react";
 import { CloseButton } from "@chakra-ui/react";
 import "./EventCard.css";
+import { useNavigate } from "react-router-dom";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
 import { cz } from "../../firebase";
 import { registerEvent } from "../../service/eventRegistrationService";
 import { IoReceipt } from "react-icons/io5";
 export default function Payment(props) {
+    const navigate = useNavigate();
     const [eventTransactionId, setEventTransactionId] = useState({
         transactionId: ""
     });
@@ -137,15 +139,9 @@ export default function Payment(props) {
                 });
                 props.onClose();
                 setLoad(false);
+                console.log("Registered");
+                navigate(0);
             }
-        } else {
-            toast({
-                description: "Error registering event",
-                status: "error",
-                duration: 5000,
-                position: "top",
-                isClosable: true
-            });
         }
         setLoad(false);
     };

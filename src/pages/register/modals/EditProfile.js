@@ -215,7 +215,7 @@ const EditProfile = (props) => {
     const [errorForRegisterForm, setErrorForRegisterForm] = useState({
         errors: {}
     });
-    // console.log(eventRegisterCredentials);
+    console.log(eventRegisterCredentials);
     // console.log(eventRegisterCredAcco);
     const validateRegisterEventCredentials = () => {
         let errors = {};
@@ -267,13 +267,38 @@ const EditProfile = (props) => {
                     name: ""
                 };
             }
+
+            if (
+                (props.eventId === 20 || props.eventId === 21 || props.eventId === 24) &&
+                !eventRegisterCredentials[`participant${i}`]?.gameId?.trim()
+            ) {
+                errors[`participant${i}`] = {
+                    ...errors[`participant${i}`],
+                    gameId:
+                        props.eventId === 20
+                            ? "In Game Id is required"
+                            : props.eventId === 21
+                            ? "In Game Name is required"
+                            : props.eventId === 24
+                            ? "Steam Id Link is required"
+                            : ""
+                };
+                isValid = false;
+            } else {
+                errors[`participant${i}`] = {
+                    ...errors[`participant${i}`],
+                    gameId: ""
+                };
+            }
         }
+        console.log(errors);
         setErrorForRegisterForm((value) => {
             return {
                 ...value,
                 errors
             };
         });
+        console.log(isValid);
         if (isValid) {
             setErrorForRegisterForm({
                 errors: {}
@@ -401,6 +426,75 @@ const EditProfile = (props) => {
                     />
                     <FormErrorMessage>{errorForRegisterForm.errors[`participant${i}`]?.name}</FormErrorMessage>
                 </FormControl>
+                {props.eventId === 20 && (
+                    <>
+                        <FormControl isInvalid={!!errorForRegisterForm.errors[`participant${i}`]?.gameId}>
+                            <Input
+                                name="gameId"
+                                type="string"
+                                pr="4.5rem"
+                                fontSize={15}
+                                variant="outline"
+                                value={i === 0 ? eventRegisterCredentials?.participant0?.gameId : undefined}
+                                placeholder={
+                                    i === 0 ? "Enter Your In Game Id" : `Enter Participant${i + 1}'s In Game Id`
+                                }
+                                onChange={(event) => {
+                                    handleChangeEvent(event, i);
+                                }}
+                            />
+                            <FormErrorMessage>
+                                {errorForRegisterForm.errors[`participant${i}`]?.gameId}
+                            </FormErrorMessage>
+                        </FormControl>
+                    </>
+                )}
+                {props.eventId === 21 && (
+                    <>
+                        <FormControl isInvalid={!!errorForRegisterForm.errors[`participant${i}`]?.gameId}>
+                            <Input
+                                name="gameId"
+                                type="string"
+                                pr="4.5rem"
+                                fontSize={15}
+                                variant="outline"
+                                value={i === 0 ? eventRegisterCredentials?.participant0?.gameId : undefined}
+                                placeholder={
+                                    i === 0 ? "Enter Your In Game Name" : `Enter Participant${i + 1}'s In Game Name`
+                                }
+                                onChange={(event) => {
+                                    handleChangeEvent(event, i);
+                                }}
+                            />
+                            <FormErrorMessage>
+                                {errorForRegisterForm.errors[`participant${i}`]?.gameId}
+                            </FormErrorMessage>
+                        </FormControl>
+                    </>
+                )}
+                {props.eventId === 24 && (
+                    <>
+                        <FormControl isInvalid={!!errorForRegisterForm.errors[`participant${i}`]?.gameId}>
+                            <Input
+                                name="gameId"
+                                type="string"
+                                pr="4.5rem"
+                                fontSize={15}
+                                variant="outline"
+                                value={i === 0 ? eventRegisterCredentials?.participant0?.gameId : undefined}
+                                placeholder={
+                                    i === 0 ? "Enter Your Steam Id Link" : `Enter Participant${i + 1}'s Steam Id Link`
+                                }
+                                onChange={(event) => {
+                                    handleChangeEvent(event, i);
+                                }}
+                            />
+                            <FormErrorMessage>
+                                {errorForRegisterForm.errors[`participant${i}`]?.gameId}
+                            </FormErrorMessage>
+                        </FormControl>
+                    </>
+                )}
                 {/* <FormControl>
                     <Input
                         name="email"

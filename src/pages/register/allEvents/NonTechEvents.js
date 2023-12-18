@@ -327,7 +327,6 @@ const NonTechEvents = (props) => {
             setFinalData((value) => [...value, ...data.filter((item) => props.nonTechEventIds?.includes(item.id))]);
         }
     }, [props.nonTechEventIds]);
-
     return (
         <>
             <div
@@ -362,6 +361,7 @@ const NonTechEvents = (props) => {
                         addEventHandler={props.addEventHandler}
                         registeredEvent={props.registeredEvent}
                         isAlreadyRegistered={props.nonTechEventIds?.includes(IData.id)}
+                        isAdditionalFieldRequired={IData.id === 20 || IData.id === 21 || IData.id === 24}
                     />
                 ))}
             </div>
