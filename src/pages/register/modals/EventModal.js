@@ -69,7 +69,12 @@ const BasicUsage = (props) => {
                                 }}
                                 flexDirection={{ base: "column", md: "row" }}
                             >
-                                <Box w={{ base: "100%", md: "auto" }}>
+                                <Box
+                                    display={"flex"}
+                                    justifyContent={"center"}
+                                    alignItems={"center"}
+                                    w={{ base: "100%", md: "auto" }}
+                                >
                                     <img
                                         style={{
                                             width: "300px",
