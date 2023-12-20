@@ -1,14 +1,28 @@
 import React, { useState } from "react";
-import { Container, Divider, Text, useToast } from "@chakra-ui/react";
+import {
+    Container,
+    Divider,
+    Text,
+    useToast,
+    Box,
+    FormControl,
+    Input,
+    InputGroup,
+    InputRightElement,
+    Button,
+    Heading
+} from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowBack, IoMdEye, IoMdEyeOff } from "react-icons/io";
 import "./pages/photoGallery/PhotoGallery.css";
-import { Box, FormControl, Input, Button, Heading } from "@chakra-ui/react";
+
 export default function AdminLogin(props) {
     const toast = useToast();
     const navigate = useNavigate();
     const usernameEnv = process.env.REACT_APP_USER_NAME;
     const passwordEnv = process.env.REACT_APP_USER_PASSWORD;
+
+    const [showPassword, setShowPassword] = useState(false);
 
     const [credentials, setCredentials] = useState({
         username: "",
@@ -30,6 +44,7 @@ export default function AdminLogin(props) {
             props.setIsAdmin(false);
         }
     };
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setCredentials((prevData) => ({
@@ -52,6 +67,11 @@ export default function AdminLogin(props) {
             });
         }
     };
+
+    const handleTogglePassword = () => {
+        setShowPassword(!showPassword);
+    };
+
     return (
         <>
             <div className="photo-gallery-parent-container">
@@ -106,15 +126,32 @@ export default function AdminLogin(props) {
                             </FormControl>
                             <FormControl mt={4}>
                                 <Text color={"white"}>Password:</Text>
-                                <Input
-                                    type="password"
-                                    id="password"
-                                    name="password"
-                                    value={credentials.password}
-                                    onChange={handleChange}
-                                    variant={"outline"}
-                                    textColor={"white"}
-                                />
+                                <InputGroup>
+                                    <Input
+                                        type={showPassword ? "text" : "password"}
+                                        id="password"
+                                        name="password"
+                                        value={credentials.password}
+                                        onChange={handleChange}
+                                        variant={"outline"}
+                                        textColor={"white"}
+                                    />
+                                    <InputRightElement>
+                                        <Button
+                                            variant={"unstyled"}
+                                            backgroundColor={"transparent"}
+                                            color={"white"}
+                                            size="sm"
+                                            onClick={handleTogglePassword}
+                                            textAlign={"center"}
+                                            alignItems={"center"}
+                                            display={"flex"}
+                                            justifyContent={"center"}
+                                        >
+                                            {showPassword ? <IoMdEyeOff /> : <IoMdEye />}
+                                        </Button>
+                                    </InputRightElement>
+                                </InputGroup>
                             </FormControl>
                             <Button width={"200px"} mt={6} onClick={handleLogin}>
                                 Login
