@@ -2,9 +2,10 @@ import React from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { Navigate, useNavigate } from "react-router-dom";
 import "./Contact.css";
-import { Box, Container, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Container, Image, Text } from "@chakra-ui/react";
 import address from "../../assets/footer/adderss.png";
 import { RiMapPinRangeLine } from "react-icons/ri";
+import { HiDownload } from "react-icons/hi";
 
 export default function ContactUs() {
     const navigate = useNavigate();
@@ -64,26 +65,25 @@ export default function ContactUs() {
                                     <Text fontSize={{ base: "16px", md: "20px" }}>Rahul Mistry</Text>
                                     <Text fontSize={{ base: "16px", md: "20px" }}>+91 95583 53148</Text>
                                 </Container>
+                            </Container>
+                            <Container
+                                display={"flex"}
+                                alignItems={"center"}
+                                justifyContent={"center"}
+                                gap={"30px"}
+                                textAlign={"center"}
+                                marginTop={"30px"}
+                                flexDirection={{ base: "column", md: "row" }}
+                            >
+                                <Container textAlign={"center"}>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>Dhairya Bhavsar</Text>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>+91 90994 39337</Text>
                                 </Container>
-                                <Container
-                                    display={"flex"}
-                                    alignItems={"center"}
-                                    justifyContent={"center"}
-                                    gap={"30px"}
-                                    textAlign={"center"}
-                                    marginTop={"30px"}
-                                    flexDirection={{ base: "column", md: "row" }}
-                                >
-                                    <Container textAlign={"center"}>
-                                        <Text fontSize={{ base: "16px", md: "20px" }}>Dhairya Bhavsar</Text>
-                                        <Text fontSize={{ base: "16px", md: "20px" }}>+91 90994 39337</Text>
-                                    </Container>
-                                    <Container textAlign={"center"}>
-                                        <Text fontSize={{ base: "16px", md: "20px" }}>Khushi Kathiriya</Text>
-                                        <Text fontSize={{ base: "16px", md: "20px" }}>+91 80005 06433</Text>
-                                    </Container>
+                                <Container textAlign={"center"}>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>Khushi Kathiriya</Text>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>+91 80005 06433</Text>
                                 </Container>
-                        
+                            </Container>
                         </div>
 
                         <div className="contact-card">
@@ -101,25 +101,30 @@ export default function ContactUs() {
                             >
                                 <Container textAlign={"center"}>
                                     <Text fontSize={{ base: "16px", md: "20px" }}>Prof. Srushti Gajjar</Text>
+                                    <Text fontSize={{ base: "16px", md: "20px" }}>Prof. Vaibhavi Patel</Text>
+                                    {/* </Container>
+                                <Container textAlign={"center"}> */}
                                     <Text
+                                        marginTop={"10px"}
                                         fontSize={{ base: "16px", md: "20px" }}
                                         onClick={() => {
-                                            window.open("mailto:srushtigajjar.cse@charusat.ac.in");
+                                            window.open("mailto:accommodation.cogni@charusat.edu.in");
                                         }}
                                     >
-                                        srushtigajjar.cse@charusat.ac.in
+                                        accommodation.cogni@charusat.edu.in
                                     </Text>
                                 </Container>
-                                <Container textAlign={"center"}>
-                                    <Text fontSize={{ base: "16px", md: "20px" }}>Prof. Vaibhavi Patel</Text>
-                                    <Text
-                                        fontSize={{ base: "16px", md: "20px" }}
-                                        onClick={() => {
-                                            window.open("mailto:vaibhavipatel.cse@charusat.ac.in");
-                                        }}
+                                <Container display={"flex"} flexDirection={"row"} justifyContent={"space-between"}>
+                                    <Text fontSize={{ base: "12px", md: "16px" }}>For more information:</Text>
+                                    <Button
+                                        color="black"
+                                        bg="white"
+                                        size="sm"
+                                        leftIcon={<HiDownload />}
+                                        fontSize={"12px"}
                                     >
-                                        vaibhavipatel.cse@charusat.ac.in
-                                    </Text>
+                                        Download PDF
+                                    </Button>
                                 </Container>
                             </Container>
                         </div>
@@ -138,7 +143,7 @@ export default function ContactUs() {
                                 <Container textAlign={"center"}>
                                     <Text fontSize={{ base: "16px", md: "20px" }}>Jay Shah</Text>
                                     <Text fontSize={{ base: "16px", md: "20px" }}>+91 82007 78757</Text>
-                                    <Text  marginTop={"30px"} fontSize={"20px"} textAlign={"center"} fontWeight={"700"}>
+                                    <Text marginTop={"30px"} fontSize={"20px"} textAlign={"center"} fontWeight={"700"}>
                                         Email
                                     </Text>
                                     <Text

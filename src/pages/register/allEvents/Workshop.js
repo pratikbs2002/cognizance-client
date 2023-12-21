@@ -30,19 +30,19 @@ const Workshop = (props) => {
         {
             id: 31,
             image: Aws,
-            title: "AWS-DevOps",
+            title: "Code commit - Devops using AWS ",
             description:
                 "Embark on an immersive learning experience and gain comprehensive expertise to revolutionize your capabilities within the dynamic realm of AWS Cloud at our transformative and hands-on workshop.",
-            pdfName: "AWS-DevOps - Workshop - Cognizance 2024",
+            pdfName: "Code commit - Workshop - Cognizance 2024",
             eventFee: 200
         },
         {
             id: 32,
             image: CyberSecurity,
-            title: "Cyber Security",
+            title: "Hackharbour: Navigating Offensive seas",
             description:
                 "Explore the intricate world of Cyber Security in our comprehensive workshop, where cutting-edge techniques and hands-on learning converge to fortify your defenses and safeguard the digital landscape.",
-            pdfName: "Cyber Security - Workshop - Cognizance 2024",
+            pdfName: "Hackharbour- Workshop - Cognizance 2024",
             eventFee: 200
         },
         {
