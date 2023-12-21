@@ -115,13 +115,16 @@ export default function ContactUs() {
                                     </Text>
                                 </Container>
                                 <Container display={"flex"} flexDirection={"row"} justifyContent={"space-between"}>
-                                    <Text fontSize={{ base: "12px", md: "16px" }}>For more information:</Text>
+                                    <Text fontSize={{ base: "12px", md: "16px" }}>For more Information:</Text>
                                     <Button
                                         color="black"
                                         bg="white"
                                         size="sm"
                                         leftIcon={<HiDownload />}
                                         fontSize={"12px"}
+                                        as="a"
+                                        href="pdfs/Accommodation Guide for Students.pdf"
+                                        download
                                     >
                                         Download PDF
                                     </Button>

@@ -1,18 +1,18 @@
 import React from "react";
-import { useState } from "react";
-import { Box, Button, FormControl, FormLabel, FormHelperText, useToast } from "@chakra-ui/react";
+// import { useState } from "react";
+import { Box, Button, Container, useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
-import { useDropzone } from "react-dropzone";
-import { MdCloudUpload } from "react-icons/md";
+// import { useDropzone } from "react-dropzone";
+// import { MdCloudUpload } from "react-icons/md";
 import {
-    downloadMusicalNightRegistrationSheet,
+    // downloadMusicalNightRegistrationSheet,
     downloadNonTechEventRegistrationSheet,
     downloadTechEventRegistrationSheet,
-    downloadWorkshopRegistrationSheet,
-    uploadImage
+    downloadWorkshopRegistrationSheet
+    // uploadImage
 } from "../../service/privateService";
-import styles from "./fileUploader";
+// import styles from "./fileUploader";
 import "../photoGallery/PhotoGallery.css";
 
 export default function UploadImages() {
@@ -28,7 +28,7 @@ export default function UploadImages() {
             const url = window.URL.createObjectURL(data);
             const link = document.createElement("a");
             link.href = url;
-            const d = new Date();
+            // const d = new Date();
             link.setAttribute("download", `Tech Events Registrations Sheet - Cognizance 2024.xlsx`);
             document.body.appendChild(link);
             link.click();
@@ -53,7 +53,7 @@ export default function UploadImages() {
             const url = window.URL.createObjectURL(data);
             const link = document.createElement("a");
             link.href = url;
-            const d = new Date();
+            // const d = new Date();
             link.setAttribute("download", `Workshops Registrations Sheet - Cognizance 2024.xlsx`);
             document.body.appendChild(link);
             link.click();
@@ -103,7 +103,7 @@ export default function UploadImages() {
             const url = window.URL.createObjectURL(data);
             const link = document.createElement("a");
             link.href = url;
-            const d = new Date();
+            // const d = new Date();
             link.setAttribute("download", `Non Tech Events Registrations Sheet - Cognizance 2024.xlsx`);
             document.body.appendChild(link);
             link.click();
@@ -224,6 +224,26 @@ export default function UploadImages() {
                         Download Musical Night Registration Sheet
                     </Button> */}
                 </Box>
+
+                <Container
+                    marginTop={"40px"}
+                    gap="10px"
+                    display={"flex"}
+                    flexDirection={"column"}
+                    justifyContent={"center"}
+                    alignContent={"center"}
+                >
+                    <Box padding={2} rounded={"10px"} bg="white" color={"black"} textAlign={"center"}>
+                        Tech Event Entries: 3
+                    </Box>
+                    <Box padding={2} rounded={"10px"} bg="white" color={"black"} textAlign={"center"}>
+                        Non Tech Event Entries: 3
+                    </Box>
+                    <Box padding={2} rounded={"10px"} bg="white" color={"black"} textAlign={"center"}>
+                        Workshop Entries: 3
+                    </Box>
+                    {/* <Box>Musical Night Entries: 3</Box> */}
+                </Container>
             </div>
         </>
     );
