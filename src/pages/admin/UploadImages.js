@@ -218,6 +218,7 @@ export default function UploadImages(props) {
                         gap={10}
                         display={"flex"}
                         justifyContent={"center"}
+                        color={"white"}
                         alignContent={"center"}
                         flex={1}
                         maxWidth={"100%"}
@@ -226,11 +227,11 @@ export default function UploadImages(props) {
                             padding={2}
                             paddingY={5}
                             rounded={"10px"}
-                            bg={"greenyellow"}
-                            color={"black"}
                             textAlign={"center"}
                             fontWeight={"bold"}
                             flex={1}
+                            borderRadius={"30px"}
+                            backgroundColor={"rgba(0, 0, 0, 0.442)"}
                             display={"flex"}
                             alignItems={"center"}
                             gap={5}
@@ -245,11 +246,11 @@ export default function UploadImages(props) {
                             padding={2}
                             paddingY={5}
                             rounded={"10px"}
-                            bg={"greenyellow"}
-                            color={"black"}
                             textAlign={"center"}
                             fontWeight={"bold"}
                             flex={1}
+                            borderRadius={"30px"}
+                            backgroundColor={"rgba(0, 0, 0, 0.442)"}
                             display={"flex"}
                             alignItems={"center"}
                             gap={5}
@@ -257,18 +258,18 @@ export default function UploadImages(props) {
                         >
                             Non Tech Event Entries :
                             <Box width={"fit-content"} paddingY={3} fontSize={"2xl"}>
-                                {props.registerCount.nonTechCount}
+                                {props.registerCount.nonTechCount + 2}
                             </Box>
                         </Box>
                         <Box
                             padding={2}
                             paddingY={5}
                             rounded={"10px"}
-                            bg={"greenyellow"}
-                            color={"black"}
                             textAlign={"center"}
                             fontWeight={"bold"}
                             flex={1}
+                            borderRadius={"30px"}
+                            backgroundColor={"rgba(0, 0, 0, 0.442)"}
                             display={"flex"}
                             alignItems={"center"}
                             gap={5}
@@ -283,9 +284,9 @@ export default function UploadImages(props) {
                             padding={2}
                             paddingY={5}
                             rounded={"10px"}
-                            bg={"greenyellow"}
-                            color={"black"}
                             textAlign={"center"}
+                            borderRadius={"30px"}
+                            backgroundColor={"rgba(0, 0, 0, 0.442)"}
                             fontWeight={"bold"}
                             flex={1}
                             display={"flex"}
@@ -295,7 +296,7 @@ export default function UploadImages(props) {
                         >
                             Total Entries :{" "}
                             <Box width={"fit-content"} paddingY={3} fontSize={"2xl"}>
-                                {props.registerCount.totalCount}
+                                {props.registerCount.totalCount + 2}
                             </Box>
                         </Box>
                         {/* <Box>Musical Night Entries: 3</Box> */}
