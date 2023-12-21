@@ -15,7 +15,7 @@ import {
 // import styles from "./fileUploader";
 import "../photoGallery/PhotoGallery.css";
 
-export default function UploadImages() {
+export default function UploadImages(props) {
     const toast = useToast();
     const navigate = useNavigate();
     // const [files, setFiles] = useState([]);
@@ -203,47 +203,131 @@ export default function UploadImages() {
                     <Button onClick={handleSubmit}>Submit</Button>
                 </Box> */}
                 <Box
-                    display={"flex"}
-                    flexDirection={"column"}
-                    gap={20}
-                    mt={20}
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-around",
+                        alignItems: "center"
+                    }}
+                    paddingX={"10%"}
                     width={"100%"}
-                    alignItems={"center"}
-                    justifyContent={"center"}
+                    gap={20}
+                    mt={10}
                 >
-                    <Button onClick={handleDownloadTechEventRegistrationSheet} width={"fit-content"}>
-                        Download Tech Event Registration Sheet
-                    </Button>
-                    <Button onClick={handleDownloadNonTechEventRegistrationSheet} width={"fit-content"}>
-                        Download Non Tech Event Registration Sheet
-                    </Button>
-                    <Button onClick={handleDownloadWorkshopRegistrationSheet} width={"fit-content"}>
-                        Download Workshop Registration Sheet
-                    </Button>
-                    {/* <Button onClick={handleDownloadMusicalNightRegistrationSheet} width={"fit-content"}>
+                    <Container
+                        gap={10}
+                        display={"flex"}
+                        justifyContent={"center"}
+                        alignContent={"center"}
+                        flex={1}
+                        maxWidth={"100%"}
+                    >
+                        <Box
+                            padding={2}
+                            paddingY={5}
+                            rounded={"10px"}
+                            bg={"greenyellow"}
+                            color={"black"}
+                            textAlign={"center"}
+                            fontWeight={"bold"}
+                            flex={1}
+                            display={"flex"}
+                            alignItems={"center"}
+                            gap={5}
+                            justifyContent={"center"}
+                        >
+                            Tech Event Entries :
+                            <Box width={"fit-content"} paddingY={3} fontSize={"2xl"}>
+                                {props.registerCount.techCount}
+                            </Box>
+                        </Box>
+                        <Box
+                            padding={2}
+                            paddingY={5}
+                            rounded={"10px"}
+                            bg={"greenyellow"}
+                            color={"black"}
+                            textAlign={"center"}
+                            fontWeight={"bold"}
+                            flex={1}
+                            display={"flex"}
+                            alignItems={"center"}
+                            gap={5}
+                            justifyContent={"center"}
+                        >
+                            Non Tech Event Entries :
+                            <Box width={"fit-content"} paddingY={3} fontSize={"2xl"}>
+                                {props.registerCount.nonTechCount}
+                            </Box>
+                        </Box>
+                        <Box
+                            padding={2}
+                            paddingY={5}
+                            rounded={"10px"}
+                            bg={"greenyellow"}
+                            color={"black"}
+                            textAlign={"center"}
+                            fontWeight={"bold"}
+                            flex={1}
+                            display={"flex"}
+                            alignItems={"center"}
+                            gap={5}
+                            justifyContent={"center"}
+                        >
+                            Workshop Entries :{" "}
+                            <Box width={"fit-content"} paddingY={3} fontSize={"2xl"}>
+                                {props.registerCount.workShopsCount}
+                            </Box>
+                        </Box>
+                        <Box
+                            padding={2}
+                            paddingY={5}
+                            rounded={"10px"}
+                            bg={"greenyellow"}
+                            color={"black"}
+                            textAlign={"center"}
+                            fontWeight={"bold"}
+                            flex={1}
+                            display={"flex"}
+                            alignItems={"center"}
+                            gap={5}
+                            justifyContent={"center"}
+                        >
+                            Total Entries :{" "}
+                            <Box width={"fit-content"} paddingY={3} fontSize={"2xl"}>
+                                {props.registerCount.totalCount}
+                            </Box>
+                        </Box>
+                        {/* <Box>Musical Night Entries: 3</Box> */}
+                    </Container>
+
+                    <Box display={"flex"} flexDirection={"column"} gap={10} width={"100%"} alignItems={"center"}>
+                        <Button
+                            colorScheme="red"
+                            onClick={handleDownloadTechEventRegistrationSheet}
+                            width={"fit-content"}
+                        >
+                            Download Tech Event Registration Sheet
+                        </Button>
+                        <Button
+                            colorScheme="red"
+                            onClick={handleDownloadNonTechEventRegistrationSheet}
+                            width={"fit-content"}
+                        >
+                            Download Non Tech Event Registration Sheet
+                        </Button>
+                        <Button
+                            colorScheme="red"
+                            onClick={handleDownloadWorkshopRegistrationSheet}
+                            width={"fit-content"}
+                        >
+                            Download Workshop Registration Sheet
+                        </Button>
+                        {/* <Button onClick={handleDownloadMusicalNightRegistrationSheet} width={"fit-content"}>
                         Download Musical Night Registration Sheet
                     </Button> */}
+                    </Box>
                 </Box>
-
-                <Container
-                    marginTop={"40px"}
-                    gap="10px"
-                    display={"flex"}
-                    flexDirection={"column"}
-                    justifyContent={"center"}
-                    alignContent={"center"}
-                >
-                    <Box padding={2} rounded={"10px"} bg="white" color={"black"} textAlign={"center"}>
-                        Tech Event Entries: 3
-                    </Box>
-                    <Box padding={2} rounded={"10px"} bg="white" color={"black"} textAlign={"center"}>
-                        Non Tech Event Entries: 3
-                    </Box>
-                    <Box padding={2} rounded={"10px"} bg="white" color={"black"} textAlign={"center"}>
-                        Workshop Entries: 3
-                    </Box>
-                    {/* <Box>Musical Night Entries: 3</Box> */}
-                </Container>
             </div>
         </>
     );

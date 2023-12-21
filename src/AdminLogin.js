@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     Container,
     Divider,
@@ -15,6 +15,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack, IoMdEye, IoMdEyeOff } from "react-icons/io";
 import "./pages/photoGallery/PhotoGallery.css";
+import { getRegisterCountService } from "./service/publicService";
 
 export default function AdminLogin(props) {
     const toast = useToast();

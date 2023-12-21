@@ -7,8 +7,20 @@ export async function getImagesLinks() {
     return await fetch(`${hostUrl}/getAllImages`, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json"
         },
-        body: JSON.stringify({ locationData: locationData }),
+        body: JSON.stringify({ locationData: locationData })
     });
 }
+
+export async function getRegisterCountService() {
+    let res = await fetch(`${hostUrl}/getEventCount`);
+    let data = await res.json();
+    return data;
+}
+
+// export async function getVisitorCount(type) {
+//     let res = await fetch(`${hostUrl}/getVisitorCount?${type}`);
+//     let data = await res.json();
+//     return data;
+// }
