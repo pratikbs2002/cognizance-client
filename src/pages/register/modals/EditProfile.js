@@ -1009,14 +1009,21 @@ const EditProfile = (props) => {
                                                         )}
 
                                                         {typeof props.teamSize === "number" && participantsField}
-
-                                                        <CheckboxGroup>
-                                                            <Checkbox onChange={handleChangeEvent} name="checkbox">
-                                                                By checking this you agree that you need accomodation
-                                                                for the event <b>{props.eventName}</b> at Charusat
-                                                                campus.
-                                                            </Checkbox>
-                                                        </CheckboxGroup>
+                                                        <span 
+                                                            style={{
+                                                                backgroundColor: "#f68a1c",
+                                                                padding:".5rem 1rem",
+                                                                borderRadius: "5px",
+                                                            }}
+                                                        >
+                                                            <CheckboxGroup>
+                                                                <Checkbox onChange={handleChangeEvent} name="checkbox">
+                                                                    By checking this you agree that you need accomodation
+                                                                    for the event <b>{props.eventName}</b> at Charusat
+                                                                    campus.
+                                                                </Checkbox>
+                                                            </CheckboxGroup>
+                                                        </span>
 
                                                         <VStack>
                                                             <Button
