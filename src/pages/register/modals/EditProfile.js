@@ -1018,9 +1018,7 @@ const EditProfile = (props) => {
                                                         >
                                                             <CheckboxGroup>
                                                                 <Checkbox onChange={handleChangeEvent} name="checkbox">
-                                                                    By checking this you agree that you need <b>accomodation</b>
-                                                                    for the event <b>{props.eventName}</b> at Charusat
-                                                                    campus.
+                                                                    By checking this you agree that you need <b>accomodation</b> for the event <b>{props.eventName}</b> at Charusat campus.
                                                                 </Checkbox>
                                                             </CheckboxGroup>
                                                         </span>
