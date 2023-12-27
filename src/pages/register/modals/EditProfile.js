@@ -224,7 +224,7 @@ const EditProfile = (props) => {
             if (!eventRegisterCredentials?.teamSize) {
                 errors[`teamSize`] = {
                     ...errors[`teamSize`],
-                    teamSize: ""
+                    teamSize: "Team size is required"
                 };
                 isValid = false;
             } else {
@@ -548,8 +548,10 @@ const EditProfile = (props) => {
     const dynParticipantsField = [];
     if (typeof props.teamSize === "string") {
         const ts = props.teamSize.split("-").pop();
-        for (let i = 0; i < ts; i++) {
-            optoinList.push(<option value={i + 1}>{i + 1}</option>);
+        let min =props.teamSize.split("-")[0];
+        min=parseInt(min);
+        for (let i = min; i <= ts; i++) {
+            optoinList.push(<option value={i}>{i}</option>);
         }
 
         for (let i = 0; i < eventRegisterCredentials.teamSize; i++) {
@@ -916,7 +918,7 @@ const EditProfile = (props) => {
                                                     <VStack w="full" bg="white" p={2} spacing={5}>
                                                         {typeof props.teamSize === "string" ? (
                                                             <>
-                                                                <FormControl>
+                                                                <FormControl isInvalid={!!errorForRegisterForm.errors?.teamSize?.teamSize}>
                                                                     <Select
                                                                         variant="outline"
                                                                         name="teamSize"
@@ -926,6 +928,7 @@ const EditProfile = (props) => {
                                                                     >
                                                                         {optoinList}
                                                                     </Select>
+                                                                    <FormErrorMessage>{errorForRegisterForm.errors?.teamSize?.teamSize}</FormErrorMessage>
                                                                 </FormControl>
                                                                 {eventRegisterCredentials?.teamSize > 1 ? (
                                                                     <VStack
