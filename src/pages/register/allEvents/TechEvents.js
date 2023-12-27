@@ -305,7 +305,7 @@ const TechEvents = (props) => {
             task: ["●	Task 1 : Find the flags 8 flags", "●	Task 2 : Answer the questions"],
             contact: "",
             about: "Welcome to the Amazing Security Challenge, an exhilarating competition designed to test a series of rounds that will involve certain tasks (from decrypting ciphers, finding data hidden behind server/web pages they can find hidden info via exploiting it!",
-            teamSize: 2,
+            teamSize: "2-3",
             eventFee: 150,
             winningPrice: ["● 1st Prize: ₹ 3,000", "● 2nd Prize: ₹ 1,500"],
             isPrizesEnabled: true,
