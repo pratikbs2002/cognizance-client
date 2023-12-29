@@ -37,7 +37,8 @@ const TechEvents = (props) => {
             eventFee: 500,
             winningPrice: ["● 1st Prize: ₹ 25,000", "● 2nd Prize: ₹ 20,000"],
             isPrizesEnabled: true,
-            pdfName: "battleblitz"
+            pdfName: "battleblitz",
+            maxRegistration:45,
         },
         {
             id: 2,
@@ -56,7 +57,8 @@ const TechEvents = (props) => {
             eventFee: 200,
             winningPrice: ["● 1st Prize: ₹ 4,000", "● 2nd Prize: ₹ 2,500"],
             isPrizesEnabled: true,
-            pdfName: "robosoccer"
+            pdfName: "robosoccer",
+            maxRegistration:50,
         },
         {
             id: 3,
@@ -78,7 +80,8 @@ const TechEvents = (props) => {
             eventFee: 500,
             winningPrice: ["● Winner Prize: ₹ 5,000", "● Runner up Prize: ₹ 2,500"],
             isPrizesEnabled: true,
-            pdfName: "roborace"
+            pdfName: "roborace",
+            maxRegistration:30,
         },
         {
             id: 4,
@@ -98,7 +101,8 @@ const TechEvents = (props) => {
             eventFee: 150,
             winningPrice: ["● 1st Prize: ₹ 7,000", "● 2nd Prize: ₹ 5,000"],
             isPrizesEnabled: true,
-            pdfName: "networkhunting"
+            pdfName: "networkhunting",
+            maxRegistration:50,
         },
         {
             id: 5,
@@ -119,7 +123,8 @@ const TechEvents = (props) => {
             eventFee: 150,
             winningPrice: ["● 1st Prize: ₹ 7,000", "● 2nd Prize: ₹ 5,000"],
             isPrizesEnabled: true,
-            pdfName: "healthyswitching"
+            pdfName: "healthyswitching",
+            maxRegistration:50,
         },
         {
             id: 6,
@@ -140,7 +145,8 @@ const TechEvents = (props) => {
             eventFee: 150,
             winningPrice: ["● 1st Prize: ₹ 5,000", "● 2nd Prize: ₹ 3,000"],
             isPrizesEnabled: true,
-            pdfName: "arttech"
+            pdfName: "arttech",
+            maxRegistration:50,
         },
         {
             id: 7,
@@ -160,7 +166,8 @@ const TechEvents = (props) => {
             eventFee: 150,
             winningPrice: ["● 1st Prize: ₹ 5,000", "● 2nd Prize: ₹ 3,000"],
             isPrizesEnabled: true,
-            pdfName: "codemania"
+            pdfName: "codemania",
+            maxRegistration:50,
         },
         {
             id: 8,
@@ -182,10 +189,11 @@ const TechEvents = (props) => {
             contact: "",
             about: "Dive into the exciting world of Civil Saga! Join us for a fun-filled day of quizzes, stimulating discussions about all objects of civil engineering and model-making. Whether you're a seasoned pro or just starting, there's something for everyone. Let's explore and enjoy the world of civil engineering together!",
             teamSize: "2-4",
-            eventFee: 750,
+            eventFee: 250,
             winningPrice: ["● 1st Prize: ₹ 10,000", "● 2nd Prize: ₹ 5,000"],
             isPrizesEnabled: true,
-            pdfName: "civilsaga"
+            pdfName: "civilsaga",
+            maxRegistration:25,
         },
         {
             id: 9,
@@ -205,7 +213,8 @@ const TechEvents = (props) => {
             eventFee: 200,
             winningPrice: ["● 1st Prize: ₹ 3,000", "● 2nd Prize: ₹ 2,000"],
             isPrizesEnabled: true,
-            pdfName: "rollercoaster"
+            pdfName: "rollercoaster",
+            maxRegistration:15,
         },
         {
             id: 10,
@@ -227,7 +236,8 @@ const TechEvents = (props) => {
             eventFee: 300,
             winningPrice: ["● 1st Prize: ₹ 4,000", "● 2nd Prize: ₹ 2,000"],
             isPrizesEnabled: true,
-            pdfName: "relay"
+            pdfName: "relay",
+            maxRegistration:50,
         },
         {
             id: 11,
@@ -245,7 +255,8 @@ const TechEvents = (props) => {
             eventFee: 150,
             winningPrice: ["● 1st Prize: ₹ 4,000", "● 2nd Prize: ₹ 2,000"],
             isPrizesEnabled: true,
-            pdfName: "keymasters"
+            pdfName: "keymasters",
+            maxRegistration:100,
         },
         {
             id: 12,
@@ -261,7 +272,8 @@ const TechEvents = (props) => {
             eventFee: 150,
             winningPrice: ["● 1st Prize: ₹ 1,500", "● 2nd Prize: ₹ 1,000"],
             isPrizesEnabled: true,
-            pdfName: "breakthequery"
+            pdfName: "breakthequery",
+            maxRegistration:30,
         },
         {
             id: 13,
@@ -277,7 +289,8 @@ const TechEvents = (props) => {
             eventFee: 150,
             winningPrice: ["● 1st Prize: ₹ 1,500", "● 2nd Prize: ₹ 1,000"],
             isPrizesEnabled: true,
-            pdfName: "designingfordelight"
+            pdfName: "designingfordelight",
+            maxRegistration:30,
         },
         {
             id: 14,
@@ -293,7 +306,8 @@ const TechEvents = (props) => {
             eventFee: 150,
             winningPrice: ["● 1st Prize: ₹ 3,000", "● 2nd Prize: ₹ 1,500"],
             isPrizesEnabled: true,
-            pdfName: "pingdatastructure"
+            pdfName: "pingdatastructure",
+            maxRegistration:45,
         },
         {
             id: 15,
@@ -309,7 +323,8 @@ const TechEvents = (props) => {
             eventFee: 150,
             winningPrice: ["● 1st Prize: ₹ 3,000", "● 2nd Prize: ₹ 1,500"],
             isPrizesEnabled: true,
-            pdfName: "capturetheflag"
+            pdfName: "capturetheflag",
+            maxRegistration:45,
         },
         {
             id: 16,
@@ -330,7 +345,8 @@ const TechEvents = (props) => {
             eventFee: 420,
             winningPrice: ["● 1st Prize: ₹ 5,000", "● 2nd Prize: ₹ 3,000"],
             isPrizesEnabled: true,
-            pdfName: "digitalscavengerhunt"
+            pdfName: "digitalscavengerhunt",
+            maxRegistration:40,
         },
         {
             id: 17,
@@ -346,7 +362,8 @@ const TechEvents = (props) => {
             eventFee: 150,
             winningPrice: ["● 1st Prize: ₹ 2,500", "● 2nd Prize: ₹ 2,000"],
             isPrizesEnabled: true,
-            pdfName: "graphicsgladiator"
+            pdfName: "graphicsgladiator",
+            maxRegistration:100,
         }
     ];
 

@@ -43,7 +43,8 @@ const NonTechEvents = (props) => {
             eventFee: 200,
             winningPrice: ["●	Winner: ₹ 3,000", "● Runner up's: ₹ 1,500"],
             isPrizesEnabled: true,
-            pdfName: "roadies"
+            pdfName: "roadies",
+            maxRegistration:10,
         },
         {
             id: 19,
@@ -61,7 +62,8 @@ const NonTechEvents = (props) => {
             eventFee: 150,
             winningPrice: ["Coming Soon"],
             isPrizesEnabled: false,
-            pdfName: "rapbattle"
+            pdfName: "rapbattle",
+            maxRegistration:30,
         },
         {
             id: 20,
@@ -77,7 +79,8 @@ const NonTechEvents = (props) => {
             eventFee: 160,
             winningPrice: ["●	Winner: Rs. 4,000/-", "●	Runner up: Rs. 3,000/-"],
             isPrizesEnabled: true,
-            pdfName: "bgmi"
+            pdfName: "bgmi",
+            maxRegistration:128,
         },
         {
             id: 21,
@@ -94,7 +97,8 @@ const NonTechEvents = (props) => {
             maxNumberOfTeams: 256,
             winningPrice: ["●	Winner: Rs. 7,500/-", "●	Runner up: Rs. 5,000/-"],
             isPrizesEnabled: true,
-            pdfName: "valorant"
+            pdfName: "valorant",
+            maxRegistration:256,
         },
 
         {
@@ -109,7 +113,8 @@ const NonTechEvents = (props) => {
             eventFee: 150,
             winningPrice: ["●	Winner: Rs. 1,500/-", "●	Runner up: Rs. 1,000/-"],
             isPrizesEnabled: true,
-            pdfName: "boxsoccer"
+            pdfName: "boxsoccer",
+            maxRegistration:150,
         },
         {
             id: 23,
@@ -138,7 +143,8 @@ const NonTechEvents = (props) => {
             eventFee: 150,
             winningPrice: ["●	Winner: Rs. 3,000/-", "●	Runner up: Rs. 1,500/-"],
             isPrizesEnabled: true,
-            pdfName: "moneyheist"
+            pdfName: "moneyheist",
+            maxRegistration:40,
         },
         {
             id: 24,
@@ -155,7 +161,8 @@ const NonTechEvents = (props) => {
             eventFee: 250,
             winningPrice: ["●	Winner: Rs. 5,000/-", "●	Runner up: Rs. 3,000/-"],
             isPrizesEnabled: true,
-            pdfName: "cs2"
+            pdfName: "cs2",
+            maxRegistration:55,
         },
 
         {
@@ -176,7 +183,8 @@ const NonTechEvents = (props) => {
             eventFee: 200,
             winningPrice: ["●	Winner: Rs. 1,500/-", "●	Runner up: Rs. 1,000/-"],
             isPrizesEnabled: true,
-            pdfName: "paintdate"
+            pdfName: "paintdate",
+            maxRegistration:60,
         },
         {
             id: 26,
@@ -199,7 +207,8 @@ const NonTechEvents = (props) => {
             eventFee: 150,
             winningPrice: ["●	Winner: Rs. 1,000/-", "●	Runner up: Rs. 500/-"],
             isPrizesEnabled: true,
-            pdfName: "wireloop"
+            pdfName: "wireloop",
+            maxRegistration:25,
         },
         {
             id: 27,
@@ -217,7 +226,8 @@ const NonTechEvents = (props) => {
             eventFee: 150,
             winningPrice: ["●	Winner: Rs. 6,000/-", "●	Runner up: Rs. 3,000/-"],
             isPrizesEnabled: true,
-            pdfName: "squidgame"
+            pdfName: "squidgame",
+            maxRegistration:250,
         },
         {
             id: 28,
@@ -244,7 +254,8 @@ const NonTechEvents = (props) => {
             eventFee: 150,
             winningPrice: ["●	Winner: Rs. 3,000/-", "●	Runner up: Rs. 1,500/-"],
             isPrizesEnabled: true,
-            pdfName: "galacticquest"
+            pdfName: "galacticquest",
+            maxRegistration:40,
         },
         {
             id: 29,
@@ -266,7 +277,8 @@ const NonTechEvents = (props) => {
             eventFee: 200,
             winningPrice: ["●	Winner: Rs. 3,000/-", "●	Runner up: Rs. 1,500/-"],
             isPrizesEnabled: true,
-            pdfName: "takeshischamber"
+            pdfName: "takeshischamber",
+            maxRegistration:50,
         }
         // {
         //     id: 19,
