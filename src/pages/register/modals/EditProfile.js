@@ -548,8 +548,8 @@ const EditProfile = (props) => {
     const dynParticipantsField = [];
     if (typeof props.teamSize === "string") {
         const ts = props.teamSize.split("-").pop();
-        let min =props.teamSize.split("-")[0];
-        min=parseInt(min);
+        let min = props.teamSize.split("-")[0];
+        min = parseInt(min);
         for (let i = min; i <= ts; i++) {
             optoinList.push(<option value={i}>{i}</option>);
         }
@@ -616,11 +616,12 @@ const EditProfile = (props) => {
             );
         }
     }
-
+    console.log(props);
     return (
         <>
             {props.eventName !== "Musical Night" ? (
-                !props.isAlreadyRegistered ? (
+                !props.isAlreadyRegistered &&
+                props.maxRegistration > (typeof props?.registerCount === "undefined" ? 0 : props?.registerCount) ? (
                     <Button
                         backgroundColor="#54cadd"
                         color={"black"}
@@ -649,7 +650,7 @@ const EditProfile = (props) => {
                     >
                         Register
                     </Button>
-                ) : (
+                ) : props.isAlreadyRegistered ? (
                     <Box
                         alignSelf={"center"}
                         color={"white"}
@@ -658,6 +659,16 @@ const EditProfile = (props) => {
                         borderRadius={"5px"}
                     >
                         Already Registered
+                    </Box>
+                ) : (
+                    <Box
+                        alignSelf={"center"}
+                        color={"white"}
+                        backgroundColor={"red.500"}
+                        padding={"8px 5px"}
+                        borderRadius={"5px"}
+                    >
+                        Registration Full!
                     </Box>
                 )
             ) : null}
@@ -883,12 +894,32 @@ const EditProfile = (props) => {
                                         >
                                             <Box
                                                 display={"flex"}
+                                                flexDirection={"column"}
+                                                gap={10}
                                                 alignItems={"center"}
                                                 justifyContent={"center"}
                                                 padding={0}
                                                 margin={0}
                                                 w={{ base: "100%", md: "auto" }}
                                             >
+                                                {
+                                                    <Box
+                                                        alignSelf={"center"}
+                                                        backgroundColor={"#f68a1c"}
+                                                        padding={"0.5rem 1rem"}
+                                                        borderRadius={"5px"}
+                                                        fontWeight={500}
+                                                    >
+                                                        Hurry Up! Only{" "}
+                                                        <b>
+                                                            {props.maxRegistration -
+                                                                (typeof props?.registerCount === "undefined"
+                                                                    ? 0
+                                                                    : props?.registerCount)}
+                                                        </b>{" "}
+                                                        registrations left
+                                                    </Box>
+                                                }
                                                 <Image
                                                     src={props.image}
                                                     alt="Image"
@@ -918,7 +949,12 @@ const EditProfile = (props) => {
                                                     <VStack w="full" bg="white" p={2} spacing={5}>
                                                         {typeof props.teamSize === "string" ? (
                                                             <>
-                                                                <FormControl isInvalid={!!errorForRegisterForm.errors?.teamSize?.teamSize}>
+                                                                <FormControl
+                                                                    isInvalid={
+                                                                        !!errorForRegisterForm.errors?.teamSize
+                                                                            ?.teamSize
+                                                                    }
+                                                                >
                                                                     <Select
                                                                         variant="outline"
                                                                         name="teamSize"
@@ -928,7 +964,12 @@ const EditProfile = (props) => {
                                                                     >
                                                                         {optoinList}
                                                                     </Select>
-                                                                    <FormErrorMessage>{errorForRegisterForm.errors?.teamSize?.teamSize}</FormErrorMessage>
+                                                                    <FormErrorMessage>
+                                                                        {
+                                                                            errorForRegisterForm.errors?.teamSize
+                                                                                ?.teamSize
+                                                                        }
+                                                                    </FormErrorMessage>
                                                                 </FormControl>
                                                                 {eventRegisterCredentials?.teamSize > 1 ? (
                                                                     <VStack
@@ -1012,16 +1053,18 @@ const EditProfile = (props) => {
                                                         )}
 
                                                         {typeof props.teamSize === "number" && participantsField}
-                                                        <span 
+                                                        <span
                                                             style={{
                                                                 backgroundColor: "#f68a1c",
-                                                                padding:".5rem 1rem",
-                                                                borderRadius: "5px",
+                                                                padding: ".5rem 1rem",
+                                                                borderRadius: "5px"
                                                             }}
                                                         >
                                                             <CheckboxGroup>
                                                                 <Checkbox onChange={handleChangeEvent} name="checkbox">
-                                                                    By checking this you agree that you need <b>accomodation</b> for the event <b>{props.eventName}</b> at Charusat campus.
+                                                                    By checking this you agree that you need{" "}
+                                                                    <b>accomodation</b> for the event{" "}
+                                                                    <b>{props.eventName}</b> at Charusat campus.
                                                                 </Checkbox>
                                                             </CheckboxGroup>
                                                         </span>
@@ -1050,6 +1093,7 @@ const EditProfile = (props) => {
                                         isAccomodationNeeded={eventRegisterCredAcco.isAccomodationNeeded}
                                         eventRegisterCredentials={eventRegisterCredentials}
                                         onClose={onEventRegisterModalClose}
+                                        maxRegistration={props.maxRegistration}
                                     />
                                 )}
                             </ModalBody>

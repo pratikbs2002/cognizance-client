@@ -1,8 +1,11 @@
 import React from "react";
-// import { useState } from "react";
+import { useState } from "react";
 import { Box, Button, Container, useToast } from "@chakra-ui/react";
+import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
+import { getZipFileService } from "../../service/publicService";
 import { IoIosArrowBack } from "react-icons/io";
+import skull from "../../assets/skull.png";
 // import { useDropzone } from "react-dropzone";
 // import { MdCloudUpload } from "react-icons/md";
 import {
@@ -19,8 +22,13 @@ export default function UploadImages(props) {
     const toast = useToast();
     const navigate = useNavigate();
     // const [files, setFiles] = useState([]);
+    const [isDownloadingTechEventRegistrationSheet, setIsDownloadingTechEventRegistrationSheet] = useState(false);
+    const [isDownloadingNonTechEventRegistrationSheet, setIsDownloadingNonTechEventRegistrationSheet] = useState(false);
+    const [isDownloadingWorkshopRegistrationSheet, setIsDownloadingWorkshopRegistrationSheet] = useState(false);
+    const [isDownloadingZipFile, setIsDownloadingZipFile] = useState(false);
 
     const handleDownloadTechEventRegistrationSheet = async () => {
+        setIsDownloadingTechEventRegistrationSheet(true);
         const res = await downloadTechEventRegistrationSheet();
 
         if (res.status === 200) {
@@ -43,9 +51,11 @@ export default function UploadImages(props) {
                 isClosable: true
             });
         }
+        setIsDownloadingTechEventRegistrationSheet(false);
     };
 
     const handleDownloadWorkshopRegistrationSheet = async () => {
+        setIsDownloadingWorkshopRegistrationSheet(true);
         const res = await downloadWorkshopRegistrationSheet();
 
         if (res.status === 200) {
@@ -67,6 +77,86 @@ export default function UploadImages(props) {
                 position: "top",
                 isClosable: true
             });
+        }
+        setIsDownloadingWorkshopRegistrationSheet(false);
+    };
+
+    const handleDownloadNonTechEventRegistrationSheet = async () => {
+        setIsDownloadingNonTechEventRegistrationSheet(true);
+        const res = await downloadNonTechEventRegistrationSheet();
+
+        if (res.status === 200) {
+            const data = await res.blob();
+            const url = window.URL.createObjectURL(data);
+            const link = document.createElement("a");
+            link.href = url;
+            // const d = new Date();
+            link.setAttribute("download", `Non Tech Events Registrations Sheet - Cognizance 2024.xlsx`);
+            document.body.appendChild(link);
+            link.click();
+        } else {
+            const parseRes = await res.json();
+            // alert(parseRes.message);
+            toast({
+                description: parseRes.message,
+                status: "info",
+                duration: 5000,
+                position: "top",
+                isClosable: true
+            });
+        }
+        setIsDownloadingNonTechEventRegistrationSheet(false);
+    };
+
+    const fetchImages = async () => {
+        setIsDownloadingZipFile(true);
+        const storage = getStorage();
+
+        const storageRef = ref(storage, "cz"); // Update this to your storage reference
+        try {
+            // Retrieve a list of items (images) in the storage reference
+            const listResult = await listAll(storageRef);
+
+            // Loop through the items and fetch download URLs and names
+            const images = await Promise.all(
+                listResult.items.map(async (item) => {
+                    const downloadURL = await getDownloadURL(item);
+                    return { name: item.name, url: downloadURL };
+                })
+            );
+
+            const res = await getZipFileService(images);
+
+            console.log(res);
+
+            if (res.status === 200) {
+                const data = await res.blob();
+                console.log(data);
+                const link = document.createElement("a");
+                link.href = window.URL.createObjectURL(data);
+                console.log(link);
+                toast({
+                    description: "Zip file downloaded successfully!",
+                    status: "success",
+                    duration: 5000,
+                    position: "top",
+                    isClosable: true
+                });
+                link.download = "payment-reciepts.zip";
+                link.click();
+            } else {
+                toast({
+                    description: "Zip file not found! Please try again later.",
+                    status: "error",
+                    duration: 5000,
+                    position: "top",
+                    isClosable: true
+                });
+            }
+        } catch (error) {
+            console.error("Error fetching images:", error);
+        } finally {
+            setIsDownloadingZipFile(false);
         }
     };
 
@@ -94,31 +184,6 @@ export default function UploadImages(props) {
     //         });
     //     }
     // };
-
-    const handleDownloadNonTechEventRegistrationSheet = async () => {
-        const res = await downloadNonTechEventRegistrationSheet();
-
-        if (res.status === 200) {
-            const data = await res.blob();
-            const url = window.URL.createObjectURL(data);
-            const link = document.createElement("a");
-            link.href = url;
-            // const d = new Date();
-            link.setAttribute("download", `Non Tech Events Registrations Sheet - Cognizance 2024.xlsx`);
-            document.body.appendChild(link);
-            link.click();
-        } else {
-            const parseRes = await res.json();
-            // alert(parseRes.message);
-            toast({
-                description: parseRes.message,
-                status: "info",
-                duration: 5000,
-                position: "top",
-                isClosable: true
-            });
-        }
-    };
 
     // const thumbs = files.map((file) => (
     //     <div style={styles.thumb} key={file.name}>
@@ -303,10 +368,23 @@ export default function UploadImages(props) {
                     </Container>
 
                     <Box display={"flex"} flexDirection={"column"} gap={10} width={"100%"} alignItems={"center"}>
+                        <img
+                            src={skull}
+                            alt="skull"
+                            style={{
+                                width: "40%",
+                                height: "40%",
+                                position: "absolute",
+                                top: "28%",
+                                opacity: "5%"
+                            }}
+                        />
                         <Button
                             colorScheme="red"
                             onClick={handleDownloadTechEventRegistrationSheet}
                             width={"fit-content"}
+                            loadingText="Downloading Tech Event Registration Sheet"
+                            isLoading={isDownloadingTechEventRegistrationSheet}
                         >
                             Download Tech Event Registration Sheet
                         </Button>
@@ -314,6 +392,8 @@ export default function UploadImages(props) {
                             colorScheme="red"
                             onClick={handleDownloadNonTechEventRegistrationSheet}
                             width={"fit-content"}
+                            loadingText="Downloading Non Tech Event Registration Sheet"
+                            isLoading={isDownloadingNonTechEventRegistrationSheet}
                         >
                             Download Non Tech Event Registration Sheet
                         </Button>
@@ -321,8 +401,20 @@ export default function UploadImages(props) {
                             colorScheme="red"
                             onClick={handleDownloadWorkshopRegistrationSheet}
                             width={"fit-content"}
+                            loadingText="Downloading Workshop Registration Sheet"
+                            isLoading={isDownloadingWorkshopRegistrationSheet}
                         >
                             Download Workshop Registration Sheet
+                        </Button>
+
+                        <Button
+                            colorScheme="red"
+                            onClick={fetchImages}
+                            loadingText="Downloading Payment Reciepts"
+                            isLoading={isDownloadingZipFile}
+                            width={"fit-content"}
+                        >
+                            Download Payment Reciepts
                         </Button>
                         {/* <Button onClick={handleDownloadMusicalNightRegistrationSheet} width={"fit-content"}>
                         Download Musical Night Registration Sheet

@@ -87,7 +87,8 @@ export default function Payment(props) {
                 eventParticipantInfo: props.eventRegisterCredentials,
                 eventIsAccomodationNeeded: props.isAccomodationNeeded,
                 transactionId: eventTransactionId.transactionId,
-                eventTransactionImage: data
+                eventTransactionImage: data,
+                eventRegistrationLimit: props.maxRegistration
             };
 
             let response = await registerEvent(eventData);

@@ -20,7 +20,6 @@ import EditProfile from "./modals/EditProfile";
 
 export default function EventCard(props) {
     const navigate = useNavigate();
-
     const [show, setShow] = useState(props.show);
     return (
         <>
@@ -91,6 +90,8 @@ export default function EventCard(props) {
                                         isAccomodationNeeded={false}
                                         isAlreadyRegistered={props.isAlreadyRegistered}
                                         isAdditionalFieldRequired={props.isAdditionalFieldRequired}
+                                        maxRegistration={props.maxRegistration}
+                                        registerCount={props.registerCount}
                                     />
                                 ) : (
                                     <>

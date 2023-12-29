@@ -19,6 +19,18 @@ export async function getRegisterCountService() {
     return data;
 }
 
+export async function getZipFileService(paymentReciepts) {
+    let locationData = await getLocationData();
+    let res = await fetch(`${hostUrl}/getZipFile`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ locationData: locationData, paymentReciepts: paymentReciepts })
+    });
+    return res;
+}
+
 // export async function getVisitorCount(type) {
 //     let res = await fetch(`${hostUrl}/getVisitorCount?${type}`);
 //     let data = await res.json();

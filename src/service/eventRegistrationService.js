@@ -54,3 +54,19 @@ export async function deleteEvent(eventId) {
     let data = await response.json();
     return data;
 }
+
+export async function getAllEventsCount() {
+    let locationData = await getLocationData();
+    let response = await fetch(`${hostUrl}/get-registration-count`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            token: sessionStorage.getItem("token")
+        },
+        body: JSON.stringify({
+            locationData: locationData
+        })
+    });
+    let data = await response.json();
+    return data;
+}

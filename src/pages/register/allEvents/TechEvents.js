@@ -38,7 +38,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 25,000", "● 2nd Prize: ₹ 20,000"],
             isPrizesEnabled: true,
             pdfName: "battleblitz",
-            maxRegistration:45,
+            maxRegistration: 45
         },
         {
             id: 2,
@@ -58,7 +58,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 4,000", "● 2nd Prize: ₹ 2,500"],
             isPrizesEnabled: true,
             pdfName: "robosoccer",
-            maxRegistration:50,
+            maxRegistration: 50
         },
         {
             id: 3,
@@ -81,7 +81,7 @@ const TechEvents = (props) => {
             winningPrice: ["● Winner Prize: ₹ 5,000", "● Runner up Prize: ₹ 2,500"],
             isPrizesEnabled: true,
             pdfName: "roborace",
-            maxRegistration:30,
+            maxRegistration: 30
         },
         {
             id: 4,
@@ -102,7 +102,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 7,000", "● 2nd Prize: ₹ 5,000"],
             isPrizesEnabled: true,
             pdfName: "networkhunting",
-            maxRegistration:50,
+            maxRegistration: 50
         },
         {
             id: 5,
@@ -124,7 +124,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 7,000", "● 2nd Prize: ₹ 5,000"],
             isPrizesEnabled: true,
             pdfName: "healthyswitching",
-            maxRegistration:50,
+            maxRegistration: 50
         },
         {
             id: 6,
@@ -146,7 +146,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 5,000", "● 2nd Prize: ₹ 3,000"],
             isPrizesEnabled: true,
             pdfName: "arttech",
-            maxRegistration:50,
+            maxRegistration: 50
         },
         {
             id: 7,
@@ -167,7 +167,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 5,000", "● 2nd Prize: ₹ 3,000"],
             isPrizesEnabled: true,
             pdfName: "codemania",
-            maxRegistration:50,
+            maxRegistration: 50
         },
         {
             id: 8,
@@ -193,7 +193,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 10,000", "● 2nd Prize: ₹ 5,000"],
             isPrizesEnabled: true,
             pdfName: "civilsaga",
-            maxRegistration:25,
+            maxRegistration: 25
         },
         {
             id: 9,
@@ -214,7 +214,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 3,000", "● 2nd Prize: ₹ 2,000"],
             isPrizesEnabled: true,
             pdfName: "rollercoaster",
-            maxRegistration:15,
+            maxRegistration: 15
         },
         {
             id: 10,
@@ -237,7 +237,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 4,000", "● 2nd Prize: ₹ 2,000"],
             isPrizesEnabled: true,
             pdfName: "relay",
-            maxRegistration:50,
+            maxRegistration: 50
         },
         {
             id: 11,
@@ -256,7 +256,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 4,000", "● 2nd Prize: ₹ 2,000"],
             isPrizesEnabled: true,
             pdfName: "keymasters",
-            maxRegistration:100,
+            maxRegistration: 100
         },
         {
             id: 12,
@@ -273,7 +273,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 1,500", "● 2nd Prize: ₹ 1,000"],
             isPrizesEnabled: true,
             pdfName: "breakthequery",
-            maxRegistration:30,
+            maxRegistration: 30
         },
         {
             id: 13,
@@ -290,7 +290,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 1,500", "● 2nd Prize: ₹ 1,000"],
             isPrizesEnabled: true,
             pdfName: "designingfordelight",
-            maxRegistration:30,
+            maxRegistration: 30
         },
         {
             id: 14,
@@ -307,7 +307,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 3,000", "● 2nd Prize: ₹ 1,500"],
             isPrizesEnabled: true,
             pdfName: "pingdatastructure",
-            maxRegistration:45,
+            maxRegistration: 45
         },
         {
             id: 15,
@@ -324,7 +324,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 3,000", "● 2nd Prize: ₹ 1,500"],
             isPrizesEnabled: true,
             pdfName: "capturetheflag",
-            maxRegistration:45,
+            maxRegistration: 45
         },
         {
             id: 16,
@@ -346,7 +346,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 5,000", "● 2nd Prize: ₹ 3,000"],
             isPrizesEnabled: true,
             pdfName: "digitalscavengerhunt",
-            maxRegistration:40,
+            maxRegistration: 40
         },
         {
             id: 17,
@@ -363,7 +363,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 2,500", "● 2nd Prize: ₹ 2,000"],
             isPrizesEnabled: true,
             pdfName: "graphicsgladiator",
-            maxRegistration:100,
+            maxRegistration: 100
         }
     ];
 
@@ -414,6 +414,8 @@ const TechEvents = (props) => {
                                 addEventHandler={props.addEventHandler}
                                 registeredEvent={props.registeredEvent}
                                 isAlreadyRegistered={props.techEventIds?.includes(IData.id)}
+                                maxRegistration={IData.maxRegistration}
+                                registerCount={props?.registerCount?.[IData.id.toString()]}
                             />
                         )
                 )}

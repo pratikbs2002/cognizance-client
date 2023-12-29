@@ -6,7 +6,7 @@ import EventCard from "../EventCard";
 
 const MusicalNight = (props) => {
     const IData = {
-        id: 36,
+        id: 37,
         image: MusicalNight1,
         title: "Musical Night",
         description:
@@ -17,7 +17,7 @@ const MusicalNight = (props) => {
         teamSize: 1,
         eventFee: 1000,
         eventType: "WORKSHOP",
-        pdfName:"musicalnight"
+        pdfName: "musicalnight"
     };
 
     return (
@@ -30,7 +30,7 @@ const MusicalNight = (props) => {
                         justifyContent: "center",
                         color: "white",
                         fontWeight: "600",
-                        flexWrap: "wrap",
+                        flexWrap: "wrap"
                     }}
                 >
                     {!props.registeredEvent && (
@@ -38,7 +38,7 @@ const MusicalNight = (props) => {
                             style={{
                                 display: "flex",
                                 alignItems: "center",
-                                justifyContent: "center",
+                                justifyContent: "center"
                             }}
                             fontWeight={"800"}
                             color={"white"}

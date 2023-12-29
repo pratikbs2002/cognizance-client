@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
-import { Button, Card, Container } from "@chakra-ui/react";
+import { Button, Card, Container, useToast } from "@chakra-ui/react";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import JSZip from "jszip";
+import { getZipFileService } from "../../service/publicService";
+
 const DownloadZip = () => {
-    const [imageList, setImageList] = useState([]);
     const navigate = useNavigate();
+    const toast = useToast();
+    const [isLoading, setIsLoading] = useState(false);
 
     const fetchImages = async () => {
+        setIsLoading(true);
         const storage = getStorage();
-        const storageRef = ref(storage, "cz"); // Update this to your storage reference
 
+        const storageRef = ref(storage, "cz"); // Update this to your storage reference
         try {
             // Retrieve a list of items (images) in the storage reference
             const listResult = await listAll(storageRef);
@@ -24,43 +27,36 @@ const DownloadZip = () => {
                 })
             );
 
-            console.log(images);
+            const res = await getZipFileService(images);
 
-            const files = await Promise.all(
-                images.map((url) =>
-                    fetch(images[0].url)
-                        .then((res) => {
-                            console.log(res);
-                            return res.blob();
-                        })
-                        .then((blob) => {
-                            console.log(blob);
-                            return { name: images[0].name, blob: blob };
-                        })
-                )
-            );
+            console.log(res);
 
-            console.log(files);
-            const jszip = new JSZip();
-            files.forEach((file) => {
-                jszip.file(file.name, file.blob);
-            });
-
-            const zipData = await jszip.generateAsync({
-                type: "blob",
-                streamFiles: true
-            });
-
-            console.log(zipData);
-
-            const link = document.createElement("a");
-            link.href = window.URL.createObjectURL(zipData);
-            link.download = "payment-reciepts.zip";
-            link.click();
-            // Update state with the list of images
-            setImageList(images);
+            if (res.status === 200) {
+                const data = await res.blob();
+                const link = document.createElement("a");
+                link.href = window.URL.createObjectURL(data);
+                toast({
+                    description: "Zip file downloaded successfully!",
+                    status: "success",
+                    duration: 5000,
+                    position: "top",
+                    isClosable: true
+                });
+                link.download = "payment-reciepts.zip";
+                link.click();
+            } else {
+                toast({
+                    description: "Zip file not found! Please try again later.",
+                    status: "error",
+                    duration: 5000,
+                    position: "top",
+                    isClosable: true
+                });
+            }
         } catch (error) {
             // console.error("Error fetching images:", error);
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -99,7 +95,9 @@ const DownloadZip = () => {
                     alignItems={"center"}
                     justifyContent={"center"}
                 >
-                    <Button onClick={fetchImages}>Download Zip</Button>
+                    <Button onClick={fetchImages} loadingText="Downloading Payment Reciepts" isLoading={isLoading}>
+                        Download Payment Reciepts
+                    </Button>
                 </Container>
             </div>
         </>

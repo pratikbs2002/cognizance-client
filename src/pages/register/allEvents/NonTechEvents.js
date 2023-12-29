@@ -44,7 +44,7 @@ const NonTechEvents = (props) => {
             winningPrice: ["●	Winner: ₹ 3,000", "● Runner up's: ₹ 1,500"],
             isPrizesEnabled: true,
             pdfName: "roadies",
-            maxRegistration:10,
+            maxRegistration: 10
         },
         {
             id: 19,
@@ -63,7 +63,7 @@ const NonTechEvents = (props) => {
             winningPrice: ["Coming Soon"],
             isPrizesEnabled: false,
             pdfName: "rapbattle",
-            maxRegistration:30,
+            maxRegistration: 30
         },
         {
             id: 20,
@@ -80,7 +80,7 @@ const NonTechEvents = (props) => {
             winningPrice: ["●	Winner: Rs. 4,000/-", "●	Runner up: Rs. 3,000/-"],
             isPrizesEnabled: true,
             pdfName: "bgmi",
-            maxRegistration:128,
+            maxRegistration: 128
         },
         {
             id: 21,
@@ -98,7 +98,7 @@ const NonTechEvents = (props) => {
             winningPrice: ["●	Winner: Rs. 7,500/-", "●	Runner up: Rs. 5,000/-"],
             isPrizesEnabled: true,
             pdfName: "valorant",
-            maxRegistration:256,
+            maxRegistration: 256
         },
 
         {
@@ -114,7 +114,7 @@ const NonTechEvents = (props) => {
             winningPrice: ["●	Winner: Rs. 1,500/-", "●	Runner up: Rs. 1,000/-"],
             isPrizesEnabled: true,
             pdfName: "boxsoccer",
-            maxRegistration:150,
+            maxRegistration: 150
         },
         {
             id: 23,
@@ -144,7 +144,7 @@ const NonTechEvents = (props) => {
             winningPrice: ["●	Winner: Rs. 3,000/-", "●	Runner up: Rs. 1,500/-"],
             isPrizesEnabled: true,
             pdfName: "moneyheist",
-            maxRegistration:40,
+            maxRegistration: 40
         },
         {
             id: 24,
@@ -162,7 +162,7 @@ const NonTechEvents = (props) => {
             winningPrice: ["●	Winner: Rs. 5,000/-", "●	Runner up: Rs. 3,000/-"],
             isPrizesEnabled: true,
             pdfName: "cs2",
-            maxRegistration:55,
+            maxRegistration: 55
         },
 
         {
@@ -184,7 +184,7 @@ const NonTechEvents = (props) => {
             winningPrice: ["●	Winner: Rs. 1,500/-", "●	Runner up: Rs. 1,000/-"],
             isPrizesEnabled: true,
             pdfName: "paintdate",
-            maxRegistration:60,
+            maxRegistration: 60
         },
         {
             id: 26,
@@ -208,7 +208,7 @@ const NonTechEvents = (props) => {
             winningPrice: ["●	Winner: Rs. 1,000/-", "●	Runner up: Rs. 500/-"],
             isPrizesEnabled: true,
             pdfName: "wireloop",
-            maxRegistration:25,
+            maxRegistration: 25
         },
         {
             id: 27,
@@ -227,7 +227,7 @@ const NonTechEvents = (props) => {
             winningPrice: ["●	Winner: Rs. 6,000/-", "●	Runner up: Rs. 3,000/-"],
             isPrizesEnabled: true,
             pdfName: "squidgame",
-            maxRegistration:250,
+            maxRegistration: 250
         },
         {
             id: 28,
@@ -255,7 +255,7 @@ const NonTechEvents = (props) => {
             winningPrice: ["●	Winner: Rs. 3,000/-", "●	Runner up: Rs. 1,500/-"],
             isPrizesEnabled: true,
             pdfName: "galacticquest",
-            maxRegistration:40,
+            maxRegistration: 40
         },
         {
             id: 29,
@@ -278,7 +278,7 @@ const NonTechEvents = (props) => {
             winningPrice: ["●	Winner: Rs. 3,000/-", "●	Runner up: Rs. 1,500/-"],
             isPrizesEnabled: true,
             pdfName: "takeshischamber",
-            maxRegistration:50,
+            maxRegistration: 50
         }
         // {
         //     id: 19,
@@ -373,6 +373,8 @@ const NonTechEvents = (props) => {
                         addEventHandler={props.addEventHandler}
                         registeredEvent={props.registeredEvent}
                         isAlreadyRegistered={props.nonTechEventIds?.includes(IData.id)}
+                        maxRegistration={IData.maxRegistration}
+                        registerCount={props?.registerCount?.[IData.id.toString()]}
                         isAdditionalFieldRequired={IData.id === 20 || IData.id === 21 || IData.id === 24}
                     />
                 ))}

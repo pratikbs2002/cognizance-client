@@ -19,7 +19,7 @@ const Workshop = (props) => {
                 "Technology for creating decentralized ledger systems for various Dataset.Learn the fundamentals, applications, and hands-on skills to navigate the decentralized future",
             pdfName: "Blockchain - Workshop - Cognizance 2024",
             eventFee: 200,
-            maxRegistration:75,
+            maxRegistration: 75
         },
         // {
         //     id: 28,
@@ -36,7 +36,7 @@ const Workshop = (props) => {
                 "Embark on an immersive learning experience and gain comprehensive expertise to revolutionize your capabilities within the dynamic realm of AWS Cloud at our transformative and hands-on workshop.",
             pdfName: "Code commit - Workshop - Cognizance 2024",
             eventFee: 200,
-            maxRegistration:75,
+            maxRegistration: 75
         },
         {
             id: 32,
@@ -46,7 +46,7 @@ const Workshop = (props) => {
                 "Explore the intricate world of Cyber Security in our comprehensive workshop, where cutting-edge techniques and hands-on learning converge to fortify your defenses and safeguard the digital landscape.",
             pdfName: "Hackharbour- Workshop - Cognizance 2024",
             eventFee: 200,
-            maxRegistration:75,
+            maxRegistration: 75
         },
         {
             id: 33,
@@ -56,7 +56,7 @@ const Workshop = (props) => {
                 "Discover the transformative potential of Building Information Modeling (BIM) in our immersive workshop, where innovation meets construction to reshape industry standards and unleash project excellence.",
             pdfName: "BIM - Workshop - Cognizance 2024",
             eventFee: 300,
-            maxRegistration:100,
+            maxRegistration: 100
         },
         {
             id: 34,
@@ -66,7 +66,7 @@ const Workshop = (props) => {
                 "Enhance your expertise in cable and wire testing techniques through our comprehensive workshop, covering essential methods for accurate diagnostics and quality assurance.",
             pdfName: "Cable & Wire Testing - Workshop - Cognizance 2024",
             eventFee: 300,
-            maxRegistration:25,
+            maxRegistration: 25
         },
         {
             id: 35,
@@ -76,7 +76,7 @@ const Workshop = (props) => {
                 "Experience working with SolidWorks, a 3D CAD software which includes modeling, analysis and AMP, Animation and more.",
             pdfName: "Solidworks & 3D Printing - Workshop - Cognizance 2024",
             eventFee: 300,
-            maxRegistration:25,
+            maxRegistration: 25
         },
         {
             id: 36,
@@ -86,7 +86,7 @@ const Workshop = (props) => {
                 "Explore the boundless horizons of IoT and Robotics application integration into mobile apps through our comprehensive workshop, expanding your skills and vision in this transformative technological landscape.",
             pdfName: "Enlarging Mobile Apps for IoT & Robotics Application - Workshop - Cognizance 2024",
             eventFee: 200,
-            maxRegistration:50,
+            maxRegistration: 50
         }
     ];
 
@@ -134,6 +134,8 @@ const Workshop = (props) => {
                         isExploreMoreDeactived={true}
                         registeredEvent={props.registeredEvent}
                         isAlreadyRegistered={props.workShopsIds?.includes(IData.id)}
+                        maxRegistration={IData.maxRegistration}
+                        registerCount={props?.registerCount?.[IData.id.toString()]}
                     />
                 ))}
             </div>

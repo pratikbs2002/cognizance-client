@@ -11,7 +11,6 @@ import RegisterdEvent from "./pages/registeredEvent/RegisteredEvent";
 import NewCommittee from "./pages/committee/NewCommittee";
 import AdminLogin from "./AdminLogin";
 import { getRegisterCountService } from "./service/publicService";
-import DownloadZip from "./pages/TransactionImages/DownloadZip";
 
 const App = () => {
     const [isAdmin, setIsAdmin] = useState(false);
@@ -50,10 +49,6 @@ const App = () => {
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/committee" element={<NewCommittee />} />
                 <Route path="/registeredEvents" element={<RegisterdEvent />} />
-                <Route
-                    path="/f3d0ad4e-7a64-4571-9770-b7347920abk18"
-                    element={isAdmin ? <DownloadZip /> : <AdminLogin isAdmin={isAdmin} setIsAdmin={setIsAdmin} />}
-                />
             </Routes>
         </BrowserRouter>
     );
