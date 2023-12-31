@@ -13,11 +13,15 @@ import paintball from "../../assets/adBanner/Paintball1.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-export default function AdModal() {
+export default function AdModal(props) {
     const { isOpen, onOpen, onClose } = useDisclosure();
     useEffect(() => {
         onOpen();
     }, []);
+
+    useEffect(() => {
+        props.setIsModalOpen(isOpen);
+    }, [isOpen]);
 
     return (
         <>

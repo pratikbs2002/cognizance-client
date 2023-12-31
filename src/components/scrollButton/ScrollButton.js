@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import lg from "../../assets/rocketo6.png";
 import "./ScrollButton.css";
 
-const ScrollButton = () => {
+const ScrollButton = (props) => {
     const [visible, setVisible] = useState(false);
 
     const toggleVisible = () => {
@@ -40,8 +40,8 @@ const ScrollButton = () => {
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    placeItems: "center"
-                    // display: visible ? "inline" : "none"
+                    placeItems: "center",
+                    display: !props.isModalOpen ? "inline" : "none"
                 }}
             >
                 <Img boxSize="70px" src={lg} />

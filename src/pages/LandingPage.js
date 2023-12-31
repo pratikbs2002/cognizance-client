@@ -40,6 +40,8 @@ export default function LandingPage() {
     //
     //     return () => clearInterval(interval);
     // }, []);
+
+    const [isModalOpen, setIsModalOpen] = useState(true);
     return (
         <>
             <Container
@@ -70,8 +72,8 @@ export default function LandingPage() {
                 <NewHome />
                 <About />
                 <Footer />
-                <ScrollButton />
-                <AdModal />
+                <ScrollButton isModalOpen={isModalOpen} />
+                <AdModal setIsModalOpen={setIsModalOpen} />
             </Container>
         </>
     );
