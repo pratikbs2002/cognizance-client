@@ -130,10 +130,11 @@ export default function UploadImages(props) {
             console.log(res);
 
             if (res.status === 200) {
-                const data = await res.blob();
+                // const data = await res.blob();
+                const data = await res.arrayBuffer();
                 console.log(data);
                 const link = document.createElement("a");
-                link.href = window.URL.createObjectURL(data);
+                link.href = window.URL.createObjectURL(new Blob([data], { type: "application/zip" }));
                 console.log(link);
                 toast({
                     description: "Zip file downloaded successfully!",

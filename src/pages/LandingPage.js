@@ -17,29 +17,29 @@ import aboutIm3 from "./homePage6.png";
 import AdModal from "../components/advertisement/adModel";
 
 export default function LandingPage() {
-    const [isImage1Visible, setIsImage1Visible] = useState(true);
+    // const [isImage1Visible, setIsImage1Visible] = useState(true);
 
     // const updateCounter=async(type)=>{
     //     let data=await getVisitorCount(type);
     //     setVisitorCount(data.visitorCount);
     // }
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setIsImage1Visible((prev) => !prev);
-        }, 3000);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setIsImage1Visible((prev) => !prev);
+    //     }, 3000);
+    //
+    // let data= await getTechCount();
+    // setRegisterCount(data.totalCount);
 
-        // let data= await getTechCount();
-        // setRegisterCount(data.totalCount);
-
-        // if(sessionStorage.getItem("visit")===null){
-        //     updateCounter("type=visit-pageview");
-        // }else{
-        //     sessionStorage.setItem("visit","x");
-        //     updateCounter("type=pageview");
-        // }
-
-        return () => clearInterval(interval);
-    }, []);
+    // if(sessionStorage.getItem("visit")===null){
+    //     updateCounter("type=visit-pageview");
+    // }else{
+    //     sessionStorage.setItem("visit","x");
+    //     updateCounter("type=pageview");
+    // }
+    //
+    //     return () => clearInterval(interval);
+    // }, []);
     return (
         <>
             <Container
