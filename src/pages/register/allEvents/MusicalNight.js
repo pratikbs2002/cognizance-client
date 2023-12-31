@@ -22,6 +22,13 @@ const MusicalNight = (props) => {
 
     return (
         <>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
+                {" "}
+                <div className="exploreMore-note">
+                    <span className="title">Note:</span>
+                    <span className="message">Musical Night Registration will be done offline on campus.</span>
+                </div>
+            </div>
             {!(props.registeredEvent && !props.isMusicalNightRegistered) ? (
                 <div
                     style={{

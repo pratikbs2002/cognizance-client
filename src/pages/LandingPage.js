@@ -14,10 +14,10 @@ import ScrollButton from "../components/scrollButton/ScrollButton";
 // import aboutIm from "./posterCz.png";
 // import aboutIm2 from "./posterCz2.png";
 import aboutIm3 from "./homePage6.png";
+import AdModal from "../components/advertisement/adModel";
 
 export default function LandingPage() {
     const [isImage1Visible, setIsImage1Visible] = useState(true);
-
 
     // const updateCounter=async(type)=>{
     //     let data=await getVisitorCount(type);
@@ -27,10 +27,10 @@ export default function LandingPage() {
         const interval = setInterval(() => {
             setIsImage1Visible((prev) => !prev);
         }, 3000);
-        
+
         // let data= await getTechCount();
         // setRegisterCount(data.totalCount);
-        
+
         // if(sessionStorage.getItem("visit")===null){
         //     updateCounter("type=visit-pageview");
         // }else{
@@ -71,6 +71,7 @@ export default function LandingPage() {
                 <About />
                 <Footer />
                 <ScrollButton />
+                <AdModal />
             </Container>
         </>
     );
