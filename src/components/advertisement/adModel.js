@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, useDisclosure, Image } from "@chakra-ui/react";
-import paintball from "../../assets/adBanner/Paintball.jpg";
+import paintball from "../../assets/adBanner/Paintball1.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
@@ -12,7 +12,7 @@ export default function AdModal() {
 
     return (
         <>
-            <Modal isOpen={isOpen} onClose={onClose} scrollBehavior="inside" size={"2xl"}>
+            <Modal isOpen={isOpen} onClose={onClose} scrollBehavior="inside" size={"md"}>
                 <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(10px) hue-rotate(90deg)" />
                 <ModalContent backgroundColor={"#191818"} paddingBottom={3}>
                     <ModalCloseButton position={"relative"} left={"90%"} />
@@ -27,8 +27,7 @@ export default function AdModal() {
                             effect="blur"
                             src={paintball}
                             style={{
-                                height: "72vh",
-                                objectFit: "cover"
+                                height: "72vh"
                             }}
                         />
                     </ModalBody>
