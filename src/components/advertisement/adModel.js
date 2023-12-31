@@ -21,7 +21,7 @@ export default function AdModal() {
 
     return (
         <>
-            <Modal isOpen={isOpen} onClose={onClose} scrollBehavior="inside">
+            <Modal isOpen={isOpen} onClose={onClose} scrollBehavior="inside" blockScrollOnMount={false}>
                 <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(10px) hue-rotate(90deg)" />
                 <ModalContent backgroundColor={"#191818"} paddingBottom={3} minWidth={"min-content"}>
                     <ModalCloseButton />
@@ -32,7 +32,7 @@ export default function AdModal() {
                             effect="blur"
                             src={paintball}
                             style={{
-                                minWidth: "29vw",
+                                minWidth: "27vw",
                                 aspectRatio: "5/7",
                                 objectFit: "cover"
                             }}
