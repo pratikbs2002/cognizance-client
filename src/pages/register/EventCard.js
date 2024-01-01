@@ -87,7 +87,6 @@ export default function EventCard(props) {
                                         price={props.price}
                                         image={props.image}
                                         isMusicalNight={props.isMusicalNight}
-                                        isAccomodationNeeded={false}
                                         isAlreadyRegistered={props.isAlreadyRegistered}
                                         isAdditionalFieldRequired={props.isAdditionalFieldRequired}
                                         maxRegistration={props.maxRegistration}

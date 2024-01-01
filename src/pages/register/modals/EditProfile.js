@@ -47,7 +47,6 @@ const EditProfile = (props) => {
         onClose: onEventRegisterModalClose
     } = useDisclosure();
     const teamSize = typeof props.teamSize === "string" ? undefined : props.teamSize;
-    const isAccomodationNeeded = props.isAccomodationNeeded ? true : false;
     const [registerCredentials, setRegisterCredentials] = useState({
         name: "",
         universityName: "",
@@ -59,7 +58,7 @@ const EditProfile = (props) => {
         teamSize: teamSize
     });
     const [eventRegisterCredAcco, setEventRegisterCredAcco] = useState({
-        isAccomodationNeeded: isAccomodationNeeded
+        isAccomodationNeeded: false
     });
     // const [eventRegistrationErrors, setEventRegistrationErrors] = useState({});
     const [profileError, setProfileErrors] = useState({});
@@ -1053,7 +1052,7 @@ const EditProfile = (props) => {
                                                         )}
 
                                                         {typeof props.teamSize === "number" && participantsField}
-                                                        <span
+                                                        {/* <span
                                                             style={{
                                                                 backgroundColor: "#f68a1c",
                                                                 padding: ".5rem 1rem",
@@ -1067,7 +1066,7 @@ const EditProfile = (props) => {
                                                                     <b>{props.eventName}</b> at Charusat campus.
                                                                 </Checkbox>
                                                             </CheckboxGroup>
-                                                        </span>
+                                                        </span> */}
 
                                                         <VStack>
                                                             <Button
