@@ -367,16 +367,26 @@ export default function UploadImages(props) {
                         </Container>
                     </Container>
 
-                    <Box display={"flex"} flexDirection={"column"} gap={10} width={"100%"} alignItems={"center"}>
+                    <Box
+                        paddingBottom={"100px"}
+                        display={"flex"}
+                        flexDirection={"column"}
+                        gap={10}
+                        width={"100%"}
+                        alignItems={"center"}
+                    >
                         <img
                             src={skull}
                             alt="skull"
                             style={{
-                                width: "40%",
+                                width: "100%",
+                                maxWidth: "300px",
                                 height: "40%",
                                 position: "absolute",
-                                top: "28%",
-                                opacity: "5%"
+                                top: "60%",
+                                left: "50%",
+                                transform: "translate(-50%, -50%)",
+                                opacity: "0.1"
                             }}
                         />
                         <Button
@@ -409,7 +419,6 @@ export default function UploadImages(props) {
                         >
                             Workshop Registration Sheet
                         </Button>
-
                         <Button
                             colorScheme="red"
                             onClick={fetchImages}
