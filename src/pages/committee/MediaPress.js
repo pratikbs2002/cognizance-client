@@ -43,7 +43,7 @@ const MediaPress = () => {
             id:2,
             name:"Nilay Shah",
             email:"22it081@charusat.edu.in",
-            department:"Infomatin Technology, CSPIT",
+            department:"Information Technology, CSPIT",
             profile:_5,
         },
         {

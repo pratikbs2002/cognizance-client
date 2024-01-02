@@ -34,7 +34,7 @@ const DecComm = () => {
             id: 4,
             name: "Harsh Prajapati",
             email: "22cl013@charusat.edu.in",
-            department: "Civil Department, CSPIT",
+            department: "Civil Engineering, CSPIT",
             profile: _4
         }
     ];

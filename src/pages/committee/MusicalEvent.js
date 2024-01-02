@@ -13,21 +13,21 @@ const MusicalEvent = () => {
             id: 1,
             name: "Prof. Nishat Shaikh",
             email: "nishatshaikh.it@charusat.ac.in",
-            department: "Infomation Technology, CSPIT",
+            department: "Information Technology, CSPIT",
             profile: _1
         },
         {
             id: 2,
             name: "Prof. Dhaval Patel",
             email: "dhavalpatel.it@charusat.ac.in",
-            department: "Infomation Technology, CSPIT",
+            department: "Information Technology, CSPIT",
             profile: _2
         },
         {
             id: 3,
             name: "Mohit Mungra",
             email: "21it092@charusat.edu.in",
-            department: "Infomation Technology, CSPIT",
+            department: "Information Technology, CSPIT",
             profile: _3
         },
         {
