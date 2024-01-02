@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import { Box, Button, Container, useToast } from "@chakra-ui/react";
+import { Box, Button, Container, Icon, Text, useToast } from "@chakra-ui/react";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 import { getZipFileService } from "../../service/publicService";
 import { IoIosArrowBack } from "react-icons/io";
 import skull from "../../assets/skull.png";
+import { MdFileDownload } from "react-icons/md";
 // import { useDropzone } from "react-dropzone";
 // import { MdCloudUpload } from "react-icons/md";
 import {
@@ -280,92 +281,90 @@ export default function UploadImages(props) {
                     gap={20}
                     mt={10}
                 >
-                    <Container
-                        gap={10}
-                        display={"flex"}
-                        justifyContent={"center"}
-                        color={"white"}
-                        alignContent={"center"}
-                        flex={1}
-                        maxWidth={"100%"}
-                    >
-                        <Box
-                            padding={2}
-                            paddingY={5}
-                            rounded={"10px"}
-                            textAlign={"center"}
-                            fontWeight={"bold"}
-                            flex={1}
-                            borderRadius={"30px"}
-                            backgroundColor={"rgba(0, 0, 0, 0.442)"}
+                    <Container width={"100%"} maxW={"100%"}>
+                        <Container
+                            gap={{ base: "2", md: "10" }}
                             display={"flex"}
-                            alignItems={"center"}
-                            gap={5}
+                            flexDirection={{ base: "column", md: "row" }}
                             justifyContent={"center"}
-                        >
-                            Tech Event Entries :
-                            <Box width={"fit-content"} paddingY={3} fontSize={"2xl"}>
-                                {props.registerCount.techCount}
-                            </Box>
-                        </Box>
-                        <Box
-                            padding={2}
-                            paddingY={5}
-                            rounded={"10px"}
-                            textAlign={"center"}
-                            fontWeight={"bold"}
+                            color={"white"}
+                            alignContent={"center"}
                             flex={1}
-                            borderRadius={"30px"}
-                            backgroundColor={"rgba(0, 0, 0, 0.442)"}
-                            display={"flex"}
-                            alignItems={"center"}
-                            gap={5}
-                            justifyContent={"center"}
+                            maxWidth={"100%"}
                         >
-                            Non Tech Event Entries :
-                            <Box width={"fit-content"} paddingY={3} fontSize={"2xl"}>
-                                {props.registerCount.nonTechCount + 2}
+                            <Box
+                                width={{ base: "100%", md: "auto" }}
+                                padding={5}
+                                textAlign={"center"}
+                                fontWeight={"bold"}
+                                borderRadius={"15px"}
+                                backgroundColor={"rgba(0, 0, 0, 0.442)"}
+                                display={"flex"}
+                                flexDirection={"column"}
+                                alignItems={"center"}
+                                gap={2}
+                                justifyContent={"center"}
+                            >
+                                <span>Tech Event Entries</span>
+                                <Box width={"fit-content"} paddingY={3} fontSize={{ base: "2xl", md: "xl" }}>
+                                    {props.registerCount.techCount}
+                                </Box>
                             </Box>
-                        </Box>
-                        <Box
-                            padding={2}
-                            paddingY={5}
-                            rounded={"10px"}
-                            textAlign={"center"}
-                            fontWeight={"bold"}
-                            flex={1}
-                            borderRadius={"30px"}
-                            backgroundColor={"rgba(0, 0, 0, 0.442)"}
-                            display={"flex"}
-                            alignItems={"center"}
-                            gap={5}
-                            justifyContent={"center"}
-                        >
-                            Workshop Entries :{" "}
-                            <Box width={"fit-content"} paddingY={3} fontSize={"2xl"}>
-                                {props.registerCount.workShopsCount}
+                            <Box
+                                width={{ base: "100%", md: "auto" }}
+                                padding={5}
+                                textAlign={"center"}
+                                fontWeight={"bold"}
+                                borderRadius={"15px"}
+                                backgroundColor={"rgba(0, 0, 0, 0.442)"}
+                                display={"flex"}
+                                flexDirection={"column"}
+                                alignItems={"center"}
+                                gap={2}
+                                justifyContent={"center"}
+                            >
+                                <span>Non Tech Event Entries</span>
+                                <Box width={"fit-content"} paddingY={3} fontSize={{ base: "2xl", md: "xl" }}>
+                                    {props.registerCount.nonTechCount + 2}
+                                </Box>
                             </Box>
-                        </Box>
-                        <Box
-                            padding={2}
-                            paddingY={5}
-                            rounded={"10px"}
-                            textAlign={"center"}
-                            borderRadius={"30px"}
-                            backgroundColor={"rgba(0, 0, 0, 0.442)"}
-                            fontWeight={"bold"}
-                            flex={1}
-                            display={"flex"}
-                            alignItems={"center"}
-                            gap={5}
-                            justifyContent={"center"}
-                        >
-                            Total Entries :{" "}
-                            <Box width={"fit-content"} paddingY={3} fontSize={"2xl"}>
-                                {props.registerCount.totalCount + 2}
+                            <Box
+                                width={{ base: "100%", md: "auto" }}
+                                padding={5}
+                                textAlign={"center"}
+                                fontWeight={"bold"}
+                                borderRadius={"15px"}
+                                backgroundColor={"rgba(0, 0, 0, 0.442)"}
+                                display={"flex"}
+                                flexDirection={"column"}
+                                alignItems={"center"}
+                                gap={2}
+                                justifyContent={"center"}
+                            >
+                                <span>Workshop Entries</span>
+                                <Box width={"fit-content"} paddingY={3} fontSize={{ base: "2xl", md: "xl" }}>
+                                    {props.registerCount.workShopsCount}
+                                </Box>
                             </Box>
-                        </Box>
-                        {/* <Box>Musical Night Entries: 3</Box> */}
+                            <Box
+                                width={{ base: "100%", md: "auto" }}
+                                padding={5}
+                                textAlign={"center"}
+                                fontWeight={"bold"}
+                                borderRadius={"15px"}
+                                backgroundColor={"rgba(0, 0, 0, 0.442)"}
+                                display={"flex"}
+                                flexDirection={"column"}
+                                alignItems={"center"}
+                                gap={2}
+                                justifyContent={"center"}
+                            >
+                                <span>Total Entries</span>
+                                <Box width={"fit-content"} paddingY={3} fontSize={{ base: "2xl", md: "xl" }}>
+                                    {props.registerCount.totalCount + 2}
+                                </Box>
+                            </Box>
+                        </Container>
                     </Container>
 
                     <Box display={"flex"} flexDirection={"column"} gap={10} width={"100%"} alignItems={"center"}>
@@ -386,8 +385,9 @@ export default function UploadImages(props) {
                             width={"fit-content"}
                             loadingText="Downloading Tech Event Registration Sheet"
                             isLoading={isDownloadingTechEventRegistrationSheet}
+                            leftIcon={<MdFileDownload />}
                         >
-                            Download Tech Event Registration Sheet
+                            Tech Event Registration Sheet
                         </Button>
                         <Button
                             colorScheme="red"
@@ -395,8 +395,9 @@ export default function UploadImages(props) {
                             width={"fit-content"}
                             loadingText="Downloading Non Tech Event Registration Sheet"
                             isLoading={isDownloadingNonTechEventRegistrationSheet}
+                            leftIcon={<MdFileDownload />}
                         >
-                            Download Non Tech Event Registration Sheet
+                            Non Tech Event Registration Sheet
                         </Button>
                         <Button
                             colorScheme="red"
@@ -404,8 +405,9 @@ export default function UploadImages(props) {
                             width={"fit-content"}
                             loadingText="Downloading Workshop Registration Sheet"
                             isLoading={isDownloadingWorkshopRegistrationSheet}
+                            leftIcon={<MdFileDownload />}
                         >
-                            Download Workshop Registration Sheet
+                            Workshop Registration Sheet
                         </Button>
 
                         <Button
@@ -413,9 +415,9 @@ export default function UploadImages(props) {
                             onClick={fetchImages}
                             loadingText="Downloading Payment Reciepts"
                             isLoading={isDownloadingZipFile}
-                            width={"fit-content"}
+                            leftIcon={<MdFileDownload />}
                         >
-                            Download Payment Reciepts
+                            Payment Reciepts
                         </Button>
                         {/* <Button onClick={handleDownloadMusicalNightRegistrationSheet} width={"fit-content"}>
                         Download Musical Night Registration Sheet
