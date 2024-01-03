@@ -132,7 +132,7 @@ export default function Footer() {
                                 style={{
                                     height: "50vh",
                                     width: "40%",
-                                    marginLeft: "5%",
+                                    // marginLeft: "5%",
                                 }}
                             >
                                 <div
@@ -165,7 +165,7 @@ export default function Footer() {
                                 className="social_logo_container"
                                 onClick={() => {
                                     window.open(
-                                        "https://www.instagram.com/cognizance23/",
+                                        "https://www.instagram.com/cognizance24/",
                                         "_blank"
                                     );
                                 }}

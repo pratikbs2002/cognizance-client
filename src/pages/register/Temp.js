@@ -6,6 +6,7 @@ import NonTechEvents from "./allEvents/NonTechEvents";
 // import ComboEvents from "./comboPage/ComboEvents";
 import MusicalNight from "./allEvents/MusicalNight";
 import { getAllEventsCount } from "../../service/eventRegistrationService";
+import AdventureEvents from "./allEvents/AdventureEvnets";
 
 const Temp = (props) => {
     const [eventWiseRegisterationCount, setEventWiseRegisterationCount] = React.useState({});
@@ -113,7 +114,6 @@ const Temp = (props) => {
                             </Tab>
                         )}
 
-                        {/* {!props.addEventModal && !props.registeredEvent && (
                             <Tab
                                 color={"white"}
                                 variant="enclosed"
@@ -128,9 +128,8 @@ const Temp = (props) => {
                                     border: "1px solid white",
                                 }}
                             >
-                                Combo Events
+                                Adventure  Events
                             </Tab>
-                        )} */}
                     </TabList>
 
                     <TabPanels padding={0} margin={0}>
@@ -177,11 +176,13 @@ const Temp = (props) => {
                                 />
                             </TabPanel>
                         )}
-                        {/* {!props.addEventModal && !props.registeredEvent && (
+                        {!props.addEventModal && !props.registeredEvent && (
                             <TabPanel padding={0} margin={0}>
-                                <ComboEvents />
+                                <AdventureEvents 
+                                    registeredEvent={props.registeredEvent}
+                                />
                             </TabPanel>
-                        )} */}
+                        )}
                     </TabPanels>
                 </Tabs>
             </Container>
