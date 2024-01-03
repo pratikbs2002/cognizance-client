@@ -52,7 +52,7 @@ const MusicalNight = (props) => {
                             fontSize={"40px"}
                             width={"100%"}
                             maxW={"100%"}
-                            mt={"4%"}
+                            mt={"2%"}
                             mb={"2%"}
                             textAlign={"center"}
                         >

@@ -1,8 +1,7 @@
-import React from 'react';
-import { Container, Text } from "@chakra-ui/react";
-import paintball from "../../../assets/eventImages/Paintball1.png";
-import wallRap from "../../../assets/eventImages/wallrappelling.png"
-
+import React from "react";
+import { Container, Text, Box, Image } from "@chakra-ui/react";
+import paintball from "../../../assets/adBanner/Paintball1.png";
+import wallRap from "../../../assets/adBanner/wallrappelling.png";
 
 const AdventureEvents = (props) => {
     return (
@@ -14,94 +13,95 @@ const AdventureEvents = (props) => {
                     <span className="message">Adventure Event Registration will be done offline on campus.</span>
                 </div>
             </div>
-            {
-                !(props.registeredEvent)?(
-                    <div
+            {!props.registeredEvent ? (
+                <div
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "white",
+                        fontWeight: "600",
+                        flexWrap: "wrap",
+                        paddingTop: "2%",
+                        paddingBottom: "2%"
+                    }}
+                >
+                    <Container
                         style={{
                             display: "flex",
                             alignItems: "center",
-                            justifyContent: "center",
-                            color: "white",
-                            fontWeight: "600",
-                            flexWrap: "wrap"
+                            marginBottom: "2%",
+                            justifyContent: "center"
                         }}
+                        fontWeight={"800"}
+                        color={"white"}
+                        fontSize={"40px"}
+                        width={"100%"}
+                        maxW={"100%"}
+                        textAlign={"center"}
                     >
-                        <Container
-                            style={{
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center"
-                            }}
-                            fontWeight={"800"}
-                            color={"white"}
-                            fontSize={"40px"}
-                            width={"100%"}
-                            maxW={"100%"}
-                            mt={"4%"}
-                            mb={"2%"}
-                            textAlign={"center"}
-                        >
-                            <Text width={"100%"} maxW={"100%"}>
-                                Adventure Events
-                            </Text>
-                        </Container>
-                        <div
-                            style={{
-                                width:"350px",
-                                padding:"16px",
-                            }}
-                        >
-                            <div
+                        <Text width={"100%"} maxW={"100%"}>
+                            Adventure Events
+                        </Text>
+                    </Container>
+                    <Container
+                        style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "space-around",
+                            gap: 50
+                        }}
+                        flexDirection={{ base: "column", lg: "row" }}
+                    >
+                        <div>
+                            <Box
                                 style={{
-                                    border:"1px solid white",
-                                    borderRadius:"6px",
-                                    overflow:'hidden',
-                                    height:"450px"
+                                    border: "1px solid white",
+                                    borderRadius: "6px",
+                                    overflow: "hidden",
+                                    backdropFilter: "blur(10px)"
                                 }}
                             >
-                                <img 
-                                    src={paintball} 
-                                    alt='paintball' 
+                                <Image
+                                    src={paintball}
+                                    alt="paintball"
                                     style={{
-                                        objectFit:'cover',
-                                        width:"100%",
-                                        height:"450px",
+                                        objectFit: "cover",
+                                        aspectRatio: "5/7"
                                     }}
+                                    padding={"3px"}
+                                    borderRadius={"6px"}
+                                    maxW={{ base: "100%", lg: "33vw" }}
+                                />
+                            </Box>
+                        </div>
+                        <div>
+                            <div
+                                style={{
+                                    border: "1px solid white",
+                                    borderRadius: "6px",
+                                    overflow: "hidden",
+                                    backdropFilter: "blur(10px)"
+                                }}
+                            >
+                                <Image
+                                    src={wallRap}
+                                    alt="paintball"
+                                    style={{
+                                        objectFit: "cover",
+                                        aspectRatio: "5/7"
+                                    }}
+                                    padding={"3px"}
+                                    borderRadius={"6px"}
+                                    maxW={{ base: "100%", lg: "33vw" }}
                                 />
                             </div>
                         </div>
-                        <div
-                            style={{
-                                width:"350px",
-                                padding:"16px",
-                            }}
-                        >
-                            <div
-                                style={{
-                                    border:"1px solid white",
-                                    borderRadius:"6px",
-                                    overflow:'hidden',
-                                    height:"450px",
-
-                                }}
-                            >
-                                <img 
-                                    src={wallRap} 
-                                    alt='paintball' 
-                                    style={{
-                                        objectFit:'cover',
-                                        width:"100%",
-                                        height:"450px",
-
-                                    }}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                ):null
-            }
+                    </Container>
+                </div>
+            ) : null}
         </>
-    )
-}
+    );
+};
 
-export default AdventureEvents
+export default AdventureEvents;
