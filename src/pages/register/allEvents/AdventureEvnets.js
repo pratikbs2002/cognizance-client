@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Text, Box, Image } from "@chakra-ui/react";
 import paintball from "../../../assets/adBanner/Paintball1.png";
 import wallRap from "../../../assets/adBanner/wallrappelling.png";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const AdventureEvents = (props) => {
     return (
@@ -61,41 +62,43 @@ const AdventureEvents = (props) => {
                                     overflow: "hidden",
                                     backdropFilter: "blur(10px)"
                                 }}
+                                minW={{ base: "100%", lg: "33vw" }}
                             >
-                                <Image
+                                <LazyLoadImage
+                                    effect="blur"
                                     src={paintball}
                                     alt="paintball"
                                     style={{
                                         objectFit: "cover",
-                                        aspectRatio: "5/7"
+                                        aspectRatio: "5/7",
+                                        padding: "3px",
+                                        borderRadius: "6px"
                                     }}
-                                    padding={"3px"}
-                                    borderRadius={"6px"}
-                                    maxW={{ base: "100%", lg: "33vw" }}
                                 />
                             </Box>
                         </div>
                         <div>
-                            <div
+                            <Box
                                 style={{
                                     border: "1px solid white",
                                     borderRadius: "6px",
                                     overflow: "hidden",
                                     backdropFilter: "blur(10px)"
                                 }}
+                                minW={{ base: "100%", lg: "33vw" }}
                             >
-                                <Image
+                                <LazyLoadImage
+                                    effect="blur"
                                     src={wallRap}
                                     alt="paintball"
                                     style={{
                                         objectFit: "cover",
-                                        aspectRatio: "5/7"
+                                        aspectRatio: "5/7",
+                                        padding: "3px",
+                                        borderRadius: "6px"
                                     }}
-                                    padding={"3px"}
-                                    borderRadius={"6px"}
-                                    maxW={{ base: "100%", lg: "33vw" }}
                                 />
-                            </div>
+                            </Box>
                         </div>
                     </Container>
                 </div>
