@@ -8,7 +8,7 @@ import _3 from "../../assets/event_committee_photo/website/3pratik.jpeg"
 import _4 from "../../assets/event_committee_photo/website/4ketan.png"
 import _5 from "../../assets/event_committee_photo/website/5ish.png"
 import _6 from "../../assets/event_committee_photo/website/6dhruvin.jpg"
-import _7 from "../../assets/event_committee_photo/website/7jay.png"
+import _7 from "../../assets/event_committee_photo/website/7jay1.png"
 
 const Website = () => {
     const arr=[
