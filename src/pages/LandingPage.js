@@ -47,6 +47,7 @@ export default function LandingPage() {
             <Container
                 padding={0}
                 margin={0}
+                minHeight={"120vh"}
                 maxWidth={"100%"}
                 backgroundImage={mainbg}
                 backgroundSize="cover"
