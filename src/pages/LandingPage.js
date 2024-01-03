@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container } from "@chakra-ui/react";
 import mainbg from "../assets/bg8.png";
 // import Committee from "./committee/Committee";
@@ -14,7 +14,7 @@ import ScrollButton from "../components/scrollButton/ScrollButton";
 // import aboutIm from "./posterCz.png";
 // import aboutIm2 from "./posterCz2.png";
 import aboutIm3 from "./homePage6.png";
-import AdModal from "../components/advertisement/adModel";
+// import AdModal from "../components/advertisement/adModel";
 
 export default function LandingPage() {
     // const [isImage1Visible, setIsImage1Visible] = useState(true);
@@ -41,7 +41,7 @@ export default function LandingPage() {
     //     return () => clearInterval(interval);
     // }, []);
 
-    const [isModalOpen, setIsModalOpen] = useState(true);
+    // const [isModalOpen, setIsModalOpen] = useState(false);
     return (
         <>
             <Container
@@ -72,8 +72,8 @@ export default function LandingPage() {
                 <NewHome />
                 <About />
                 <Footer />
-                <ScrollButton isModalOpen={isModalOpen} />
-                <AdModal setIsModalOpen={setIsModalOpen} />
+                <ScrollButton isModalOpen={false} />
+                {/* <AdModal setIsModalOpen={setIsModalOpen} /> */}
             </Container>
         </>
     );
