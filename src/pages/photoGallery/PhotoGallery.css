@@ -127,14 +127,14 @@
         padding-left: 10px;
         height: 64px;
     }
-} 
+}
 
 .chakra-modal__close-btn {
     color: red;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 0.5vh;
     background-color: #9f454e;
 }
 

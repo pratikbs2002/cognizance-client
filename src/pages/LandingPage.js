@@ -47,14 +47,13 @@ export default function LandingPage() {
             <Container
                 padding={0}
                 margin={0}
-                minHeight={"120vh"}
                 maxWidth={"100%"}
                 backgroundImage={mainbg}
                 backgroundSize="cover"
                 backgroundAttachment="fixed"
                 backgroundColor="blackAlpha.800"
                 backdropBlur={"lg"}
-                backgroundRepeat={"n  o-repeat"}
+                backgroundRepeat={"no-repeat"}
             >
                 <Navbar />
 
