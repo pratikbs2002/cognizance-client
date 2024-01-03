@@ -3,8 +3,15 @@ import { Container, Text, Box, Image } from "@chakra-ui/react";
 import paintball from "../../../assets/adBanner/Paintball1.png";
 import wallRap from "../../../assets/adBanner/wallrappelling.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { jsx } from "@emotion/react";
 
 const AdventureEvents = (props) => {
+    const setBgColor = (e) => {
+        e.target.parentElement.style.backgroundColor = "rgba(0,0,0,0.443)";
+        e.target.parentElement.style.padding = "5px";
+        e.target.parentElement.style.borderRadius = "6px";
+    };
+
     return (
         <>
             <div style={{ display: "flex", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
@@ -24,7 +31,7 @@ const AdventureEvents = (props) => {
                         fontWeight: "600",
                         flexWrap: "wrap",
                         paddingTop: "2%",
-                        paddingBottom: "2%"
+                        paddingBottom: "4%"
                     }}
                 >
                     <Container
@@ -55,48 +62,32 @@ const AdventureEvents = (props) => {
                         flexDirection={{ base: "column", lg: "row" }}
                     >
                         <div>
-                            <Box
-                                style={{
-                                    border: "1px solid white",
-                                    borderRadius: "6px",
-                                    overflow: "hidden",
-                                    backdropFilter: "blur(10px)"
-                                }}
-                                minW={{ base: "100%", lg: "33vw" }}
-                            >
+                            <Box minW={{ base: "100%", lg: "33vw" }}>
                                 <LazyLoadImage
-                                    effect="blur"
                                     src={paintball}
                                     alt="paintball"
                                     style={{
                                         objectFit: "cover",
                                         aspectRatio: "5/7",
-                                        padding: "3px",
                                         borderRadius: "6px"
                                     }}
+                                    effect="blur"
+                                    onLoad={(e) => setBgColor(e)}
                                 />
                             </Box>
                         </div>
                         <div>
-                            <Box
-                                style={{
-                                    border: "1px solid white",
-                                    borderRadius: "6px",
-                                    overflow: "hidden",
-                                    backdropFilter: "blur(10px)"
-                                }}
-                                minW={{ base: "100%", lg: "33vw" }}
-                            >
+                            <Box minW={{ base: "100%", lg: "33vw" }}>
                                 <LazyLoadImage
-                                    effect="blur"
                                     src={wallRap}
                                     alt="paintball"
                                     style={{
                                         objectFit: "cover",
                                         aspectRatio: "5/7",
-                                        padding: "3px",
                                         borderRadius: "6px"
                                     }}
+                                    effect="blur"
+                                    onLoad={(e) => setBgColor(e)}
                                 />
                             </Box>
                         </div>
