@@ -111,22 +111,22 @@ export default function UploadImages(props) {
 
     const fetchImages = async () => {
         setIsDownloadingZipFile(true);
-        const storage = getStorage();
+        // const storage = getStorage();
 
-        const storageRef = ref(storage, "cz"); // Update this to your storage reference
+        // const storageRef = ref(storage, "cz"); // Update this to your storage reference
         try {
             // Retrieve a list of items (images) in the storage reference
-            const listResult = await listAll(storageRef);
+            // const listResult = await listAll(storageRef);
 
             // Loop through the items and fetch download URLs and names
-            const images = await Promise.all(
-                listResult.items.map(async (item) => {
-                    const downloadURL = await getDownloadURL(item);
-                    return { name: item.name, url: downloadURL };
-                })
-            );
+            // const images = await Promise.all(
+            //     listResult.items.map(async (item) => {
+            //         const downloadURL = await getDownloadURL(item);
+            //         return { name: item.name, url: downloadURL };
+            //     })
+            // );
 
-            const res = await getZipFileService(images);
+            const res = await getZipFileService();
 
             console.log(res);
 
@@ -156,7 +156,13 @@ export default function UploadImages(props) {
                 });
             }
         } catch (error) {
-            console.error("Error fetching images:", error);
+            toast({
+                description: "Zip file not found! Please try again later.",
+                status: "error",
+                duration: 5000,
+                position: "top",
+                isClosable: true
+            });
         } finally {
             setIsDownloadingZipFile(false);
         }
