@@ -19,14 +19,14 @@ export async function getRegisterCountService() {
     return data;
 }
 
-export async function getZipFileService(paymentReciepts) {
+export async function getZipFileService() {
     let locationData = await getLocationData();
     let res = await fetch(`${hostUrl}/getZipFile`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ locationData: locationData, paymentReciepts: paymentReciepts })
+        body: JSON.stringify({ locationData: locationData })
     });
     return res;
 }
