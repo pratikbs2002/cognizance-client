@@ -38,7 +38,7 @@ const TechEvents = (props) => {
             winningPrice: ["● 1st Prize: ₹ 25,000", "● 2nd Prize: ₹ 20,000"],
             isPrizesEnabled: true,
             pdfName: "battleblitz",
-            maxRegistration: 45
+            maxRegistration: 1
         },
         {
             id: 2,
