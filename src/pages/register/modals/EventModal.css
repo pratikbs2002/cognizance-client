@@ -20,3 +20,23 @@ li {
         padding-left: 5px;
     }
 }
+
+.exploreMore-note1 {
+    width: fit-content;
+    /* margin-top: 4%; */
+    background-color: #f68a1c;
+    color: #2b1805;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 1rem;
+
+    .title {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .message {
+        padding-left: 5px;
+    }
+}

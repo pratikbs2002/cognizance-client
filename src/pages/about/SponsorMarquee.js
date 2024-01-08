@@ -15,7 +15,7 @@ import Marquee from "react-fast-marquee";
 export default function SponsorMarquee() {
     const arr = [s1, s2, s3, s4, s5, s6, s7, s8];
     return (
-        <Marquee gradient gradientColor speed={180}>
+        <Marquee gradient gradientColor speed={120}>
             {arr.map((index) => (
                 <Card
                     style={{

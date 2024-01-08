@@ -73,6 +73,19 @@ export default function Register() {
                 >
                     <Text>Event Registrations</Text>
                 </div>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        textAlign: "center"
+                    }}
+                >
+                    <div className="exploreMore-note1">
+                        <span className="title">Note:</span>
+                        <span className="message">Registered students must bring their college ID card to participate in the events.</span>
+                    </div>
+                </div>
                 <Container
                     style={{
                         display: "flex",

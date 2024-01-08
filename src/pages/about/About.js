@@ -2,11 +2,12 @@ import { Button, Card, Container, Heading, HStack, Image, Stack, Text, VStack } 
 import React from "react";
 import { HiDownload } from "react-icons/hi";
 import count_icon from "../../assets/count_icon.png";
-// import SponsorMarquee from "./SponsorMarquee";
+import SponsorMarquee from "./SponsorMarquee";
 import Count from "../../components/Count";
 import aboutVideo from "../../assets/video/intro1.mp4";
+import Sponsors from "./Sponsors";
 
-export default function About({registerCount,visitorCount}) {
+export default function About({ registerCount, visitorCount }) {
     // const date = new Date();
     return (
         <>
@@ -81,7 +82,7 @@ export default function About({registerCount,visitorCount}) {
                                 <Stack
                                     width={"80%"}
                                     justifyContent="space-between"
-                                    alignItems={{md:"flex-start", base: "center"}}
+                                    alignItems={{ md: "flex-start", base: "center" }}
                                     direction={{ base: "column", md: "row" }}
                                     gap={{ base: 2, md: 10 }}
                                 >
@@ -201,11 +202,13 @@ export default function About({registerCount,visitorCount}) {
                         </Stack>
                     </Container>
                 </Stack>
-                {/* <Container
+                <Container
                     paddingBottom={10}
-                    bg={"blackAlpha.100"}
                     marginTop={"50px"}
                     maxWidth="100%"
+                    style={{
+                        backgroundColor: "rgba(0, 0, 0, 0.442)"
+                    }}
                 >
                     <Heading
                         marginTop={"50px"}
@@ -217,8 +220,22 @@ export default function About({registerCount,visitorCount}) {
                     >
                         Sponsors
                     </Heading>
-                    <SponsorMarquee />
-                </Container> */}
+
+                    <div style={{}}>
+                        <div
+                            style={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                                alignItems: "center",
+                                padding: "10px 20px",
+                                color: "white"
+                            }}
+                        >
+                            <Sponsors />
+                        </div>
+                    </div>
+                    {/* <SponsorMarquee /> */}
+                </Container>
             </Container>
         </>
     );
