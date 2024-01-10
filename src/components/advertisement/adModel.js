@@ -9,7 +9,9 @@ import {
     Image,
     ModalHeader
 } from "@chakra-ui/react";
-import paintball from "../../assets/adBanner/Paintball1.png";
+// import paintball from "../../assets/adBanner/Paintball1.png";
+import dvivid from "../../assets/adBanner/d-vivid.jpg";
+import amul from "../../assets/adBanner/amul.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
@@ -30,14 +32,31 @@ export default function AdModal(props) {
                 <ModalContent backgroundColor={"#191818"} paddingBottom={3} minWidth={"min-content"}>
                     <ModalCloseButton />
 
-                    <ModalBody alignItems={"center"} justifyContent={"center"} mt={12}>
+                    <ModalBody
+                        alignItems={"center"}
+                        justifyContent={"center"}
+                        mt={12}
+                        display="flex"
+                        flexDirection={{ base: "column", md: "row" }}
+                        gap={10}
+                    >
                         <LazyLoadImage
                             alt="paintballAdvertisement"
                             effect="blur"
-                            src={paintball}
+                            src={amul}
                             style={{
                                 minWidth: "27vw",
-                                aspectRatio: "5/7",
+                                aspectRatio: "1/1",
+                                objectFit: "cover"
+                            }}
+                        />
+                        <LazyLoadImage
+                            alt="paintballAdvertisement"
+                            effect="blur"
+                            src={dvivid}
+                            style={{
+                                minWidth: "27vw",
+                                aspectRatio: "1/1",
                                 objectFit: "cover"
                             }}
                         />
