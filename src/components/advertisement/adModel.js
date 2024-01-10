@@ -38,6 +38,7 @@ export default function AdModal(props) {
                         mt={12}
                         display="flex"
                         flexDirection={{ base: "column", md: "row" }}
+                        pt={{ base: 32, md: 2 }}
                         gap={10}
                     >
                         <LazyLoadImage
