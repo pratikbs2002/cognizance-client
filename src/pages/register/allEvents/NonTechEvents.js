@@ -80,7 +80,7 @@ const NonTechEvents = (props) => {
             winningPrice: ["●	Winner: Rs. 4,000/-", "●	Runner up: Rs. 3,000/-"],
             isPrizesEnabled: true,
             pdfName: "bgmi",
-            maxRegistration: 128
+            maxRegistration: 1,
         },
         {
             id: 21,
