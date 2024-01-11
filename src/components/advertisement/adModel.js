@@ -6,8 +6,6 @@ import {
     ModalBody,
     ModalCloseButton,
     useDisclosure,
-    Image,
-    ModalHeader
 } from "@chakra-ui/react";
 // import paintball from "../../assets/adBanner/Paintball1.png";
 import dvivid from "../../assets/adBanner/d-vivid.jpg";
@@ -27,7 +25,7 @@ export default function AdModal(props) {
 
     return (
         <>
-            <Modal isOpen={isOpen} onClose={onClose} scrollBehavior="inside" blockScrollOnMount={false}>
+            <Modal isCentered isOpen={isOpen} onClose={onClose} scrollBehavior="inside" blockScrollOnMount={false}>
                 <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(10px) hue-rotate(90deg)" />
                 <ModalContent backgroundColor={"#191818"} paddingBottom={3} minWidth={"min-content"}>
                     <ModalCloseButton />
