@@ -9,6 +9,7 @@ import UploadImages from "./pages/admin/UploadImages";
 import ContactUs from "./pages/contactUs/ContactUs";
 import RegisterdEvent from "./pages/registeredEvent/RegisteredEvent";
 import NewCommittee from "./pages/committee/NewCommittee";
+import Schedule from "./pages/Schedule/Schedule";
 import AdminLogin from "./AdminLogin";
 import { getRegisterCountService } from "./service/publicService";
 
@@ -49,6 +50,7 @@ const App = () => {
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/committee" element={<NewCommittee />} />
                 <Route path="/registeredEvents" element={<RegisterdEvent />} />
+                <Route path="/schedule" element={<Schedule/>}/>
             </Routes>
         </BrowserRouter>
     );

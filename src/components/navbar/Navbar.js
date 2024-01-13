@@ -97,9 +97,9 @@ export default function Navbar() {
                         <li>
                             <Link to="register">Events</Link>
                         </li>
-                        {/* <li>
-                            <Link to="gallery">Gallery</Link>
-                        </li> */}
+                        <li>
+                            <Link to="schedule">Schedule</Link>
+                        </li>
                         <li>
                             <Link to="contact-us">Contact Us</Link>
                         </li>
