@@ -132,6 +132,7 @@ export default function EventCard(props) {
                                         as="a"
                                         // mr={3}
                                         download
+                                        padding={"8px"}
                                         href={`pdfs/${props.pdfName}.pdf`}
                                     >
                                         Download PDF
