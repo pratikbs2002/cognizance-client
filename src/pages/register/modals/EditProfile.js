@@ -653,7 +653,7 @@ const EditProfile = (props) => {
                         alignSelf={"center"}
                         color={"white"}
                         backgroundColor={"green"}
-                        padding={"8px"}
+                        padding={"8px 5px"}
                         borderRadius={"5px"}
                     >
                         Registration Over!
