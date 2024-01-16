@@ -621,43 +621,46 @@ const EditProfile = (props) => {
             {props.eventName !== "Musical Night" ? (
                 !props.isAlreadyRegistered &&
                 props.maxRegistration > (typeof props?.registerCount === "undefined" ? 0 : props?.registerCount) ? (
-                    // <Button
-                    //     backgroundColor="#54cadd"
-                    //     color={"black"}
-                    //     onClick={async () => {
-                    //         if (sessionStorage.getItem("token") !== null) {
-                    //             setIsLoading(true);
-                    //             if (isProfileUpdated || (await isProfileUpdatedRequest())) {
-                    //                 // Call For Register Modal
-                    //                 // console.log("REGISTER MODAL");
-                    //                 onEventRegisterModalOpen();
-                    //                 setIsLoading(false);
-                    //             } else {
-                    //                 // Call For Profile Modal
-                    //                 if (!sessionStorage.getItem("token")) {
-                    //                     GAuth();
-                    //                     return;
-                    //                 }
-                    //                 // console.log("PROFILE MODAL");
-                    //                 onEditProfileModalOpen();
-                    //                 setIsLoading(false);
-                    //             }
-                    //         } else {
-                    //             GAuth();
-                    //         }
-                    //     }}
-                    // >
-                    //     Register
-                    // </Button>
-                    <Box
-                        alignSelf={"center"}
-                        color={"white"}
-                        backgroundColor={"green"}
-                        padding={"8px"}
-                        borderRadius={"5px"}
-                    >
-                        Registration Over!
-                    </Box>
+                    props.eventId === 30 || props.eventId === 31 ? (
+                        <Button
+                            backgroundColor="#54cadd"
+                            color={"black"}
+                            onClick={async () => {
+                                if (sessionStorage.getItem("token") !== null) {
+                                    setIsLoading(true);
+                                    if (isProfileUpdated || (await isProfileUpdatedRequest())) {
+                                        // Call For Register Modal
+                                        // console.log("REGISTER MODAL");
+                                        onEventRegisterModalOpen();
+                                        setIsLoading(false);
+                                    } else {
+                                        // Call For Profile Modal
+                                        if (!sessionStorage.getItem("token")) {
+                                            GAuth();
+                                            return;
+                                        }
+                                        // console.log("PROFILE MODAL");
+                                        onEditProfileModalOpen();
+                                        setIsLoading(false);
+                                    }
+                                } else {
+                                    GAuth();
+                                }
+                            }}
+                        >
+                            Register
+                        </Button>
+                    ) : (
+                        <Box
+                            alignSelf={"center"}
+                            color={"white"}
+                            backgroundColor={"green"}
+                            padding={"8px"}
+                            borderRadius={"5px"}
+                        >
+                            Registration Over!
+                        </Box>
+                    )
                 ) : props.isAlreadyRegistered ? (
                     <Box
                         alignSelf={"center"}
